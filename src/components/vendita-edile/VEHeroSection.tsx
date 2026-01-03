@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowDown, Check, Shield, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
+import heroImage from "@/assets/hero-windows.jpg";
 
 const VEHeroSection = () => {
   const aziende = useCountUp({ end: 47, duration: 2000 });
@@ -30,10 +31,15 @@ const VEHeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center section-padding pt-24 md:pt-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-navy">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy to-navy-light opacity-50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.15)_0%,transparent_50%)]" />
+      {/* Background with Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Showroom infissi e serramenti" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/90 to-navy/95" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.2)_0%,transparent_50%)]" />
         <div 
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -49,10 +55,14 @@ const VEHeroSection = () => {
         transition={{ duration: 0.5 }}
         className="absolute top-20 md:top-24 left-0 right-0 z-20"
       >
-        <div className="bg-gold/10 border-y border-gold/30 py-2">
-          <p className="text-center text-sm md:text-base text-gold font-medium">
+        <div className="bg-gold/20 backdrop-blur-sm border-y border-gold/40 py-2">
+          <motion.p 
+            animate={{ opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-center text-sm md:text-base text-gold font-medium"
+          >
             ⚠️ GENNAIO 2026: Solo <span className="font-bold">3 posti disponibili</span> per nuovi affiancamenti
-          </p>
+          </motion.p>
         </div>
       </motion.div>
 
@@ -64,12 +74,16 @@ const VEHeroSection = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive/30 border-2 border-destructive rounded-lg shadow-lg shadow-destructive/20">
+          <motion.div 
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive/30 border-2 border-destructive rounded-lg shadow-lg shadow-destructive/30"
+          >
             <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
             <span className="text-destructive text-sm md:text-base font-bold uppercase tracking-wide">
               🛑 FERMATI. Leggi questo prima di perdere un altro cliente.
             </span>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Main Headline - Competitor Focus */}
@@ -81,7 +95,7 @@ const VEHeroSection = () => {
         >
           In questo momento, mentre leggi,
           <br />
-          <span className="text-gold">un tuo concorrente sta chiudendo</span>
+          <span className="text-gold drop-shadow-[0_0_30px_hsl(var(--gold)/0.5)]">un tuo concorrente sta chiudendo</span>
           <br />
           il cliente che <span className="underline decoration-destructive decoration-4">TU hai perso ieri.</span>
         </motion.h1>
@@ -103,11 +117,15 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/50 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto"
+          className="bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 border-2 border-gold/60 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-gold/20"
         >
-          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gold mb-3">
+          <motion.p 
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gold mb-3 drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]"
+          >
             €30.000 – €50.000 al mese.
-          </p>
+          </motion.p>
           <p className="text-lg md:text-xl text-center text-foreground mb-2">
             Questa è la cifra <span className="font-bold">ESATTA</span> che stai lasciando sul tavolo.
           </p>
@@ -136,7 +154,8 @@ const VEHeroSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-                className="flex items-start gap-3 bg-navy-light/50 border border-border/30 rounded-lg p-4 hover:border-gold/50 transition-colors"
+                whileHover={{ scale: 1.02, borderColor: 'hsl(var(--gold))' }}
+                className="flex items-start gap-3 bg-navy-light/60 backdrop-blur-sm border border-border/40 rounded-lg p-4 transition-all duration-300 cursor-default"
               >
                 <div className="w-5 h-5 rounded border-2 border-gold bg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3 h-3 text-gold" />
@@ -152,7 +171,7 @@ const VEHeroSection = () => {
             transition={{ duration: 0.6, delay: 1.1 }}
             className="text-center text-lg md:text-xl text-gold font-semibold mt-6"
           >
-            ...questo messaggio potrebbe valere <span className="text-2xl font-bold">€100.000+</span> per te quest'anno.
+            ...questo messaggio potrebbe valere <span className="text-2xl font-bold drop-shadow-[0_0_10px_hsl(var(--gold)/0.5)]">€100.000+</span> per te quest'anno.
           </motion.p>
         </motion.div>
 
@@ -161,7 +180,7 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-navy-dark/80 border border-gold/30 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto text-center"
+          className="bg-navy-dark/90 backdrop-blur-sm border border-gold/40 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto text-center shadow-xl"
         >
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
             L'<span className="text-gold font-bold">UNICO</span> programma di affiancamento per l'edilizia
@@ -182,21 +201,33 @@ const VEHeroSection = () => {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10"
         >
-          <div className="flex items-center gap-2 text-foreground" ref={aziende.ref}>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            ref={aziende.ref}
+          >
             <Users className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold">{Math.round(aziende.count)}+</span>
+            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">{Math.round(aziende.count)}+</span>
             <span className="text-sm text-muted-foreground">aziende affiancate</span>
-          </div>
-          <div className="flex items-center gap-2 text-foreground" ref={fatturato.ref}>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            ref={fatturato.ref}
+          >
             <TrendingUp className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold">+€{fatturato.formattedValue}M</span>
+            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">+€{fatturato.formattedValue}M</span>
             <span className="text-sm text-muted-foreground">fatturato generato</span>
-          </div>
-          <div className="flex items-center gap-2 text-foreground" ref={rinnovi.ref}>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            ref={rinnovi.ref}
+          >
             <Shield className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold">{Math.round(rinnovi.count)}%</span>
+            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">{Math.round(rinnovi.count)}%</span>
             <span className="text-sm text-muted-foreground">tasso rinnovi</span>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* CTA Section */}
@@ -206,14 +237,19 @@ const VEHeroSection = () => {
           transition={{ duration: 0.6, delay: 1 }}
           className="flex flex-col items-center mb-12"
         >
-          <Button
-            size="lg"
-            variant="gold"
-            onClick={handleCtaClick}
-            className="text-lg md:text-xl px-10 py-7 glow-gold font-bold shadow-2xl shadow-gold/30 hover:scale-105 transition-transform"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Scopri se Qualifichi (2 minuti)
-          </Button>
+            <Button
+              size="lg"
+              variant="gold"
+              onClick={handleCtaClick}
+              className="text-lg md:text-xl px-10 py-7 font-bold shadow-2xl shadow-gold/40 hover:shadow-gold/60 transition-all duration-300"
+            >
+              Scopri se Qualifichi (2 minuti)
+            </Button>
+          </motion.div>
           
           <div className="flex flex-col items-center gap-2 mt-4">
             <p className="text-sm text-muted-foreground">

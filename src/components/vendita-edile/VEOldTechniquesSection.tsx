@@ -29,6 +29,25 @@ const obsoleteTechniques = [
   }
 ];
 
+const falsePromises = [
+  {
+    promise: '"Avrai un consulente dedicato"',
+    reality: "Poi scopri che non ha mai chiuso una trattativa edile",
+  },
+  {
+    promise: '"Ti seguiremo passo dopo passo"',
+    reality: "Poi risponde quando può e sparisce quando serve",
+  },
+  {
+    promise: '"Costruiremo una strategia su misura"',
+    reality: "Poi scopri che non conosce obiezioni, posa, margini",
+  },
+  {
+    promise: '"Aumenteremo il fatturato"',
+    reality: "Poi nessuno misura nulla",
+  },
+];
+
 const VEOldTechniquesSection = () => {
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-destructive/5 to-background relative overflow-hidden">
@@ -83,19 +102,52 @@ const VEOldTechniquesSection = () => {
           ))}
         </StaggerContainer>
 
+        {/* False Promises Section - Merged */}
+        <AnimatedSection delay={0.25}>
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8">
+              E PER ANNI TI HANNO RACCONTATO{" "}
+              <span className="text-destructive">QUESTE FRASI</span>
+            </h3>
+            <div className="space-y-4">
+              {falsePromises.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ x: 10 }}
+                  className="p-5 md:p-6 bg-card/80 border border-destructive/20 rounded-xl"
+                >
+                  <p className="text-lg md:text-xl font-semibold text-foreground mb-2 line-through decoration-destructive/50 decoration-2">
+                    {item.promise}
+                  </p>
+                  <p className="text-muted-foreground">
+                    {item.reality}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Central Shock Box */}
         <AnimatedSection delay={0.3}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-4xl mx-auto bg-gradient-to-r from-destructive/10 via-destructive/5 to-destructive/10 border border-destructive/30 rounded-3xl p-8 md:p-12 mb-12"
+            className="max-w-4xl mx-auto bg-gradient-to-r from-destructive/10 via-destructive/5 to-destructive/10 border-2 border-destructive/30 rounded-3xl p-8 md:p-12 mb-12"
           >
             <div className="text-center">
               <TrendingDown className="w-12 h-12 text-destructive mx-auto mb-6" />
               <p className="text-lg md:text-xl text-foreground mb-4">
                 Se stai ancora usando queste tecniche, <span className="font-bold">non è colpa tua</span>.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 È colpa di chi te le ha insegnate senza dirti che il mondo è cambiato.
+              </p>
+              <p className="text-xl md:text-2xl font-bold text-destructive">
+                👉 Chi non ha mai chiuso una commessa edile NON può insegnarti a vendere.
               </p>
             </div>
           </motion.div>

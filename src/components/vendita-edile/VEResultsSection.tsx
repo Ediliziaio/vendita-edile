@@ -3,6 +3,12 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 import { TrendingUp, Clock, Target, Award, ArrowRight, CheckCircle2 } from "lucide-react";
 
+// Import client logos
+import logoRoma from "@/assets/logo-impresa-edile-roma.png";
+import logoVeneto from "@/assets/logo-posatore-veneto.png";
+import logoMilano from "@/assets/logo-serramentista-milano.png";
+import logoToscana from "@/assets/logo-showroom-toscana.png";
+
 const VEResultsSection = () => {
   const commesse = useCountUp({ end: 50, duration: 2000, prefix: "€", suffix: "K" });
   const fatturato = useCountUp({ end: 50, duration: 2000, prefix: "+", suffix: "%" });
@@ -12,6 +18,13 @@ const VEResultsSection = () => {
     "Media calcolata su 47 aziende affiancate",
     "Settori: infissi, serramenti, fotovoltaico, ristrutturazioni",
     "Risultati verificabili (su richiesta)",
+  ];
+
+  const clientLogos = [
+    { src: logoRoma, alt: "Impresa Edile Roma" },
+    { src: logoVeneto, alt: "Posatore Veneto" },
+    { src: logoMilano, alt: "Serramentista Milano" },
+    { src: logoToscana, alt: "Showroom Toscana" },
   ];
 
   return (
@@ -39,7 +52,7 @@ const VEResultsSection = () => {
             </motion.div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Questo è ciò che <span className="text-gold">OTTERRAI</span>
+              Questo è ciò che <span className="text-gold drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]">OTTERRAI</span>
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -60,12 +73,12 @@ const VEResultsSection = () => {
           >
             <div 
               ref={commesse.ref}
-              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-lg group-hover:shadow-gold/20"
+              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-xl group-hover:shadow-gold/30"
             >
-              <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-gold" />
+              <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 €30-{Math.round(commesse.count)}K
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Nuove commesse</p>
@@ -83,12 +96,12 @@ const VEResultsSection = () => {
           >
             <div 
               ref={fatturato.ref}
-              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-lg group-hover:shadow-gold/20"
+              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-xl group-hover:shadow-gold/30"
             >
-              <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Target className="w-6 h-6 text-gold" />
+              <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Target className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 +30-{Math.round(fatturato.count)}%
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Fatturato</p>
@@ -106,12 +119,12 @@ const VEResultsSection = () => {
           >
             <div 
               ref={tempo.ref}
-              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-lg group-hover:shadow-gold/20"
+              className="p-6 md:p-8 bg-gradient-to-b from-card to-card/80 border-2 border-gold/30 rounded-2xl text-center transition-all duration-300 group-hover:border-gold group-hover:shadow-xl group-hover:shadow-gold/30"
             >
-              <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-gold" />
+              <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2">
+              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 -60/{Math.round(tempo.count)}%
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Tempo perso</p>
@@ -128,10 +141,10 @@ const VEResultsSection = () => {
             viewport={{ once: true }}
             className="flex justify-center mb-10"
           >
-            <div className="inline-flex items-center gap-4 px-8 py-5 bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold rounded-2xl shadow-lg shadow-gold/20">
+            <div className="inline-flex items-center gap-4 px-8 py-5 bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 border-2 border-gold rounded-2xl shadow-xl shadow-gold/30">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground mb-1">Timeline garantita</p>
-                <p className="text-3xl md:text-4xl font-black text-gold">90 GIORNI</p>
+                <p className="text-3xl md:text-4xl font-black text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">90 GIORNI</p>
                 <p className="text-sm text-foreground">o meno</p>
               </div>
               <ArrowRight className="w-8 h-8 text-gold hidden md:block" />
@@ -142,6 +155,32 @@ const VEResultsSection = () => {
               </div>
             </div>
           </motion.div>
+        </AnimatedSection>
+
+        {/* Client Logos Section */}
+        <AnimatedSection delay={0.45}>
+          <div className="text-center mb-8">
+            <p className="text-muted-foreground text-sm uppercase tracking-wider mb-6">Hanno già lavorato con noi</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              {clientLogos.map((logo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                  className="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.alt}
+                    className="h-12 md:h-16 w-auto object-contain"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </AnimatedSection>
 
         {/* Proof Points */}
