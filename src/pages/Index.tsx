@@ -24,6 +24,7 @@ import VECostOfInactionSection from "@/components/vendita-edile/VECostOfInaction
 import VEPricingSection from "@/components/vendita-edile/VEPricingSection";
 import VEForWhoSection from "@/components/vendita-edile/VEForWhoSection";
 import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
+import VEFAQSection from "@/components/vendita-edile/VEFAQSection";
 import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
 
 const Index = () => {
@@ -84,6 +85,7 @@ const Index = () => {
         <VEPricingSection />
         <VEForWhoSection />
         <VESelectionProcessSection />
+        <VEFAQSection />
         <VEFinalCTASection />
         <Footer />
       </main>
