@@ -1,139 +1,127 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/marketing-edile-logo.png";
+
+// Configura qui l'URL del tuo form esterno
+const EXTERNAL_FORM_URL = "https://example.typeform.com/to/your-form";
 
 const navLinks = [
-  { label: "Il Problema", href: "#problema" },
-  { label: "Chi Siamo", href: "#differenza" },
-  { label: "Metodo", href: "#metodo" },
-  { label: "Servizi", href: "#servizi" },
-  { label: "Prezzi", href: "#prezzi" },
-  { label: "Blog", href: "/blog", isExternal: true },
+  { label: "Home", href: "/" },
+  { label: "Il Metodo", href: "#metodo" },
+  { label: "Investimento", href: "#investimento" },
+  { label: "Candidati", href: "#candidati" },
 ];
 
 const Footer = () => {
-  const handleSmoothScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
-    e.preventDefault();
-    const targetId = href.slice(1);
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+  const handleSmoothScroll = (href: string) => {
+    if (href === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (href.startsWith("#")) {
+      const element = document.getElementById(href.slice(1));
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
-  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="py-16 px-6 bg-navy-light border-t border-border/30">
-      <div className="container-narrow">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-12 mb-12"
-        >
+    <footer className="bg-navy-dark border-t border-border">
+      <div className="container-narrow section-padding py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
-          <div>
-            <Link
-              to="/"
-              className="inline-block mb-4"
-            >
-              <img src={logo} alt="Marketing Edile" className="h-10 w-auto" />
-            </Link>
-            <p className="text-muted-foreground mb-6">
-              Il sistema di marketing costruito sul campo per aziende edili e
-              serramentisti.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <button onClick={scrollToTop} className="mb-4">
+              <span className="text-2xl font-black text-foreground tracking-tight">
+                VENDITA <span className="text-gold">EDILE</span>
+                <span className="text-gold text-xs align-super">®</span>
+              </span>
+            </button>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              L'unico programma di affiancamento vendite per imprenditori edili.
+              Costruito sul campo, testato su risultati reali.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-foreground font-bold mb-4 uppercase tracking-wider text-sm">
-              Link Rapidi
-            </h4>
-            <nav className="flex flex-col gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-foreground font-semibold mb-4">Link Rapidi</h3>
+            <ul className="space-y-3">
               {navLinks.map((link) => (
-                link.isExternal ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="text-muted-foreground hover:text-gold transition-colors"
+                <li key={link.label}>
+                  <button
+                    onClick={() => handleSmoothScroll(link.href)}
+                    className="text-muted-foreground text-sm hover:text-gold transition-colors"
                   >
                     {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-muted-foreground hover:text-gold transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                )
+                  </button>
+                </li>
               ))}
-            </nav>
-          </div>
+            </ul>
+          </motion.div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-foreground font-bold mb-4 uppercase tracking-wider text-sm">
-              Contatti
-            </h4>
-            <div className="flex flex-col gap-4">
-              <a
-                href="mailto:info@marketingedile.it"
-                className="flex items-center gap-3 text-muted-foreground hover:text-gold transition-colors"
-              >
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-foreground font-semibold mb-4">Contatti</h3>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Mail className="w-4 h-4 text-gold" />
-                info@marketingedile.it
-              </a>
-              <a
-                href="tel:+390000000000"
-                className="flex items-center gap-3 text-muted-foreground hover:text-gold transition-colors"
-              >
+                <span>info@venditaedile.it</span>
+              </li>
+              <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-4 h-4 text-gold" />
-                +39 000 000 0000
-              </a>
-              <div className="flex items-start gap-3 text-muted-foreground">
-                <MapPin className="w-4 h-4 text-gold mt-0.5" />
+                <span>+39 XXX XXX XXXX</span>
+              </li>
+              <li className="flex items-center gap-3 text-muted-foreground text-sm">
+                <MapPin className="w-4 h-4 text-gold" />
                 <span>Italia</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
 
         {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4"
+          className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MARKETING EDILE® — Tutti i diritti
-            riservati
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} VENDITA EDILE®. Tutti i diritti riservati.
           </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-gold transition-colors">
+          <div className="flex items-center gap-6 text-sm">
+            <button className="text-muted-foreground hover:text-gold transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gold transition-colors">
-              Cookie Policy
-            </a>
+            </button>
+            <button className="text-muted-foreground hover:text-gold transition-colors">
+              Termini di Servizio
+            </button>
           </div>
         </motion.div>
       </div>

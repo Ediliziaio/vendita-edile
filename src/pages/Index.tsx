@@ -1,31 +1,31 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AgencyProblemsSection from "@/components/AgencyProblemsSection";
-import FakeStrategySection from "@/components/FakeStrategySection";
-import EmptyPromisesSection from "@/components/EmptyPromisesSection";
-import UncomfortableQuestionSection from "@/components/UncomfortableQuestionSection";
-import DifferentialSection from "@/components/DifferentialSection";
-import MethodSection from "@/components/MethodSection";
-import StatsSection from "@/components/StatsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import WhatWeDoSection from "@/components/WhatWeDoSection";
-import ServicesSection from "@/components/ServicesSection";
-import ComparisonSection from "@/components/ComparisonSection";
-import PricingSection from "@/components/PricingSection";
-import GuaranteeSection from "@/components/GuaranteeSection";
-import ForWhoSection from "@/components/ForWhoSection";
-import FAQSection from "@/components/FAQSection";
-import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
-import { generateOrganizationSchema, generateLocalBusinessSchema, generateWebSiteSchema } from "@/lib/seo";
+
+// Vendita Edile Components
+import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
+import VEProblemSection from "@/components/vendita-edile/VEProblemSection";
+import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
+import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
+import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
+import VECredibilitySection from "@/components/vendita-edile/VECredibilitySection";
+import VEFalsePromisesSection from "@/components/vendita-edile/VEFalsePromisesSection";
+import VEUncomfortableQuestionSection from "@/components/vendita-edile/VEUncomfortableQuestionSection";
+import VESalesIsDifferentSection from "@/components/vendita-edile/VESalesIsDifferentSection";
+import VEPillarsSection from "@/components/vendita-edile/VEPillarsSection";
+import VEClientResultsSection from "@/components/vendita-edile/VEClientResultsSection";
+import VECostOfInactionSection from "@/components/vendita-edile/VECostOfInactionSection";
+import VEPricingSection from "@/components/vendita-edile/VEPricingSection";
+import VEForWhoSection from "@/components/vendita-edile/VEForWhoSection";
+import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
+import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
 
 const Index = () => {
   const location = useLocation();
 
-  // Handle hash scroll on navigation from other pages
+  // Handle hash scroll on navigation
   useEffect(() => {
     const hash = location.hash;
     if (hash) {
@@ -44,34 +44,39 @@ const Index = () => {
     }
   }, [location.hash]);
 
-  const schemas = [
-    generateOrganizationSchema(),
-    generateLocalBusinessSchema(),
-    generateWebSiteSchema()
-  ];
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "VENDITA EDILE®",
+    description: "Programma di affiancamento vendite per imprenditori edili",
+    url: "https://venditaedile.it",
+  };
 
   return (
     <>
-      <SEOHead jsonLd={schemas} />
+      <SEOHead
+        title="VENDITA EDILE® | Programma di Affiancamento per Imprenditori Edili"
+        description="L'unico programma di affiancamento vendite per imprenditori edili. +30-50% fatturato in 90 giorni. Infissi, serramenti, fotovoltaico, edilizia, ristrutturazioni."
+        jsonLd={[organizationSchema]}
+      />
       <Navbar />
       <main className="overflow-hidden">
-        <HeroSection />
-        <AgencyProblemsSection />
-        <FakeStrategySection />
-        <EmptyPromisesSection />
-        <UncomfortableQuestionSection />
-        <DifferentialSection />
-        <MethodSection />
-        <StatsSection />
-        <TestimonialsSection />
-        <WhatWeDoSection />
-        <ServicesSection />
-        <ComparisonSection />
-        <PricingSection />
-        <GuaranteeSection />
-        <ForWhoSection />
-        <FAQSection />
-        <FinalCTASection />
+        <VEHeroSection />
+        <VEProblemSection />
+        <VEPainPointsSection />
+        <VEResultsSection />
+        <VEDifferentiatorSection />
+        <VECredibilitySection />
+        <VEFalsePromisesSection />
+        <VEUncomfortableQuestionSection />
+        <VESalesIsDifferentSection />
+        <VEPillarsSection />
+        <VEClientResultsSection />
+        <VECostOfInactionSection />
+        <VEPricingSection />
+        <VEForWhoSection />
+        <VESelectionProcessSection />
+        <VEFinalCTASection />
         <Footer />
       </main>
     </>
