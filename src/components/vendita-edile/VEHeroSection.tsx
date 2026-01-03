@@ -104,7 +104,7 @@ const VEHeroSection = () => {
           <motion.p 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gold mb-3 drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3 drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]"
           >
             €30.000 – €50.000 al mese.
           </motion.p>
@@ -112,7 +112,7 @@ const VEHeroSection = () => {
             Questa è la cifra <span className="font-bold">ESATTA</span> che stai lasciando sul tavolo.
           </p>
           <p className="text-base text-center text-muted-foreground">
-            Non è un'ipotesi. È la media dei nostri <span className="text-gold font-semibold">47 clienti</span> PRIMA di lavorare con noi.
+            Non è un'ipotesi. È la media dei nostri <span className="text-secondary font-semibold">47 clienti</span> PRIMA di lavorare con noi.
           </p>
         </motion.div>
 
