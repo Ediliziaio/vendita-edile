@@ -1,33 +1,63 @@
 import { motion } from "framer-motion";
-import { Shield, Check, Clock, TrendingUp, Zap, Users, MessageSquare, FileText, AlertTriangle } from "lucide-react";
+import { Clock, Users, MessageSquare, FileText, Zap, Repeat, FileCheck, BadgeCheck } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const VEPricingSection = () => {
-  const guaranteePoints = [
-    "non migliori le vendite",
-    "non aumenti il controllo",
-    "non ottieni risultati concreti",
+  const valueStack = [
+    { 
+      icon: Users, 
+      title: "Affiancamento 1:1 per 90 giorni", 
+      description: "Sessioni settimanali personalizzate",
+      value: 12000 
+    },
+    { 
+      icon: FileText, 
+      title: "Script di Vendita Personalizzati", 
+      description: "Creati su misura per il tuo settore",
+      value: 4500 
+    },
+    { 
+      icon: MessageSquare, 
+      title: "Revisione Trattative Settimanale", 
+      description: "Analisi e feedback su ogni trattativa",
+      value: 6000 
+    },
+    { 
+      icon: Zap, 
+      title: "Supporto WhatsApp Diretto", 
+      description: "Risposte rapide quando ne hai bisogno",
+      value: 3000 
+    },
+    { 
+      icon: Repeat, 
+      title: "Sistema di Follow-up", 
+      description: "Mai più clienti persi per mancato contatto",
+      value: 2500 
+    },
+    { 
+      icon: FileCheck, 
+      title: "Template Preventivi Persuasivi", 
+      description: "Modelli testati che convertono",
+      value: 2000 
+    },
   ];
 
-  const includes = [
-    { icon: Users, text: "Affiancamento 1:1" },
-    { icon: FileText, text: "Script personalizzati" },
-    { icon: MessageSquare, text: "Revisione trattative" },
-    { icon: Zap, text: "Supporto WhatsApp diretto" },
-  ];
+  const totalValue = valueStack.reduce((sum, item) => sum + item.value, 0);
+  const actualPrice = 9000;
+  const savings = totalValue - actualPrice;
 
-  const comparison = [
-    { label: "Costo del programma", value: "€9.000", color: "text-foreground" },
-    { label: "1 solo contratto recuperato", value: "€15.000+", color: "text-gold" },
-    { label: "ROI dopo 90 giorni", value: "5-10x", color: "text-gold" },
-  ];
+  const { ref: totalValueRef, formattedValue: totalValueAnimated } = useCountUp({ 
+    end: totalValue, 
+    duration: 2000,
+    prefix: "€"
+  });
 
-  const { ref: roiRef, formattedValue: roiValue } = useCountUp({ 
-    end: 45000, 
-    duration: 2500,
-    prefix: "+€"
+  const { ref: savingsRef, formattedValue: savingsAnimated } = useCountUp({ 
+    end: savings, 
+    duration: 2000,
+    prefix: "€"
   });
 
   const handleCtaClick = () => {
@@ -51,167 +81,139 @@ const VEPricingSection = () => {
       </div>
 
       <div className="container-narrow relative z-10">
-        {/* Pre-header frame */}
+        {/* Header */}
         <AnimatedSection>
           <div className="text-center mb-4">
             <span className="inline-block px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium mb-6 uppercase tracking-wider">
-              Investimento
+              Cosa Ottieni
             </span>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <p className="text-center text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Non è un costo.{" "}
-            <span className="text-gold font-semibold">È un investimento con ROI calcolabile.</span>
-          </p>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.2}>
-          <div className="text-center mb-12">
-            <h2 className="heading-section text-foreground">
-              QUANTO COSTA?
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="heading-section text-foreground mb-4">
+              ECCO COSA RICEVI
+              <span className="block text-gold">(E QUANTO VALE)</span>
             </h2>
-            <p className="text-xl text-muted-foreground mt-4">
-              La domanda sbagliata è "Quanto costa".
-              <br />
-              La domanda giusta è: <span className="text-gold font-semibold">"Quanto mi costa NON farlo?"</span>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Ogni elemento ha un valore economico reale, calcolato sui prezzi di mercato.
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {/* Pricing card - potenziata */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
-            className="p-8 md:p-10 bg-card border-2 border-gold rounded-2xl text-center relative overflow-hidden"
-          >
-            {/* Badge ROI */}
-            <motion.div 
-              ref={roiRef}
-              className="absolute top-4 right-4 px-3 py-1 bg-gold/20 rounded-full"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <span className="text-sm font-bold text-gold">ROI: {roiValue}</span>
-            </motion.div>
+        {/* Value Stack Grid */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mb-8 md:mb-12">
+          {valueStack.map((item, index) => (
+            <StaggerItem key={index}>
+              <motion.div
+                whileHover={{ scale: 1.02, borderColor: "hsl(var(--gold))" }}
+                className="p-5 md:p-6 bg-card border border-border rounded-xl flex items-start gap-4 transition-colors"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-6 h-6 md:w-7 md:h-7 text-gold" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base md:text-lg font-bold text-foreground mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">{item.description}</p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <span className="text-lg md:text-xl font-bold text-gold">
+                    €{item.value.toLocaleString("it-IT")}
+                  </span>
+                </div>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
 
-            <h3 className="text-lg font-semibold text-muted-foreground mb-4 uppercase tracking-wider">
-              Investimento
-            </h3>
-            <div className="mb-4">
-              <span className="text-5xl md:text-6xl font-black text-gold">€9.000</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-muted-foreground mb-6">
-              <Clock className="w-5 h-5" />
-              <span>Durata: 90 giorni</span>
-            </div>
-
-            {/* Cosa include */}
-            <div className="text-left mb-6 p-4 bg-background rounded-xl">
-              <p className="text-sm font-semibold text-foreground mb-3 uppercase">Include:</p>
-              <div className="space-y-2">
-                {includes.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 text-sm">
-                    <item.icon className="w-4 h-4 text-gold" />
-                    <span className="text-muted-foreground">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <Button
-              size="lg"
-              variant="gold"
-              onClick={handleCtaClick}
-              className="w-full text-lg py-6 glow-gold"
-            >
-              Richiedi Valutazione
-            </Button>
-          </motion.div>
-
-          {/* Guarantee card - potenziata */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            whileHover={{ scale: 1.02 }}
-            className="p-8 md:p-10 bg-navy-light border-2 border-gold/50 rounded-2xl"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-xl bg-gold/20 flex items-center justify-center">
-                <Shield className="w-7 h-7 text-gold" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gold">GARANZIA 100%</h3>
-                <p className="text-sm text-muted-foreground">ZERO RISCHIO PER TE</p>
-              </div>
-            </div>
-
-            <p className="text-muted-foreground mb-4">
-              Se entro 90 giorni:
-            </p>
-
-            <ul className="space-y-3 mb-6">
-              {guaranteePoints.map((point, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0">
-                    <span className="text-destructive text-sm font-bold">✕</span>
-                  </div>
-                  <span className="text-foreground">{point}</span>
-                </li>
-              ))}
-            </ul>
-
-            <motion.div 
-              className="p-5 bg-gold/10 border border-gold/30 rounded-xl mb-4"
-              whileHover={{ scale: 1.02 }}
-            >
-              <p className="text-xl font-black text-gold text-center mb-2">
-                👉 Ti rimborsiamo. TUTTO.
-              </p>
-              <p className="text-sm text-foreground text-center">
-                Non "parte". Non "dipende". <span className="font-bold">TUTTO.</span>
-              </p>
-            </motion.div>
-
-            <p className="text-sm text-muted-foreground text-center italic">
-              Lo mettiamo per iscritto prima di iniziare.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Confronto visivo */}
+        {/* Total Value Box */}
         <AnimatedSection delay={0.4}>
-          <div className="max-w-xl mx-auto mb-12">
-            <h3 className="text-center text-lg font-semibold text-foreground mb-6">
-              Cosa ottieni davvero:
-            </h3>
-            <div className="space-y-3">
-              {comparison.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center justify-between p-4 bg-card border border-border rounded-xl"
-                >
-                  <span className="text-muted-foreground">{item.label}</span>
-                  <span className={`text-xl font-bold ${item.color}`}>{item.value}</span>
-                </motion.div>
-              ))}
-            </div>
+          <motion.div
+            ref={totalValueRef}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="max-w-md mx-auto p-6 md:p-8 bg-navy-light border-2 border-gold/50 rounded-2xl text-center mb-12 md:mb-16"
+          >
+            <p className="text-lg text-muted-foreground mb-2 uppercase tracking-wider">Valore Totale</p>
+            <p className="text-4xl md:text-5xl font-black text-gold">
+              {totalValueAnimated}
+            </p>
+          </motion.div>
+        </AnimatedSection>
+
+        {/* Pricing Card */}
+        <AnimatedSection delay={0.5}>
+          <div className="max-w-xl mx-auto">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 md:p-12 bg-card border-2 border-gold rounded-2xl text-center relative overflow-hidden"
+            >
+              {/* Savings Badge */}
+              <motion.div 
+                ref={savingsRef}
+                className="absolute top-4 right-4 px-3 py-2 bg-green-500/20 border border-green-500/50 rounded-full"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <span className="text-sm font-bold text-green-400">RISPARMI {savingsAnimated}</span>
+              </motion.div>
+
+              <h3 className="text-lg font-semibold text-muted-foreground mb-6 uppercase tracking-wider">
+                Il Tuo Investimento
+              </h3>
+
+              {/* Crossed out value */}
+              <div className="mb-4">
+                <span className="text-2xl md:text-3xl text-muted-foreground line-through decoration-2">
+                  €{totalValue.toLocaleString("it-IT")}
+                </span>
+              </div>
+
+              {/* Actual price */}
+              <div className="mb-6">
+                <span className="text-5xl md:text-7xl font-black text-gold">
+                  €{actualPrice.toLocaleString("it-IT")}
+                </span>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
+                <Clock className="w-5 h-5" />
+                <span className="text-lg">Durata: 90 giorni</span>
+              </div>
+
+              {/* Trust badges */}
+              <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <BadgeCheck className="w-5 h-5 text-gold" />
+                  <span>Garanzia 100%</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Users className="w-5 h-5 text-gold" />
+                  <span>Solo 3 posti/mese</span>
+                </div>
+              </div>
+
+              <Button
+                size="lg"
+                variant="gold"
+                onClick={handleCtaClick}
+                className="w-full text-lg py-6 glow-gold"
+              >
+                Richiedi Valutazione Gratuita
+              </Button>
+
+              <p className="text-sm text-muted-foreground mt-4">
+                Nessun impegno. Scopri se fa per te.
+              </p>
+            </motion.div>
           </div>
         </AnimatedSection>
 
-        {/* Transition - collegamento alla sezione successiva */}
-        <AnimatedSection delay={0.5}>
-          <div className="text-center mt-8">
+        {/* Transition */}
+        <AnimatedSection delay={0.6}>
+          <div className="text-center mt-12 md:mt-16">
             <p className="text-lg text-muted-foreground mb-2">
               Ma non accettiamo tutti.
             </p>
