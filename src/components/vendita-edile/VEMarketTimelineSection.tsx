@@ -60,7 +60,16 @@ const timelineData = [
   {
     year: "2025",
     title: "MERCATO NUOVO",
-    description: "-30% manutenzione straordinaria. Bonus al 50%/36%.",
+    description: "Bonus ridotti al 50%/36%. Clienti devono pagare.",
+    impact: "Bonus ridotti",
+    source: "ANCE",
+    phase: "crisis",
+    icon: TrendingDown
+  },
+  {
+    year: "2026",
+    title: "CONTRAZIONE CONTINUA",
+    description: "Previsione: -30% manutenzione. Solo chi ha sistemi sopravvive.",
     impact: "-30% previsto",
     source: "ANCE",
     phase: "crisis",
@@ -90,10 +99,10 @@ const statsBoxes = [
     ]
   },
   {
-    title: "PREVISIONI 2025",
+    title: "PREVISIONI 2025-2026",
     subtitle: "Dati ANCE Gennaio 2025",
     stats: [
-      { value: "-30%", label: "manutenzione straord." },
+      { value: "-30%", label: "manutenzione 2026" },
       { value: "-2,6%", label: "finanziamenti bancari" },
       { value: "50%", label: "bonus prima casa" },
       { value: "36%", label: "bonus seconda casa" }
@@ -188,9 +197,9 @@ const VEMarketTimelineSection = () => {
 
         {/* Timeline - Desktop */}
         <div className="hidden lg:block mb-16">
-          <div className="relative">
+          <div className="relative py-24">
             {/* Timeline line */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-gold via-50% to-destructive rounded-full transform -translate-y-1/2" />
+            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-gold via-50% to-destructive rounded-full transform -translate-y-1/2 z-0" />
             
             {/* Timeline points */}
             <div className="flex justify-between relative">
@@ -201,10 +210,10 @@ const VEMarketTimelineSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex flex-col items-center w-32 ${index % 2 === 0 ? 'flex-col-reverse' : ''}`}
+                  className={`flex flex-col items-center w-28 relative z-10 ${index % 2 === 0 ? 'flex-col-reverse' : ''}`}
                 >
                   {/* Content */}
-                  <div className={`text-center mb-4 ${index % 2 === 0 ? 'mt-4 mb-0' : ''}`}>
+                  <div className={`text-center mb-6 bg-background/80 backdrop-blur-sm rounded-lg p-2 ${index % 2 === 0 ? 'mt-6 mb-0' : ''}`}>
                     <p className={`text-xs font-bold ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`}>
                       {item.year}
                     </p>
@@ -218,7 +227,7 @@ const VEMarketTimelineSection = () => {
                   {/* Point */}
                   <motion.div
                     whileHover={{ scale: 1.3 }}
-                    className={`w-10 h-10 rounded-full border-4 flex items-center justify-center bg-background z-10 ${phaseColors[item.phase as keyof typeof phaseColors]}`}
+                    className={`w-10 h-10 rounded-full border-4 flex items-center justify-center bg-background z-20 ${phaseColors[item.phase as keyof typeof phaseColors]}`}
                   >
                     <item.icon className={`w-4 h-4 ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`} />
                   </motion.div>
