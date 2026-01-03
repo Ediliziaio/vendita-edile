@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, Brain, TrendingDown, Users, Target, Euro, Calculator, ArrowRight, TrendingUp, UserPlus } from "lucide-react";
+import { Clock, Brain, TrendingDown, Users, Target, Euro, Calculator, ArrowRight, TrendingUp, UserPlus, AlertCircle } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const lossTimeline = [
   { period: "OGNI MESE", loss: "30.000-50.000", detail: "Vendite perse + margini compressi" },
@@ -109,8 +110,62 @@ const VETrueCostSection = () => {
     margine: 40
   });
 
+  // State per errori di validazione
+  const [errors, setErrors] = useState<{
+    trattative?: string;
+    chiusuraAttuale?: string;
+    commessaMedia?: string;
+    margine?: string;
+  }>({});
+
   const chiusuraDopo = 40; // Target fisso del programma
   const investimento = 9000;
+
+  // Funzione di validazione per ogni campo
+  const validateField = (field: keyof typeof formData, value: number): string | undefined => {
+    switch (field) {
+      case 'trattative':
+        if (!value || value <= 0) return "Campo obbligatorio";
+        if (value > 200) return "Massimo 200 trattative/mese";
+        break;
+      case 'chiusuraAttuale':
+        if (!value || value <= 0) return "Campo obbligatorio";
+        if (value >= 40) return "Deve essere inferiore al 40%";
+        if (value > 100) return "Non può superare 100%";
+        break;
+      case 'commessaMedia':
+        if (!value || value <= 0) return "Campo obbligatorio";
+        if (value < 1000) return "Minimo €1.000";
+        if (value > 500000) return "Massimo €500.000";
+        break;
+      case 'margine':
+        if (!value || value <= 0) return "Campo obbligatorio";
+        if (value < 5) return "Minimo 5%";
+        if (value > 80) return "Massimo 80%";
+        break;
+    }
+    return undefined;
+  };
+
+  const handleInputChange = (field: keyof typeof formData, value: string) => {
+    const numValue = parseFloat(value) || 0;
+    setFormData(prev => ({ ...prev, [field]: numValue }));
+    
+    // Valida il campo e aggiorna errori
+    const error = validateField(field, numValue);
+    setErrors(prev => ({ ...prev, [field]: error }));
+  };
+
+  // Verifica se il form è valido
+  const isFormValid = !errors.trattative && 
+                      !errors.chiusuraAttuale && 
+                      !errors.commessaMedia && 
+                      !errors.margine &&
+                      formData.trattative > 0 &&
+                      formData.chiusuraAttuale > 0 &&
+                      formData.chiusuraAttuale < 40 &&
+                      formData.commessaMedia >= 1000 &&
+                      formData.margine >= 5;
 
   // Calcoli derivati in tempo reale
   const calcVenditePrima = Math.round(formData.trattative * (formData.chiusuraAttuale / 100));
@@ -128,11 +183,6 @@ const VETrueCostSection = () => {
     { periodo: "1 ANNO", margineExtra: calcMargineExtra * 12, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 12) / investimento).toFixed(1) : "0" },
     { periodo: "3 ANNI", margineExtra: calcMargineExtra * 36, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 36) / investimento).toFixed(1) : "0" }
   ];
-
-  const handleInputChange = (field: keyof typeof formData, value: string) => {
-    const numValue = parseFloat(value) || 0;
-    setFormData(prev => ({ ...prev, [field]: numValue }));
-  };
   
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-destructive/10 to-background relative overflow-hidden">
@@ -438,11 +488,20 @@ const VETrueCostSection = () => {
                         id="trattative"
                         type="number"
                         min={1}
-                        max={100}
+                        max={200}
                         value={formData.trattative}
                         onChange={(e) => handleInputChange('trattative', e.target.value)}
-                        className="bg-muted border-border text-foreground"
+                        className={cn(
+                          "bg-muted border-border text-foreground",
+                          errors.trattative && "border-destructive focus-visible:ring-destructive"
+                        )}
                       />
+                      {errors.trattative && (
+                        <p className="text-sm text-destructive flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" />
+                          {errors.trattative}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="chiusura" className="text-foreground">Chiusura attuale (%)</Label>
@@ -453,8 +512,17 @@ const VETrueCostSection = () => {
                         max={39}
                         value={formData.chiusuraAttuale}
                         onChange={(e) => handleInputChange('chiusuraAttuale', e.target.value)}
-                        className="bg-muted border-border text-foreground"
+                        className={cn(
+                          "bg-muted border-border text-foreground",
+                          errors.chiusuraAttuale && "border-destructive focus-visible:ring-destructive"
+                        )}
                       />
+                      {errors.chiusuraAttuale && (
+                        <p className="text-sm text-destructive flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" />
+                          {errors.chiusuraAttuale}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="commessa" className="text-foreground">Commessa media (€)</Label>
@@ -462,28 +530,46 @@ const VETrueCostSection = () => {
                         id="commessa"
                         type="number"
                         min={1000}
-                        max={100000}
+                        max={500000}
                         value={formData.commessaMedia}
                         onChange={(e) => handleInputChange('commessaMedia', e.target.value)}
-                        className="bg-muted border-border text-foreground"
+                        className={cn(
+                          "bg-muted border-border text-foreground",
+                          errors.commessaMedia && "border-destructive focus-visible:ring-destructive"
+                        )}
                       />
+                      {errors.commessaMedia && (
+                        <p className="text-sm text-destructive flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" />
+                          {errors.commessaMedia}
+                        </p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="margine" className="text-foreground">Margine (%)</Label>
                       <Input
                         id="margine"
                         type="number"
-                        min={10}
-                        max={70}
+                        min={5}
+                        max={80}
                         value={formData.margine}
                         onChange={(e) => handleInputChange('margine', e.target.value)}
-                        className="bg-muted border-border text-foreground"
+                        className={cn(
+                          "bg-muted border-border text-foreground",
+                          errors.margine && "border-destructive focus-visible:ring-destructive"
+                        )}
                       />
+                      {errors.margine && (
+                        <p className="text-sm text-destructive flex items-center gap-1">
+                          <AlertCircle className="w-3 h-3" />
+                          {errors.margine}
+                        </p>
+                      )}
                     </div>
                   </div>
 
-                  {/* Risultati in tempo reale */}
-                  {formData.chiusuraAttuale < chiusuraDopo && (
+                  {/* Risultati in tempo reale - solo se form valido */}
+                  {isFormValid && (
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -544,10 +630,10 @@ const VETrueCostSection = () => {
                     </motion.div>
                   )}
 
-                  {formData.chiusuraAttuale >= chiusuraDopo && (
-                    <div className="mt-6 bg-destructive/10 border border-destructive/30 rounded-xl p-4 text-center">
-                      <p className="text-destructive font-medium">
-                        Il tasso di chiusura attuale deve essere inferiore al {chiusuraDopo}% per vedere i risultati
+                  {!isFormValid && (
+                    <div className="mt-6 bg-muted/50 border border-border rounded-xl p-4 text-center">
+                      <p className="text-muted-foreground font-medium">
+                        Correggi i campi evidenziati per vedere i risultati
                       </p>
                     </div>
                   )}
