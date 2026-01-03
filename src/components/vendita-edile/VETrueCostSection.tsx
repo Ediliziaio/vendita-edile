@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Clock, Brain, TrendingDown, Users, Target, Euro, Calculator, ArrowRight, TrendingUp, UserPlus } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 const lossTimeline = [
   { period: "OGNI MESE", loss: "30.000-50.000", detail: "Vendite perse + margini compressi" },
@@ -95,6 +100,39 @@ const margineExtra3AnniConComm = margineConComm * 30; // 2.5 anni (dopo 6 mesi)
 const VETrueCostSection = () => {
   const { ref: monthlyRef, count: monthlyCount } = useCountUp({ end: 50000, duration: 2000 });
   const { ref: extraRef, count: extraCount } = useCountUp({ end: margineExtraMese, duration: 2500 });
+  
+  // State per il calcolatore ROI
+  const [formData, setFormData] = useState({
+    trattative: 20,
+    chiusuraAttuale: 15,
+    commessaMedia: 9500,
+    margine: 40
+  });
+
+  const chiusuraDopo = 40; // Target fisso del programma
+  const investimento = 9000;
+
+  // Calcoli derivati in tempo reale
+  const calcVenditePrima = Math.round(formData.trattative * (formData.chiusuraAttuale / 100));
+  const calcVenditeDopo = Math.round(formData.trattative * (chiusuraDopo / 100));
+  const calcMarginePerVendita = formData.commessaMedia * (formData.margine / 100);
+  const calcMargineMesePrima = calcVenditePrima * calcMarginePerVendita;
+  const calcMargineMeseDopo = calcVenditeDopo * calcMarginePerVendita;
+  const calcMargineExtra = calcMargineMeseDopo - calcMargineMesePrima;
+  const calcGiorniPayback = calcMargineExtra > 0 ? Math.round((investimento / calcMargineExtra) * 30) : 0;
+
+  // Timeline ROI personalizzata
+  const calcRoiTimeline = [
+    { periodo: "3 MESI", margineExtra: calcMargineExtra * 3, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 3) / investimento).toFixed(1) : "0" },
+    { periodo: "6 MESI", margineExtra: calcMargineExtra * 6, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 6) / investimento).toFixed(1) : "0" },
+    { periodo: "1 ANNO", margineExtra: calcMargineExtra * 12, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 12) / investimento).toFixed(1) : "0" },
+    { periodo: "3 ANNI", margineExtra: calcMargineExtra * 36, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 36) / investimento).toFixed(1) : "0" }
+  ];
+
+  const handleInputChange = (field: keyof typeof formData, value: string) => {
+    const numValue = parseFloat(value) || 0;
+    setFormData(prev => ({ ...prev, [field]: numValue }));
+  };
   
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-destructive/10 to-background relative overflow-hidden">
@@ -365,6 +403,157 @@ const VETrueCostSection = () => {
                 L'investimento si ripaga in meno di 15 giorni.
               </motion.p>
             </motion.div>
+
+            {/* Calcolatore ROI Personalizzato */}
+            <div className="mt-8 text-center">
+              <p className="text-lg text-muted-foreground mb-4">
+                Vuoi vedere i <span className="text-primary font-bold">TUOI</span> numeri?
+              </p>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    className="bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 font-bold text-lg px-8 py-6"
+                  >
+                    <Calculator className="w-5 h-5 mr-2" />
+                    CALCOLA IL TUO ROI PERSONALIZZATO
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl font-black text-foreground flex items-center gap-2">
+                      <Calculator className="w-6 h-6 text-primary" />
+                      Calcola il TUO ROI
+                    </DialogTitle>
+                    <p className="text-muted-foreground">
+                      Inserisci i numeri della tua azienda e scopri il tuo potenziale
+                    </p>
+                  </DialogHeader>
+
+                  {/* Form Input */}
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="trattative" className="text-foreground">Trattative/mese</Label>
+                      <Input
+                        id="trattative"
+                        type="number"
+                        min={1}
+                        max={100}
+                        value={formData.trattative}
+                        onChange={(e) => handleInputChange('trattative', e.target.value)}
+                        className="bg-muted border-border text-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="chiusura" className="text-foreground">Chiusura attuale (%)</Label>
+                      <Input
+                        id="chiusura"
+                        type="number"
+                        min={1}
+                        max={39}
+                        value={formData.chiusuraAttuale}
+                        onChange={(e) => handleInputChange('chiusuraAttuale', e.target.value)}
+                        className="bg-muted border-border text-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="commessa" className="text-foreground">Commessa media (€)</Label>
+                      <Input
+                        id="commessa"
+                        type="number"
+                        min={1000}
+                        max={100000}
+                        value={formData.commessaMedia}
+                        onChange={(e) => handleInputChange('commessaMedia', e.target.value)}
+                        className="bg-muted border-border text-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="margine" className="text-foreground">Margine (%)</Label>
+                      <Input
+                        id="margine"
+                        type="number"
+                        min={10}
+                        max={70}
+                        value={formData.margine}
+                        onChange={(e) => handleInputChange('margine', e.target.value)}
+                        className="bg-muted border-border text-foreground"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Risultati in tempo reale */}
+                  {formData.chiusuraAttuale < chiusuraDopo && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="mt-6 space-y-4"
+                    >
+                      {/* Confronto OGGI vs DOPO */}
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-4 text-center">
+                          <p className="text-sm font-bold text-destructive mb-2">OGGI ({formData.chiusuraAttuale}%)</p>
+                          <p className="text-xl font-black text-foreground">{calcVenditePrima} vendite</p>
+                          <p className="text-sm text-muted-foreground">€{(calcVenditePrima * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
+                          <p className="text-lg font-bold text-destructive mt-2">€{calcMargineMesePrima.toLocaleString('it-IT')}/mese</p>
+                        </div>
+                        <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 text-center">
+                          <p className="text-sm font-bold text-primary mb-2">DOPO ({chiusuraDopo}%)</p>
+                          <p className="text-xl font-black text-foreground">{calcVenditeDopo} vendite</p>
+                          <p className="text-sm text-muted-foreground">€{(calcVenditeDopo * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
+                          <p className="text-lg font-bold text-primary mt-2">€{calcMargineMeseDopo.toLocaleString('it-IT')}/mese</p>
+                        </div>
+                      </div>
+
+                      {/* Differenza */}
+                      <div className="bg-primary/20 border-2 border-primary rounded-xl p-4 text-center">
+                        <p className="text-sm text-foreground mb-1">MARGINE EXTRA MENSILE</p>
+                        <p className="text-3xl font-black text-primary">+€{calcMargineExtra.toLocaleString('it-IT')}</p>
+                      </div>
+
+                      {/* Timeline ROI */}
+                      <div className="grid grid-cols-4 gap-2">
+                        {calcRoiTimeline.map((item, index) => (
+                          <div key={index} className="bg-muted/50 border border-border rounded-lg p-3 text-center">
+                            <p className="text-xs font-bold text-primary">{item.periodo}</p>
+                            <p className="text-sm font-black text-foreground">+€{item.margineExtra.toLocaleString('it-IT')}</p>
+                            <p className="text-xs text-muted-foreground">ROI: {item.roi}x</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Payback */}
+                      <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-xl p-4 text-center">
+                        <p className="text-sm mb-1">Con un investimento di €{investimento.toLocaleString('it-IT')}</p>
+                        <p className="text-xl font-black">
+                          Sei in positivo in {calcGiorniPayback} giorni
+                        </p>
+                      </div>
+
+                      {/* CTA */}
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6"
+                        onClick={() => {
+                          const section = document.getElementById('candidatura');
+                          if (section) section.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                      >
+                        VOGLIO QUESTI RISULTATI
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Button>
+                    </motion.div>
+                  )}
+
+                  {formData.chiusuraAttuale >= chiusuraDopo && (
+                    <div className="mt-6 bg-destructive/10 border border-destructive/30 rounded-xl p-4 text-center">
+                      <p className="text-destructive font-medium">
+                        Il tasso di chiusura attuale deve essere inferiore al {chiusuraDopo}% per vedere i risultati
+                      </p>
+                    </div>
+                  )}
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </AnimatedSection>
 
