@@ -38,9 +38,9 @@ const VEHeroSection = () => {
           alt="Showroom infissi e serramenti" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Overlay più scuro per massimo contrasto */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/95 to-background/98" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.15)_0%,transparent_40%)]" />
+        {/* Overlay scuro per massimo contrasto */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.08)_0%,transparent_40%)]" />
         <div 
           className="absolute inset-0 opacity-[0.02]"
           style={{
