@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 213 60% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 55% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 55% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 213 60% 8%;
+
+    --secondary: 45 93% 51%;
+    --secondary-foreground: 213 60% 8%;
+
+    --muted: 213 40% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 45 93% 51%;
+    --accent-foreground: 213 60% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 30% 20%;
+    --input: 213 30% 20%;
+    --ring: 45 93% 51%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --gold: 45 93% 51%;
+    --gold-glow: 45 100% 60%;
+    --navy: 213 60% 8%;
+    --navy-light: 213 52% 23%;
+    --navy-dark: 213 65% 5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-outfit antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--gold) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold to-gold-glow;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-24 md:py-32 lg:py-40;
+  }
+
+  .container-narrow {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .heading-hero {
+    @apply text-5xl md:text-7xl lg:text-[6rem] xl:text-[7rem] font-black tracking-tighter leading-[0.9];
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1];
+  }
+
+  .heading-sub {
+    @apply text-xl md:text-2xl lg:text-3xl font-medium;
+  }
+
+  .body-large {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+
+  .text-gold {
+    @apply text-secondary;
+  }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+
+  .bg-navy-dark {
+    background-color: hsl(var(--navy-dark));
+  }
+
+  /* Glow effects */
+  .glow-gold {
+    box-shadow: 0 0 40px hsl(var(--gold) / 0.3), 0 0 80px hsl(var(--gold) / 0.1);
+  }
+
+  .glow-gold-sm {
+    box-shadow: 0 0 20px hsl(var(--gold) / 0.2);
+  }
+
+  /* Text animations */
+  .text-reveal {
+    @apply opacity-0 translate-y-8;
+    animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes textReveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger children */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Line decoration */
+  .line-accent {
+    @apply relative;
+  }
+
+  .line-accent::before {
+    content: '';
+    @apply absolute left-0 top-0 w-1 h-full bg-secondary rounded-full;
+  }
+
+  /* Hover underline */
+  .hover-underline {
+    @apply relative;
+  }
+
+  .hover-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-secondary transition-all duration-500;
+  }
+
+  .hover-underline:hover::after {
+    @apply w-full;
+  }
+}
