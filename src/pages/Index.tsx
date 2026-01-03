@@ -7,6 +7,7 @@ import { SEOHead } from "@/components/SEOHead";
 // Vendita Edile Components
 import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
 import VEProblemSection from "@/components/vendita-edile/VEProblemSection";
+import VEMarketTimelineSection from "@/components/vendita-edile/VEMarketTimelineSection";
 import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
 import VEOldTechniquesSection from "@/components/vendita-edile/VEOldTechniquesSection";
 import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
@@ -63,6 +64,7 @@ const Index = () => {
       <main className="overflow-hidden">
         <VEHeroSection />
         <VEProblemSection />
+        <VEMarketTimelineSection />
         <VEPainPointsSection />
         <VEOldTechniquesSection />
         <VETrueCostSection />

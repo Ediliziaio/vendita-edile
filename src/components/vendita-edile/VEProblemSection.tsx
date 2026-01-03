@@ -7,26 +7,30 @@ const VEProblemSection = () => {
     { 
       icon: Percent,
       title: "SUPERBONUS 110%", 
-      impact: "Ha creato aspettative irrealistiche. I clienti pensano ancora di avere diritto a tutto gratis.",
-      badge: "2020-2023"
+      impact: "€119,5 miliardi di lavori. 496.315 cantieri. Clienti abituati a \"gratis\".",
+      badge: "ENEA 2024",
+      stat: "€119,5 MLD"
     },
     { 
       icon: Ban,
       title: "SCONTO IN FATTURA", 
-      impact: "Ha abituato i clienti a non pagare. Ora il prezzo pieno sembra una rapina.",
-      badge: "Eliminato"
+      impact: "Eliminato con DL 11/2023. I clienti ora devono PAGARE ma non ci sono abituati.",
+      badge: "Feb 2023",
+      stat: "Eliminato"
     },
     { 
       icon: Users,
       title: "BOOM DI COMPETITOR", 
-      impact: "Durante i bonus sono spuntati 10.000 \"esperti\". Guerra al ribasso totale.",
-      badge: "+300%"
+      impact: "+15.000 nuove imprese edili in 3 anni. Concorrenza triplicata, guerra al ribasso.",
+      badge: "Registro Imprese",
+      stat: "+15.000"
     },
     { 
       icon: TrendingDown,
       title: "FINE DEGLI INCENTIVI", 
-      impact: "I clienti ora sono diffidenti, indecisi, aspettano \"il prossimo bonus\".",
-      badge: "2024"
+      impact: "-22% investimenti nel 2024. -30% manutenzione straordinaria prevista nel 2025.",
+      badge: "ANCE 2025",
+      stat: "-22%"
     },
   ];
 
@@ -77,17 +81,20 @@ const VEProblemSection = () => {
                     <change.icon className="w-5 h-5 text-destructive" />
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex items-center justify-between gap-2 mb-1">
                       <span className="text-lg text-foreground font-bold">
                         {change.title}
                       </span>
-                      <span className="px-2 py-0.5 bg-destructive/20 text-destructive text-xs font-semibold rounded">
-                        {change.badge}
+                      <span className="text-lg font-black text-destructive">
+                        {change.stat}
                       </span>
                     </div>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mb-2">
                       {change.impact}
                     </p>
+                    <span className="px-2 py-0.5 bg-gold/20 text-gold text-xs font-semibold rounded">
+                      Fonte: {change.badge}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -108,14 +115,17 @@ const VEProblemSection = () => {
               NON È COLPA TUA.
             </p>
             <div className="space-y-2 text-lg text-muted-foreground mb-6">
-              <p>Il Superbonus ha <span className="text-destructive font-semibold">drogato</span> il mercato.</p>
-              <p>Lo sconto in fattura ha <span className="text-destructive font-semibold">ucciso</span> i margini.</p>
-              <p>I competitor improvvisati hanno <span className="text-destructive font-semibold">abbassato</span> i prezzi.</p>
+              <p>€119,5 miliardi di Superbonus hanno <span className="text-destructive font-semibold">drogato</span> il mercato.</p>
+              <p>Lo sconto in fattura ha <span className="text-destructive font-semibold">ucciso</span> i margini (eliminato Feb 2023).</p>
+              <p>+15.000 competitor improvvisati hanno <span className="text-destructive font-semibold">triplicato</span> la concorrenza.</p>
             </div>
             <p className="text-xl text-foreground font-semibold">
               Le regole del gioco sono cambiate.
               <br />
               <span className="text-gold">Ma nessuno ti ha dato il nuovo manuale.</span>
+            </p>
+            <p className="text-xs text-muted-foreground/70 mt-4">
+              Fonti: ENEA, ANCE, Registro Imprese
             </p>
           </motion.div>
         </AnimatedSection>
