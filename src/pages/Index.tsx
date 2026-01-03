@@ -8,6 +8,10 @@ import { SEOHead } from "@/components/SEOHead";
 import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
 import VEProblemSection from "@/components/vendita-edile/VEProblemSection";
 import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
+import VEOldTechniquesSection from "@/components/vendita-edile/VEOldTechniquesSection";
+import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
+import VEWhoWinsSection from "@/components/vendita-edile/VEWhoWinsSection";
+import VEWhyWeCanSection from "@/components/vendita-edile/VEWhyWeCanSection";
 import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
 import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
 import VECredibilitySection from "@/components/vendita-edile/VECredibilitySection";
@@ -64,6 +68,10 @@ const Index = () => {
         <VEHeroSection />
         <VEProblemSection />
         <VEPainPointsSection />
+        <VEOldTechniquesSection />
+        <VETrueCostSection />
+        <VEWhoWinsSection />
+        <VEWhyWeCanSection />
         <VEResultsSection />
         <VEDifferentiatorSection />
         <VECredibilitySection />
