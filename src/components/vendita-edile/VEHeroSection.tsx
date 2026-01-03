@@ -48,25 +48,7 @@ const VEHeroSection = () => {
         />
       </div>
 
-      {/* Urgency Pre-header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="absolute top-20 md:top-24 left-0 right-0 z-20"
-      >
-        <div className="bg-gold/20 backdrop-blur-sm border-y border-gold/40 py-2">
-          <motion.p 
-            animate={{ opacity: [1, 0.7, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-center text-sm md:text-base text-gold font-medium"
-          >
-            ⚠️ GENNAIO 2026: Solo <span className="font-bold">3 posti disponibili</span> per nuovi affiancamenti
-          </motion.p>
-        </div>
-      </motion.div>
-
-      <div className="container-narrow relative z-10 mt-8">
+      <div className="container-narrow relative z-10">
         {/* Pattern Interrupt Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -77,10 +59,10 @@ const VEHeroSection = () => {
           <motion.div 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive/30 border-2 border-destructive rounded-lg shadow-lg shadow-destructive/30"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive border-2 border-destructive rounded-lg shadow-lg shadow-destructive/30"
           >
-            <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
-            <span className="text-destructive text-sm md:text-base font-bold uppercase tracking-wide">
+            <AlertTriangle className="w-5 h-5 text-white animate-pulse" />
+            <span className="text-white text-sm md:text-base font-bold uppercase tracking-wide">
               🛑 FERMATI. Leggi questo prima di perdere un altro cliente.
             </span>
           </motion.div>
