@@ -60,19 +60,55 @@ const VEOldTechniquesSection = () => {
           <div className="text-center mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium">
               <AlertTriangle className="w-4 h-4" />
-              Il mercato è cambiato. Tu stai ancora usando armi spuntate.
+              Superbonus, sconto in fattura, boom di competitor... Il mercato è un altro.
             </span>
           </div>
+        </AnimatedSection>
+
+        {/* Market Context Box */}
+        <AnimatedSection delay={0.05}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto bg-navy-dark/80 border border-gold/30 rounded-2xl p-6 md:p-8 mb-12 text-center"
+          >
+            <p className="text-sm font-bold text-gold uppercase tracking-wider mb-4">
+              DAL 2020 AL 2024, IL MERCATO EDILE HA SUBITO:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="bg-destructive/10 rounded-lg p-3">
+                <p className="text-lg font-bold text-destructive">+300%</p>
+                <p className="text-xs text-muted-foreground">domanda artificiale</p>
+              </div>
+              <div className="bg-destructive/10 rounded-lg p-3">
+                <p className="text-lg font-bold text-destructive">"GRATIS"</p>
+                <p className="text-xs text-muted-foreground">aspettativa clienti</p>
+              </div>
+              <div className="bg-destructive/10 rounded-lg p-3">
+                <p className="text-lg font-bold text-destructive">+15.000</p>
+                <p className="text-xs text-muted-foreground">nuove aziende</p>
+              </div>
+              <div className="bg-destructive/10 rounded-lg p-3">
+                <p className="text-lg font-bold text-destructive">-60%</p>
+                <p className="text-xs text-muted-foreground">domanda 2024</p>
+              </div>
+            </div>
+            <p className="text-foreground font-semibold">
+              RISULTATO: Le tecniche di vendita che funzionavano nel 2019<br />
+              <span className="text-destructive">oggi ti fanno PERDERE clienti.</span>
+            </p>
+          </motion.div>
         </AnimatedSection>
 
         {/* Headline */}
         <AnimatedSection delay={0.1}>
           <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-foreground">
-            PERCHÉ LE VECCHIE TECNICHE DI VENDITA
-            <span className="block text-destructive">NON FUNZIONANO PIÙ IN EDILIZIA</span>
+            LE VECCHIE TECNICHE NON FUNZIONANO PIÙ
+            <span className="block text-destructive">PERCHÉ IL MERCATO È UN ALTRO</span>
           </h2>
           <p className="text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-16">
-            Quello che funzionava 10 anni fa oggi ti fa <span className="text-destructive font-semibold">PERDERE clienti</span>.
+            Non è colpa tua se le usi ancora. <span className="text-gold font-semibold">È colpa di chi te le ha insegnate</span> senza dirti che il mondo è cambiato.
           </p>
         </AnimatedSection>
 
@@ -136,18 +172,21 @@ const VEOldTechniquesSection = () => {
         <AnimatedSection delay={0.3}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-4xl mx-auto bg-gradient-to-r from-destructive/10 via-destructive/5 to-destructive/10 border-2 border-destructive/30 rounded-3xl p-8 md:p-12 mb-12"
+            className="max-w-4xl mx-auto bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border-2 border-gold/30 rounded-3xl p-8 md:p-12 mb-12"
           >
             <div className="text-center">
-              <TrendingDown className="w-12 h-12 text-destructive mx-auto mb-6" />
+              <TrendingDown className="w-12 h-12 text-gold mx-auto mb-6" />
               <p className="text-lg md:text-xl text-foreground mb-4">
-                Se stai ancora usando queste tecniche, <span className="font-bold">non è colpa tua</span>.
+                Se stai ancora usando queste tecniche, <span className="font-bold text-gold">NON È COLPA TUA</span>.
               </p>
               <p className="text-muted-foreground mb-6">
-                È colpa di chi te le ha insegnate senza dirti che il mondo è cambiato.
+                Il problema è che:<br />
+                <span className="text-foreground">1. Le hai imparate quando il mercato era diverso</span><br />
+                <span className="text-foreground">2. Nessuno ti ha insegnato le nuove regole</span><br />
+                <span className="text-foreground">3. I "formatori" non sanno cosa significa vendere post-Superbonus</span>
               </p>
-              <p className="text-xl md:text-2xl font-bold text-destructive">
-                👉 Chi non ha mai chiuso una commessa edile NON può insegnarti a vendere.
+              <p className="text-xl md:text-2xl font-bold text-gold">
+                Il mercato è cambiato. Tu devi cambiare con lui.
               </p>
             </div>
           </motion.div>

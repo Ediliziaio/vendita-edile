@@ -112,11 +112,44 @@ const VEHeroSection = () => {
           ma con un <span className="text-gold font-bold">SISTEMA diverso.</span>
         </motion.p>
 
-        {/* Verità Scomoda Box */}
+        {/* Market Context Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
+          className="bg-navy-dark/90 border-2 border-destructive/50 rounded-xl p-5 md:p-6 mb-6 max-w-3xl mx-auto"
+        >
+          <p className="text-sm font-bold text-destructive uppercase tracking-wider text-center mb-3">
+            2024: L'EDILIZIA È CAMBIATA PER SEMPRE
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
+            <div>
+              <p className="text-destructive font-bold">Superbonus</p>
+              <p className="text-muted-foreground text-xs">finito</p>
+            </div>
+            <div>
+              <p className="text-destructive font-bold">Sconto fattura</p>
+              <p className="text-muted-foreground text-xs">eliminato</p>
+            </div>
+            <div>
+              <p className="text-destructive font-bold">Concorrenza</p>
+              <p className="text-muted-foreground text-xs">triplicata</p>
+            </div>
+            <div>
+              <p className="text-destructive font-bold">Clienti</p>
+              <p className="text-muted-foreground text-xs">diffidenti</p>
+            </div>
+          </div>
+          <p className="text-center text-foreground mt-4 text-sm">
+            Chi vendeva "a sensazione" oggi è in crisi. <span className="text-gold font-semibold">Chi ha un SISTEMA sta dominando.</span>
+          </p>
+        </motion.div>
+
+        {/* Verità Scomoda Box */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 border-2 border-gold/60 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-gold/20"
         >
           <motion.p 

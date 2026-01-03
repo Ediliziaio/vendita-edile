@@ -133,8 +133,21 @@ const VEPainPointsSection = () => {
             <p className="text-3xl md:text-4xl font-bold text-destructive mb-4">
               Stai perdendo €30.000 – €50.000 ogni mese.
             </p>
-            <p className="text-muted-foreground">
-              Non perché sei incapace. Perché <span className="text-gold font-semibold">non hai un sistema.</span>
+            <p className="text-muted-foreground mb-4">
+              Non perché sei incapace.
+            </p>
+            <div className="bg-navy-dark/50 rounded-lg p-4 mb-4">
+              <p className="text-sm text-foreground mb-2">Il mercato è cambiato:</p>
+              <div className="flex flex-wrap justify-center gap-2 text-xs">
+                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Superbonus → finito</span>
+                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Sconto in fattura → eliminato</span>
+                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Concorrenza → triplicata</span>
+              </div>
+            </div>
+            <p className="text-foreground">
+              Le vecchie tecniche non funzionano più.
+              <br />
+              <span className="text-gold font-semibold">Ti serve un SISTEMA pensato per il mercato 2024-2025.</span>
             </p>
           </motion.div>
         </AnimatedSection>
