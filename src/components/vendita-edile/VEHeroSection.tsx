@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, ArrowDown } from "lucide-react";
+import { AlertTriangle, ArrowDown, Check, Shield, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const VEHeroSection = () => {
+  const aziende = useCountUp({ end: 47, duration: 2000 });
+  const fatturato = useCountUp({ end: 2.3, duration: 2000, decimals: 1 });
+  const rinnovi = useCountUp({ end: 87, duration: 2000 });
+
   const handleCtaClick = () => {
     const element = document.getElementById("candidati");
     if (element) {
@@ -16,12 +21,19 @@ const VEHeroSection = () => {
     }
   };
 
+  const painPoints = [
+    "Fai 20+ preventivi al mese ma ne chiudi 2-3",
+    "I clienti ti chiedono SEMPRE \"l'ultimo sconto\"",
+    "Hai commerciali che \"vanno a sensazione\"",
+    "Trattative infinite che muoiono nel \"ci penso\"",
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding pt-32 md:pt-40 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center section-padding pt-24 md:pt-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-navy">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy to-navy-light opacity-50" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.1)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.15)_0%,transparent_50%)]" />
         <div 
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -30,98 +42,196 @@ const VEHeroSection = () => {
         />
       </div>
 
-      <div className="container-narrow relative z-10">
-        {/* Warning badge */}
+      {/* Urgency Pre-header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="absolute top-20 md:top-24 left-0 right-0 z-20"
+      >
+        <div className="bg-gold/10 border-y border-gold/30 py-2">
+          <p className="text-center text-sm md:text-base text-gold font-medium">
+            ⚠️ GENNAIO 2026: Solo <span className="font-bold">3 posti disponibili</span> per nuovi affiancamenti
+          </p>
+        </div>
+      </motion.div>
+
+      <div className="container-narrow relative z-10 mt-8">
+        {/* Pattern Interrupt Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-destructive/20 border border-destructive/50 rounded-full">
-            <AlertTriangle className="w-4 h-4 text-destructive" />
-            <span className="text-destructive text-sm font-semibold uppercase tracking-wider">
-              Attenzione Imprenditore Edile
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive/30 border-2 border-destructive rounded-lg shadow-lg shadow-destructive/20">
+            <AlertTriangle className="w-5 h-5 text-destructive animate-pulse" />
+            <span className="text-destructive text-sm md:text-base font-bold uppercase tracking-wide">
+              🛑 FERMATI. Leggi questo prima di perdere un altro cliente.
             </span>
           </div>
         </motion.div>
 
-        {/* Main headline */}
+        {/* Main Headline - Competitor Focus */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="heading-hero text-center text-foreground mb-6"
+          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center text-foreground mb-4 leading-tight"
         >
-          Ogni mese stai perdendo{" "}
-          <span className="text-gradient">€30.000 – €50.000</span>
+          In questo momento, mentre leggi,
+          <br />
+          <span className="text-gold">un tuo concorrente sta chiudendo</span>
+          <br />
+          il cliente che <span className="underline decoration-destructive decoration-4">TU hai perso ieri.</span>
         </motion.h1>
 
+        {/* Subheadline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="heading-sub text-center text-muted-foreground mb-4"
+          className="text-lg md:text-xl text-center text-muted-foreground mb-8 max-w-3xl mx-auto"
         >
-          perché NON hai un sistema di vendita strutturato
+          E lo sta facendo con lo <span className="text-foreground font-semibold">STESSO prodotto</span>, 
+          allo <span className="text-foreground font-semibold">STESSO prezzo</span>... 
+          ma con un <span className="text-gold font-bold">SISTEMA diverso.</span>
         </motion.p>
 
-        {/* Target audience */}
+        {/* Verità Scomoda Box */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mb-8"
+          className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/50 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto"
         >
-          <p className="text-lg text-muted-foreground">
-            Se operi in{" "}
-            <span className="text-foreground font-medium">infissi</span>,{" "}
-            <span className="text-foreground font-medium">serramenti</span>,{" "}
-            <span className="text-foreground font-medium">fotovoltaico</span>,{" "}
-            <span className="text-foreground font-medium">edilizia</span>,{" "}
-            <span className="text-foreground font-medium">ristrutturazioni</span>,{" "}
-            questa pagina ti riguarda direttamente.
+          <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gold mb-3">
+            €30.000 – €50.000 al mese.
+          </p>
+          <p className="text-lg md:text-xl text-center text-foreground mb-2">
+            Questa è la cifra <span className="font-bold">ESATTA</span> che stai lasciando sul tavolo.
+          </p>
+          <p className="text-base text-center text-muted-foreground">
+            Non è un'ipotesi. È la media dei nostri <span className="text-gold font-semibold">47 clienti</span> PRIMA di lavorare con noi.
           </p>
         </motion.div>
 
-        {/* Key message */}
+        {/* Target Identification with Checkboxes */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mb-12"
+          className="mb-10"
         >
-          <p className="text-xl md:text-2xl text-foreground">
-            Perché oggi non vince chi lavora di più,
+          <p className="text-lg md:text-xl text-center text-foreground mb-6">
+            Se vendi <span className="text-gold font-semibold">infissi, serramenti, fotovoltaico o ristrutturazioni</span>
+            <br />
+            e almeno <span className="font-bold">UNA</span> di queste ti suona familiare...
           </p>
-          <p className="text-xl md:text-2xl text-gold font-semibold">
-            vince chi vende meglio, più velocemente e con margini più alti.
-          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto">
+            {painPoints.map((point, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                className="flex items-start gap-3 bg-navy-light/50 border border-border/30 rounded-lg p-4 hover:border-gold/50 transition-colors"
+              >
+                <div className="w-5 h-5 rounded border-2 border-gold bg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-gold" />
+                </div>
+                <span className="text-foreground text-sm md:text-base">{point}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+            className="text-center text-lg md:text-xl text-gold font-semibold mt-6"
+          >
+            ...questo messaggio potrebbe valere <span className="text-2xl font-bold">€100.000+</span> per te quest'anno.
+          </motion.p>
         </motion.div>
 
-        {/* CTA */}
+        {/* USP Block */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex justify-center mb-16"
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="bg-navy-dark/80 border border-gold/30 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto text-center"
+        >
+          <p className="text-lg md:text-xl text-foreground leading-relaxed">
+            L'<span className="text-gold font-bold">UNICO</span> programma di affiancamento per l'edilizia
+            <br className="hidden md:block" />{" "}
+            creato da chi <span className="font-semibold">VENDE infissi ogni giorno.</span>
+          </p>
+          <p className="text-muted-foreground mt-3">
+            Non da formatori. Non da consulenti.
+            <br />
+            <span className="text-foreground font-medium">Da imprenditori edili con un'azienda VERA.</span>
+          </p>
+        </motion.div>
+
+        {/* Social Proof Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10"
+        >
+          <div className="flex items-center gap-2 text-foreground" ref={aziende.ref}>
+            <Users className="w-5 h-5 text-gold" />
+            <span className="text-2xl md:text-3xl font-bold text-gold">{Math.round(aziende.count)}+</span>
+            <span className="text-sm text-muted-foreground">aziende affiancate</span>
+          </div>
+          <div className="flex items-center gap-2 text-foreground" ref={fatturato.ref}>
+            <TrendingUp className="w-5 h-5 text-gold" />
+            <span className="text-2xl md:text-3xl font-bold text-gold">+€{fatturato.formattedValue}M</span>
+            <span className="text-sm text-muted-foreground">fatturato generato</span>
+          </div>
+          <div className="flex items-center gap-2 text-foreground" ref={rinnovi.ref}>
+            <Shield className="w-5 h-5 text-gold" />
+            <span className="text-2xl md:text-3xl font-bold text-gold">{Math.round(rinnovi.count)}%</span>
+            <span className="text-sm text-muted-foreground">tasso rinnovi</span>
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="flex flex-col items-center mb-12"
         >
           <Button
             size="lg"
             variant="gold"
             onClick={handleCtaClick}
-            className="text-lg px-8 py-6 glow-gold"
+            className="text-lg md:text-xl px-10 py-7 glow-gold font-bold shadow-2xl shadow-gold/30 hover:scale-105 transition-transform"
           >
-            Richiedi Valutazione Strategica
+            Scopri se Qualifichi (2 minuti)
           </Button>
+          
+          <div className="flex flex-col items-center gap-2 mt-4">
+            <p className="text-sm text-muted-foreground">
+              📞 Solo <span className="text-gold font-semibold">3 posti</span> per gennaio • Risposta entro 48h
+            </p>
+            <div className="flex items-center gap-2 text-sm text-green-400">
+              <Shield className="w-4 h-4" />
+              <span>Garanzia 100% Soddisfatto o Rimborsato</span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 1.4, duration: 0.6 }}
+          className="flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
