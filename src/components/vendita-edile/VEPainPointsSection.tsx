@@ -133,30 +133,20 @@ const VEPainPointsSection = () => {
             <p className="text-3xl md:text-4xl font-bold text-destructive mb-4">
               Stai perdendo €30.000 – €50.000 ogni mese.
             </p>
-            <p className="text-muted-foreground mb-4">
-              Non perché sei incapace.
-            </p>
-            <div className="bg-navy-dark/50 rounded-lg p-4 mb-4">
-              <p className="text-sm text-foreground mb-2">Il mercato è cambiato:</p>
-              <div className="flex flex-wrap justify-center gap-2 text-xs">
-                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Superbonus → finito</span>
-                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Sconto in fattura → eliminato</span>
-                <span className="px-2 py-1 bg-destructive/20 text-destructive rounded">Concorrenza → triplicata</span>
-              </div>
-            </div>
-            <p className="text-foreground">
-              Le vecchie tecniche non funzionano più.
-              <br />
-              <span className="text-gold font-semibold">Ti serve un SISTEMA pensato per il mercato 2024-2025.</span>
+            <p className="text-muted-foreground">
+              Non perché sei incapace. Perché il mercato è cambiato e nessuno ti ha dato il nuovo manuale.
             </p>
           </motion.div>
         </AnimatedSection>
 
-        {/* Transition Hook */}
+        {/* Transition Hook - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-10">
-            <p className="text-xl text-muted-foreground">
-              La buona notizia? <span className="text-gold font-semibold">Si può risolvere. In 90 giorni.</span>
+            <p className="text-lg text-muted-foreground mb-2">
+              Se hai riconosciuto anche solo 2 punti, fai questo calcolo...
+            </p>
+            <p className="text-xl font-bold text-foreground">
+              <span className="text-gold">Quanto ti sta costando tutto questo?</span>
             </p>
           </div>
         </AnimatedSection>

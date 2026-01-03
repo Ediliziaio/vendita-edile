@@ -209,20 +209,16 @@ const VEPricingSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Urgenza */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.5}>
-          <motion.div 
-            className="flex items-center justify-center gap-3 p-4 bg-gold/10 border border-gold/30 rounded-xl max-w-lg mx-auto"
-            animate={{ scale: [1, 1.02, 1] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <AlertTriangle className="w-5 h-5 text-gold" />
-            <p className="text-foreground font-medium">
-              Lavoriamo con <span className="text-gold font-bold">massimo 5 aziende al mese</span>.
-              <br className="hidden sm:block" />
-              <span className="text-muted-foreground text-sm">Disponibilità limitata.</span>
+          <div className="text-center mt-8">
+            <p className="text-lg text-muted-foreground mb-2">
+              Ma non accettiamo tutti.
             </p>
-          </motion.div>
+            <p className="text-xl font-bold text-foreground">
+              <span className="text-gold">Ecco chi cerchiamo e come candidarsi...</span>
+            </p>
+          </div>
         </AnimatedSection>
       </div>
     </section>

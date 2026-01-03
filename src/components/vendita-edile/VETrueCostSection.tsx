@@ -67,13 +67,8 @@ const VETrueCostSection = () => {
             IL VERO COSTO DI CONTINUARE COSÌ
             <span className="block text-destructive text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4">
-            Nel 2021-2022 bastava aprire la serranda per vendere.
-            <br />
-            <span className="text-foreground font-semibold">Nel 2024 il mercato è crollato del 22% (ANCE). Nel 2025 calerà un altro 30%.</span>
-          </p>
-          <p className="text-base text-destructive font-semibold text-center mb-8">
-            Chi non ha un sistema, chiude.
+          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+            Facciamo i conti. Ti faranno male, ma devi vederli.
           </p>
         </AnimatedSection>
 
@@ -189,14 +184,14 @@ const VETrueCostSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Transition */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.6}>
           <div className="text-center">
-            <p className="text-lg text-muted-foreground">
-              La domanda giusta è: chi sta vincendo oggi in edilizia?
+            <p className="text-lg text-muted-foreground mb-2">
+              Ma chi sta VINCENDO in questo mercato? E cosa fanno di diverso?
             </p>
-            <p className="text-xl font-bold text-foreground mt-2">
-              E <span className="text-primary">come</span>?
+            <p className="text-xl font-bold text-foreground">
+              <span className="text-primary">Ecco cosa li distingue...</span>
             </p>
           </div>
         </AnimatedSection>

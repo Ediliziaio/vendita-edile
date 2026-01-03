@@ -133,7 +133,7 @@ const VEResultsSection = () => {
           </motion.div>
         </div>
 
-        {/* Timeline Badge */}
+        {/* Timeline Badge - semplificato, rimosso duplicato garanzia */}
         <AnimatedSection delay={0.4}>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -146,12 +146,6 @@ const VEResultsSection = () => {
                 <p className="text-sm text-muted-foreground mb-1">Timeline garantita</p>
                 <p className="text-3xl md:text-4xl font-black text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">90 GIORNI</p>
                 <p className="text-sm text-foreground">o meno</p>
-              </div>
-              <ArrowRight className="w-8 h-8 text-gold hidden md:block" />
-              <div className="text-center hidden md:block">
-                <p className="text-sm text-muted-foreground mb-1">Oppure</p>
-                <p className="text-2xl font-bold text-foreground">RIMBORSO</p>
-                <p className="text-sm text-gold">100% garantito</p>
               </div>
             </div>
           </motion.div>
@@ -204,14 +198,14 @@ const VEResultsSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Transition to next section */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.6}>
           <div className="text-center mt-10">
-            <p className="text-xl text-muted-foreground">
-              Ma aspetta... <span className="text-foreground font-medium">come facciamo a garantirlo?</span>
+            <p className="text-lg text-muted-foreground mb-2">
+              Ma COME facciamo tutto questo?
             </p>
-            <p className="text-lg text-gold font-semibold mt-2">
-              Perché siamo diversi da tutti gli altri. ↓
+            <p className="text-xl font-bold text-foreground">
+              Ecco il <span className="text-gold">metodo in 5 pilastri</span>...
             </p>
           </div>
         </AnimatedSection>

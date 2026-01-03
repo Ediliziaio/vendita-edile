@@ -1,8 +1,23 @@
 import { motion } from "framer-motion";
-import { FileEdit, Search, CheckCircle, ArrowRight, Clock, Users, Target, AlertTriangle } from "lucide-react";
+import { FileEdit, Search, CheckCircle, ArrowRight, Clock, Users, Target, AlertTriangle, Check, X, AlertCircle } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
+
+// Integrato da VEForWhoSection
+const weAccept = [
+  { text: "Aziende con margini sani (≥20%)", reason: "Lavoriamo sulla crescita, non sulla sopravvivenza" },
+  { text: "Titolari con visione di crescita", reason: "Chi vuole passare da artigiano a imprenditore" },
+  { text: "Chi ha già una struttura (o vuole crearla)", reason: "Senza struttura, niente metodo" },
+  { text: "Chi è disposto a mettersi in discussione", reason: "Il metodo funziona SE lo applichi" },
+];
+
+const weRefuse = [
+  { text: "Chi cerca scorciatoie", reason: "Non esistono. Punto." },
+  { text: "Chi vuole miracoli", reason: "I risultati si costruiscono" },
+  { text: "Chi è in crisi grave", reason: "Prima sistema la casa" },
+  { text: 'Chi vuole solo "qualche dritta"', reason: "Vendiamo trasformazioni." },
+];
 
 const VESelectionProcessSection = () => {
   const steps = [
@@ -27,12 +42,6 @@ const VESelectionProcessSection = () => {
       time: "SÌ / NO",
       description: "Niente 'forse'. Niente 'ne riparliamo'. Sì o No."
     },
-  ];
-
-  const stats = [
-    { label: "Candidature ricevute/mese", value: "50+", icon: Users },
-    { label: "Aziende accettate/mese", value: "max 5", icon: Target },
-    { label: "Tasso di accettazione", value: "<20%", icon: CheckCircle },
   ];
 
   const { ref: percentRef, formattedValue: percentValue } = useCountUp({ 
@@ -65,31 +74,126 @@ const VESelectionProcessSection = () => {
         {/* Pre-header */}
         <AnimatedSection>
           <div className="text-center mb-4">
-            <span className="inline-block px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium mb-6 uppercase tracking-wider">
-              Come Funziona
+            <span className="inline-block px-4 py-2 bg-destructive/10 border border-destructive/30 rounded-full text-destructive text-sm font-medium mb-6 uppercase tracking-wider">
+              ⚠️ Leggi bene. Potresti non essere adatto.
             </span>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <p className="text-center text-lg text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Come funziona la candidatura
-          </p>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.2}>
           <div className="text-center mb-12">
             <h2 className="heading-section text-foreground mb-2">
-              IL PROCESSO È{" "}
-              <span className="text-gold">SEMPLICE</span>.
+              CHI ACCETTIAMO E <span className="text-gold">COME FUNZIONA</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              L'accesso <span className="text-destructive font-semibold">NO</span>.
+              Non è per tutti. <span className="text-destructive font-semibold">E non ci scusiamo per questo.</span>
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Timeline visiva potenziata */}
+        {/* Chi Accettiamo / Chi Rifiutiamo - Integrato da VEForWhoSection */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+          {/* We accept */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            className="p-6 bg-gold/10 border-2 border-gold rounded-2xl"
+          >
+            <h3 className="text-lg font-bold text-gold mb-4 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                <Check className="w-5 h-5" />
+              </div>
+              LAVORIAMO CON:
+            </h3>
+            <StaggerContainer className="space-y-3" staggerDelay={0.08}>
+              {weAccept.map((item, index) => (
+                <StaggerItem key={index}>
+                  <motion.div 
+                    className="p-3 bg-background/50 rounded-xl"
+                    whileHover={{ x: 3 }}
+                  >
+                    <div className="flex items-start gap-2 mb-1">
+                      <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground ml-6 italic">
+                      → {item.reason}
+                    </p>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </motion.div>
+
+          {/* We refuse */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02 }}
+            className="p-6 bg-destructive/10 border-2 border-destructive/30 rounded-2xl"
+          >
+            <h3 className="text-lg font-bold text-destructive mb-4 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center">
+                <X className="w-5 h-5" />
+              </div>
+              NON LAVORIAMO CON:
+            </h3>
+            <StaggerContainer className="space-y-3" staggerDelay={0.08}>
+              {weRefuse.map((item, index) => (
+                <StaggerItem key={index}>
+                  <motion.div 
+                    className="p-3 bg-background/50 rounded-xl"
+                    whileHover={{ x: 3 }}
+                  >
+                    <div className="flex items-start gap-2 mb-1">
+                      <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                    </div>
+                    <p className="text-xs text-muted-foreground ml-6 italic">
+                      → {item.reason}
+                    </p>
+                  </motion.div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </motion.div>
+        </div>
+
+        {/* Acceptance Rate */}
+        <AnimatedSection delay={0.25}>
+          <div className="text-center mb-12">
+            <motion.div
+              ref={percentRef}
+              className="inline-block p-6 bg-card border-2 border-gold rounded-2xl"
+              whileHover={{ scale: 1.05 }}
+            >
+              <motion.div 
+                className="text-5xl md:text-6xl font-black text-gold mb-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {percentValue}
+              </motion.div>
+              <p className="text-foreground font-semibold mb-1">
+                delle candidature viene accettata
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Il nostro successo dipende dal TUO successo.
+              </p>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+
+        {/* Timeline Steps */}
+        <AnimatedSection delay={0.3}>
+          <h3 className="text-xl font-bold text-center text-foreground mb-8">
+            IL PROCESSO IN <span className="text-gold">3 STEP</span>
+          </h3>
+        </AnimatedSection>
+
         <div className="max-w-4xl mx-auto mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {steps.map((step, index) => (
@@ -98,7 +202,7 @@ const VESelectionProcessSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                transition={{ delay: index * 0.15 }}
                 whileHover={{ scale: 1.03, y: -5 }}
                 className="relative"
               >
@@ -109,11 +213,11 @@ const VESelectionProcessSection = () => {
                   </div>
                   
                   <div className="flex flex-col items-center text-center pt-4">
-                    <div className="w-16 h-16 rounded-2xl bg-gold/20 flex items-center justify-center mb-4">
-                      <step.icon className="w-8 h-8 text-gold" />
+                    <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center mb-4">
+                      <step.icon className="w-7 h-7 text-gold" />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                    <div className="inline-block px-3 py-1 bg-gold/10 rounded-full mb-4">
+                    <h4 className="text-lg font-bold text-foreground mb-2">{step.title}</h4>
+                    <div className="inline-block px-3 py-1 bg-gold/10 rounded-full mb-3">
                       <span className="text-sm font-semibold text-gold">{step.time}</span>
                     </div>
                     <p className="text-sm text-muted-foreground">{step.description}</p>
@@ -131,57 +235,8 @@ const VESelectionProcessSection = () => {
           </div>
         </div>
 
-        {/* Box "Perché questo processo?" */}
+        {/* CTA finale */}
         <AnimatedSection delay={0.4}>
-          <motion.div 
-            className="max-w-2xl mx-auto p-6 md:p-8 bg-card border border-border rounded-2xl mb-12"
-            whileHover={{ scale: 1.02 }}
-          >
-            <h3 className="text-xl font-bold text-foreground mb-4 text-center">
-              Perché questo processo?
-            </h3>
-            <div className="space-y-3">
-              <p className="text-muted-foreground flex items-start gap-2">
-                <span className="text-gold mt-0.5">→</span>
-                Non vendiamo a tutti.
-              </p>
-              <p className="text-muted-foreground flex items-start gap-2">
-                <span className="text-gold mt-0.5">→</span>
-                Accettiamo solo chi ha il potenziale per ottenere risultati.
-              </p>
-              <p className="text-foreground font-semibold flex items-start gap-2">
-                <span className="text-gold mt-0.5">→</span>
-                Il nostro business si basa sui <span className="text-gold">risultati</span>, non sui corsi venduti.
-              </p>
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* Statistiche enfatizzate */}
-        <AnimatedSection delay={0.5}>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12" staggerDelay={0.1}>
-            {stats.map((stat, index) => (
-              <StaggerItem key={index}>
-                <motion.div
-                  ref={index === 2 ? percentRef : undefined}
-                  whileHover={{ scale: 1.05 }}
-                  className="p-5 bg-background border border-border rounded-xl text-center"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-5 h-5 text-gold" />
-                  </div>
-                  <div className="text-2xl font-black text-gold mb-1">
-                    {index === 2 ? percentValue : stat.value}
-                  </div>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </motion.div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </AnimatedSection>
-
-        {/* CTA finale con urgenza */}
-        <AnimatedSection delay={0.6}>
           <div className="text-center">
             <motion.div
               className="inline-block"
@@ -209,6 +264,15 @@ const VESelectionProcessSection = () => {
                 <span>Posti limitati. <span className="text-gold font-semibold">Max 5 aziende/mese.</span></span>
               </motion.div>
             </motion.div>
+          </div>
+        </AnimatedSection>
+
+        {/* Transition - collegamento alla sezione successiva */}
+        <AnimatedSection delay={0.5}>
+          <div className="text-center mt-10">
+            <p className="text-lg text-muted-foreground">
+              Hai ancora dubbi? <span className="text-gold font-semibold">Ecco le risposte...</span>
+            </p>
           </div>
         </AnimatedSection>
       </div>

@@ -131,25 +131,7 @@ const VEPillarsSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {/* Main Content - 2 columns */}
           <div className="lg:col-span-2">
-            {/* Guarantee badge */}
-            <AnimatedSection delay={0.1}>
-              <motion.div
-                initial={{ scale: 0.95 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                className="mb-8"
-              >
-                <div className="flex items-center justify-center gap-3 p-4 bg-gold/10 border-2 border-gold rounded-xl">
-                  <Shield className="w-8 h-8 text-gold flex-shrink-0" />
-                  <p className="text-lg font-bold text-foreground">
-                    Garanzia 100%: Se dopo 90 giorni non vedi risultati,{" "}
-                    <span className="text-gold">ti rimborsiamo.</span>
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatedSection>
-
-            {/* Pillars accordion */}
+            {/* Pillars accordion - rimosso badge garanzia duplicato */}
             <Accordion type="single" collapsible className="space-y-4">
               {pillars.map((pillar, index) => (
                 <motion.div
@@ -270,20 +252,14 @@ const VEPillarsSection = () => {
           </motion.div>
         </AnimatedSection>
 
-        {/* Internal CTA */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-12">
-            <motion.a
-              href="#candidatura"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-primary-foreground font-bold text-lg rounded-xl hover:bg-gold/90 transition-colors shadow-lg shadow-gold/30"
-            >
-              Vuoi vedere se il programma fa per te?
-              <ArrowRight className="w-5 h-5" />
-            </motion.a>
-            <p className="text-muted-foreground mt-3 text-sm">
-              Rispondi in 2 minuti
+            <p className="text-lg text-muted-foreground mb-2">
+              Tutto questo... quanto costa?
+            </p>
+            <p className="text-xl font-bold text-foreground">
+              <span className="text-gold">Ecco l'investimento...</span>
             </p>
           </div>
         </AnimatedSection>

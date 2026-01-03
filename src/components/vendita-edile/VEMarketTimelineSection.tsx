@@ -288,30 +288,16 @@ const VEMarketTimelineSection = () => {
           </div>
         </div>
 
-        {/* Key Insight Box */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.3}>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-destructive/20 via-destructive/30 to-destructive/20 border-2 border-destructive/50 rounded-2xl p-6 md:p-8 text-center max-w-3xl mx-auto"
-          >
-            <Euro className="w-10 h-10 text-destructive mx-auto mb-4" />
-            <p className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              €119,5 MILIARDI di Superbonus.
-              <br />
-              <span className="text-destructive">Finiti.</span>
-            </p>
-            <p className="text-lg text-muted-foreground mb-4">
-              Nel 2021-2022 bastava aprire la serranda per vendere.
-              <br />
-              <span className="text-foreground font-semibold">Nel 2024 il mercato è crollato del 22%. Nel 2025 calerà un altro 30%.</span>
+          <div className="text-center mt-8">
+            <p className="text-lg text-muted-foreground mb-2">
+              E tu? Quanti di questi problemi stai vivendo OGGI?
             </p>
             <p className="text-xl font-bold text-foreground">
-              Chi non cambia strategia,
-              <span className="text-destructive"> sparisce.</span>
+              <span className="text-gold">Fai questo test...</span>
             </p>
-          </motion.div>
+          </div>
         </AnimatedSection>
 
         {/* Sources */}
