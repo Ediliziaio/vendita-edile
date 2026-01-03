@@ -1,5 +1,24 @@
 import { Helmet } from 'react-helmet-async';
-import { siteConfig } from '@/lib/seo';
+
+const siteConfig = {
+  name: "VENDITA EDILE®",
+  description: "L'unico programma di affiancamento vendite per imprenditori edili. +30-50% fatturato in 90 giorni.",
+  url: "https://venditaedile.it",
+  ogImage: "/og-image.jpg",
+  author: "VENDITA EDILE®",
+  keywords: [
+    "vendita edile",
+    "affiancamento vendite",
+    "imprenditori edili",
+    "infissi",
+    "serramenti",
+    "fotovoltaico",
+    "edilizia",
+    "ristrutturazioni",
+    "sistema vendita",
+    "coaching vendite"
+  ]
+};
 
 interface SEOHeadProps {
   title?: string;
@@ -30,7 +49,7 @@ export function SEOHead({
 }: SEOHeadProps) {
   const fullTitle = title 
     ? `${title} | ${siteConfig.name}` 
-    : `${siteConfig.name} - Marketing Digitale per l'Edilizia`;
+    : `${siteConfig.name} - Affiancamento Vendite per Imprenditori Edili`;
   
   const fullImageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;
   
