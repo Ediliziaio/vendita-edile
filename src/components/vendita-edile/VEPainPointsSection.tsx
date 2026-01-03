@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { CircleX, Clock, TrendingDown, Users, Calculator, Frown, AlertTriangle } from "lucide-react";
+import { CircleX, Clock, TrendingDown, Users, Calculator, Frown, AlertTriangle, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { Button } from "@/components/ui/button";
 
 const VEPainPointsSection = () => {
   const painPoints = [
@@ -42,11 +43,24 @@ const VEPainPointsSection = () => {
     },
   ];
 
+  const handleCtaClick = () => {
+    const element = document.getElementById("costo-reale");
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="section-padding bg-background relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-destructive/5 rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="container-narrow relative z-10">
@@ -57,16 +71,16 @@ const VEPainPointsSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-destructive/20 border border-destructive/40 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gold/20 border border-gold/40 rounded-full mb-6"
             >
-              <CircleX className="w-4 h-4 text-destructive" />
-              <span className="text-destructive text-sm font-semibold uppercase tracking-wider">
+              <CircleX className="w-4 h-4 text-gold" />
+              <span className="text-gold text-sm font-semibold uppercase tracking-wider">
                 Sii brutalmente onesto
               </span>
             </motion.div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Quanti di questi ti <span className="text-destructive">fanno male</span>?
+              Quanti di questi ti <span className="text-gold">fanno male</span>?
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -86,17 +100,17 @@ const VEPainPointsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, borderColor: "hsl(var(--destructive))" }}
+              whileHover={{ scale: 1.02, borderColor: "hsl(var(--gold))" }}
               className="group relative bg-card border border-border rounded-xl p-5 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Hover glow effect */}
-              <div className="absolute inset-0 bg-destructive/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center group-hover:bg-destructive/30 transition-colors">
-                    <point.icon className="w-5 h-5 text-destructive" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center group-hover:bg-gold/30 transition-colors">
+                    <point.icon className="w-5 h-5 text-gold" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-foreground mb-1">
@@ -108,7 +122,7 @@ const VEPainPointsSection = () => {
                   </div>
                 </div>
                 
-                {/* Cost Badge */}
+                {/* Cost Badge - mantieni rosso per la perdita */}
                 <div className="flex justify-end">
                   <span className="inline-block px-3 py-1 bg-destructive/10 border border-destructive/30 rounded-full text-xs font-semibold text-destructive">
                     {point.cost}
@@ -125,7 +139,7 @@ const VEPainPointsSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-destructive/10 via-destructive/20 to-destructive/10 border-2 border-destructive/40 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center"
+            className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/40 rounded-2xl p-6 md:p-8 max-w-3xl mx-auto text-center"
           >
             <p className="text-lg text-foreground mb-2">
               Se hai riconosciuto almeno <span className="font-bold">3 punti</span>:
@@ -137,6 +151,21 @@ const VEPainPointsSection = () => {
               Non perché sei incapace. Perché il mercato è cambiato e nessuno ti ha dato il nuovo manuale.
             </p>
           </motion.div>
+        </AnimatedSection>
+
+        {/* CTA Button */}
+        <AnimatedSection delay={0.35}>
+          <div className="text-center mt-8">
+            <Button
+              size="lg"
+              variant="gold"
+              onClick={handleCtaClick}
+              className="text-lg px-8 py-6 glow-gold"
+            >
+              Calcola il Tuo Costo Reale
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
         </AnimatedSection>
 
         {/* Transition Hook - collegamento alla sezione successiva */}

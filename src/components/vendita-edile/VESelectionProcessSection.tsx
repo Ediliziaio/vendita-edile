@@ -74,7 +74,7 @@ const VESelectionProcessSection = () => {
         {/* Pre-header */}
         <AnimatedSection>
           <div className="text-center mb-4">
-            <span className="inline-block px-4 py-2 bg-destructive/10 border border-destructive/30 rounded-full text-destructive text-sm font-medium mb-6 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 bg-gold/20 border border-gold/40 rounded-full text-gold text-sm font-medium mb-6 uppercase tracking-wider">
               ⚠️ Leggi bene. Potresti non essere adatto.
             </span>
           </div>
@@ -86,7 +86,7 @@ const VESelectionProcessSection = () => {
               CHI ACCETTIAMO E <span className="text-gold">COME FUNZIONA</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Non è per tutti. <span className="text-destructive font-semibold">E non ci scusiamo per questo.</span>
+              Non è per tutti. <span className="text-gold font-semibold">E non ci scusiamo per questo.</span>
             </p>
           </div>
         </AnimatedSection>
@@ -127,17 +127,17 @@ const VESelectionProcessSection = () => {
             </StaggerContainer>
           </motion.div>
 
-          {/* We refuse */}
+          {/* We refuse - ridotta prominenza */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-destructive/10 border-2 border-destructive/30 rounded-2xl"
+            className="p-6 bg-muted/30 border border-destructive/20 rounded-2xl"
           >
-            <h3 className="text-lg font-bold text-destructive mb-4 flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center">
-                <X className="w-5 h-5" />
+            <h3 className="text-lg font-bold text-muted-foreground mb-4 flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center">
+                <X className="w-5 h-5 text-destructive/70" />
               </div>
               NON LAVORIAMO CON:
             </h3>
@@ -149,10 +149,10 @@ const VESelectionProcessSection = () => {
                     whileHover={{ x: 3 }}
                   >
                     <div className="flex items-start gap-2 mb-1">
-                      <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground font-medium text-sm">{item.text}</span>
+                      <X className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground font-medium text-sm">{item.text}</span>
                     </div>
-                    <p className="text-xs text-muted-foreground ml-6 italic">
+                    <p className="text-xs text-muted-foreground/70 ml-6 italic">
                       → {item.reason}
                     </p>
                   </motion.div>

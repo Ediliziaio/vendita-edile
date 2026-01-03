@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { AlertCircle, Target, TrendingDown, Users, Percent, Ban, Building2, X } from "lucide-react";
+import { AlertCircle, Target, TrendingDown, Users, Percent, Ban, Building2, X, ArrowRight } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import { Button } from "@/components/ui/button";
 
 // Tecniche obsolete integrate da VEOldTechniquesSection
 const obsoleteTechniques = [
@@ -44,10 +45,23 @@ const VEProblemSection = () => {
     },
   ];
 
+  const handleCtaClick = () => {
+    const element = document.getElementById("chi-vince");
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="section-padding bg-card relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--destructive)/0.05)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,hsl(var(--gold)/0.05)_0%,transparent_50%)]" />
       
       <div className="container-narrow relative z-10">
         {/* Hook - Pattern Interrupt */}
@@ -83,12 +97,12 @@ const VEProblemSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-navy-dark/50 border border-destructive/30 rounded-xl p-5 overflow-hidden group hover:border-gold/50 transition-colors"
+              className="relative bg-navy-dark/50 border border-gold/30 rounded-xl p-5 overflow-hidden group hover:border-gold/50 transition-colors"
             >
               <div className="relative z-10">
                 <div className="flex items-start gap-4 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center flex-shrink-0">
-                    <change.icon className="w-5 h-5 text-destructive" />
+                  <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <change.icon className="w-5 h-5 text-gold" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between gap-2 mb-1">
@@ -143,7 +157,7 @@ const VEProblemSection = () => {
         {/* Tecniche Obsolete - Integrato da VEOldTechniquesSection */}
         <AnimatedSection delay={0.25}>
           <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8">
-            LE TECNICHE CHE <span className="text-destructive">NON FUNZIONANO PIÙ</span>
+            LE TECNICHE CHE <span className="text-gold">NON FUNZIONANO PIÙ</span>
           </h3>
         </AnimatedSection>
 
@@ -152,11 +166,11 @@ const VEProblemSection = () => {
             <StaggerItem key={index}>
               <motion.div
                 whileHover={{ scale: 1.02, y: -3 }}
-                className="bg-card/50 backdrop-blur-sm border border-destructive/20 rounded-xl p-5 h-full"
+                className="bg-card/50 backdrop-blur-sm border border-gold/20 rounded-xl p-5 h-full"
               >
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center">
-                    <X className="w-4 h-4 text-destructive" />
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
+                    <X className="w-4 h-4 text-gold" />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground mb-1 line-through opacity-70 text-sm">
@@ -195,13 +209,28 @@ const VEProblemSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + index * 0.1 }}
-                  className="flex items-start gap-3 p-3 bg-destructive/10 border-l-4 border-destructive rounded-r-lg"
+                  className="flex items-start gap-3 p-3 bg-gold/10 border-l-4 border-gold rounded-r-lg"
                 >
-                  <span className="text-destructive font-bold text-lg">→</span>
+                  <span className="text-gold font-bold text-lg">→</span>
                   <span className="text-foreground">{problem}</span>
                 </motion.div>
               ))}
             </div>
+          </div>
+        </AnimatedSection>
+
+        {/* CTA Button */}
+        <AnimatedSection delay={0.35}>
+          <div className="text-center mb-8">
+            <Button
+              size="lg"
+              variant="gold"
+              onClick={handleCtaClick}
+              className="text-lg px-8 py-6 glow-gold"
+            >
+              Scopri Come Risolvere
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </AnimatedSection>
 

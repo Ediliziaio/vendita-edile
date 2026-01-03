@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 import { TrendingUp, Clock, Target, Award, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Import client logos
 import logoRoma from "@/assets/logo-impresa-edile-roma.png";
@@ -26,6 +27,19 @@ const VEResultsSection = () => {
     { src: logoMilano, alt: "Serramentista Milano" },
     { src: logoToscana, alt: "Showroom Toscana" },
   ];
+
+  const handleCtaClick = () => {
+    const element = document.getElementById("candidati");
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section className="section-padding bg-navy-light relative overflow-hidden">
@@ -195,6 +209,21 @@ const VEResultsSection = () => {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </AnimatedSection>
+
+        {/* CTA Button */}
+        <AnimatedSection delay={0.55}>
+          <div className="text-center mt-10">
+            <Button
+              size="lg"
+              variant="gold"
+              onClick={handleCtaClick}
+              className="text-lg px-8 py-6 glow-gold"
+            >
+              Ottieni Questi Risultati
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
           </div>
         </AnimatedSection>
 
