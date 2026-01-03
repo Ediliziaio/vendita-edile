@@ -1,20 +1,33 @@
 import { motion } from "framer-motion";
-import { X, AlertCircle, Target } from "lucide-react";
+import { AlertCircle, Target, TrendingDown, Users, Percent, Ban, Building2 } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 const VEProblemSection = () => {
-  const falseProblems = [
-    { text: "il mercato", excuse: '"È la crisi, è così per tutti"' },
-    { text: "la concorrenza", excuse: '"Loro hanno prezzi più bassi"' },
-    { text: 'il cliente indeciso', excuse: '"La gente non ha soldi"' },
-    { text: 'il passaparola lento', excuse: '"Devo solo aspettare"' },
-  ];
-
-  const realProblems = [
-    "Fai preventivi senza qualificare il cliente",
-    "Non hai uno script: ogni trattativa è diversa",
-    "Nessun follow-up strutturato: speri che richiamino",
-    "Zero numeri: non sai dove perdi le vendite",
+  const marketChanges = [
+    { 
+      icon: Percent,
+      title: "SUPERBONUS 110%", 
+      impact: "Ha creato aspettative irrealistiche. I clienti pensano ancora di avere diritto a tutto gratis.",
+      badge: "2020-2023"
+    },
+    { 
+      icon: Ban,
+      title: "SCONTO IN FATTURA", 
+      impact: "Ha abituato i clienti a non pagare. Ora il prezzo pieno sembra una rapina.",
+      badge: "Eliminato"
+    },
+    { 
+      icon: Users,
+      title: "BOOM DI COMPETITOR", 
+      impact: "Durante i bonus sono spuntati 10.000 \"esperti\". Guerra al ribasso totale.",
+      badge: "+300%"
+    },
+    { 
+      icon: TrendingDown,
+      title: "FINE DEGLI INCENTIVI", 
+      impact: "I clienti ora sono diffidenti, indecisi, aspettano \"il prossimo bonus\".",
+      badge: "2024"
+    },
   ];
 
   return (
@@ -30,91 +43,100 @@ const VEProblemSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-destructive/20 border border-destructive/40 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gold/20 border border-gold/40 rounded-full mb-6"
             >
-              <AlertCircle className="w-4 h-4 text-destructive" />
-              <span className="text-destructive text-sm font-semibold uppercase tracking-wider">
-                La bugia che ti racconti
+              <AlertCircle className="w-4 h-4 text-gold" />
+              <span className="text-gold text-sm font-semibold uppercase tracking-wider">
+                Il mercato è cambiato. Tu lo sai.
               </span>
             </motion.div>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Continui a dare la colpa a:
+              Il mercato dell'edilizia è stato <span className="text-destructive">STRAVOLTO</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ogni imprenditore che perde vendite si racconta sempre la stessa storia...
+              E tu stai ancora vendendo con le regole di 5 anni fa.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* False Problems Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-3xl mx-auto">
-          {falseProblems.map((problem, index) => (
+        {/* Market Changes Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-4xl mx-auto">
+          {marketChanges.map((change, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-navy-dark/50 border border-destructive/30 rounded-xl p-5 overflow-hidden group hover:border-destructive/50 transition-colors"
+              className="relative bg-navy-dark/50 border border-destructive/30 rounded-xl p-5 overflow-hidden group hover:border-gold/50 transition-colors"
             >
-              {/* Strike-through overlay effect */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-0.5 bg-destructive/60 transform -rotate-3" />
-              </div>
-              
               <div className="relative z-10">
-                <div className="flex items-start gap-3 mb-2">
-                  <X className="w-6 h-6 text-destructive flex-shrink-0 mt-0.5" />
-                  <span className="text-xl text-foreground font-semibold line-through decoration-destructive decoration-2">
-                    {problem.text}
-                  </span>
+                <div className="flex items-start gap-4 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-destructive/20 flex items-center justify-center flex-shrink-0">
+                    <change.icon className="w-5 h-5 text-destructive" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-lg text-foreground font-bold">
+                        {change.title}
+                      </span>
+                      <span className="px-2 py-0.5 bg-destructive/20 text-destructive text-xs font-semibold rounded">
+                        {change.badge}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {change.impact}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground italic ml-9">
-                  {problem.excuse}
-                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* The Reveal - Transition */}
+        {/* The Reveal - NOT YOUR FAULT */}
         <AnimatedSection delay={0.2}>
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="w-24 h-1 bg-gold mx-auto mb-8"
-            />
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-              La verità che <span className="text-foreground font-semibold">nessuno ti dice?</span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/50 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto text-center"
+          >
+            <Building2 className="w-10 h-10 text-gold mx-auto mb-4" />
+            <p className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              NON È COLPA TUA.
             </p>
-            
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2">
-              Il problema <span className="text-destructive">sei TU.</span>
-            </h3>
-            
-            <p className="text-lg text-muted-foreground">
-              O meglio: è il <span className="text-gold font-semibold">MODO</span> in cui vendi.
+            <div className="space-y-2 text-lg text-muted-foreground mb-6">
+              <p>Il Superbonus ha <span className="text-destructive font-semibold">drogato</span> il mercato.</p>
+              <p>Lo sconto in fattura ha <span className="text-destructive font-semibold">ucciso</span> i margini.</p>
+              <p>I competitor improvvisati hanno <span className="text-destructive font-semibold">abbassato</span> i prezzi.</p>
+            </div>
+            <p className="text-xl text-foreground font-semibold">
+              Le regole del gioco sono cambiate.
+              <br />
+              <span className="text-gold">Ma nessuno ti ha dato il nuovo manuale.</span>
             </p>
-          </div>
+          </motion.div>
         </AnimatedSection>
 
-        {/* Real Problems - The Truth */}
+        {/* Real Problems - Consequences */}
         <AnimatedSection delay={0.3}>
           <div className="bg-gradient-to-b from-navy-dark/80 to-navy/80 border border-gold/30 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-6 h-6 text-gold" />
               <h4 className="text-xl font-semibold text-gold">
-                Ecco cosa sta DAVVERO succedendo:
+                E questo significa che oggi:
               </h4>
             </div>
             
             <div className="space-y-4">
-              {realProblems.map((problem, index) => (
+              {[
+                "Le vecchie tecniche di vendita NON funzionano più",
+                "I clienti sono più diffidenti e indecisi di sempre",
+                "La concorrenza gioca solo sul prezzo",
+                "Chi non ha un SISTEMA, sparisce"
+              ].map((problem, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
@@ -138,16 +160,16 @@ const VEProblemSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block bg-gold/10 border-2 border-gold/50 rounded-2xl p-6 md:p-8"
+              className="inline-block bg-navy-dark/80 border-2 border-gold/50 rounded-2xl p-6 md:p-8"
             >
               <p className="text-xl md:text-2xl text-foreground mb-3">
-                Il tuo prodotto è ottimo. I tuoi preventivi sono competitivi.
+                La buona notizia?
               </p>
               <p className="text-2xl md:text-3xl font-bold text-gold mb-4">
-                Ti manca solo UN SISTEMA per chiudere.
+                Chi capisce il nuovo gioco VINCE.
               </p>
               <p className="text-muted-foreground">
-                E questo sistema esiste. Funziona. Lo usiamo noi ogni giorno.
+                Chi continua con le vecchie regole... <span className="text-destructive font-semibold">sparisce.</span>
               </p>
             </motion.div>
           </div>

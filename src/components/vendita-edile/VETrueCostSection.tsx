@@ -67,6 +67,11 @@ const VETrueCostSection = () => {
             IL VERO COSTO DI CONTINUARE COSÌ
             <span className="block text-destructive text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
+          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+            Con il Superbonus vendevi anche dormendo.
+            <br />
+            <span className="text-foreground font-semibold">Ora che è finito, ogni errore di vendita ti costa MIGLIAIA di euro.</span>
+          </p>
         </AnimatedSection>
 
         {/* Loss Timeline */}
