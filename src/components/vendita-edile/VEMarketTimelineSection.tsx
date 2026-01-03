@@ -225,12 +225,17 @@ const VEMarketTimelineSection = () => {
                   </div>
                   
                   {/* Point */}
-                  <motion.div
-                    whileHover={{ scale: 1.3 }}
-                    className={`w-10 h-10 rounded-full border-4 flex items-center justify-center bg-background z-20 ${phaseColors[item.phase as keyof typeof phaseColors]}`}
-                  >
-                    <item.icon className={`w-4 h-4 ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`} />
-                  </motion.div>
+                  <div className="relative">
+                    {item.phase === "crisis" && (
+                      <div className="absolute inset-0 w-10 h-10 rounded-full bg-destructive/40 animate-ping" />
+                    )}
+                    <motion.div
+                      whileHover={{ scale: 1.3 }}
+                      className={`relative w-10 h-10 rounded-full border-4 flex items-center justify-center bg-background z-20 ${phaseColors[item.phase as keyof typeof phaseColors]}`}
+                    >
+                      <item.icon className={`w-4 h-4 ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`} />
+                    </motion.div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -254,8 +259,13 @@ const VEMarketTimelineSection = () => {
                   className="relative"
                 >
                   {/* Point */}
-                  <div className={`absolute -left-5 w-8 h-8 rounded-full border-4 flex items-center justify-center bg-background z-10 ${phaseColors[item.phase as keyof typeof phaseColors]}`}>
-                    <item.icon className={`w-3 h-3 ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`} />
+                  <div className="absolute -left-5">
+                    {item.phase === "crisis" && (
+                      <div className="absolute inset-0 w-8 h-8 rounded-full bg-destructive/40 animate-ping" />
+                    )}
+                    <div className={`relative w-8 h-8 rounded-full border-4 flex items-center justify-center bg-background z-10 ${phaseColors[item.phase as keyof typeof phaseColors]}`}>
+                      <item.icon className={`w-3 h-3 ${phaseTextColors[item.phase as keyof typeof phaseTextColors]}`} />
+                    </div>
                   </div>
                   
                   {/* Content */}
