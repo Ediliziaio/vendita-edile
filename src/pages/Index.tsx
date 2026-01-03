@@ -16,6 +16,7 @@ import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
 import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
 import VEPillarsSection from "@/components/vendita-edile/VEPillarsSection";
 import VEPricingSection from "@/components/vendita-edile/VEPricingSection";
+import VEGuaranteeSection from "@/components/vendita-edile/VEGuaranteeSection";
 import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
 import VEFAQSection from "@/components/vendita-edile/VEFAQSection";
 import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
@@ -91,10 +92,13 @@ const Index = () => {
         {/* 10. METODO - I 5 pilastri */}
         <VEPillarsSection />
         
-        {/* 11. PREZZO - Investimento e garanzia */}
+        {/* 11. VALUE STACK + PREZZO */}
         <VEPricingSection />
         
-        {/* 12. SELEZIONE - Chi accettiamo + processo (fuse) */}
+        {/* 12. GARANZIA - Sezione separata */}
+        <VEGuaranteeSection />
+        
+        {/* 13. SELEZIONE - Chi accettiamo + processo (fuse) */}
         <VESelectionProcessSection />
         
         {/* 13. OBIEZIONI - FAQ */}
