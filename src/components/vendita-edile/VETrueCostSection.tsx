@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Brain, TrendingDown, Users, Target, Euro, AlertTriangle } from "lucide-react";
+import { Clock, Brain, TrendingDown, Users, Target, Euro, Calculator, ArrowRight, TrendingUp, UserPlus } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 
@@ -42,8 +42,59 @@ const hiddenCosts = [
   }
 ];
 
+// Esempio concreto serramentista
+const infissiExample = {
+  trattativeMese: 20,
+  tassoChiusuraAttuale: 15,
+  tassoChiusuraDopo: 40,
+  commessaMedia: 9500,
+  marginePercentuale: 40,
+  investimento: 9000
+};
+
+// Calcoli derivati
+const venditePrima = Math.round(infissiExample.trattativeMese * (infissiExample.tassoChiusuraAttuale / 100));
+const venditeDopo = Math.round(infissiExample.trattativeMese * (infissiExample.tassoChiusuraDopo / 100));
+const fatturatoPrima = venditePrima * infissiExample.commessaMedia;
+const fatturatoDopo = venditeDopo * infissiExample.commessaMedia;
+const marginePrima = fatturatoPrima * (infissiExample.marginePercentuale / 100);
+const margineDopo = fatturatoDopo * (infissiExample.marginePercentuale / 100);
+const margineExtraMese = margineDopo - marginePrima;
+const marginePerVendita = infissiExample.commessaMedia * (infissiExample.marginePercentuale / 100);
+
+// Timeline ROI
+const roiTimeline = [
+  { 
+    periodo: "3 MESI", 
+    margineExtra: margineExtraMese * 3,
+    roi: ((margineExtraMese * 3) / infissiExample.investimento).toFixed(1)
+  },
+  { 
+    periodo: "6 MESI", 
+    margineExtra: margineExtraMese * 6,
+    roi: ((margineExtraMese * 6) / infissiExample.investimento).toFixed(1)
+  },
+  { 
+    periodo: "1 ANNO", 
+    margineExtra: margineExtraMese * 12,
+    roi: ((margineExtraMese * 12) / infissiExample.investimento).toFixed(1)
+  },
+  { 
+    periodo: "3 ANNI", 
+    margineExtra: margineExtraMese * 36,
+    roi: ((margineExtraMese * 36) / infissiExample.investimento).toFixed(1)
+  }
+];
+
+// Crescita con commerciale aggiuntivo
+const trattativeConComm = 40;
+const venditeConComm = Math.round(trattativeConComm * (infissiExample.tassoChiusuraDopo / 100));
+const margineConComm = venditeConComm * marginePerVendita;
+const margineExtra3AnniConComm = margineConComm * 30; // 2.5 anni (dopo 6 mesi)
+
 const VETrueCostSection = () => {
   const { ref: monthlyRef, count: monthlyCount } = useCountUp({ end: 50000, duration: 2000 });
+  const { ref: extraRef, count: extraCount } = useCountUp({ end: margineExtraMese, duration: 2500 });
   
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-destructive/10 to-background relative overflow-hidden">
@@ -121,57 +172,200 @@ const VETrueCostSection = () => {
           ))}
         </StaggerContainer>
 
-        {/* Brutal Comparison Box */}
+        {/* ESEMPIO CONCRETO SERRAMENTISTA */}
         <AnimatedSection delay={0.4}>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="max-w-4xl mx-auto bg-card border border-border rounded-3xl p-8 md:p-12 mb-12"
-          >
-            <h3 className="text-xl font-bold text-center text-foreground mb-8">
-              <AlertTriangle className="w-6 h-6 text-primary inline mr-2" />
-              Il Confronto Brutale: Il Valore Della Tua Ora
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Today */}
-              <div className="bg-destructive/10 border border-destructive/30 rounded-2xl p-6">
-                <h4 className="font-bold text-destructive text-center mb-4">TU OGGI</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>100 ore/mese</li>
-                  <li>→ €80.000 fatturato</li>
-                  <li>→ €10.000 margine</li>
-                </ul>
-                <div className="mt-4 pt-4 border-t border-destructive/30">
-                  <p className="text-center">
-                    <span className="text-3xl font-black text-destructive">€100</span>
-                    <span className="text-muted-foreground">/ora LORDO</span>
-                  </p>
+          <div className="max-w-5xl mx-auto mb-16">
+            {/* Header Esempio */}
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+                <Calculator className="w-4 h-4" />
+                ESEMPIO CONCRETO CON NUMERI REALI
+              </span>
+              <h3 className="text-2xl md:text-3xl font-black text-foreground">
+                Serramentista con {infissiExample.trattativeMese} Trattative/Mese
+              </h3>
+            </div>
+
+            {/* Box Parametri */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-muted/50 border border-border rounded-2xl p-6 mb-8"
+            >
+              <p className="text-sm font-bold text-muted-foreground mb-4 text-center">PARAMETRI DI PARTENZA</p>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                <div>
+                  <p className="text-2xl font-black text-foreground">{infissiExample.trattativeMese}</p>
+                  <p className="text-xs text-muted-foreground">Trattative/mese</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-destructive">{infissiExample.tassoChiusuraAttuale}%</p>
+                  <p className="text-xs text-muted-foreground">Chiusura attuale</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-foreground">€{infissiExample.commessaMedia.toLocaleString('it-IT')}</p>
+                  <p className="text-xs text-muted-foreground">Commessa media</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-foreground">{infissiExample.marginePercentuale}%</p>
+                  <p className="text-xs text-muted-foreground">Margine</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-primary">€{infissiExample.investimento.toLocaleString('it-IT')}</p>
+                  <p className="text-xs text-muted-foreground">Investimento</p>
                 </div>
               </div>
+            </motion.div>
 
-              {/* After Program */}
-              <div className="bg-primary/10 border border-primary/30 rounded-2xl p-6">
-                <h4 className="font-bold text-primary text-center mb-4">DOPO IL PROGRAMMA</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>100 ore/mese</li>
-                  <li>→ €120.000 fatturato</li>
-                  <li>→ €25.000 margine</li>
-                </ul>
-                <div className="mt-4 pt-4 border-t border-primary/30">
-                  <p className="text-center">
-                    <span className="text-3xl font-black text-primary">€250</span>
-                    <span className="text-muted-foreground">/ora LORDO</span>
-                  </p>
+            {/* Confronto PRIMA vs DOPO */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {/* PRIMA */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="bg-destructive/10 border-2 border-destructive/30 rounded-2xl p-6"
+              >
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <TrendingDown className="w-5 h-5 text-destructive" />
+                  <h4 className="font-black text-destructive text-lg">OGGI ({infissiExample.tassoChiusuraAttuale}% chiusura)</h4>
                 </div>
+                <div className="space-y-3 text-center">
+                  <div className="bg-destructive/10 rounded-xl p-3">
+                    <p className="text-3xl font-black text-foreground">{venditePrima}</p>
+                    <p className="text-sm text-muted-foreground">vendite/mese</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                    <span className="text-muted-foreground">€{fatturatoPrima.toLocaleString('it-IT')} fatturato</span>
+                  </div>
+                  <div className="bg-destructive/20 rounded-xl p-4">
+                    <p className="text-4xl font-black text-destructive">€{marginePrima.toLocaleString('it-IT')}</p>
+                    <p className="text-sm text-muted-foreground">margine/mese</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* DOPO */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-6"
+              >
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <h4 className="font-black text-primary text-lg">DOPO ({infissiExample.tassoChiusuraDopo}% chiusura)</h4>
+                </div>
+                <div className="space-y-3 text-center">
+                  <div className="bg-primary/10 rounded-xl p-3">
+                    <p className="text-3xl font-black text-foreground">{venditeDopo}</p>
+                    <p className="text-sm text-muted-foreground">vendite/mese</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                    <span className="text-muted-foreground">€{fatturatoDopo.toLocaleString('it-IT')} fatturato</span>
+                  </div>
+                  <div className="bg-primary/20 rounded-xl p-4">
+                    <p className="text-4xl font-black text-primary">€{margineDopo.toLocaleString('it-IT')}</p>
+                    <p className="text-sm text-muted-foreground">margine/mese</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Freccia Risultato */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="text-center mb-12"
+            >
+              <div className="inline-flex items-center gap-3 bg-primary/20 border-2 border-primary rounded-full px-8 py-4">
+                <span className="text-lg text-foreground font-bold">DIFFERENZA:</span>
+                <span className="text-3xl md:text-4xl font-black text-primary" ref={extraRef}>
+                  +€{extraCount.toLocaleString('it-IT')}
+                </span>
+                <span className="text-lg text-foreground font-bold">/mese EXTRA</span>
+              </div>
+            </motion.div>
+
+            {/* Timeline ROI */}
+            <div className="mb-12">
+              <h4 className="text-xl font-bold text-center text-foreground mb-6">
+                Il Tuo ROI Nel Tempo
+              </h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {roiTimeline.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 rounded-2xl p-5 text-center"
+                  >
+                    <p className="text-sm font-bold text-primary mb-2">{item.periodo}</p>
+                    <p className="text-2xl md:text-3xl font-black text-foreground mb-1">
+                      +€{item.margineExtra.toLocaleString('it-IT')}
+                    </p>
+                    <p className="text-sm text-muted-foreground mb-2">margine extra</p>
+                    <div className="bg-primary/30 rounded-full px-3 py-1 inline-block">
+                      <span className="text-sm font-black text-primary">ROI: {item.roi}x</span>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
-            <div className="text-center mt-8">
-              <p className="text-2xl font-black text-primary">
-                DIFFERENZA: <span className="text-3xl">+150%</span> sul tuo tempo.
+            {/* Crescita con Commerciale */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8 mb-8"
+            >
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <UserPlus className="w-6 h-6 text-primary" />
+                <h4 className="text-lg md:text-xl font-bold text-foreground">
+                  E se dopo 6 mesi aggiungi 1 commerciale?
+                </h4>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <p className="text-2xl font-black text-foreground">{trattativeConComm}</p>
+                  <p className="text-xs text-muted-foreground">trattative/mese</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-foreground">{venditeConComm}</p>
+                  <p className="text-xs text-muted-foreground">vendite/mese</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-primary">€{margineConComm.toLocaleString('it-IT')}</p>
+                  <p className="text-xs text-muted-foreground">margine/mese</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-black text-primary">+€{margineExtra3AnniConComm.toLocaleString('it-IT')}</p>
+                  <p className="text-xs text-muted-foreground">in 3 anni</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Call-out Finale */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 text-center"
+            >
+              <p className="text-lg md:text-xl font-bold mb-2">
+                Hai investito €{infissiExample.investimento.toLocaleString('it-IT')} e in 3 mesi hai già generato €{(margineExtraMese * 3).toLocaleString('it-IT')} di margine EXTRA.
               </p>
-            </div>
-          </motion.div>
+              <motion.p 
+                className="text-2xl md:text-3xl font-black"
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+              >
+                L'investimento si ripaga in meno di 15 giorni.
+              </motion.p>
+            </motion.div>
+          </div>
         </AnimatedSection>
 
         {/* Final Question */}
@@ -179,7 +373,7 @@ const VETrueCostSection = () => {
           <div className="text-center mb-8">
             <p className="text-xl md:text-2xl font-bold text-foreground">
               Quanti mesi puoi ancora permetterti di perdere
-              <span className="text-destructive"> €30.000-50.000</span>?
+              <span className="text-destructive"> €{margineExtraMese.toLocaleString('it-IT')}</span>?
             </p>
           </div>
         </AnimatedSection>
