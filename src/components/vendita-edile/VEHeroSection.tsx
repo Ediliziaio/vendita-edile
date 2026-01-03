@@ -120,24 +120,24 @@ const VEHeroSection = () => {
           className="bg-navy-dark/90 border-2 border-destructive/50 rounded-xl p-5 md:p-6 mb-6 max-w-3xl mx-auto"
         >
           <p className="text-sm font-bold text-destructive uppercase tracking-wider text-center mb-3">
-            2024: L'EDILIZIA È CAMBIATA PER SEMPRE
+            2024-2025: I NUMERI DEL CROLLO (Fonte: ANCE/ISTAT)
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
             <div>
-              <p className="text-destructive font-bold">Superbonus</p>
-              <p className="text-muted-foreground text-xs">finito</p>
+              <p className="text-2xl font-black text-destructive">-22%</p>
+              <p className="text-muted-foreground text-xs">Investimenti recupero</p>
             </div>
             <div>
-              <p className="text-destructive font-bold">Sconto fattura</p>
-              <p className="text-muted-foreground text-xs">eliminato</p>
+              <p className="text-2xl font-black text-destructive">-30%</p>
+              <p className="text-muted-foreground text-xs">Manut. prevista 2025</p>
             </div>
             <div>
-              <p className="text-destructive font-bold">Concorrenza</p>
-              <p className="text-muted-foreground text-xs">triplicata</p>
+              <p className="text-2xl font-black text-destructive">-5,3%</p>
+              <p className="text-muted-foreground text-xs">Settore costruzioni</p>
             </div>
             <div>
-              <p className="text-destructive font-bold">Clienti</p>
-              <p className="text-muted-foreground text-xs">diffidenti</p>
+              <p className="text-2xl font-black text-orange-500">69,9%</p>
+              <p className="text-muted-foreground text-xs">Difficoltà assunzioni</p>
             </div>
           </div>
           <p className="text-center text-foreground mt-4 text-sm">

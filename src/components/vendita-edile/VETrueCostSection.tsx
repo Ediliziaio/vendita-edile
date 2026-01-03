@@ -67,10 +67,13 @@ const VETrueCostSection = () => {
             IL VERO COSTO DI CONTINUARE COSÌ
             <span className="block text-destructive text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-            Con il Superbonus vendevi anche dormendo.
+          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-4">
+            Nel 2021-2022 bastava aprire la serranda per vendere.
             <br />
-            <span className="text-foreground font-semibold">Ora che è finito, ogni errore di vendita ti costa MIGLIAIA di euro.</span>
+            <span className="text-foreground font-semibold">Nel 2024 il mercato è crollato del 22% (ANCE). Nel 2025 calerà un altro 30%.</span>
+          </p>
+          <p className="text-base text-destructive font-semibold text-center mb-8">
+            Chi non ha un sistema, chiude.
           </p>
         </AnimatedSection>
 
