@@ -185,15 +185,15 @@ const VETrueCostSection = () => {
   ];
   
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-background via-destructive/10 to-background relative overflow-hidden">
+    <section id="costo-reale" className="py-20 md:py-32 bg-gradient-to-b from-background via-gold/5 to-background relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-destructive/15 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Pre-header */}
         <AnimatedSection>
           <div className="text-center mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 text-destructive text-sm font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold text-sm font-medium">
               <Euro className="w-4 h-4" />
               Facciamo due conti. Ti faranno male.
             </span>
@@ -204,7 +204,7 @@ const VETrueCostSection = () => {
         <AnimatedSection delay={0.1}>
           <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-foreground">
             IL VERO COSTO DI CONTINUARE COSÌ
-            <span className="block text-destructive text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
+            <span className="block text-gold text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
           <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
             Facciamo i conti. Ti faranno male, ma devi vederli.
@@ -222,10 +222,10 @@ const VETrueCostSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.15 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-destructive/20 to-destructive/5 border border-destructive/30 rounded-2xl p-6 text-center"
+                  className="bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30 rounded-2xl p-6 text-center"
                 >
-                  <p className="text-sm font-bold text-destructive mb-2">{item.period}</p>
-                  <p className="text-3xl md:text-4xl font-black text-foreground mb-2" ref={index === 0 ? monthlyRef : undefined}>
+                  <p className="text-sm font-bold text-gold mb-2">{item.period}</p>
+                  <p className="text-3xl md:text-4xl font-black text-destructive mb-2" ref={index === 0 ? monthlyRef : undefined}>
                     €{index === 0 ? monthlyCount.toLocaleString('it-IT') : item.loss}
                   </p>
                   <p className="text-sm text-muted-foreground">{item.detail}</p>
@@ -238,7 +238,7 @@ const VETrueCostSection = () => {
         {/* Hidden Costs Grid */}
         <AnimatedSection delay={0.3}>
           <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-            I Costi Che <span className="text-destructive">Non Vedi</span> (Ma Paghi Ogni Giorno)
+            I Costi Che <span className="text-gold">Non Vedi</span> (Ma Paghi Ogni Giorno)
           </h3>
         </AnimatedSection>
 
@@ -247,10 +247,10 @@ const VETrueCostSection = () => {
             <StaggerItem key={index}>
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-card/50 backdrop-blur-sm border border-destructive/20 rounded-xl p-5 h-full text-center"
+                className="bg-card/50 backdrop-blur-sm border border-gold/20 rounded-xl p-5 h-full text-center"
               >
-                <div className="w-12 h-12 rounded-full bg-destructive/20 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-destructive" />
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-gold" />
                 </div>
                 <h4 className="font-black text-foreground mb-2">{item.cost}</h4>
                 <p className="text-sm text-muted-foreground mb-1">{item.impact}</p>
@@ -265,7 +265,7 @@ const VETrueCostSection = () => {
           <div className="max-w-5xl mx-auto mb-16">
             {/* Header Esempio */}
             <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium mb-4">
                 <Calculator className="w-4 h-4" />
                 ESEMPIO CONCRETO CON NUMERI REALI
               </span>
@@ -299,7 +299,7 @@ const VETrueCostSection = () => {
                   <p className="text-xs text-muted-foreground">Margine</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-primary">€{infissiExample.investimento.toLocaleString('it-IT')}</p>
+                  <p className="text-2xl font-black text-gold">€{infissiExample.investimento.toLocaleString('it-IT')}</p>
                   <p className="text-xs text-muted-foreground">Investimento</p>
                 </div>
               </div>
@@ -337,14 +337,14 @@ const VETrueCostSection = () => {
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-6"
+                className="bg-gold/10 border-2 border-gold/30 rounded-2xl p-6"
               >
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  <h4 className="font-black text-primary text-lg">DOPO ({infissiExample.tassoChiusuraDopo}% chiusura)</h4>
+                  <TrendingUp className="w-5 h-5 text-gold" />
+                  <h4 className="font-black text-gold text-lg">DOPO ({infissiExample.tassoChiusuraDopo}% chiusura)</h4>
                 </div>
                 <div className="space-y-3 text-center">
-                  <div className="bg-primary/10 rounded-xl p-3">
+                  <div className="bg-gold/10 rounded-xl p-3">
                     <p className="text-3xl font-black text-foreground">{venditeDopo}</p>
                     <p className="text-sm text-muted-foreground">vendite/mese</p>
                   </div>
@@ -352,8 +352,8 @@ const VETrueCostSection = () => {
                     <ArrowRight className="w-4 h-4 text-muted-foreground" />
                     <span className="text-muted-foreground">€{fatturatoDopo.toLocaleString('it-IT')} fatturato</span>
                   </div>
-                  <div className="bg-primary/20 rounded-xl p-4">
-                    <p className="text-4xl font-black text-primary">€{margineDopo.toLocaleString('it-IT')}</p>
+                  <div className="bg-gold/20 rounded-xl p-4">
+                    <p className="text-4xl font-black text-gold">€{margineDopo.toLocaleString('it-IT')}</p>
                     <p className="text-sm text-muted-foreground">margine/mese</p>
                   </div>
                 </div>
@@ -366,9 +366,9 @@ const VETrueCostSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-3 bg-primary/20 border-2 border-primary rounded-full px-8 py-4">
+              <div className="inline-flex items-center gap-3 bg-gold/20 border-2 border-gold rounded-full px-8 py-4">
                 <span className="text-lg text-foreground font-bold">DIFFERENZA:</span>
-                <span className="text-3xl md:text-4xl font-black text-primary" ref={extraRef}>
+                <span className="text-3xl md:text-4xl font-black text-gold" ref={extraRef}>
                   +€{extraCount.toLocaleString('it-IT')}
                 </span>
                 <span className="text-lg text-foreground font-bold">/mese EXTRA</span>
@@ -388,15 +388,15 @@ const VETrueCostSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -5 }}
-                    className="bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 rounded-2xl p-5 text-center"
+                    className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-2xl p-5 text-center"
                   >
-                    <p className="text-sm font-bold text-primary mb-2">{item.periodo}</p>
+                    <p className="text-sm font-bold text-gold mb-2">{item.periodo}</p>
                     <p className="text-2xl md:text-3xl font-black text-foreground mb-1">
                       +€{item.margineExtra.toLocaleString('it-IT')}
                     </p>
                     <p className="text-sm text-muted-foreground mb-2">margine extra</p>
-                    <div className="bg-primary/30 rounded-full px-3 py-1 inline-block">
-                      <span className="text-sm font-black text-primary">ROI: {item.roi}x</span>
+                    <div className="bg-gold/30 rounded-full px-3 py-1 inline-block">
+                      <span className="text-sm font-black text-gold">ROI: {item.roi}x</span>
                     </div>
                   </motion.div>
                 ))}
@@ -407,10 +407,10 @@ const VETrueCostSection = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6 md:p-8 mb-8"
+              className="bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/20 rounded-2xl p-6 md:p-8 mb-8"
             >
               <div className="flex items-center justify-center gap-2 mb-4">
-                <UserPlus className="w-6 h-6 text-primary" />
+                <UserPlus className="w-6 h-6 text-gold" />
                 <h4 className="text-lg md:text-xl font-bold text-foreground">
                   E se dopo 6 mesi aggiungi 1 commerciale?
                 </h4>
@@ -425,11 +425,11 @@ const VETrueCostSection = () => {
                   <p className="text-xs text-muted-foreground">vendite/mese</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-primary">€{margineConComm.toLocaleString('it-IT')}</p>
+                  <p className="text-2xl font-black text-gold">€{margineConComm.toLocaleString('it-IT')}</p>
                   <p className="text-xs text-muted-foreground">margine/mese</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-black text-primary">+€{margineExtra3AnniConComm.toLocaleString('it-IT')}</p>
+                  <p className="text-2xl font-black text-gold">+€{margineExtra3AnniConComm.toLocaleString('it-IT')}</p>
                   <p className="text-xs text-muted-foreground">in 3 anni</p>
                 </div>
               </div>
@@ -440,7 +440,7 @@ const VETrueCostSection = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 text-center"
+              className="bg-gold text-background rounded-2xl p-6 md:p-8 text-center"
             >
               <p className="text-lg md:text-xl font-bold mb-2">
                 Hai investito €{infissiExample.investimento.toLocaleString('it-IT')} e in 3 mesi hai già generato €{(margineExtraMese * 3).toLocaleString('it-IT')} di margine EXTRA.
@@ -457,13 +457,14 @@ const VETrueCostSection = () => {
             {/* Calcolatore ROI Personalizzato */}
             <div className="mt-8 text-center">
               <p className="text-lg text-muted-foreground mb-4">
-                Vuoi vedere i <span className="text-primary font-bold">TUOI</span> numeri?
+                Vuoi vedere i <span className="text-gold font-bold">TUOI</span> numeri?
               </p>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button 
                     size="lg" 
-                    className="bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 font-bold text-lg px-8 py-6"
+                    variant="gold"
+                    className="font-bold text-lg px-8 py-6 glow-gold"
                   >
                     <Calculator className="w-5 h-5 mr-2" />
                     CALCOLA IL TUO ROI PERSONALIZZATO
@@ -472,7 +473,7 @@ const VETrueCostSection = () => {
                 <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border">
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-black text-foreground flex items-center gap-2">
-                      <Calculator className="w-6 h-6 text-primary" />
+                      <Calculator className="w-6 h-6 text-gold" />
                       Calcola il TUO ROI
                     </DialogTitle>
                     <p className="text-muted-foreground">
@@ -583,25 +584,25 @@ const VETrueCostSection = () => {
                           <p className="text-sm text-muted-foreground">€{(calcVenditePrima * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
                           <p className="text-lg font-bold text-destructive mt-2">€{calcMargineMesePrima.toLocaleString('it-IT')}/mese</p>
                         </div>
-                        <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 text-center">
-                          <p className="text-sm font-bold text-primary mb-2">DOPO ({chiusuraDopo}%)</p>
+                        <div className="bg-gold/10 border border-gold/30 rounded-xl p-4 text-center">
+                          <p className="text-sm font-bold text-gold mb-2">DOPO ({chiusuraDopo}%)</p>
                           <p className="text-xl font-black text-foreground">{calcVenditeDopo} vendite</p>
                           <p className="text-sm text-muted-foreground">€{(calcVenditeDopo * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
-                          <p className="text-lg font-bold text-primary mt-2">€{calcMargineMeseDopo.toLocaleString('it-IT')}/mese</p>
+                          <p className="text-lg font-bold text-gold mt-2">€{calcMargineMeseDopo.toLocaleString('it-IT')}/mese</p>
                         </div>
                       </div>
 
                       {/* Differenza */}
-                      <div className="bg-primary/20 border-2 border-primary rounded-xl p-4 text-center">
+                      <div className="bg-gold/20 border-2 border-gold rounded-xl p-4 text-center">
                         <p className="text-sm text-foreground mb-1">MARGINE EXTRA MENSILE</p>
-                        <p className="text-3xl font-black text-primary">+€{calcMargineExtra.toLocaleString('it-IT')}</p>
+                        <p className="text-3xl font-black text-gold">+€{calcMargineExtra.toLocaleString('it-IT')}</p>
                       </div>
 
                       {/* Timeline ROI */}
                       <div className="grid grid-cols-4 gap-2">
                         {calcRoiTimeline.map((item, index) => (
                           <div key={index} className="bg-muted/50 border border-border rounded-lg p-3 text-center">
-                            <p className="text-xs font-bold text-primary">{item.periodo}</p>
+                            <p className="text-xs font-bold text-gold">{item.periodo}</p>
                             <p className="text-sm font-black text-foreground">+€{item.margineExtra.toLocaleString('it-IT')}</p>
                             <p className="text-xs text-muted-foreground">ROI: {item.roi}x</p>
                           </div>
@@ -609,7 +610,7 @@ const VETrueCostSection = () => {
                       </div>
 
                       {/* Payback */}
-                      <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground rounded-xl p-4 text-center">
+                      <div className="bg-gradient-to-r from-gold to-gold/80 text-background rounded-xl p-4 text-center">
                         <p className="text-sm mb-1">Con un investimento di €{investimento.toLocaleString('it-IT')}</p>
                         <p className="text-xl font-black">
                           Sei in positivo in {calcGiorniPayback} giorni
@@ -618,7 +619,7 @@ const VETrueCostSection = () => {
 
                       {/* CTA */}
                       <Button 
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-6"
+                        className="w-full bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6"
                         onClick={() => {
                           const section = document.getElementById('candidatura');
                           if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -660,7 +661,7 @@ const VETrueCostSection = () => {
               Ma chi sta VINCENDO in questo mercato? E cosa fanno di diverso?
             </p>
             <p className="text-xl font-bold text-foreground">
-              <span className="text-primary">Ecco cosa li distingue...</span>
+              <span className="text-gold">Ecco cosa li distingue...</span>
             </p>
           </div>
         </AnimatedSection>
