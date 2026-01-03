@@ -38,10 +38,11 @@ const VEHeroSection = () => {
           alt="Showroom infissi e serramenti" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/90 to-navy/95" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.2)_0%,transparent_50%)]" />
+        {/* Overlay più scuro per massimo contrasto */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/95 to-background/98" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--gold)/0.15)_0%,transparent_40%)]" />
         <div 
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}
@@ -77,7 +78,7 @@ const VEHeroSection = () => {
         >
           In questo momento, mentre leggi,
           <br />
-          <span className="text-gold drop-shadow-[0_0_30px_hsl(var(--gold)/0.5)]">un tuo concorrente sta chiudendo</span>
+          <span className="text-secondary">un tuo concorrente sta chiudendo</span>
           <br />
           il cliente che <span className="underline decoration-destructive decoration-4">TU hai perso ieri.</span>
         </motion.h1>
@@ -91,27 +92,27 @@ const VEHeroSection = () => {
         >
           E lo sta facendo con lo <span className="text-foreground font-semibold">STESSO prodotto</span>, 
           allo <span className="text-foreground font-semibold">STESSO prezzo</span>... 
-          ma con un <span className="text-gold font-bold">SISTEMA diverso.</span>
+          ma con un <span className="text-secondary font-bold">SISTEMA diverso.</span>
         </motion.p>
 
-        {/* Verità Scomoda Box - rimosso Market Context Box (duplicato in Timeline) */}
+        {/* Verità Scomoda Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-gradient-to-r from-gold/15 via-gold/25 to-gold/15 border-2 border-gold/60 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-gold/20"
+          className="bg-card/95 backdrop-blur-md border-2 border-secondary/70 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-secondary/30"
         >
           <motion.p 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3 drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3"
           >
             €30.000 – €50.000 al mese.
           </motion.p>
           <p className="text-lg md:text-xl text-center text-foreground mb-2">
             Questa è la cifra <span className="font-bold">ESATTA</span> che stai lasciando sul tavolo.
           </p>
-          <p className="text-base text-center text-muted-foreground">
+          <p className="text-base text-center text-foreground/80">
             Non è un'ipotesi. È la media dei nostri <span className="text-secondary font-semibold">47 clienti</span> PRIMA di lavorare con noi.
           </p>
         </motion.div>
@@ -124,7 +125,7 @@ const VEHeroSection = () => {
           className="mb-10"
         >
           <p className="text-lg md:text-xl text-center text-foreground mb-6">
-            Se vendi <span className="text-gold font-semibold">infissi, serramenti, fotovoltaico o ristrutturazioni</span>
+            Se vendi <span className="text-secondary font-semibold">infissi, serramenti, fotovoltaico o ristrutturazioni</span>
             <br />
             e almeno <span className="font-bold">UNA</span> di queste ti suona familiare...
           </p>
@@ -137,10 +138,10 @@ const VEHeroSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                 whileHover={{ scale: 1.02, borderColor: 'hsl(var(--gold))' }}
-                className="flex items-start gap-3 bg-navy-light/60 backdrop-blur-sm border border-border/40 rounded-lg p-4 transition-all duration-300 cursor-default"
+                className="flex items-start gap-3 bg-card/90 backdrop-blur-md border border-border rounded-lg p-4 transition-all duration-300 cursor-default"
               >
-                <div className="w-5 h-5 rounded border-2 border-gold bg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Check className="w-3 h-3 text-gold" />
+                <div className="w-5 h-5 rounded border-2 border-secondary bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <Check className="w-3 h-3 text-secondary" />
                 </div>
                 <span className="text-foreground text-sm md:text-base">{point}</span>
               </motion.div>
@@ -151,9 +152,9 @@ const VEHeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="text-center text-lg md:text-xl text-gold font-semibold mt-6"
+            className="text-center text-lg md:text-xl text-secondary font-semibold mt-6"
           >
-            ...questo messaggio potrebbe valere <span className="text-2xl font-bold drop-shadow-[0_0_10px_hsl(var(--gold)/0.5)]">€100.000+</span> per te quest'anno.
+            ...questo messaggio potrebbe valere <span className="text-2xl font-bold">€100.000+</span> per te quest'anno.
           </motion.p>
         </motion.div>
 
@@ -162,14 +163,14 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-navy-dark/90 backdrop-blur-sm border border-gold/40 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto text-center shadow-xl"
+          className="bg-card/95 backdrop-blur-md border border-secondary/50 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto text-center shadow-xl"
         >
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
-            L'<span className="text-gold font-bold">UNICO</span> programma di affiancamento per l'edilizia
+            L'<span className="text-secondary font-bold">UNICO</span> programma di affiancamento per l'edilizia
             <br className="hidden md:block" />{" "}
             creato da chi <span className="font-semibold">VENDE infissi ogni giorno.</span>
           </p>
-          <p className="text-muted-foreground mt-3">
+          <p className="text-foreground/70 mt-3">
             Non da formatori. Non da consulenti.
             <br />
             <span className="text-foreground font-medium">Da imprenditori edili con un'azienda VERA.</span>
@@ -185,30 +186,30 @@ const VEHeroSection = () => {
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-card/90 backdrop-blur-md rounded-lg border border-secondary/40" 
             ref={aziende.ref}
           >
-            <Users className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">{Math.round(aziende.count)}+</span>
-            <span className="text-sm text-muted-foreground">aziende affiancate</span>
+            <Users className="w-5 h-5 text-secondary" />
+            <span className="text-2xl md:text-3xl font-bold text-secondary">{Math.round(aziende.count)}+</span>
+            <span className="text-sm text-foreground/70">aziende affiancate</span>
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-card/90 backdrop-blur-md rounded-lg border border-secondary/40" 
             ref={fatturato.ref}
           >
-            <TrendingUp className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">+€{fatturato.formattedValue}M</span>
-            <span className="text-sm text-muted-foreground">fatturato generato</span>
+            <TrendingUp className="w-5 h-5 text-secondary" />
+            <span className="text-2xl md:text-3xl font-bold text-secondary">+€{fatturato.formattedValue}M</span>
+            <span className="text-sm text-foreground/70">fatturato generato</span>
           </motion.div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 text-foreground px-4 py-2 bg-gold/10 rounded-lg border border-gold/30" 
+            className="flex items-center gap-2 text-foreground px-4 py-2 bg-card/90 backdrop-blur-md rounded-lg border border-secondary/40" 
             ref={rinnovi.ref}
           >
-            <Shield className="w-5 h-5 text-gold" />
-            <span className="text-2xl md:text-3xl font-bold text-gold drop-shadow-[0_0_10px_hsl(var(--gold)/0.4)]">{Math.round(rinnovi.count)}%</span>
-            <span className="text-sm text-muted-foreground">tasso rinnovi</span>
+            <Shield className="w-5 h-5 text-secondary" />
+            <span className="text-2xl md:text-3xl font-bold text-secondary">{Math.round(rinnovi.count)}%</span>
+            <span className="text-sm text-foreground/70">tasso rinnovi</span>
           </motion.div>
         </motion.div>
 
@@ -234,8 +235,8 @@ const VEHeroSection = () => {
           </motion.div>
           
           <div className="flex flex-col items-center gap-2 mt-4">
-            <p className="text-sm text-muted-foreground">
-              📞 Solo <span className="text-gold font-semibold">3 posti</span> per gennaio • Risposta entro 48h
+            <p className="text-sm text-foreground/70">
+              📞 Solo <span className="text-secondary font-semibold">3 posti</span> per gennaio • Risposta entro 48h
             </p>
             <div className="flex items-center gap-2 text-sm text-green-400">
               <Shield className="w-4 h-4" />
