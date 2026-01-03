@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Building2, Wallet, Phone, Users, Award, Check, X, Shield, MapPin } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
+import showroomImage from "@/assets/showroom.jpg";
 
 const credentials = [
   { icon: Building2, label: "Showroom attivo", value: "350", suffix: "mq", proof: "Apriamo ogni mattina" },
@@ -73,37 +74,59 @@ const VEWhyWeCanSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Credentials Grid */}
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-          {credentials.map((item, index) => (
-            <StaggerItem key={index}>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center h-full"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
-                <p 
-                  className="text-2xl font-black text-primary mb-1"
-                  ref={countRefs[index]}
+        {/* Showroom Image + Credentials Grid */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Showroom Image Card */}
+          <AnimatedSection delay={0.15}>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gold/20 border-2 border-gold/30"
+            >
+              <img 
+                src={showroomImage} 
+                alt="Il nostro showroom operativo" 
+                className="w-full h-80 lg:h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-gold font-bold text-xl mb-1">Il nostro showroom operativo</p>
+                <p className="text-foreground text-sm">350mq dove vendiamo ogni giorno. Non teoria. Pratica.</p>
+              </div>
+            </motion.div>
+          </AnimatedSection>
+
+          {/* Credentials Grid */}
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {credentials.map((item, index) => (
+              <StaggerItem key={index}>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center h-full hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
                 >
-                  {typeof countValues[index] === 'number' && countValues[index] % 1 !== 0 
-                    ? countValues[index].toFixed(1) 
-                    : Math.floor(countValues[index])}{item.suffix}
-                </p>
-                <p className="text-xs text-muted-foreground">{item.proof}</p>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
+                  <p 
+                    className="text-2xl font-black text-primary mb-1"
+                    ref={countRefs[index]}
+                  >
+                    {typeof countValues[index] === 'number' && countValues[index] % 1 !== 0 
+                      ? countValues[index].toFixed(1) 
+                      : Math.floor(countValues[index])}{item.suffix}
+                  </p>
+                  <p className="text-xs text-muted-foreground">{item.proof}</p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
 
         {/* Promise Box */}
         <AnimatedSection delay={0.3}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-3xl p-8 md:p-12 mb-16"
+            className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30 rounded-3xl p-8 md:p-12 mb-16 shadow-xl shadow-primary/10"
           >
             <h3 className="text-2xl font-bold text-center text-foreground mb-8">
               <Shield className="w-8 h-8 text-primary inline mr-2" />
@@ -123,9 +146,14 @@ const VEWhyWeCanSection = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start gap-4"
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: index * 0.1 + 0.2, type: "spring" }}
+                    className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0"
+                  >
                     <Check className="w-5 h-5 text-primary" />
-                  </div>
+                  </motion.div>
                   <div>
                     <p className="font-bold text-foreground">{item.title}</p>
                     <p className="text-sm text-muted-foreground">{item.subtitle}</p>
@@ -151,7 +179,7 @@ const VEWhyWeCanSection = () => {
             <span className="text-destructive">I "GURU"</span> vs. <span className="text-primary">NOI</span>
           </h3>
           
-          <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl overflow-hidden mb-12">
+          <div className="max-w-3xl mx-auto bg-card border-2 border-border rounded-2xl overflow-hidden mb-12 shadow-xl">
             {/* Header */}
             <div className="grid grid-cols-2 bg-muted/50">
               <div className="p-4 text-center font-bold text-destructive border-r border-border">
@@ -164,16 +192,23 @@ const VEWhyWeCanSection = () => {
             
             {/* Rows */}
             {comparison.map((item, index) => (
-              <div key={index} className="grid grid-cols-2 border-t border-border">
-                <div className="p-4 flex items-center gap-2 border-r border-border">
-                  <X className="w-4 h-4 text-destructive flex-shrink-0" />
+              <motion.div 
+                key={index} 
+                className="grid grid-cols-2 border-t border-border hover:bg-muted/30 transition-colors"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <div className="p-4 flex items-center gap-3 border-r border-border">
+                  <X className="w-5 h-5 text-destructive flex-shrink-0" />
                   <span className="text-muted-foreground text-sm">{item.guru}</span>
                 </div>
-                <div className="p-4 flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                <div className="p-4 flex items-center gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
                   <span className="text-foreground text-sm font-medium">{item.us}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </AnimatedSection>
@@ -182,7 +217,7 @@ const VEWhyWeCanSection = () => {
         <AnimatedSection delay={0.5}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-3xl mx-auto bg-card border-2 border-primary/50 rounded-3xl p-8 text-center mb-8"
+            className="max-w-3xl mx-auto bg-card border-2 border-primary/50 rounded-3xl p-8 text-center mb-8 shadow-lg shadow-primary/10"
           >
             <p className="text-lg text-foreground italic mb-4">
               "PRIMA funziona per noi.
@@ -200,7 +235,7 @@ const VEWhyWeCanSection = () => {
           <div className="text-center mb-8">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/20 border border-primary/30 text-primary font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/20 border border-primary/30 text-primary font-medium shadow-lg shadow-primary/10"
             >
               <MapPin className="w-5 h-5" />
               Chiedici i bilanci. Chiedici i preventivi. Vieni a trovarci in showroom.

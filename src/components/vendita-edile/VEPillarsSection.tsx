@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import cantiereImage from "@/assets/cantiere.jpg";
 
 const VEPillarsSection = () => {
   const pillars = [
@@ -112,7 +113,7 @@ const VEPillarsSection = () => {
             </span>
             <h2 className="heading-section text-foreground mb-4">
               ECCO COSA COSTRUIAMO IN{" "}
-              <span className="text-gold">90 GIORNI</span>
+              <span className="text-gold drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]">90 GIORNI</span>
             </h2>
             <p className="text-xl md:text-2xl font-bold text-foreground mb-2">
               (E perché funziona anche per te)
@@ -126,89 +127,116 @@ const VEPillarsSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Guarantee badge */}
-        <AnimatedSection delay={0.1}>
-          <motion.div
-            initial={{ scale: 0.95 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            className="max-w-lg mx-auto mb-12"
-          >
-            <div className="flex items-center justify-center gap-3 p-4 bg-gold/10 border-2 border-gold rounded-xl">
-              <Shield className="w-8 h-8 text-gold flex-shrink-0" />
-              <p className="text-lg font-bold text-foreground">
-                Garanzia 100%: Se dopo 90 giorni non vedi risultati,{" "}
-                <span className="text-gold">ti rimborsiamo.</span>
-              </p>
-            </div>
-          </motion.div>
-        </AnimatedSection>
-
-        {/* Pillars accordion */}
-        <Accordion type="single" collapsible className="space-y-4 mb-12">
-          {pillars.map((pillar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <AccordionItem
-                value={`pillar-${index}`}
-                className="bg-card border-2 border-border hover:border-gold/50 transition-colors rounded-2xl overflow-hidden"
+        {/* Content with Image */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          {/* Main Content - 2 columns */}
+          <div className="lg:col-span-2">
+            {/* Guarantee badge */}
+            <AnimatedSection delay={0.1}>
+              <motion.div
+                initial={{ scale: 0.95 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                className="mb-8"
               >
-                <AccordionTrigger className="px-6 md:px-8 py-6 hover:no-underline hover:bg-muted/50 transition-colors">
-                  <div className="flex items-center gap-4 md:gap-6 w-full">
-                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gold/20 flex items-center justify-center">
-                      <pillar.icon className="w-6 h-6 md:w-7 md:h-7 text-gold" />
-                    </div>
-                    <div className="text-left flex-1">
-                      <div className="flex items-center gap-3 mb-1">
-                        <span className="text-gold font-bold text-sm">
-                          PILASTRO {pillar.number}
-                        </span>
+                <div className="flex items-center justify-center gap-3 p-4 bg-gold/10 border-2 border-gold rounded-xl">
+                  <Shield className="w-8 h-8 text-gold flex-shrink-0" />
+                  <p className="text-lg font-bold text-foreground">
+                    Garanzia 100%: Se dopo 90 giorni non vedi risultati,{" "}
+                    <span className="text-gold">ti rimborsiamo.</span>
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatedSection>
+
+            {/* Pillars accordion */}
+            <Accordion type="single" collapsible className="space-y-4">
+              {pillars.map((pillar, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <AccordionItem
+                    value={`pillar-${index}`}
+                    className="bg-card border-2 border-border hover:border-gold/50 transition-colors rounded-2xl overflow-hidden"
+                  >
+                    <AccordionTrigger className="px-6 md:px-8 py-6 hover:no-underline hover:bg-muted/50 transition-colors">
+                      <div className="flex items-center gap-4 md:gap-6 w-full">
+                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gold/20 flex items-center justify-center">
+                          <pillar.icon className="w-6 h-6 md:w-7 md:h-7 text-gold" />
+                        </div>
+                        <div className="text-left flex-1">
+                          <div className="flex items-center gap-3 mb-1">
+                            <span className="text-gold font-bold text-sm">
+                              PILASTRO {pillar.number}
+                            </span>
+                          </div>
+                          <h3 className="text-lg md:text-xl font-bold text-foreground">
+                            {pillar.title}
+                          </h3>
+                        </div>
+                        {/* Result badge visible on desktop */}
+                        <div className="hidden md:block flex-shrink-0">
+                          <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium">
+                            {pillar.result}
+                          </span>
+                        </div>
                       </div>
-                      <h3 className="text-lg md:text-xl font-bold text-foreground">
-                        {pillar.title}
-                      </h3>
-                    </div>
-                    {/* Result badge visible on desktop */}
-                    <div className="hidden md:block flex-shrink-0">
-                      <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium">
-                        {pillar.result}
-                      </span>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 md:px-8 pb-6">
-                  <div className="pl-0 md:pl-20 pt-4 border-t border-border">
-                    <p className="text-lg text-foreground font-medium mb-4">{pillar.subtitle}</p>
-                    {pillar.description && (
-                      <p className="text-muted-foreground mb-3">{pillar.description}</p>
-                    )}
-                    <ul className="space-y-2 mb-6">
-                      {pillar.points.map((point, i) => (
-                        <li key={i} className="text-muted-foreground flex items-start gap-3">
-                          <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="p-4 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-xl">
-                      <p className="text-gold font-bold text-lg mb-1">
-                        👉 {pillar.result}
-                      </p>
-                      <p className="text-foreground">
-                        {pillar.resultDetail}
-                      </p>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </motion.div>
-          ))}
-        </Accordion>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 md:px-8 pb-6">
+                      <div className="pl-0 md:pl-20 pt-4 border-t border-border">
+                        <p className="text-lg text-foreground font-medium mb-4">{pillar.subtitle}</p>
+                        {pillar.description && (
+                          <p className="text-muted-foreground mb-3">{pillar.description}</p>
+                        )}
+                        <ul className="space-y-2 mb-6">
+                          {pillar.points.map((point, i) => (
+                            <li key={i} className="text-muted-foreground flex items-start gap-3">
+                              <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="p-4 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-xl">
+                          <p className="text-gold font-bold text-lg mb-1">
+                            👉 {pillar.result}
+                          </p>
+                          <p className="text-foreground">
+                            {pillar.resultDetail}
+                          </p>
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Sidebar Image - 1 column */}
+          <div className="hidden lg:block">
+            <AnimatedSection delay={0.2}>
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="sticky top-24 rounded-2xl overflow-hidden shadow-2xl shadow-gold/20 border-2 border-gold/30"
+              >
+                <img 
+                  src={cantiereImage} 
+                  alt="Cantiere edile - il nostro lavoro quotidiano" 
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-gold font-bold text-lg mb-1">Il contesto reale</p>
+                  <p className="text-foreground text-sm">Dove le nostre tecniche vengono testate ogni giorno.</p>
+                </div>
+              </motion.div>
+            </AnimatedSection>
+          </div>
+        </div>
 
         {/* Final deliverables box */}
         <AnimatedSection delay={0.3}>
@@ -216,7 +244,7 @@ const VEPillarsSection = () => {
             initial={{ scale: 0.95 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto p-8 bg-card border-2 border-gold rounded-2xl"
+            className="max-w-2xl mx-auto p-8 bg-card border-2 border-gold rounded-2xl shadow-xl shadow-gold/20"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               Dopo 90 giorni avrai:
@@ -249,7 +277,7 @@ const VEPillarsSection = () => {
               href="#candidatura"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-primary-foreground font-bold text-lg rounded-xl hover:bg-gold/90 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-primary-foreground font-bold text-lg rounded-xl hover:bg-gold/90 transition-colors shadow-lg shadow-gold/30"
             >
               Vuoi vedere se il programma fa per te?
               <ArrowRight className="w-5 h-5" />
