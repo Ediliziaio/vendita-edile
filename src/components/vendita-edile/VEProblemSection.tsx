@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
-import { AlertCircle, Target, TrendingDown, Users, Percent, Ban, Building2 } from "lucide-react";
-import { AnimatedSection } from "@/components/AnimatedSection";
+import { AlertCircle, Target, TrendingDown, Users, Percent, Ban, Building2, X } from "lucide-react";
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+
+// Tecniche obsolete integrate da VEOldTechniquesSection
+const obsoleteTechniques = [
+  { technique: "Fai più preventivi, chiudi di più", whyFails: "Il cliente vuole VALORE, non quantità." },
+  { technique: "Abbassa il prezzo per vincere", whyFails: "Corsa al ribasso = margini zero" },
+  { technique: "Sii aggressivo nella chiusura", whyFails: "Il cliente 2024 fugge dalla pressione." },
+  { technique: "Il prodotto si vende da solo", whyFails: "15 concorrenti vendono lo stesso prodotto." },
+  { technique: "Aspetta che il cliente richiami", whyFails: "Il 70% delle vendite va a chi fa follow-up." },
+  { technique: "I social portano clienti", whyFails: "I social portano CURIOSI, non contratti." }
+];
 
 const VEProblemSection = () => {
   const marketChanges = [
@@ -130,9 +140,41 @@ const VEProblemSection = () => {
           </motion.div>
         </AnimatedSection>
 
+        {/* Tecniche Obsolete - Integrato da VEOldTechniquesSection */}
+        <AnimatedSection delay={0.25}>
+          <h3 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-8">
+            LE TECNICHE CHE <span className="text-destructive">NON FUNZIONANO PIÙ</span>
+          </h3>
+        </AnimatedSection>
+
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
+          {obsoleteTechniques.map((item, index) => (
+            <StaggerItem key={index}>
+              <motion.div
+                whileHover={{ scale: 1.02, y: -3 }}
+                className="bg-card/50 backdrop-blur-sm border border-destructive/20 rounded-xl p-5 h-full"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center">
+                    <X className="w-4 h-4 text-destructive" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground mb-1 line-through opacity-70 text-sm">
+                      "{item.technique}"
+                    </h4>
+                    <p className="text-muted-foreground text-xs">
+                      {item.whyFails}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+
         {/* Real Problems - Consequences */}
         <AnimatedSection delay={0.3}>
-          <div className="bg-gradient-to-b from-navy-dark/80 to-navy/80 border border-gold/30 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-b from-navy-dark/80 to-navy/80 border border-gold/30 rounded-2xl p-6 md:p-8 mb-8 max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-6 h-6 text-gold" />
               <h4 className="text-xl font-semibold text-gold">
@@ -163,25 +205,15 @@ const VEProblemSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Final Punch - The Solution Tease */}
+        {/* Transition Hook - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.4}>
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="inline-block bg-navy-dark/80 border-2 border-gold/50 rounded-2xl p-6 md:p-8"
-            >
-              <p className="text-xl md:text-2xl text-foreground mb-3">
-                La buona notizia?
-              </p>
-              <p className="text-2xl md:text-3xl font-bold text-gold mb-4">
-                Chi capisce il nuovo gioco VINCE.
-              </p>
-              <p className="text-muted-foreground">
-                Chi continua con le vecchie regole... <span className="text-destructive font-semibold">sparisce.</span>
-              </p>
-            </motion.div>
+            <p className="text-lg text-muted-foreground mb-2">
+              Ma il problema vero non sono le tecniche sbagliate...
+            </p>
+            <p className="text-xl font-bold text-foreground">
+              Questi numeri non mentono. <span className="text-gold">Guarda la timeline completa...</span>
+            </p>
           </div>
         </AnimatedSection>
       </div>

@@ -243,11 +243,14 @@ const VEWhyWeCanSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Transition */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.7}>
           <div className="text-center">
+            <p className="text-lg text-muted-foreground mb-2">
+              Ora che sai CHI siamo...
+            </p>
             <p className="text-xl font-bold text-foreground">
-              Ora che sai <span className="text-primary">CHI</span> siamo, ecco <span className="text-primary">COSA</span> ottieni.
+              Ecco i <span className="text-primary">RISULTATI</span> che ottieni lavorando con noi.
             </p>
           </div>
         </AnimatedSection>

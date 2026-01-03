@@ -4,21 +4,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 
-// Vendita Edile Components
+// Vendita Edile Components - Nuovo ordine ottimizzato (da 17 a 13 sezioni)
 import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
 import VEProblemSection from "@/components/vendita-edile/VEProblemSection";
 import VEMarketTimelineSection from "@/components/vendita-edile/VEMarketTimelineSection";
 import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
-import VEOldTechniquesSection from "@/components/vendita-edile/VEOldTechniquesSection";
 import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
 import VEWhoWinsSection from "@/components/vendita-edile/VEWhoWinsSection";
 import VEWhyWeCanSection from "@/components/vendita-edile/VEWhyWeCanSection";
 import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
 import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
-import VESalesIsDifferentSection from "@/components/vendita-edile/VESalesIsDifferentSection";
 import VEPillarsSection from "@/components/vendita-edile/VEPillarsSection";
 import VEPricingSection from "@/components/vendita-edile/VEPricingSection";
-import VEForWhoSection from "@/components/vendita-edile/VEForWhoSection";
 import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
 import VEFAQSection from "@/components/vendita-edile/VEFAQSection";
 import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
@@ -62,23 +59,50 @@ const Index = () => {
       />
       <Navbar />
       <main className="overflow-hidden">
+        {/* FUNNEL OTTIMIZZATO - 14 sezioni (da 17) */}
+        
+        {/* 1. HOOK - Cattura attenzione */}
         <VEHeroSection />
+        
+        {/* 2. PROBLEMA - Il mercato è cambiato + tecniche obsolete (fuse) */}
         <VEProblemSection />
+        
+        {/* 3. DATI - Timeline con numeri ufficiali */}
         <VEMarketTimelineSection />
+        
+        {/* 4. IDENTIFICAZIONE - Quanti pain points riconosci? */}
         <VEPainPointsSection />
-        <VEOldTechniquesSection />
+        
+        {/* 5. COSTO - Quanto ti sta costando */}
         <VETrueCostSection />
+        
+        {/* 6. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
         <VEWhoWinsSection />
+        
+        {/* 7. CREDIBILITÀ - Perché possiamo insegnartelo */}
         <VEWhyWeCanSection />
+        
+        {/* 8. RISULTATI - Cosa ottieni */}
         <VEResultsSection />
+        
+        {/* 9. DIFFERENZIAZIONE - Affiancamento vs corsi */}
         <VEDifferentiatorSection />
-        <VESalesIsDifferentSection />
+        
+        {/* 10. METODO - I 5 pilastri */}
         <VEPillarsSection />
+        
+        {/* 11. PREZZO - Investimento e garanzia */}
         <VEPricingSection />
-        <VEForWhoSection />
+        
+        {/* 12. SELEZIONE - Chi accettiamo + processo (fuse) */}
         <VESelectionProcessSection />
+        
+        {/* 13. OBIEZIONI - FAQ */}
         <VEFAQSection />
+        
+        {/* 14. CTA FINALE */}
         <VEFinalCTASection />
+        
         <Footer />
       </main>
     </>

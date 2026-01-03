@@ -226,67 +226,16 @@ const VEFAQSection = () => {
           </Accordion>
         </AnimatedSection>
 
-        {/* Summary Box */}
+        {/* Transition - collegamento alla sezione finale */}
         <AnimatedSection delay={0.4} className="mt-16">
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            className="relative p-8 md:p-10 bg-gradient-to-br from-navy-light to-navy border border-gold/30 rounded-2xl overflow-hidden"
-          >
-            {/* Glow Effect */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-gold/10 rounded-full blur-3xl" />
-
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center">
-                RIASSUMIAMO
-              </h3>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                {summaryPoints.map((point, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-3 p-3 bg-navy/50 rounded-lg"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                    <div>
-                      <span className="text-white/60 text-sm">{point.label}:</span>
-                      <p className="text-white font-medium">{point.value}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="text-center space-y-4">
-                <div className="h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent mb-6" />
-                
-                <p className="text-xl md:text-2xl font-bold text-white">
-                  L'unica domanda rimasta:
-                </p>
-                <p className="text-gold text-lg md:text-xl font-semibold">
-                  Sei pronto a smettere di trovare scuse e iniziare a vendere?
-                </p>
-
-                <div className="pt-6">
-                  <motion.button
-                    onClick={handleCtaClick}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold to-gold-light text-navy font-bold text-lg rounded-xl shadow-lg shadow-gold/20 hover:shadow-gold/40 transition-all duration-300"
-                  >
-                    Candidati Ora
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
-                </div>
-
-                <p className="text-white/50 text-sm mt-4">
-                  Nessuna scusa. Solo decisioni.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          <div className="text-center">
+            <p className="text-xl md:text-2xl font-bold text-white mb-4">
+              L'unica domanda rimasta:
+            </p>
+            <p className="text-gold text-lg md:text-xl font-semibold">
+              Sei pronto a smettere di trovare scuse e iniziare a vendere?
+            </p>
+          </div>
         </AnimatedSection>
       </div>
 

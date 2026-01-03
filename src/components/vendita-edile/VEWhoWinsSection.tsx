@@ -44,12 +44,21 @@ const winnerProfile = [
   "Dorme la notte (senza ansia da fatturato)"
 ];
 
-const comparison = [
-  { you: "Rincorri i clienti", winner: "I clienti lo cercano" },
-  { you: "Competi sul prezzo", winner: "Vende valore" },
-  { you: "Subisci le obiezioni", winner: "Le previene" },
-  { you: "Speri che richiami", winner: "Ha un sistema" },
-  { you: "Improvvisa", winner: "Ha uno script" }
+// Tratti integrati da VESalesIsDifferentSection
+const losers = [
+  { trait: "Subisce la trattativa" },
+  { trait: "Accetta ogni cliente" },
+  { trait: "Compete sul prezzo" },
+  { trait: "Rincorre il cliente" },
+  { trait: "Va a sensazione" },
+];
+
+const winners = [
+  { trait: "GUIDA la trattativa" },
+  { trait: "FILTRA il cliente" },
+  { trait: "CREA valore percepito" },
+  { trait: "DECIDE il ritmo" },
+  { trait: "CONTROLLA i numeri" },
 ];
 
 const VEWhoWinsSection = () => {
@@ -77,9 +86,95 @@ const VEWhoWinsSection = () => {
           </h2>
         </AnimatedSection>
 
+        {/* TRUTH BLOCK - Integrato da VESalesIsDifferentSection */}
+        <AnimatedSection delay={0.15}>
+          <div className="max-w-2xl mx-auto mb-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="p-6 md:p-8 bg-card border-2 border-gold rounded-2xl text-center"
+            >
+              <div className="space-y-3 mb-6">
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  👉 La vendita edile <span className="text-destructive font-bold">NON</span> è marketing.
+                </p>
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  👉 <span className="text-destructive font-bold">NON</span> è motivazione.
+                </p>
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  👉 <span className="text-destructive font-bold">NON</span> è "mentalità positiva".
+                </p>
+              </div>
+              <div className="pt-6 border-t border-border">
+                <p className="text-2xl md:text-3xl font-black text-gold">
+                  È PSICOLOGIA. È PROCESSO. È CONTROLLO.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+
+        {/* Comparison Chi Perde vs Chi Vince - Integrato da VESalesIsDifferentSection */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-4xl mx-auto">
+          {/* Losers column */}
+          <AnimatedSection delay={0.2}>
+            <div className="p-6 md:p-8 bg-card border-2 border-destructive/30 rounded-2xl h-full">
+              <h3 className="text-xl font-bold text-destructive mb-6 text-center flex items-center justify-center gap-2">
+                <X className="w-6 h-6" />
+                CHI PERDE
+              </h3>
+              <StaggerContainer className="space-y-3" staggerDelay={0.08}>
+                {losers.map((item, index) => (
+                  <StaggerItem key={index}>
+                    <motion.div
+                      whileHover={{ x: -5 }}
+                      className="flex items-center gap-3 p-4 bg-destructive/5 rounded-xl"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0">
+                        <X className="w-4 h-4 text-destructive" />
+                      </div>
+                      <span className="text-lg text-muted-foreground">
+                        {item.trait}
+                      </span>
+                    </motion.div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
+          </AnimatedSection>
+
+          {/* Winners column */}
+          <AnimatedSection delay={0.3}>
+            <div className="p-6 md:p-8 bg-card border-2 border-gold rounded-2xl h-full">
+              <h3 className="text-xl font-bold text-gold mb-6 text-center flex items-center justify-center gap-2">
+                <Check className="w-6 h-6" />
+                CHI VINCE
+              </h3>
+              <StaggerContainer className="space-y-3" staggerDelay={0.08}>
+                {winners.map((item, index) => (
+                  <StaggerItem key={index}>
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-3 p-4 bg-gold/10 rounded-xl"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 text-gold" />
+                      </div>
+                      <span className="text-lg text-foreground font-medium">
+                        {item.trait}
+                      </span>
+                    </motion.div>
+                  </StaggerItem>
+                ))}
+              </StaggerContainer>
+            </div>
+          </AnimatedSection>
+        </div>
+
         {/* New Paradigm Table */}
-        <AnimatedSection delay={0.2}>
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8 mt-12">
+        <AnimatedSection delay={0.35}>
+          <h3 className="text-2xl font-bold text-center text-foreground mb-8">
             Il <span className="text-primary">Nuovo Paradigma</span> — 5 Principi
           </h3>
         </AnimatedSection>
@@ -125,10 +220,10 @@ const VEWhoWinsSection = () => {
         </StaggerContainer>
 
         {/* Winner Profile Box */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection delay={0.4}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-3xl p-8 md:p-12 mb-16"
+            className="max-w-3xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-3xl p-8 md:p-12 mb-12"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <Trophy className="w-8 h-8 text-primary" />
@@ -152,56 +247,14 @@ const VEWhoWinsSection = () => {
           </motion.div>
         </AnimatedSection>
 
-        {/* Comparison Table */}
-        <AnimatedSection delay={0.4}>
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-            <span className="text-destructive">Tu</span> vs. <span className="text-primary">Chi Vince</span>
-          </h3>
-          
-          <div className="max-w-3xl mx-auto bg-card border border-border rounded-2xl overflow-hidden mb-12">
-            {/* Header */}
-            <div className="grid grid-cols-2 bg-muted/50">
-              <div className="p-4 text-center font-bold text-destructive border-r border-border">
-                TU OGGI
-              </div>
-              <div className="p-4 text-center font-bold text-primary">
-                CHI VINCE
-              </div>
-            </div>
-            
-            {/* Rows */}
-            {comparison.map((item, index) => (
-              <div key={index} className="grid grid-cols-2 border-t border-border">
-                <div className="p-4 flex items-center gap-2 border-r border-border">
-                  <X className="w-4 h-4 text-destructive flex-shrink-0" />
-                  <span className="text-muted-foreground text-sm">{item.you}</span>
-                </div>
-                <div className="p-4 flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-foreground text-sm font-medium">{item.winner}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-
-        {/* Key Question */}
+        {/* Transition - collegamento alla sezione successiva */}
         <AnimatedSection delay={0.5}>
-          <div className="text-center mb-8">
-            <p className="text-xl md:text-2xl font-bold text-foreground">
-              Cosa sanno <span className="text-primary">loro</span> che tu <span className="text-destructive">non sai</span>?
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Transition */}
-        <AnimatedSection delay={0.6}>
           <div className="text-center">
-            <p className="text-lg text-muted-foreground">
-              E qui entriamo in gioco noi.
+            <p className="text-lg text-muted-foreground mb-2">
+              Cosa sanno <span className="text-primary font-semibold">loro</span> che tu <span className="text-destructive font-semibold">non sai</span>?
             </p>
-            <p className="text-xl font-bold text-foreground mt-2">
-              Perché possiamo insegnartelo. E sai <span className="text-primary">perché</span>?
+            <p className="text-xl font-bold text-foreground">
+              Noi lo sappiamo perché lo <span className="text-primary">FACCIAMO</span> ogni giorno...
             </p>
           </div>
         </AnimatedSection>

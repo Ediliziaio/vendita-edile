@@ -112,40 +112,7 @@ const VEHeroSection = () => {
           ma con un <span className="text-gold font-bold">SISTEMA diverso.</span>
         </motion.p>
 
-        {/* Market Context Box */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="bg-navy-dark/90 border-2 border-destructive/50 rounded-xl p-5 md:p-6 mb-6 max-w-3xl mx-auto"
-        >
-          <p className="text-sm font-bold text-destructive uppercase tracking-wider text-center mb-3">
-            2024-2025: I NUMERI DEL CROLLO (Fonte: ANCE/ISTAT)
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-sm">
-            <div>
-              <p className="text-2xl font-black text-destructive">-22%</p>
-              <p className="text-muted-foreground text-xs">Investimenti recupero</p>
-            </div>
-            <div>
-              <p className="text-2xl font-black text-destructive">-30%</p>
-              <p className="text-muted-foreground text-xs">Manut. prevista 2025</p>
-            </div>
-            <div>
-              <p className="text-2xl font-black text-destructive">-5,3%</p>
-              <p className="text-muted-foreground text-xs">Settore costruzioni</p>
-            </div>
-            <div>
-              <p className="text-2xl font-black text-orange-500">69,9%</p>
-              <p className="text-muted-foreground text-xs">Difficoltà assunzioni</p>
-            </div>
-          </div>
-          <p className="text-center text-foreground mt-4 text-sm">
-            Chi vendeva "a sensazione" oggi è in crisi. <span className="text-gold font-semibold">Chi ha un SISTEMA sta dominando.</span>
-          </p>
-        </motion.div>
-
-        {/* Verità Scomoda Box */}
+        {/* Verità Scomoda Box - rimosso Market Context Box (duplicato in Timeline) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
