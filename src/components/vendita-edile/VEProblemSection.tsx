@@ -79,7 +79,7 @@ const VEProblemSection = () => {
               </span>
             </motion.div>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-4">
               Il mercato dell'edilizia è stato <span className="text-destructive">STRAVOLTO</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -97,7 +97,7 @@ const VEProblemSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-navy-dark/50 border border-gold/30 rounded-xl p-5 overflow-hidden group hover:border-gold/50 transition-colors"
+              className="relative bg-navy-dark/50 border border-gold/30 rounded-xl p-4 md:p-5 overflow-hidden group hover:border-gold/50 transition-colors"
             >
               <div className="relative z-10">
                 <div className="flex items-start gap-4 mb-3">
@@ -132,7 +132,7 @@ const VEProblemSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/50 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto text-center"
+            className="bg-gradient-to-r from-gold/10 via-gold/20 to-gold/10 border-2 border-gold/50 rounded-2xl p-4 md:p-6 lg:p-8 mb-12 max-w-3xl mx-auto text-center"
           >
             <Building2 className="w-10 h-10 text-gold mx-auto mb-4" />
             <p className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -161,7 +161,7 @@ const VEProblemSection = () => {
           </h3>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 max-w-5xl mx-auto">
           {obsoleteTechniques.map((item, index) => (
             <StaggerItem key={index}>
               <motion.div

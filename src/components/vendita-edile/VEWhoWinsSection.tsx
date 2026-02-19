@@ -94,7 +94,7 @@ const VEWhoWinsSection = () => {
 
         {/* Headline */}
         <AnimatedSection delay={0.1}>
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-foreground">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
             CHI VINCE OGGI IN EDILIZIA
             <span className="block text-gold text-2xl md:text-3xl mt-2">(E cosa fanno di diverso da te)</span>
           </h2>
@@ -237,7 +237,7 @@ const VEWhoWinsSection = () => {
         <AnimatedSection delay={0.4}>
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="max-w-3xl mx-auto bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30 rounded-3xl p-8 md:p-12 mb-12"
+            className="max-w-3xl mx-auto bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30 rounded-3xl p-6 md:p-8 lg:p-12 mb-12"
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <Trophy className="w-8 h-8 text-gold" />

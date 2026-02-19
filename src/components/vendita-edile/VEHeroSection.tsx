@@ -60,10 +60,10 @@ const VEHeroSection = () => {
           <motion.div 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-destructive border-2 border-destructive rounded-lg shadow-lg shadow-destructive/30"
+            className="inline-flex items-center gap-2 px-3 py-2 md:px-5 md:py-2.5 bg-destructive border-2 border-destructive rounded-lg shadow-lg shadow-destructive/30"
           >
-            <AlertTriangle className="w-5 h-5 text-white animate-pulse" />
-            <span className="text-white text-sm md:text-base font-bold uppercase tracking-wide">
+            <AlertTriangle className="w-4 h-4 md:w-5 md:h-5 text-white animate-pulse" />
+            <span className="text-white text-xs md:text-sm font-bold uppercase tracking-wide">
               🛑 FERMATI. Leggi questo prima di perdere un altro cliente.
             </span>
           </motion.div>
@@ -74,7 +74,7 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center text-foreground mb-4 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center text-foreground mb-4 leading-tight"
         >
           In questo momento, mentre leggi,
           <br />
@@ -100,12 +100,12 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-card/95 backdrop-blur-md border-2 border-secondary/70 rounded-xl p-6 md:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-secondary/30"
+          className="bg-card/95 backdrop-blur-md border-2 border-secondary/70 rounded-xl p-4 md:p-6 lg:p-8 mb-10 max-w-3xl mx-auto shadow-2xl shadow-secondary/30"
         >
           <motion.p 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3"
           >
             €30.000 – €50.000 al mese.
           </motion.p>
@@ -138,7 +138,7 @@ const VEHeroSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
                 whileHover={{ scale: 1.02, borderColor: 'hsl(var(--gold))' }}
-                className="flex items-start gap-3 bg-card/90 backdrop-blur-md border border-border rounded-lg p-4 transition-all duration-300 cursor-default"
+                className="flex items-start gap-3 bg-card/90 backdrop-blur-md border border-border rounded-lg p-3 md:p-4 transition-all duration-300 cursor-default"
               >
                 <div className="w-5 h-5 rounded border-2 border-secondary bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3 h-3 text-secondary" />
@@ -182,7 +182,7 @@ const VEHeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="flex flex-wrap justify-center gap-6 md:gap-10 mb-10"
+          className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-6 lg:gap-10 mb-10"
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
@@ -228,14 +228,14 @@ const VEHeroSection = () => {
               size="lg"
               variant="gold"
               onClick={handleCtaClick}
-              className="text-lg md:text-xl px-10 py-7 font-bold shadow-2xl shadow-gold/40 hover:shadow-gold/60 transition-all duration-300"
+              className="text-base md:text-lg lg:text-xl px-6 py-5 md:px-10 md:py-7 font-bold shadow-2xl shadow-gold/40 hover:shadow-gold/60 transition-all duration-300"
             >
               Scopri se Qualifichi (2 minuti)
             </Button>
           </motion.div>
           
           <div className="flex flex-col items-center gap-2 mt-4">
-            <p className="text-sm text-foreground/70">
+            <p className="text-xs md:text-sm text-foreground/70">
               📞 Solo <span className="text-secondary font-semibold">3 posti</span> per gennaio • Risposta entro 48h
             </p>
             <div className="flex items-center gap-2 text-sm text-green-400">

@@ -46,7 +46,7 @@ const VEGuaranteeSection = () => {
               className="p-6 md:p-10 bg-card border-2 border-gold/50 rounded-2xl relative"
             >
               {/* Sigillo */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 md:w-24 md:h-24">
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
@@ -81,8 +81,8 @@ const VEGuaranteeSection = () => {
                 ))}
               </ul>
 
-              <motion.div 
-                className="p-6 md:p-8 bg-gold/10 border-2 border-gold rounded-xl mb-6"
+            <motion.div 
+                className="p-4 md:p-6 lg:p-8 bg-gold/10 border-2 border-gold rounded-xl mb-6"
                 whileHover={{ scale: 1.02 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

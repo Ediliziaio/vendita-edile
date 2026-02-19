@@ -92,7 +92,7 @@ const VEResultsSection = () => {
               <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
+              <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 €30-{Math.round(commesse.count)}K
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Nuove commesse</p>
@@ -115,7 +115,7 @@ const VEResultsSection = () => {
               <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Target className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
+              <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 +30-{Math.round(fatturato.count)}%
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Fatturato</p>
@@ -138,7 +138,7 @@ const VEResultsSection = () => {
               <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-7 h-7 text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
+              <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gold mb-2 drop-shadow-[0_0_15px_hsl(var(--gold)/0.3)]">
                 -60/{Math.round(tempo.count)}%
               </div>
               <p className="text-foreground font-semibold text-lg mb-1">Tempo perso</p>
@@ -169,7 +169,7 @@ const VEResultsSection = () => {
         <AnimatedSection delay={0.45}>
           <div className="text-center mb-8">
             <p className="text-muted-foreground text-sm uppercase tracking-wider mb-6">Hanno già lavorato con noi</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-12">
               {clientLogos.map((logo, index) => (
                 <motion.div
                   key={index}
@@ -183,7 +183,7 @@ const VEResultsSection = () => {
                   <img 
                     src={logo.src} 
                     alt={logo.alt}
-                    className="h-12 md:h-16 w-auto object-contain"
+                    className="h-10 md:h-12 lg:h-16 w-auto object-contain"
                   />
                 </motion.div>
               ))}

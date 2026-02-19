@@ -92,7 +92,7 @@ const Navbar = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="container-narrow flex items-center justify-between h-20 px-6">
+        <div className="container-narrow flex items-center justify-between h-16 md:h-20 px-4 md:px-6">
           {/* Logo */}
           <motion.button
             onClick={() => handleSmoothScroll("/")}

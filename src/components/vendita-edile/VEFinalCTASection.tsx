@@ -42,7 +42,7 @@ const VEFinalCTASection = () => {
             >
               Conclusione
             </motion.span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6">
               Vendita Edile non è formazione.
             </h2>
           </AnimatedSection>
@@ -68,7 +68,7 @@ const VEFinalCTASection = () => {
                 size="lg"
                 variant="gold"
                 onClick={handleCtaClick}
-                className="text-xl px-12 py-8 font-bold shadow-2xl shadow-gold/50 hover:shadow-gold/70 transition-all duration-300"
+                className="text-base px-8 py-6 md:text-xl md:px-12 md:py-8 font-bold shadow-2xl shadow-gold/50 hover:shadow-gold/70 transition-all duration-300"
               >
                 <span>Richiedi la Valutazione Strategica</span>
                 <motion.div
@@ -82,7 +82,7 @@ const VEFinalCTASection = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.6}>
-            <div className="mt-12 flex flex-wrap justify-center gap-6">
+            <div className="mt-12 flex flex-wrap justify-center gap-3 md:gap-6">
               {trustBadges.map((badge, index) => (
                 <motion.span 
                   key={index}
