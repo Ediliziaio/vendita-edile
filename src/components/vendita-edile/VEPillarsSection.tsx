@@ -145,9 +145,9 @@ const VEPillarsSection = () => {
                     value={`pillar-${index}`}
                     className="bg-card border-2 border-border hover:border-gold/50 transition-colors rounded-2xl overflow-hidden"
                   >
-                    <AccordionTrigger className="px-6 md:px-8 py-6 hover:no-underline hover:bg-muted/50 transition-colors">
+                    <AccordionTrigger className="px-4 py-4 md:px-6 lg:px-8 md:py-6 hover:no-underline hover:bg-muted/50 transition-colors">
                       <div className="flex items-center gap-4 md:gap-6 w-full">
-                        <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gold/20 flex items-center justify-center">
+                        <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl bg-gold/20 flex items-center justify-center">
                           <pillar.icon className="w-6 h-6 md:w-7 md:h-7 text-gold" />
                         </div>
                         <div className="text-left flex-1">
@@ -168,7 +168,7 @@ const VEPillarsSection = () => {
                         </div>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 md:px-8 pb-6">
+                    <AccordionContent className="px-4 md:px-6 lg:px-8 pb-6">
                       <div className="pl-0 md:pl-20 pt-4 border-t border-border">
                         <p className="text-lg text-foreground font-medium mb-4">{pillar.subtitle}</p>
                         {pillar.description && (
@@ -226,7 +226,7 @@ const VEPillarsSection = () => {
             initial={{ scale: 0.95 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-2xl mx-auto p-8 bg-card border-2 border-gold rounded-2xl shadow-xl shadow-gold/20"
+            className="max-w-2xl mx-auto p-5 md:p-8 bg-card border-2 border-gold rounded-2xl shadow-xl shadow-gold/20"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
               Dopo 90 giorni avrai:
@@ -238,7 +238,7 @@ const VEPillarsSection = () => {
                     <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-gold" />
                     </div>
-                    <span className="text-lg text-foreground">{item}</span>
+                    <span className="text-base md:text-lg text-foreground">{item}</span>
                   </div>
                 </StaggerItem>
               ))}

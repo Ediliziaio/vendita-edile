@@ -148,16 +148,16 @@ const VEPricingSection = () => {
           <div className="max-w-xl mx-auto">
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-8 md:p-12 bg-card border-2 border-gold rounded-2xl text-center relative overflow-hidden"
+              className="p-6 md:p-8 lg:p-12 bg-card border-2 border-gold rounded-2xl text-center relative overflow-hidden"
             >
               {/* Savings Badge */}
               <motion.div 
                 ref={savingsRef}
-                className="absolute top-4 right-4 px-3 py-2 bg-green-500/20 border border-green-500/50 rounded-full"
+                className="absolute top-2 right-2 md:top-4 md:right-4 px-2 py-1 md:px-3 md:py-2 bg-green-500/20 border border-green-500/50 rounded-full"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <span className="text-sm font-bold text-green-400">RISPARMI {savingsAnimated}</span>
+                <span className="text-xs md:text-sm font-bold text-green-400">RISPARMI {savingsAnimated}</span>
               </motion.div>
 
               <h3 className="text-lg font-semibold text-muted-foreground mb-6 uppercase tracking-wider">
@@ -173,7 +173,7 @@ const VEPricingSection = () => {
 
               {/* Actual price */}
               <div className="mb-6">
-                <span className="text-5xl md:text-7xl font-black text-gold">
+                <span className="text-4xl md:text-5xl lg:text-7xl font-black text-gold">
                   €{actualPrice.toLocaleString("it-IT")}
                 </span>
               </div>

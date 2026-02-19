@@ -92,14 +92,14 @@ const VESelectionProcessSection = () => {
         </AnimatedSection>
 
         {/* Chi Accettiamo / Chi Rifiutiamo - Integrato da VEForWhoSection */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
           {/* We accept */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-gold/10 border-2 border-gold rounded-2xl"
+            className="p-4 md:p-6 bg-gold/10 border-2 border-gold rounded-2xl"
           >
             <h3 className="text-lg font-bold text-gold mb-4 flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center">
@@ -133,7 +133,7 @@ const VESelectionProcessSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="p-6 bg-muted/30 border border-destructive/20 rounded-2xl"
+            className="p-4 md:p-6 bg-muted/30 border border-destructive/20 rounded-2xl"
           >
             <h3 className="text-lg font-bold text-muted-foreground mb-4 flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center">
@@ -171,7 +171,7 @@ const VESelectionProcessSection = () => {
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
-                className="text-5xl md:text-6xl font-black text-gold mb-2"
+                className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -195,7 +195,7 @@ const VESelectionProcessSection = () => {
         </AnimatedSection>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {steps.map((step, index) => (
               <motion.div
                 key={index}

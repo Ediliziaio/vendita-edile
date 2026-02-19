@@ -202,7 +202,7 @@ const VETrueCostSection = () => {
 
         {/* Headline */}
         <AnimatedSection delay={0.1}>
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-foreground">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
             IL VERO COSTO DI CONTINUARE COSÌ
             <span className="block text-gold text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
@@ -214,7 +214,7 @@ const VETrueCostSection = () => {
         {/* Loss Timeline */}
         <AnimatedSection delay={0.2}>
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {lossTimeline.map((item, index) => (
                 <motion.div
                   key={index}
@@ -242,7 +242,7 @@ const VETrueCostSection = () => {
           </h3>
         </AnimatedSection>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-16">
+        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
           {hiddenCosts.map((item, index) => (
             <StaggerItem key={index}>
               <motion.div
@@ -281,7 +281,7 @@ const VETrueCostSection = () => {
               className="bg-muted/50 border border-border rounded-2xl p-6 mb-8"
             >
               <p className="text-sm font-bold text-muted-foreground mb-4 text-center">PARAMETRI DI PARTENZA</p>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
                 <div>
                   <p className="text-2xl font-black text-foreground">{infissiExample.trattativeMese}</p>
                   <p className="text-xs text-muted-foreground">Trattative/mese</p>
@@ -319,7 +319,7 @@ const VETrueCostSection = () => {
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="bg-destructive/10 rounded-xl p-3">
-                    <p className="text-3xl font-black text-foreground">{venditePrima}</p>
+                    <p className="text-2xl md:text-3xl font-black text-foreground">{venditePrima}</p>
                     <p className="text-sm text-muted-foreground">vendite/mese</p>
                   </div>
                   <div className="flex items-center justify-center gap-2">
@@ -327,7 +327,7 @@ const VETrueCostSection = () => {
                     <span className="text-muted-foreground">€{fatturatoPrima.toLocaleString('it-IT')} fatturato</span>
                   </div>
                   <div className="bg-destructive/20 rounded-xl p-4">
-                    <p className="text-4xl font-black text-destructive">€{marginePrima.toLocaleString('it-IT')}</p>
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-black text-destructive">€{marginePrima.toLocaleString('it-IT')}</p>
                     <p className="text-sm text-muted-foreground">margine/mese</p>
                   </div>
                 </div>
@@ -345,7 +345,7 @@ const VETrueCostSection = () => {
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="bg-gold/10 rounded-xl p-3">
-                    <p className="text-3xl font-black text-foreground">{venditeDopo}</p>
+                    <p className="text-2xl md:text-3xl font-black text-foreground">{venditeDopo}</p>
                     <p className="text-sm text-muted-foreground">vendite/mese</p>
                   </div>
                   <div className="flex items-center justify-center gap-2">
@@ -353,7 +353,7 @@ const VETrueCostSection = () => {
                     <span className="text-muted-foreground">€{fatturatoDopo.toLocaleString('it-IT')} fatturato</span>
                   </div>
                   <div className="bg-gold/20 rounded-xl p-4">
-                    <p className="text-4xl font-black text-gold">€{margineDopo.toLocaleString('it-IT')}</p>
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-black text-gold">€{margineDopo.toLocaleString('it-IT')}</p>
                     <p className="text-sm text-muted-foreground">margine/mese</p>
                   </div>
                 </div>
@@ -366,12 +366,12 @@ const VETrueCostSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-3 bg-gold/20 border-2 border-gold rounded-full px-8 py-4">
-                <span className="text-lg text-foreground font-bold">DIFFERENZA:</span>
-                <span className="text-3xl md:text-4xl font-black text-gold" ref={extraRef}>
+              <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gold/20 border-2 border-gold rounded-2xl sm:rounded-full px-6 py-4 sm:px-8">
+                <span className="text-base md:text-lg text-foreground font-bold">DIFFERENZA:</span>
+                <span className="text-2xl md:text-3xl lg:text-4xl font-black text-gold" ref={extraRef}>
                   +€{extraCount.toLocaleString('it-IT')}
                 </span>
-                <span className="text-lg text-foreground font-bold">/mese EXTRA</span>
+                <span className="text-base md:text-lg text-foreground font-bold">/mese EXTRA</span>
               </div>
             </motion.div>
 

@@ -65,7 +65,7 @@ const VEWhyWeCanSection = () => {
 
         {/* Headline */}
         <AnimatedSection delay={0.1}>
-          <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-foreground">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
             PERCHÉ NOI POSSIAMO INSEGNARTELO
             <span className="block text-primary text-2xl md:text-3xl mt-2">(E gli altri no)</span>
           </h2>
@@ -96,12 +96,12 @@ const VEWhyWeCanSection = () => {
           </AnimatedSection>
 
           {/* Credentials Grid */}
-          <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
             {credentials.map((item, index) => (
               <StaggerItem key={index}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center h-full hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
+                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-3 md:p-4 text-center h-full hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
                     <item.icon className="w-5 h-5 text-primary" />
@@ -200,13 +200,13 @@ const VEWhyWeCanSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <div className="p-4 flex items-center gap-3 border-r border-border">
-                  <X className="w-5 h-5 text-destructive flex-shrink-0" />
-                  <span className="text-muted-foreground text-sm">{item.guru}</span>
+                <div className="p-3 md:p-4 flex items-center gap-3 border-r border-border">
+                  <X className="w-4 h-4 md:w-5 md:h-5 text-destructive flex-shrink-0" />
+                  <span className="text-muted-foreground text-xs md:text-sm">{item.guru}</span>
                 </div>
-                <div className="p-4 flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground text-sm font-medium">{item.us}</span>
+                <div className="p-3 md:p-4 flex items-center gap-3">
+                  <Check className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground text-xs md:text-sm font-medium">{item.us}</span>
                 </div>
               </motion.div>
             ))}

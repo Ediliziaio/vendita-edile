@@ -45,14 +45,14 @@ const VEDifferentiatorSection = () => {
 
         {/* Tags */}
         <AnimatedSection delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <span className="px-4 py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-sm font-semibold uppercase">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+            <span className="px-3 py-1.5 md:px-4 md:py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-xs md:text-sm font-semibold uppercase">
               Non è un corso
             </span>
-            <span className="px-4 py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-sm font-semibold uppercase">
+            <span className="px-3 py-1.5 md:px-4 md:py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-xs md:text-sm font-semibold uppercase">
               Non è consulenza
             </span>
-            <span className="px-4 py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-sm font-semibold uppercase">
+            <span className="px-3 py-1.5 md:px-4 md:py-2 bg-destructive/20 border border-destructive/40 rounded-full text-destructive text-xs md:text-sm font-semibold uppercase">
               Non è coaching
             </span>
           </div>
@@ -131,7 +131,7 @@ const VEDifferentiatorSection = () => {
             <img 
               src={teamImage} 
               alt="Il nostro team - imprenditori edili, non formatori" 
-              className="w-full h-64 md:h-80 object-cover"
+              className="w-full h-48 md:h-64 lg:h-80 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -149,7 +149,7 @@ const VEDifferentiatorSection = () => {
           className="relative mb-12"
         >
           <div className="absolute inset-0 bg-gold/20 blur-xl rounded-3xl" />
-          <div className="relative p-8 md:p-10 bg-background border-2 border-gold rounded-2xl text-center shadow-xl">
+          <div className="relative p-5 md:p-8 lg:p-10 bg-background border-2 border-gold rounded-2xl text-center shadow-xl">
             <div className="inline-block px-4 py-1 bg-gold/20 rounded-full text-gold text-sm font-bold mb-6 uppercase tracking-wider">
               Vendita Edile® — Programma 90 Giorni
             </div>

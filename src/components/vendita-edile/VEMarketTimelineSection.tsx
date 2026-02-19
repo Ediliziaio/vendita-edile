@@ -152,7 +152,7 @@ const VEMarketTimelineSection = () => {
 
         {/* Headline */}
         <AnimatedSection delay={0.1}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-foreground mb-3">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center text-foreground mb-3">
             DAL BOOM AL CROLLO:
             <span className="text-gold"> 10 ANNI DI EDILIZIA ITALIANA</span>
           </h2>
@@ -162,7 +162,7 @@ const VEMarketTimelineSection = () => {
         </AnimatedSection>
 
         {/* Stats Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
           {statsBoxes.map((box, index) => (
             <motion.div
               key={index}
@@ -171,7 +171,7 @@ const VEMarketTimelineSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className={`bg-navy-dark/80 border-2 rounded-2xl p-6 ${
+              className={`bg-navy-dark/80 border-2 rounded-2xl p-4 md:p-6 ${
                 index === 0 ? "border-gold/50" : index === 1 ? "border-destructive/50" : "border-orange-500/50"
               }`}
             >
@@ -186,7 +186,7 @@ const VEMarketTimelineSection = () => {
               <div className="grid grid-cols-2 gap-3">
                 {box.stats.map((stat, statIndex) => (
                   <div key={statIndex} className="text-center">
-                    <p className="text-xl md:text-2xl font-black text-foreground">{stat.value}</p>
+                    <p className="text-lg md:text-xl lg:text-2xl font-black text-foreground">{stat.value}</p>
                     <p className="text-xs text-muted-foreground">{stat.label}</p>
                   </div>
                 ))}

@@ -38,7 +38,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy-dark border-t border-border">
-      <div className="container-narrow section-padding py-16">
+      <div className="container-narrow section-padding py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <motion.div

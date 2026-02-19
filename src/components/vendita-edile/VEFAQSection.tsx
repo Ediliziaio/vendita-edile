@@ -170,18 +170,18 @@ const VEFAQSection = () => {
                   value={`item-${index}`}
                   className="bg-navy-light/50 border border-white/10 rounded-xl overflow-hidden hover:border-gold/30 transition-all duration-300"
                 >
-                  <AccordionTrigger className="px-6 py-5 hover:no-underline group">
-                    <div className="flex items-center gap-4 text-left">
-                      <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
+                  <AccordionTrigger className="px-4 py-4 md:px-6 md:py-5 hover:no-underline group">
+                    <div className="flex items-center gap-3 md:gap-4 text-left">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0 group-hover:bg-gold/20 transition-colors">
                         <faq.icon className="w-5 h-5 text-gold" />
                       </div>
-                      <span className="text-lg md:text-xl font-semibold text-white group-hover:text-gold transition-colors">
+                      <span className="text-base md:text-lg lg:text-xl font-semibold text-white group-hover:text-gold transition-colors">
                         {faq.question}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <div className="pl-16 space-y-4">
+                  <AccordionContent className="px-4 md:px-6 pb-6">
+                    <div className="pl-0 md:pl-16 space-y-4">
                       {/* Answer Lines */}
                       <ul className="space-y-3">
                         {faq.answer.lines.map((line, lineIndex) => (
