@@ -16,6 +16,7 @@ import VEWhoWinsSection from "@/components/vendita-edile/VEWhoWinsSection";
 import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
 import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
 import VEPillarsSection from "@/components/vendita-edile/VEPillarsSection";
+import VECaseStudiesSection from "@/components/vendita-edile/VECaseStudiesSection";
 import VEPricingSection from "@/components/vendita-edile/VEPricingSection";
 import VEGuaranteeSection from "@/components/vendita-edile/VEGuaranteeSection";
 import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
@@ -81,6 +82,9 @@ const Index = () => {
         
         {/* 6. METODO - Il programma completo */}
         <VEPillarsSection />
+        
+        {/* 6b. CASI STUDIO E RECENSIONI */}
+        <VECaseStudiesSection />
         
         {/* 7. COSTO - Quanto ti sta costando */}
         <VETrueCostSection />
