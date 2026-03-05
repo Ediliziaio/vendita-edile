@@ -171,7 +171,7 @@ const VESelectionProcessSection = () => {
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
-                className="text-4xl md:text-5xl lg:text-6xl font-black text-gold mb-2"
+                className="text-3xl md:text-5xl lg:text-6xl font-black text-gold mb-2"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >

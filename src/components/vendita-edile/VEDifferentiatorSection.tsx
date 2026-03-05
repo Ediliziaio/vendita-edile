@@ -131,7 +131,7 @@ const VEDifferentiatorSection = () => {
             <img 
               src={teamImage} 
               alt="Il nostro team - imprenditori edili, non formatori" 
-              className="w-full h-48 md:h-64 lg:h-80 object-cover"
+              className="w-full h-40 md:h-64 lg:h-80 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/50 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">

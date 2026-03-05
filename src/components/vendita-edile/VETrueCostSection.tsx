@@ -305,7 +305,7 @@ const VETrueCostSection = () => {
                     CALCOLA IL TUO ROI
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border">
+                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-background border-border">
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-black text-foreground flex items-center gap-2">
                       <Calculator className="w-6 h-6 text-gold" />

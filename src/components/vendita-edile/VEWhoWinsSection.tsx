@@ -53,9 +53,9 @@ const VEWhoWinsSection = () => {
         </AnimatedSection>
 
         {/* Comparison */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-12 max-w-4xl mx-auto">
           <AnimatedSection delay={0.2}>
-            <div className="p-6 md:p-8 bg-card border border-destructive/30 rounded-2xl h-full">
+            <div className="p-4 md:p-8 bg-card border border-destructive/30 rounded-2xl h-full">
               <h3 className="text-xl font-bold text-destructive mb-6 text-center flex items-center justify-center gap-2">
                 <X className="w-6 h-6" />
                 CHI PERDE
@@ -67,7 +67,7 @@ const VEWhoWinsSection = () => {
                       <div className="w-8 h-8 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0">
                         <X className="w-4 h-4 text-destructive" />
                       </div>
-                      <span className="text-lg text-muted-foreground">{item.trait}</span>
+                      <span className="text-base md:text-lg text-muted-foreground">{item.trait}</span>
                     </motion.div>
                   </StaggerItem>
                 ))}
@@ -76,7 +76,7 @@ const VEWhoWinsSection = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
-            <div className="p-6 md:p-8 bg-card border-2 border-gold rounded-2xl h-full">
+            <div className="p-4 md:p-8 bg-card border-2 border-gold rounded-2xl h-full">
               <h3 className="text-xl font-bold text-gold mb-6 text-center flex items-center justify-center gap-2">
                 <Check className="w-6 h-6" />
                 CHI VINCE
@@ -88,7 +88,7 @@ const VEWhoWinsSection = () => {
                       <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
                         <Check className="w-4 h-4 text-gold" />
                       </div>
-                      <span className="text-lg text-foreground font-medium">{item.trait}</span>
+                      <span className="text-base md:text-lg text-foreground font-medium">{item.trait}</span>
                     </motion.div>
                   </StaggerItem>
                 ))}

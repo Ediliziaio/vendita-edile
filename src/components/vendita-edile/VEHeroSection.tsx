@@ -106,7 +106,7 @@ const VEHeroSection = () => {
           <motion.p 
             animate={{ scale: [1, 1.02, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3"
+            className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-secondary mb-3"
           >
             €30.000 – €50.000 al mese.
           </motion.p>
@@ -191,7 +191,7 @@ const VEHeroSection = () => {
             ref={aziende.ref}
           >
             <Users className="w-5 h-5 text-secondary" />
-            <span className="text-2xl md:text-3xl font-bold text-secondary">{Math.round(aziende.count)}+</span>
+            <span className="text-xl md:text-3xl font-bold text-secondary">{Math.round(aziende.count)}+</span>
             <span className="text-sm text-foreground/70">aziende affiancate</span>
           </motion.div>
           <motion.div 
@@ -200,7 +200,7 @@ const VEHeroSection = () => {
             ref={fatturato.ref}
           >
             <TrendingUp className="w-5 h-5 text-secondary" />
-            <span className="text-2xl md:text-3xl font-bold text-secondary">+€{fatturato.formattedValue}M</span>
+            <span className="text-xl md:text-3xl font-bold text-secondary">+€{fatturato.formattedValue}M</span>
             <span className="text-sm text-foreground/70">fatturato generato</span>
           </motion.div>
           <motion.div 
@@ -209,7 +209,7 @@ const VEHeroSection = () => {
             ref={rinnovi.ref}
           >
             <Shield className="w-5 h-5 text-secondary" />
-            <span className="text-2xl md:text-3xl font-bold text-secondary">{Math.round(rinnovi.count)}%</span>
+            <span className="text-xl md:text-3xl font-bold text-secondary">{Math.round(rinnovi.count)}%</span>
             <span className="text-sm text-foreground/70">tasso rinnovi</span>
           </motion.div>
         </motion.div>
