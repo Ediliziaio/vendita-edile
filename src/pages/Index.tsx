@@ -9,6 +9,7 @@ import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
 import VEMarketChangedSection from "@/components/vendita-edile/VEMarketChangedSection";
 import VEMarketTimelineSection from "@/components/vendita-edile/VEMarketTimelineSection";
 import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
+import VEOriginStorySection from "@/components/vendita-edile/VEOriginStorySection";
 import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
 import VEWhoWinsSection from "@/components/vendita-edile/VEWhoWinsSection";
 import VEWhyWeCanSection from "@/components/vendita-edile/VEWhyWeCanSection";
@@ -75,7 +76,10 @@ const Index = () => {
         {/* 4. IDENTIFICAZIONE - Quanti pain points riconosci? */}
         <VEPainPointsSection />
         
-        {/* 5. COSTO - Quanto ti sta costando */}
+        {/* 5. ORIGIN STORY - Chi siamo */}
+        <VEOriginStorySection />
+        
+        {/* 6. COSTO - Quanto ti sta costando */}
         <VETrueCostSection />
         
         {/* 6. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
