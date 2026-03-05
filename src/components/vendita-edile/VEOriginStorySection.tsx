@@ -5,12 +5,12 @@ import { useCountUp } from "@/hooks/useCountUp";
 import floProfili from "@/assets/flo-profili.jpg";
 
 const credentials = [
-  { icon: Calendar, value: "8", suffix: " anni", label: "con Marketing Edile", proof: "Acquisizione clienti solo a provvigione" },
-  { icon: TrendingUp, value: "400", suffix: "K", label: "venduti primi 3 mesi", proof: "I-Profili — senza sconto in fattura" },
-  { icon: Users, value: "47", suffix: "+", label: "aziende affiancate", proof: "Con risultati documentati" },
-  { icon: DollarSign, value: "0.8", suffix: "M+", label: "fatturato generato", proof: "Per i clienti del programma" },
-  { icon: Building2, value: "2", suffix: "", label: "aziende attive", proof: "Marketing Edile + I-Profili" },
-  { icon: Filter, value: "14", suffix: "%", label: "candidature accettate", proof: "Selezioniamo solo chi può ottenere risultati", prefix: "<" },
+  { icon: Calendar, value: "8", suffix: " anni", label: "nel settore edile", proof: "Marketing, vendita e gestione cantieri" },
+  { icon: DollarSign, value: "60", suffix: "M+", label: "fatturato generato", proof: "Per i partner di Marketing Edile", prefix: "€" },
+  { icon: TrendingUp, value: "2", suffix: "MLN+", label: "venduto dalla nostra azienda", proof: "I-Profili — senza sconto in fattura", prefix: "+" },
+  { icon: Users, value: "47", suffix: "+", label: "aziende edili seguite", proof: "In tutta Italia con risultati documentati" },
+  { icon: Building2, value: "2", suffix: "", label: "showroom attivi", proof: "Aziende operative oggi sul campo" },
+  { icon: Filter, value: "20", suffix: "%", label: "candidature accettate", proof: "Selezioniamo solo chi può ottenere risultati", prefix: "<" },
 ];
 
 const comparison = [
@@ -25,11 +25,11 @@ const comparison = [
 const VEOriginStorySection = () => {
   const counters = [
     useCountUp({ end: 8, duration: 2000 }),
-    useCountUp({ end: 400, duration: 2000 }),
-    useCountUp({ end: 47, duration: 2000 }),
-    useCountUp({ end: 0.8, duration: 2000, decimals: 1 }),
+    useCountUp({ end: 60, duration: 2000 }),
     useCountUp({ end: 2, duration: 2000 }),
-    useCountUp({ end: 14, duration: 2000 }),
+    useCountUp({ end: 47, duration: 2000 }),
+    useCountUp({ end: 2, duration: 2000 }),
+    useCountUp({ end: 20, duration: 2000 }),
   ];
 
   return (
@@ -143,12 +143,12 @@ const VEOriginStorySection = () => {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
-              PERCHÉ <span className="text-secondary">NOI</span> POSSIAMO INSEGNARTELO
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
+              Perché <span className="text-secondary">NOI</span> possiamo insegnartelo
               <span className="block text-secondary text-xl md:text-2xl mt-2">— e gli altri no</span>
             </h2>
             <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-              Non siamo formatori. Siamo imprenditori edili attivi — con un'agenzia, un'azienda di serramenti, e 8 anni di dati sul campo.
+              La differenza tra chi <strong className="text-foreground">PARLA</strong> di vendita e chi la <strong className="text-secondary">FA</strong> ogni giorno.
             </p>
           </AnimatedSection>
 
