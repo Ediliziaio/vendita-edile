@@ -79,21 +79,21 @@ const Index = () => {
         {/* 5. ORIGIN STORY - Chi siamo */}
         <VEOriginStorySection />
         
-        {/* 6. COSTO - Quanto ti sta costando */}
+        {/* 6. METODO - Il programma completo */}
+        <VEPillarsSection />
+        
+        {/* 7. COSTO - Quanto ti sta costando */}
         <VETrueCostSection />
         
-        {/* 6. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
+        {/* 8. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
         <VEWhoWinsSection />
         
         
-        {/* 8. RISULTATI - Cosa ottieni */}
+        {/* 9. RISULTATI - Cosa ottieni */}
         <VEResultsSection />
         
-        {/* 9. DIFFERENZIAZIONE - Affiancamento vs corsi */}
+        {/* 10. DIFFERENZIAZIONE - Affiancamento vs corsi */}
         <VEDifferentiatorSection />
-        
-        {/* 10. METODO - I 5 pilastri */}
-        <VEPillarsSection />
         
         {/* 11. VALUE STACK + PREZZO */}
         <VEPricingSection />
