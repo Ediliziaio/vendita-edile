@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin, Building2 } from "lucide-react";
+import logoImg from "@/assets/vendita-edile-logo.png";
 
 // Configura qui l'URL del tuo form esterno
 const EXTERNAL_FORM_URL = "https://example.typeform.com/to/your-form";
@@ -39,7 +40,7 @@ const Footer = () => {
   return (
     <footer className="bg-navy-dark border-t border-border">
       <div className="container-narrow section-padding py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -47,10 +48,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <button onClick={scrollToTop} className="mb-4">
-              <span className="text-2xl font-black text-foreground tracking-tight">
-                VENDITA <span className="text-gold">EDILE</span>
-                <span className="text-gold text-xs align-super">®</span>
-              </span>
+              <img src={logoImg} alt="VENDITA EDILE®" className="h-10 w-auto" />
             </button>
             <p className="text-muted-foreground text-sm leading-relaxed">
               L'unico programma di affiancamento vendite per imprenditori edili.
@@ -90,17 +88,33 @@ const Footer = () => {
             <h3 className="text-foreground font-semibold mb-4">Contatti</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
-                <Mail className="w-4 h-4 text-gold" />
-                <span>info@venditaedile.it</span>
+                <Mail className="w-4 h-4 text-gold shrink-0" />
+                <span>Amministrazione@domusgroupitalia.it</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
-                <Phone className="w-4 h-4 text-gold" />
-                <span>+39 XXX XXX XXXX</span>
+                <MapPin className="w-4 h-4 text-gold shrink-0" />
+                <span>Via Aurelio Saffi 29, 20123 Milano</span>
               </li>
-              <li className="flex items-center gap-3 text-muted-foreground text-sm">
-                <MapPin className="w-4 h-4 text-gold" />
-                <span>Italia</span>
+            </ul>
+          </motion.div>
+
+          {/* Dati Aziendali */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-foreground font-semibold mb-4">Dati Aziendali</h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-start gap-2">
+                <Building2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                <span>Domus Group S.r.l.</span>
               </li>
+              <li>P.IVA: 13132010961</li>
+              <li>Capitale Sociale: 20.000,00€</li>
+              <li>PEC: domusgroupsrl@legalmail.it</li>
+              <li>SDI: USAL8PV</li>
             </ul>
           </motion.div>
         </div>
@@ -113,7 +127,7 @@ const Footer = () => {
           className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} VENDITA EDILE®. Tutti i diritti riservati.
+            © {new Date().getFullYear()} Domus Group S.r.l. — VENDITA EDILE®. Tutti i diritti riservati.
           </p>
           <div className="flex items-center gap-6 text-sm">
             <button className="text-muted-foreground hover:text-gold transition-colors">
