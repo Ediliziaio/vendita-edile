@@ -1,13 +1,27 @@
 
 
-## Piano: Riscrivere Origin Story con versione più corta e fluida
+## Piano: Integrare la sezione Credibilità dentro la Origin Story
 
-### Modifica: `src/components/vendita-edile/VEOriginStorySection.tsx`
+L'utente vuole che tutto il contenuto attualmente in `VEWhyWeCanSection` (badge, headline, 6 stat card, blocco provvigione, tabella confronto) venga spostato **dentro** `VEOriginStorySection`, subito dopo la chiusura "Non un corso. Un sistema costruito sul campo."
 
-Riscrittura completa del contenuto `chapters` con la versione abbreviata fornita dall'utente. Da 5 blocchi separati a un **unico blocco narrativo continuo** (o al massimo 2-3 blocchi leggeri senza titoli pesanti), con:
+### 1. Modifica: `src/components/vendita-edile/VEOriginStorySection.tsx`
 
-- Titolo sezione: "Perché ho creato Vendita Edile® — e cosa mi ha insegnato partire da zero"
-- Testo fluido: presentazione Flo → Marketing Edile a provvigione → problema nella vendita → apertura I-Profili → €400K in 3 mesi + €2M in <2 anni → realtà operativa → costruzione del metodo → "Non un corso. Un sistema costruito sul campo."
-- Highlight aggiornato: €400K nei primi 3 mesi + oltre €2M in meno di 2 anni
-- Rimuovere la struttura multi-card: un singolo blocco narrativo con paragrafi consecutivi e un solo highlight box per i numeri
+Dopo il blocco di chiusura (riga 82), aggiungere tutto il contenuto di credibilità:
+- Badge "Non siamo formatori. Siamo imprenditori edili attivi."
+- Headline "PERCHÉ NOI POSSIAMO INSEGNARTELO — e gli altri no"
+- Sottotitolo descrittivo
+- Griglia 2x3 con le 6 stat card (con `useCountUp` e icone)
+- Blocco provvigione ("Il modello a provvigione non è un dettaglio. È la prova.")
+- Tabella confronto "Gli altri ti vendono vs. Noi facciamo" (6 righe)
+
+Importare le dipendenze necessarie: `motion`, `Shield`, `Check`, `X`, `Calendar`, `TrendingUp`, `Users`, `DollarSign`, `Building2`, `Filter`, `StaggerContainer`, `StaggerItem`, `useCountUp`.
+
+### 2. Modifica: `src/pages/Index.tsx`
+
+- Rimuovere l'import e l'uso di `VEWhyWeCanSection` (il suo contenuto è ora dentro Origin Story)
+- Aggiornare i commenti dell'ordine sezioni
+
+### 3. Opzionale: eliminare `src/components/vendita-edile/VEWhyWeCanSection.tsx`
+
+Il file non sarà più utilizzato.
 
