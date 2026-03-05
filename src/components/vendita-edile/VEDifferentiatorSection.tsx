@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { X, Check, Video, BookOpen, Phone, Users, Clock, HeartHandshake, MessageSquare, Target, User } from "lucide-react";
+import { X, Check, Video, BookOpen, Phone, Users, Clock, HeartHandshake, MessageSquare, Target } from "lucide-react";
+import teamMember1 from "@/assets/team-member-1.jpg";
+import teamMember2 from "@/assets/team-member-2.jpg";
+import teamMember3 from "@/assets/team-member-3.jpg";
+import teamMember4 from "@/assets/team-member-4.jpg";
+import teamMember5 from "@/assets/team-member-5.jpg";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 const VEDifferentiatorSection = () => {
@@ -123,27 +128,22 @@ const VEDifferentiatorSection = () => {
 
         {/* Team Members Grid */}
         <AnimatedSection delay={0.25}>
-          <div className="mb-12 max-w-3xl mx-auto">
-            <p className="text-center text-xl md:text-2xl font-bold text-foreground mb-2">
-              Questo messaggio potrebbe valere <span className="text-gold drop-shadow-[0_0_15px_hsl(var(--gold)/0.5)]">€100.000/€500.000+</span> per te quest'anno.
-            </p>
-            <p className="text-center text-gold font-bold text-lg mb-6">Il nostro team sul campo</p>
-            <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6" staggerDelay={0.1}>
+          <div className="mb-12 max-w-5xl mx-auto">
+            <p className="text-center text-gold font-bold text-xl md:text-2xl mb-8">Il nostro team sul campo</p>
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" staggerDelay={0.1}>
               {[
-                { name: "Membro 1", role: "Fondatore" },
-                { name: "Membro 2", role: "Sales Manager" },
-                { name: "Membro 3", role: "Consulente Operativo" },
-                { name: "Membro 4", role: "Account Manager" },
-                { name: "Membro 5", role: "Strategist" },
+                { name: "Membro 1", role: "Fondatore", description: "Ha costruito 3 aziende edili da zero. Ora guida il metodo.", photo: teamMember1 },
+                { name: "Membro 2", role: "Sales Manager", description: "Oltre 2.000 trattative chiuse nel settore serramenti.", photo: teamMember2 },
+                { name: "Membro 3", role: "Consulente Operativo", description: "Specializzato in ottimizzazione processi di vendita.", photo: teamMember3 },
+                { name: "Membro 4", role: "Account Manager", description: "Segue ogni cliente dal primo contatto alla chiusura.", photo: teamMember4 },
+                { name: "Membro 5", role: "Strategist", description: "Analizza i numeri e costruisce strategie su misura.", photo: teamMember5 },
               ].map((member, index) => (
                 <StaggerItem key={index}>
-                  <div className="flex flex-col items-center text-center p-4 bg-secondary/5 border border-secondary/20 rounded-2xl hover:border-secondary/40 transition-colors">
-                    {/* Sostituire l'icona User con: <img src={importedImage} alt={member.name} className="w-20 h-20 rounded-full object-cover" /> */}
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-secondary/30 to-secondary/10 border-2 border-secondary/30 flex items-center justify-center mb-3">
-                      <User className="w-10 h-10 text-secondary/60" />
-                    </div>
-                    <p className="text-foreground font-semibold text-sm">{member.name}</p>
-                    <p className="text-muted-foreground text-xs">{member.role}</p>
+                  <div className="flex flex-col items-center text-center p-5 bg-secondary/5 border border-secondary/20 rounded-2xl hover:border-secondary/40 transition-colors">
+                    <img src={member.photo} alt={member.name} className="w-28 h-28 rounded-full object-cover border-2 border-gold/30 mb-4" />
+                    <p className="text-foreground font-semibold text-base">{member.name}</p>
+                    <p className="text-gold text-sm font-medium mb-2">{member.role}</p>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{member.description}</p>
                   </div>
                 </StaggerItem>
               ))}
