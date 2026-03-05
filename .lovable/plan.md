@@ -1,27 +1,31 @@
 
 
-## Piano: Integrare la sezione Credibilità dentro la Origin Story
+## Piano: Redesign Origin Story con layout foto + testo e accenti oro
 
-L'utente vuole che tutto il contenuto attualmente in `VEWhyWeCanSection` (badge, headline, 6 stat card, blocco provvigione, tabella confronto) venga spostato **dentro** `VEOriginStorySection`, subito dopo la chiusura "Non un corso. Un sistema costruito sul campo."
+Ispirandosi al layout di Marketing Edile (screenshot di riferimento), la sezione Origin Story viene ridisegnata con:
 
-### 1. Modifica: `src/components/vendita-edile/VEOriginStorySection.tsx`
+### 1. Aggiungere la foto di Flo al progetto
+- Copiare `user-uploads://a6eb39d7-c720-4519-a6f5-488e33ddf583_2.JPG` in `src/assets/flo-profili.jpg`
 
-Dopo il blocco di chiusura (riga 82), aggiungere tutto il contenuto di credibilità:
-- Badge "Non siamo formatori. Siamo imprenditori edili attivi."
-- Headline "PERCHÉ NOI POSSIAMO INSEGNARTELO — e gli altri no"
-- Sottotitolo descrittivo
-- Griglia 2x3 con le 6 stat card (con `useCountUp` e icone)
-- Blocco provvigione ("Il modello a provvigione non è un dettaglio. È la prova.")
-- Tabella confronto "Gli altri ti vendono vs. Noi facciamo" (6 righe)
+### 2. Ridisegnare il blocco narrativo in `VEOriginStorySection.tsx`
 
-Importare le dipendenze necessarie: `motion`, `Shield`, `Check`, `X`, `Calendar`, `TrendingUp`, `Users`, `DollarSign`, `Building2`, `Filter`, `StaggerContainer`, `StaggerItem`, `useCountUp`.
+**Layout a 2 colonne (desktop):**
+- Colonna sinistra (~35%): foto di Flo con bordo arrotondato, sotto la foto: "**Flo**" + "Fondatore, Vendita Edile®" come didascalia
+- Colonna destra (~65%): titolo + testo narrativo
+- Su mobile: foto sopra, testo sotto (stack verticale)
 
-### 2. Modifica: `src/pages/Index.tsx`
+**Titolo aggiornato:** "Perché ho creato Marketing Edile — e perché lavoriamo solo a provvigione" → adattato per Vendita Edile: "Perché ho creato Vendita Edile® — e cosa mi ha insegnato partire da zero"
 
-- Rimuovere l'import e l'uso di `VEWhyWeCanSection` (il suo contenuto è ora dentro Origin Story)
-- Aggiornare i commenti dell'ordine sezioni
+**Testo con accenti oro (secondary/gold):**
+- Parole chiave evidenziate in oro invece che in bianco: "Flo", "8 anni", "lavoriamo solo a provvigione", "€400.000 di vendite", "2 milioni di vendite", "Vendita Edile®"
+- Il testo segue lo stesso stile del reference: paragrafi puliti, font regolare, highlights in oro
 
-### 3. Opzionale: eliminare `src/components/vendita-edile/VEWhyWeCanSection.tsx`
+**Chiusura con linea separatrice + frase finale in oro:**
+- Separatore orizzontale
+- "Oggi non portiamo solo clienti. **Portiamo clienti e il sistema per chiuderli.**" in oro
 
-Il file non sarà più utilizzato.
+### 3. Stat cards, provvigione block, comparison table
+- Restano sotto il blocco narrativo come già implementati
+- Aggiornare i colori dei numeri nelle stat card da `text-primary` (bianco) a `text-secondary` (oro) per coerenza con il nuovo stile
+- Aggiornare anche il blocco provvigione e la tabella confronto con accenti oro dove appropriato
 
