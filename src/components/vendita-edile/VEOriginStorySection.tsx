@@ -13,7 +13,7 @@ const chapters = [
     ],
   },
   {
-    label: "IL PRIMO CAPITOLO",
+    label: null,
     title: "Fine 2023: apro un'azienda di serramenti da zero.",
     paragraphs: [
       "Quando lo sconto del 75% sui serramenti è finito, ho fatto una cosa che molti mi hanno sconsigliato: ho aperto I-Profili, un'azienda di serramenti in Lombardia. Senza esperienza tecnica. Senza clienti. Da zero.",
@@ -27,7 +27,7 @@ const chapters = [
     },
   },
   {
-    label: "IL SECONDO CAPITOLO",
+    label: null,
     title: "La realtà che nessuno ti racconta.",
     paragraphs: [
       "Poi è arrivata l'altra faccia della medaglia.",
@@ -37,7 +37,7 @@ const chapters = [
     ],
   },
   {
-    label: "IL TERZO CAPITOLO",
+    label: null,
     title: "Il metodo.",
     paragraphs: [
       "Abbiamo smesso di rincorrere il fatturato e abbiamo iniziato a ossessionarci sul margine per commessa.",
@@ -46,7 +46,7 @@ const chapters = [
     ],
   },
   {
-    label: "IL QUARTO CAPITOLO",
+    label: null,
     title: "Dalla prova sul campo al programma.",
     paragraphs: [
       "Avevo due laboratori paralleli: Marketing Edile, con anni di dati su cosa porta clienti qualificati alle aziende edili, e la mia azienda di serramenti, con la prova diretta di cosa converte quei clienti in commesse ad alto margine.",
