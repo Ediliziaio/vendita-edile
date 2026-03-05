@@ -12,7 +12,7 @@ import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection"
 import VEOriginStorySection from "@/components/vendita-edile/VEOriginStorySection";
 import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
 import VEWhoWinsSection from "@/components/vendita-edile/VEWhoWinsSection";
-import VEWhyWeCanSection from "@/components/vendita-edile/VEWhyWeCanSection";
+
 import VEResultsSection from "@/components/vendita-edile/VEResultsSection";
 import VEDifferentiatorSection from "@/components/vendita-edile/VEDifferentiatorSection";
 import VEPillarsSection from "@/components/vendita-edile/VEPillarsSection";
@@ -85,8 +85,6 @@ const Index = () => {
         {/* 6. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
         <VEWhoWinsSection />
         
-        {/* 7. CREDIBILITÀ - Perché possiamo insegnartelo */}
-        <VEWhyWeCanSection />
         
         {/* 8. RISULTATI - Cosa ottieni */}
         <VEResultsSection />
