@@ -187,6 +187,9 @@ const VETrueCostSection = () => {
                 <Calculator className="w-4 h-4" />
                 ESEMPIO CONCRETO — Serramentista con 20 Trattative/Mese
               </span>
+              <p className="text-xs text-muted-foreground mt-2">
+                20 trattative/mese | 15% chiusura | €9.500 commessa | 40% margine | €9.000 investimento
+              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
