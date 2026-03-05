@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Building2, Wallet, Phone, Users, Award, Check, X, Shield, MapPin } from "lucide-react";
+import { Building2, Store, Wallet, Phone, Users, Award, Check, X, Shield, MapPin } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 import showroomImage from "@/assets/showroom.jpg";
 
 const credentials = [
-  { icon: Building2, label: "Showroom attivo", value: "350", suffix: "mq", proof: "Apriamo ogni mattina" },
+  { icon: Building2, label: "Capannone operativo", value: "400", suffix: "mq", proof: "Il nostro centro logistico" },
+  { icon: Store, label: "Negozi attivi", value: "2", suffix: "", proof: "Punti vendita sul territorio" },
   { icon: Wallet, label: "Fatturato vendite", value: "1.2", suffix: "M+", proof: "Dal nostro conto corrente" },
   { icon: Phone, label: "Trattative/anno", value: "1800", suffix: "+", proof: "Gestite personalmente" },
-  { icon: Building2, label: "Pose completate", value: "200", suffix: "+/anno", proof: "Con il nostro team" },
   { icon: Users, label: "Aziende affiancate", value: "47", suffix: "+", proof: "Con risultati documentati" },
   { icon: Award, label: "Tasso di successo", value: "94", suffix: "%", proof: "Clienti soddisfatti" }
 ];
@@ -37,15 +37,15 @@ const comparison = [
 ];
 
 const VEWhyWeCanSection = () => {
-  const { ref: showroomRef, count: showroomCount } = useCountUp({ end: 350, duration: 2000 });
+  const { ref: warehouseRef, count: warehouseCount } = useCountUp({ end: 400, duration: 2000 });
+  const { ref: storesRef, count: storesCount } = useCountUp({ end: 2, duration: 2000 });
   const { ref: revenueRef, count: revenueCount } = useCountUp({ end: 1.2, duration: 2000, decimals: 1 });
   const { ref: dealsRef, count: dealsCount } = useCountUp({ end: 1800, duration: 2000 });
-  const { ref: installsRef, count: installsCount } = useCountUp({ end: 200, duration: 2000 });
   const { ref: clientsRef, count: clientsCount } = useCountUp({ end: 47, duration: 2000 });
   const { ref: successRef, count: successCount } = useCountUp({ end: 94, duration: 2000 });
 
-  const countRefs = [showroomRef, revenueRef, dealsRef, installsRef, clientsRef, successRef];
-  const countValues = [showroomCount, revenueCount, dealsCount, installsCount, clientsCount, successCount];
+  const countRefs = [warehouseRef, storesRef, revenueRef, dealsRef, clientsRef, successRef];
+  const countValues = [warehouseCount, storesCount, revenueCount, dealsCount, clientsCount, successCount];
 
   return (
     <section className="py-20 md:py-32 bg-gradient-to-b from-background via-primary/10 to-background relative overflow-hidden">
@@ -89,8 +89,8 @@ const VEWhyWeCanSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-gold font-bold text-xl mb-1">Il nostro showroom operativo</p>
-                <p className="text-foreground text-sm">350mq dove vendiamo ogni giorno. Non teoria. Pratica.</p>
+                <p className="text-gold font-bold text-xl mb-1">La nostra sede operativa</p>
+                <p className="text-foreground text-sm">400mq di capannone + 2 negozi. Non teoria. Pratica.</p>
               </div>
             </motion.div>
           </AnimatedSection>
@@ -238,7 +238,7 @@ const VEWhyWeCanSection = () => {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/20 border border-primary/30 text-primary font-medium shadow-lg shadow-primary/10"
             >
               <MapPin className="w-5 h-5" />
-              Chiedici i bilanci. Chiedici i preventivi. Vieni a trovarci in showroom.
+              Chiedici i bilanci. Chiedici i preventivi. Vieni a trovarci nei nostri negozi.
             </motion.div>
           </div>
         </AnimatedSection>
