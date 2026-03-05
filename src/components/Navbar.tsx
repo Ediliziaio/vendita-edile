@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/vendita-edile-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -100,10 +101,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2"
           >
-            <span className="text-xl md:text-2xl font-black text-foreground tracking-tight">
-              VENDITA <span className="text-gold">EDILE</span>
-              <span className="text-gold text-xs align-super">®</span>
-            </span>
+            <img src={logoImg} alt="VENDITA EDILE®" className="h-8 md:h-10 w-auto" />
           </motion.button>
 
           {/* Desktop nav */}
