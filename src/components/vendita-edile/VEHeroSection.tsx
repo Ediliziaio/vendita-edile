@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { AlertTriangle, ArrowDown, Check, Shield, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
+import { getMonthName, getAvailableSpots } from "@/lib/utils";
 import heroImage from "@/assets/hero-windows.jpg";
 
 const VEHeroSection = () => {
@@ -236,7 +237,7 @@ const VEHeroSection = () => {
           
           <div className="flex flex-col items-center gap-2 mt-4">
             <p className="text-xs md:text-sm text-foreground/70">
-              📞 Solo <span className="text-secondary font-semibold">3 posti</span> per gennaio • Risposta entro 48h
+              📞 Solo <span className="text-secondary font-semibold">{getAvailableSpots()} posti</span> per {getMonthName()} • Risposta entro 48h
             </p>
             <div className="flex items-center gap-2 text-sm text-green-400">
               <Shield className="w-4 h-4" />

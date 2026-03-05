@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Shield, Clock, Award } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { getMonthName, getAvailableSpots } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import showroomImage from "@/assets/showroom.jpg";
 
@@ -107,7 +108,7 @@ const VEFinalCTASection = () => {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="text-gold font-semibold text-lg"
               >
-                ⚠️ Solo 3 posti disponibili per gennaio 2026
+                ⚠️ Solo {getAvailableSpots()} posti disponibili per {getMonthName()} {new Date().getFullYear()}
               </motion.p>
               <p className="text-muted-foreground text-sm mt-2">
                 Risposta entro 48 ore • Chiamata strategica gratuita
