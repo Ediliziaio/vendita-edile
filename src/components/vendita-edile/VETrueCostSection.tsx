@@ -23,7 +23,7 @@ const hiddenCosts = [
 
 // Esempio concreto serramentista
 const infissiExample = {
-  trattativeMese: 20,
+  trattativeMese: 30,
   tassoChiusuraAttuale: 15,
   tassoChiusuraDopo: 40,
   commessaMedia: 9500,
@@ -50,7 +50,7 @@ const VETrueCostSection = () => {
   
   // State per il calcolatore ROI
   const [formData, setFormData] = useState({
-    trattative: 20,
+    trattative: 30,
     chiusuraAttuale: 15,
     commessaMedia: 9500,
     margine: 40
@@ -185,10 +185,10 @@ const VETrueCostSection = () => {
             <div className="text-center mb-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium">
                 <Calculator className="w-4 h-4" />
-                ESEMPIO CONCRETO — Serramentista con 20 Trattative/Mese
+                ESEMPIO CONCRETO — Serramentista con 30 Trattative/Mese
               </span>
               <p className="text-xs text-muted-foreground mt-2">
-                20 trattative/mese | 15% chiusura | €9.500 commessa | 40% margine | €3.800 margine/commessa
+                30 trattative/mese | 15% chiusura | €9.500 commessa | 40% margine | €3.800 margine/commessa
               </p>
             </div>
 
