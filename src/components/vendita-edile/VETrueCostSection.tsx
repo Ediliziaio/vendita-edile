@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, Brain, TrendingDown, Users, Target, Euro, Calculator, ArrowRight, TrendingUp, UserPlus, AlertCircle } from "lucide-react";
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import { Clock, TrendingDown, Target, Euro, Calculator, ArrowRight, TrendingUp, AlertCircle } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -10,42 +10,15 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const lossTimeline = [
-  { period: "OGNI MESE", loss: "30.000-50.000", detail: "Vendite perse + margini compressi" },
+  { period: "OGNI MESE", loss: "50.000", detail: "Vendite perse + margini compressi" },
   { period: "OGNI ANNO", loss: "360.000-600.000", detail: "Fatturato bruciato" },
   { period: "IN 3 ANNI", loss: "1.000.000+", detail: "Patrimonio evaporato" }
 ];
 
 const hiddenCosts = [
-  {
-    icon: Clock,
-    cost: "TEMPO",
-    impact: "40+ ore/mese in trattative che non chiudono",
-    detail: "= 480 ore/anno buttate"
-  },
-  {
-    icon: Brain,
-    cost: "STRESS",
-    impact: "Notti insonni, ansia, salute compromessa",
-    detail: "= incalcolabile"
-  },
-  {
-    icon: TrendingDown,
-    cost: "MARGINI",
-    impact: "-20/30% su ogni preventivo",
-    detail: "= lavori per pagare le bollette"
-  },
-  {
-    icon: Target,
-    cost: "OPPORTUNITÀ",
-    impact: "Clienti premium che vanno ai concorrenti",
-    detail: "= crescita bloccata"
-  },
-  {
-    icon: Users,
-    cost: "TEAM",
-    impact: "Commerciali demotivati, turnover alto",
-    detail: "= costi di formazione continui"
-  }
+  { icon: Clock, label: "TEMPO", line: "480 ore/anno in trattative che non chiudono" },
+  { icon: TrendingDown, label: "MARGINI", line: "-20/30% su ogni preventivo = lavori per pagare le bollette" },
+  { icon: Target, label: "OPPORTUNITÀ", line: "Clienti premium che vanno ai concorrenti = crescita bloccata" },
 ];
 
 // Esempio concreto serramentista
@@ -58,45 +31,18 @@ const infissiExample = {
   investimento: 9000
 };
 
-// Calcoli derivati
 const venditePrima = Math.round(infissiExample.trattativeMese * (infissiExample.tassoChiusuraAttuale / 100));
 const venditeDopo = Math.round(infissiExample.trattativeMese * (infissiExample.tassoChiusuraDopo / 100));
-const fatturatoPrima = venditePrima * infissiExample.commessaMedia;
-const fatturatoDopo = venditeDopo * infissiExample.commessaMedia;
-const marginePrima = fatturatoPrima * (infissiExample.marginePercentuale / 100);
-const margineDopo = fatturatoDopo * (infissiExample.marginePercentuale / 100);
+const marginePrima = venditePrima * infissiExample.commessaMedia * (infissiExample.marginePercentuale / 100);
+const margineDopo = venditeDopo * infissiExample.commessaMedia * (infissiExample.marginePercentuale / 100);
 const margineExtraMese = margineDopo - marginePrima;
-const marginePerVendita = infissiExample.commessaMedia * (infissiExample.marginePercentuale / 100);
 
-// Timeline ROI
 const roiTimeline = [
-  { 
-    periodo: "3 MESI", 
-    margineExtra: margineExtraMese * 3,
-    roi: ((margineExtraMese * 3) / infissiExample.investimento).toFixed(1)
-  },
-  { 
-    periodo: "6 MESI", 
-    margineExtra: margineExtraMese * 6,
-    roi: ((margineExtraMese * 6) / infissiExample.investimento).toFixed(1)
-  },
-  { 
-    periodo: "1 ANNO", 
-    margineExtra: margineExtraMese * 12,
-    roi: ((margineExtraMese * 12) / infissiExample.investimento).toFixed(1)
-  },
-  { 
-    periodo: "3 ANNI", 
-    margineExtra: margineExtraMese * 36,
-    roi: ((margineExtraMese * 36) / infissiExample.investimento).toFixed(1)
-  }
+  { periodo: "3 MESI", margineExtra: margineExtraMese * 3, roi: ((margineExtraMese * 3) / infissiExample.investimento).toFixed(1) },
+  { periodo: "6 MESI", margineExtra: margineExtraMese * 6, roi: ((margineExtraMese * 6) / infissiExample.investimento).toFixed(1) },
+  { periodo: "1 ANNO", margineExtra: margineExtraMese * 12, roi: ((margineExtraMese * 12) / infissiExample.investimento).toFixed(1) },
+  { periodo: "3 ANNI", margineExtra: margineExtraMese * 36, roi: ((margineExtraMese * 36) / infissiExample.investimento).toFixed(1) }
 ];
-
-// Crescita con commerciale aggiuntivo
-const trattativeConComm = 40;
-const venditeConComm = Math.round(trattativeConComm * (infissiExample.tassoChiusuraDopo / 100));
-const margineConComm = venditeConComm * marginePerVendita;
-const margineExtra3AnniConComm = margineConComm * 30; // 2.5 anni (dopo 6 mesi)
 
 const VETrueCostSection = () => {
   const { ref: monthlyRef, count: monthlyCount } = useCountUp({ end: 50000, duration: 2000 });
@@ -110,7 +56,6 @@ const VETrueCostSection = () => {
     margine: 40
   });
 
-  // State per errori di validazione
   const [errors, setErrors] = useState<{
     trattative?: string;
     chiusuraAttuale?: string;
@@ -118,10 +63,9 @@ const VETrueCostSection = () => {
     margine?: string;
   }>({});
 
-  const chiusuraDopo = 40; // Target fisso del programma
+  const chiusuraDopo = 40;
   const investimento = 9000;
 
-  // Funzione di validazione per ogni campo
   const validateField = (field: keyof typeof formData, value: number): string | undefined => {
     switch (field) {
       case 'trattative':
@@ -150,24 +94,14 @@ const VETrueCostSection = () => {
   const handleInputChange = (field: keyof typeof formData, value: string) => {
     const numValue = parseFloat(value) || 0;
     setFormData(prev => ({ ...prev, [field]: numValue }));
-    
-    // Valida il campo e aggiorna errori
     const error = validateField(field, numValue);
     setErrors(prev => ({ ...prev, [field]: error }));
   };
 
-  // Verifica se il form è valido
-  const isFormValid = !errors.trattative && 
-                      !errors.chiusuraAttuale && 
-                      !errors.commessaMedia && 
-                      !errors.margine &&
-                      formData.trattative > 0 &&
-                      formData.chiusuraAttuale > 0 &&
-                      formData.chiusuraAttuale < 40 &&
-                      formData.commessaMedia >= 1000 &&
-                      formData.margine >= 5;
+  const isFormValid = !errors.trattative && !errors.chiusuraAttuale && !errors.commessaMedia && !errors.margine &&
+    formData.trattative > 0 && formData.chiusuraAttuale > 0 && formData.chiusuraAttuale < 40 &&
+    formData.commessaMedia >= 1000 && formData.margine >= 5;
 
-  // Calcoli derivati in tempo reale
   const calcVenditePrima = Math.round(formData.trattative * (formData.chiusuraAttuale / 100));
   const calcVenditeDopo = Math.round(formData.trattative * (chiusuraDopo / 100));
   const calcMarginePerVendita = formData.commessaMedia * (formData.margine / 100);
@@ -176,7 +110,6 @@ const VETrueCostSection = () => {
   const calcMargineExtra = calcMargineMeseDopo - calcMargineMesePrima;
   const calcGiorniPayback = calcMargineExtra > 0 ? Math.round((investimento / calcMargineExtra) * 30) : 0;
 
-  // Timeline ROI personalizzata
   const calcRoiTimeline = [
     { periodo: "3 MESI", margineExtra: calcMargineExtra * 3, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 3) / investimento).toFixed(1) : "0" },
     { periodo: "6 MESI", margineExtra: calcMargineExtra * 6, roi: calcMargineExtra > 0 ? ((calcMargineExtra * 6) / investimento).toFixed(1) : "0" },
@@ -186,11 +119,10 @@ const VETrueCostSection = () => {
   
   return (
     <section id="costo-reale" className="py-20 md:py-32 bg-gradient-to-b from-background via-gold/5 to-background relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent" />
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Pre-header */}
+        {/* Badge */}
         <AnimatedSection>
           <div className="text-center mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold text-sm font-medium">
@@ -200,20 +132,16 @@ const VETrueCostSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Headline */}
+        {/* Headline — no duplicated subtitle */}
         <AnimatedSection delay={0.1}>
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-12 text-foreground">
             IL VERO COSTO DI CONTINUARE COSÌ
-            <span className="block text-gold text-2xl md:text-3xl mt-2">(E perché non puoi più ignorarlo)</span>
           </h2>
-          <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-            Facciamo i conti. Ti faranno male, ma devi vederli.
-          </p>
         </AnimatedSection>
 
-        {/* Loss Timeline */}
+        {/* Loss Timeline — il pugno */}
         <AnimatedSection delay={0.2}>
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-12">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {lossTimeline.map((item, index) => (
                 <motion.div
@@ -221,7 +149,6 @@ const VETrueCostSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.15 }}
-                  whileHover={{ scale: 1.05 }}
                   className="bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/30 rounded-2xl p-6 text-center"
                 >
                   <p className="text-sm font-bold text-gold mb-2">{item.period}</p>
@@ -235,77 +162,33 @@ const VETrueCostSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Hidden Costs Grid */}
+        {/* 3 Hidden Costs — inline, compatto */}
         <AnimatedSection delay={0.3}>
-          <h3 className="text-2xl font-bold text-center text-foreground mb-8">
-            I Costi Che <span className="text-gold">Non Vedi</span> (Ma Paghi Ogni Giorno)
-          </h3>
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {hiddenCosts.map((item, index) => (
+                <div key={index} className="flex items-start gap-3 bg-card/50 border border-gold/20 rounded-xl p-4">
+                  <item.icon className="w-5 h-5 text-gold mt-0.5 shrink-0" />
+                  <div>
+                    <span className="font-black text-foreground text-sm">{item.label}: </span>
+                    <span className="text-sm text-muted-foreground">{item.line}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
-          {hiddenCosts.map((item, index) => (
-            <StaggerItem key={index}>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-card/50 backdrop-blur-sm border border-gold/20 rounded-xl p-5 h-full text-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-gold" />
-                </div>
-                <h4 className="font-black text-foreground mb-2">{item.cost}</h4>
-                <p className="text-sm text-muted-foreground mb-1">{item.impact}</p>
-                <p className="text-xs font-bold text-destructive">{item.detail}</p>
-              </motion.div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        {/* ESEMPIO CONCRETO SERRAMENTISTA */}
+        {/* PRIMA vs DOPO — semplificato */}
         <AnimatedSection delay={0.4}>
-          <div className="max-w-5xl mx-auto mb-16">
-            {/* Header Esempio */}
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium mb-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-medium">
                 <Calculator className="w-4 h-4" />
-                ESEMPIO CONCRETO CON NUMERI REALI
+                ESEMPIO CONCRETO — Serramentista con 20 Trattative/Mese
               </span>
-              <h3 className="text-2xl md:text-3xl font-black text-foreground">
-                Serramentista con {infissiExample.trattativeMese} Trattative/Mese
-              </h3>
             </div>
 
-            {/* Box Parametri */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-muted/50 border border-border rounded-2xl p-6 mb-8"
-            >
-              <p className="text-sm font-bold text-muted-foreground mb-4 text-center">PARAMETRI DI PARTENZA</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-black text-foreground">{infissiExample.trattativeMese}</p>
-                  <p className="text-xs text-muted-foreground">Trattative/mese</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-destructive">{infissiExample.tassoChiusuraAttuale}%</p>
-                  <p className="text-xs text-muted-foreground">Chiusura attuale</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-foreground">€{infissiExample.commessaMedia.toLocaleString('it-IT')}</p>
-                  <p className="text-xs text-muted-foreground">Commessa media</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-foreground">{infissiExample.marginePercentuale}%</p>
-                  <p className="text-xs text-muted-foreground">Margine</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-gold">€{infissiExample.investimento.toLocaleString('it-IT')}</p>
-                  <p className="text-xs text-muted-foreground">Investimento</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Confronto PRIMA vs DOPO */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {/* PRIMA */}
               <motion.div
@@ -315,16 +198,12 @@ const VETrueCostSection = () => {
               >
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <TrendingDown className="w-5 h-5 text-destructive" />
-                  <h4 className="font-black text-destructive text-lg">OGGI ({infissiExample.tassoChiusuraAttuale}% chiusura)</h4>
+                  <h4 className="font-black text-destructive text-lg">OGGI (15% chiusura)</h4>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="bg-destructive/10 rounded-xl p-3">
                     <p className="text-2xl md:text-3xl font-black text-foreground">{venditePrima}</p>
                     <p className="text-sm text-muted-foreground">vendite/mese</p>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-muted-foreground">€{fatturatoPrima.toLocaleString('it-IT')} fatturato</span>
                   </div>
                   <div className="bg-destructive/20 rounded-xl p-4">
                     <p className="text-2xl md:text-3xl lg:text-4xl font-black text-destructive">€{marginePrima.toLocaleString('it-IT')}</p>
@@ -341,16 +220,12 @@ const VETrueCostSection = () => {
               >
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <TrendingUp className="w-5 h-5 text-gold" />
-                  <h4 className="font-black text-gold text-lg">DOPO ({infissiExample.tassoChiusuraDopo}% chiusura)</h4>
+                  <h4 className="font-black text-gold text-lg">DOPO (40% chiusura)</h4>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="bg-gold/10 rounded-xl p-3">
                     <p className="text-2xl md:text-3xl font-black text-foreground">{venditeDopo}</p>
                     <p className="text-sm text-muted-foreground">vendite/mese</p>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <ArrowRight className="w-4 h-4 text-muted-foreground" />
-                    <span className="text-muted-foreground">€{fatturatoDopo.toLocaleString('it-IT')} fatturato</span>
                   </div>
                   <div className="bg-gold/20 rounded-xl p-4">
                     <p className="text-2xl md:text-3xl lg:text-4xl font-black text-gold">€{margineDopo.toLocaleString('it-IT')}</p>
@@ -360,7 +235,7 @@ const VETrueCostSection = () => {
               </motion.div>
             </div>
 
-            {/* Freccia Risultato */}
+            {/* +€19.000 badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -377,9 +252,7 @@ const VETrueCostSection = () => {
 
             {/* Timeline ROI */}
             <div className="mb-12">
-              <h4 className="text-xl font-bold text-center text-foreground mb-6">
-                Il Tuo ROI Nel Tempo
-              </h4>
+              <h4 className="text-xl font-bold text-center text-foreground mb-6">Il Tuo ROI Nel Tempo</h4>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {roiTimeline.map((item, index) => (
                   <motion.div
@@ -387,7 +260,6 @@ const VETrueCostSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
                     className="bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 rounded-2xl p-5 text-center"
                   >
                     <p className="text-sm font-bold text-gold mb-2">{item.periodo}</p>
@@ -403,48 +275,12 @@ const VETrueCostSection = () => {
               </div>
             </div>
 
-            {/* Crescita con Commerciale */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-gradient-to-r from-gold/10 via-gold/5 to-gold/10 border border-gold/20 rounded-2xl p-6 md:p-8 mb-8"
-            >
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <UserPlus className="w-6 h-6 text-gold" />
-                <h4 className="text-lg md:text-xl font-bold text-foreground">
-                  E se dopo 6 mesi aggiungi 1 commerciale?
-                </h4>
-              </div>
-              <div className="grid md:grid-cols-4 gap-4 text-center">
-                <div>
-                  <p className="text-2xl font-black text-foreground">{trattativeConComm}</p>
-                  <p className="text-xs text-muted-foreground">trattative/mese</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-foreground">{venditeConComm}</p>
-                  <p className="text-xs text-muted-foreground">vendite/mese</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-gold">€{margineConComm.toLocaleString('it-IT')}</p>
-                  <p className="text-xs text-muted-foreground">margine/mese</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-black text-gold">+€{margineExtra3AnniConComm.toLocaleString('it-IT')}</p>
-                  <p className="text-xs text-muted-foreground">in 3 anni</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Call-out Finale */}
+            {/* Gold box — closer */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-gold text-background rounded-2xl p-6 md:p-8 text-center"
+              className="bg-gold text-background rounded-2xl p-6 md:p-8 text-center mb-8"
             >
-              <p className="text-lg md:text-xl font-bold mb-2">
-                Hai investito €{infissiExample.investimento.toLocaleString('it-IT')} e in 3 mesi hai già generato €{(margineExtraMese * 3).toLocaleString('it-IT')} di margine EXTRA.
-              </p>
               <motion.p 
                 className="text-2xl md:text-3xl font-black"
                 animate={{ scale: [1, 1.02, 1] }}
@@ -454,20 +290,16 @@ const VETrueCostSection = () => {
               </motion.p>
             </motion.div>
 
-            {/* Calcolatore ROI Personalizzato */}
-            <div className="mt-8 text-center">
+            {/* CTA Calcolatore */}
+            <div className="text-center mb-12">
               <p className="text-lg text-muted-foreground mb-4">
                 Vuoi vedere i <span className="text-gold font-bold">TUOI</span> numeri?
               </p>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button 
-                    size="lg" 
-                    variant="gold"
-                    className="font-bold text-lg px-8 py-6 glow-gold"
-                  >
+                  <Button size="lg" variant="gold" className="font-bold text-lg px-8 py-6 glow-gold">
                     <Calculator className="w-5 h-5 mr-2" />
-                    CALCOLA IL TUO ROI PERSONALIZZATO
+                    CALCOLA IL TUO ROI
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-background border-border">
@@ -481,124 +313,55 @@ const VETrueCostSection = () => {
                     </p>
                   </DialogHeader>
 
-                  {/* Form Input */}
                   <div className="grid grid-cols-2 gap-4 mt-4">
                     <div className="space-y-2">
                       <Label htmlFor="trattative" className="text-foreground">Trattative/mese</Label>
-                      <Input
-                        id="trattative"
-                        type="number"
-                        min={1}
-                        max={200}
-                        value={formData.trattative}
+                      <Input id="trattative" type="number" min={1} max={200} value={formData.trattative}
                         onChange={(e) => handleInputChange('trattative', e.target.value)}
-                        className={cn(
-                          "bg-muted border-border text-foreground",
-                          errors.trattative && "border-destructive focus-visible:ring-destructive"
-                        )}
-                      />
-                      {errors.trattative && (
-                        <p className="text-sm text-destructive flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3" />
-                          {errors.trattative}
-                        </p>
-                      )}
+                        className={cn("bg-muted border-border text-foreground", errors.trattative && "border-destructive focus-visible:ring-destructive")} />
+                      {errors.trattative && <p className="text-sm text-destructive flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.trattative}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="chiusura" className="text-foreground">Chiusura attuale (%)</Label>
-                      <Input
-                        id="chiusura"
-                        type="number"
-                        min={1}
-                        max={39}
-                        value={formData.chiusuraAttuale}
+                      <Input id="chiusura" type="number" min={1} max={39} value={formData.chiusuraAttuale}
                         onChange={(e) => handleInputChange('chiusuraAttuale', e.target.value)}
-                        className={cn(
-                          "bg-muted border-border text-foreground",
-                          errors.chiusuraAttuale && "border-destructive focus-visible:ring-destructive"
-                        )}
-                      />
-                      {errors.chiusuraAttuale && (
-                        <p className="text-sm text-destructive flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3" />
-                          {errors.chiusuraAttuale}
-                        </p>
-                      )}
+                        className={cn("bg-muted border-border text-foreground", errors.chiusuraAttuale && "border-destructive focus-visible:ring-destructive")} />
+                      {errors.chiusuraAttuale && <p className="text-sm text-destructive flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.chiusuraAttuale}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="commessa" className="text-foreground">Commessa media (€)</Label>
-                      <Input
-                        id="commessa"
-                        type="number"
-                        min={1000}
-                        max={500000}
-                        value={formData.commessaMedia}
+                      <Input id="commessa" type="number" min={1000} max={500000} value={formData.commessaMedia}
                         onChange={(e) => handleInputChange('commessaMedia', e.target.value)}
-                        className={cn(
-                          "bg-muted border-border text-foreground",
-                          errors.commessaMedia && "border-destructive focus-visible:ring-destructive"
-                        )}
-                      />
-                      {errors.commessaMedia && (
-                        <p className="text-sm text-destructive flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3" />
-                          {errors.commessaMedia}
-                        </p>
-                      )}
+                        className={cn("bg-muted border-border text-foreground", errors.commessaMedia && "border-destructive focus-visible:ring-destructive")} />
+                      {errors.commessaMedia && <p className="text-sm text-destructive flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.commessaMedia}</p>}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="margine" className="text-foreground">Margine (%)</Label>
-                      <Input
-                        id="margine"
-                        type="number"
-                        min={5}
-                        max={80}
-                        value={formData.margine}
+                      <Input id="margine" type="number" min={5} max={80} value={formData.margine}
                         onChange={(e) => handleInputChange('margine', e.target.value)}
-                        className={cn(
-                          "bg-muted border-border text-foreground",
-                          errors.margine && "border-destructive focus-visible:ring-destructive"
-                        )}
-                      />
-                      {errors.margine && (
-                        <p className="text-sm text-destructive flex items-center gap-1">
-                          <AlertCircle className="w-3 h-3" />
-                          {errors.margine}
-                        </p>
-                      )}
+                        className={cn("bg-muted border-border text-foreground", errors.margine && "border-destructive focus-visible:ring-destructive")} />
+                      {errors.margine && <p className="text-sm text-destructive flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.margine}</p>}
                     </div>
                   </div>
 
-                  {/* Risultati in tempo reale - solo se form valido */}
                   {isFormValid && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="mt-6 space-y-4"
-                    >
-                      {/* Confronto OGGI vs DOPO */}
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 space-y-4">
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-4 text-center">
                           <p className="text-sm font-bold text-destructive mb-2">OGGI ({formData.chiusuraAttuale}%)</p>
                           <p className="text-xl font-black text-foreground">{calcVenditePrima} vendite</p>
-                          <p className="text-sm text-muted-foreground">€{(calcVenditePrima * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
                           <p className="text-lg font-bold text-destructive mt-2">€{calcMargineMesePrima.toLocaleString('it-IT')}/mese</p>
                         </div>
                         <div className="bg-gold/10 border border-gold/30 rounded-xl p-4 text-center">
                           <p className="text-sm font-bold text-gold mb-2">DOPO ({chiusuraDopo}%)</p>
                           <p className="text-xl font-black text-foreground">{calcVenditeDopo} vendite</p>
-                          <p className="text-sm text-muted-foreground">€{(calcVenditeDopo * formData.commessaMedia).toLocaleString('it-IT')} fatturato</p>
                           <p className="text-lg font-bold text-gold mt-2">€{calcMargineMeseDopo.toLocaleString('it-IT')}/mese</p>
                         </div>
                       </div>
-
-                      {/* Differenza */}
                       <div className="bg-gold/20 border-2 border-gold rounded-xl p-4 text-center">
                         <p className="text-sm text-foreground mb-1">MARGINE EXTRA MENSILE</p>
                         <p className="text-3xl font-black text-gold">+€{calcMargineExtra.toLocaleString('it-IT')}</p>
                       </div>
-
-                      {/* Timeline ROI */}
                       <div className="grid grid-cols-4 gap-2">
                         {calcRoiTimeline.map((item, index) => (
                           <div key={index} className="bg-muted/50 border border-border rounded-lg p-3 text-center">
@@ -608,23 +371,12 @@ const VETrueCostSection = () => {
                           </div>
                         ))}
                       </div>
-
-                      {/* Payback */}
                       <div className="bg-gradient-to-r from-gold to-gold/80 text-background rounded-xl p-4 text-center">
                         <p className="text-sm mb-1">Con un investimento di €{investimento.toLocaleString('it-IT')}</p>
-                        <p className="text-xl font-black">
-                          Sei in positivo in {calcGiorniPayback} giorni
-                        </p>
+                        <p className="text-xl font-black">Sei in positivo in {calcGiorniPayback} giorni</p>
                       </div>
-
-                      {/* CTA */}
-                      <Button 
-                        className="w-full bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6"
-                        onClick={() => {
-                          const section = document.getElementById('candidatura');
-                          if (section) section.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                      >
+                      <Button className="w-full bg-gold hover:bg-gold/90 text-background font-bold text-lg py-6"
+                        onClick={() => { const s = document.getElementById('candidatura'); if (s) s.scrollIntoView({ behavior: 'smooth' }); }}>
                         VOGLIO QUESTI RISULTATI
                         <ArrowRight className="w-5 h-5 ml-2" />
                       </Button>
@@ -633,9 +385,7 @@ const VETrueCostSection = () => {
 
                   {!isFormValid && (
                     <div className="mt-6 bg-muted/50 border border-border rounded-xl p-4 text-center">
-                      <p className="text-muted-foreground font-medium">
-                        Correggi i campi evidenziati per vedere i risultati
-                      </p>
+                      <p className="text-muted-foreground font-medium">Correggi i campi evidenziati per vedere i risultati</p>
                     </div>
                   )}
                 </DialogContent>
@@ -644,24 +394,12 @@ const VETrueCostSection = () => {
           </div>
         </AnimatedSection>
 
-        {/* Final Question */}
+        {/* Domanda finale — chiusura emotiva */}
         <AnimatedSection delay={0.5}>
-          <div className="text-center mb-8">
+          <div className="text-center">
             <p className="text-xl md:text-2xl font-bold text-foreground">
               Quanti mesi puoi ancora permetterti di perdere
               <span className="text-destructive"> €{margineExtraMese.toLocaleString('it-IT')}</span>?
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Transition - collegamento alla sezione successiva */}
-        <AnimatedSection delay={0.6}>
-          <div className="text-center">
-            <p className="text-lg text-muted-foreground mb-2">
-              Ma chi sta VINCENDO in questo mercato? E cosa fanno di diverso?
-            </p>
-            <p className="text-xl font-bold text-foreground">
-              <span className="text-gold">Ecco cosa li distingue...</span>
             </p>
           </div>
         </AnimatedSection>
