@@ -6,7 +6,7 @@ import { SEOHead } from "@/components/SEOHead";
 
 // Vendita Edile Components - Nuovo ordine ottimizzato (da 17 a 13 sezioni)
 import VEHeroSection from "@/components/vendita-edile/VEHeroSection";
-import VEProblemSection from "@/components/vendita-edile/VEProblemSection";
+
 import VEMarketTimelineSection from "@/components/vendita-edile/VEMarketTimelineSection";
 import VEPainPointsSection from "@/components/vendita-edile/VEPainPointsSection";
 import VETrueCostSection from "@/components/vendita-edile/VETrueCostSection";
@@ -65,8 +65,6 @@ const Index = () => {
         {/* 1. HOOK - Cattura attenzione */}
         <VEHeroSection />
         
-        {/* 2. PROBLEMA - Il mercato è cambiato + tecniche obsolete (fuse) */}
-        <VEProblemSection />
         
         {/* 3. DATI - Timeline con numeri ufficiali */}
         <VEMarketTimelineSection />
