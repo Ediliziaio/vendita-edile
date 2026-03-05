@@ -1,30 +1,38 @@
 
 
-## Piano: Aggiungere logo e dati aziendali
+## Piano: Data dinamica e posti disponibili automatici
 
-### 1. Copiare il logo nel progetto
-- Copiare `user-uploads://Imprenditore_Edile_9.png` in `src/assets/vendita-edile-logo.png`
+### Logica
+- Mostrare il mese corrente in italiano (es. "marzo") invece di "gennaio"
+- Calcolare i posti disponibili in base al giorno del mese: da 5 (giorno 1) a 1 (giorno 28-31), con decremento lineare
 
-### 2. Navbar (`src/components/Navbar.tsx`)
-- Importare il logo e sostituire il testo "VENDITA EDILE®" con un tag `<img>` del logo (altezza ~32-40px, con `alt` appropriato)
-- Stesso logo anche nel menu mobile
+### Utility da creare
+Creare un piccolo helper riutilizzabile (inline o in un file utils) con:
+```typescript
+const getMonthName = () => {
+  const months = ["gennaio","febbraio","marzo","aprile","maggio","giugno",
+    "luglio","agosto","settembre","ottobre","novembre","dicembre"];
+  return months[new Date().getMonth()];
+};
 
-### 3. Footer (`src/components/Footer.tsx`)
-- Sostituire il testo del brand con il logo (img)
-- Cambiare la griglia da 3 a 4 colonne: Logo+descrizione | Link Rapidi | Contatti | Dati Aziendali
-- Aggiungere colonna **Dati Aziendali** con:
-  - Domus Group S.r.l.
-  - Sede Legale: Via Aurelio Saffi 29, CAP 20123
-  - P.IVA: 13132010961
-  - Capitale Sociale: 20.000,00€
-  - PEC: domusgroupsrl@legalmail.it
-  - SDI: USAL8PV
-- Aggiornare contatto email a `Amministrazione@domusgroupitalia.it`
-- Aggiornare il copyright con "Domus Group S.r.l. - VENDITA EDILE®"
-- Su mobile resta `grid-cols-1`, su desktop `md:grid-cols-2 lg:grid-cols-4`
+const getAvailableSpots = () => {
+  const day = new Date().getDate();
+  const daysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
+  const spots = Math.max(1, Math.ceil(5 - (day / daysInMonth) * 4));
+  return spots;
+};
+```
 
-### File modificati
-- `src/assets/vendita-edile-logo.png` (nuovo)
-- `src/components/Navbar.tsx`
-- `src/components/Footer.tsx`
+### File da modificare
+
+**1. `src/components/vendita-edile/VEHeroSection.tsx` (linea 239)**
+- Da: `Solo 3 posti per gennaio`
+- A: `Solo {spots} posti per {monthName}`
+
+**2. `src/components/vendita-edile/VEFinalCTASection.tsx` (linea 110)**
+- Da: `Solo 3 posti disponibili per gennaio 2026`
+- A: `Solo {spots} posti disponibili per {monthName} {year}`
+
+### File NON toccati
+- `VEMarketTimelineSection.tsx`: "Gennaio 2025" è un riferimento a una fonte/dato specifico, va lasciato com'è.
 
