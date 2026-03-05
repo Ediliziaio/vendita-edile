@@ -1,26 +1,42 @@
 
 
-## Piano: Riscrivere la sezione Pain Points
+## Piano: Origin Story + Credibilità rinnovata
 
-### Modifica: `src/components/vendita-edile/VEPainPointsSection.tsx`
+L'utente chiede di aggiungere dopo la sezione Pain Points due nuove sezioni: una **Origin Story** (storia di Flo) e una **sezione Credibilità** rinnovata che sostituisce l'attuale `VEWhyWeCanSection`.
 
-Riscrittura completa del contenuto. La struttura cambia da 6 card in griglia a **4 blocchi verticali** più narrativi, ciascuno con etichetta (es. "IL PROBLEMA VERO"), titolo, freccia con spiegazione, e costo reale.
+### 1. Nuovo file: `src/components/vendita-edile/VEOriginStorySection.tsx`
 
-**Header:**
-- Titolo: "Quanti di questi ti **costano ogni mese**?"
-- Sottotitolo: "Ogni punto che riconosci vale in media €8.000–€12.000/anno di margine perso. Conta."
+Sezione narrativa lunga con la storia di Flo, divisa in blocchi sequenziali con AnimatedSection:
+- **Intro**: "Perché ho creato Vendita Edile®..." + presentazione di Flo e Marketing Edile (modello a provvigione)
+- **Il problema scoperto**: lead generati ma persi in trattativa → il vero problema è nella vendita
+- **Capitolo 1**: Apertura I-Profili fine 2023, €400K in 3 mesi senza sconto in fattura
+- **Capitolo 2**: La realtà operativa — errori, margini che spariscono
+- **Capitolo 3**: Ossessione sul margine per commessa, sistema integrato vendita + controllo operativo
+- **Capitolo 4**: Da due laboratori (Marketing Edile + I-Profili) nasce Vendita Edile®
 
-**4 blocchi:**
-1. **IL PROBLEMA VERO** — "20–30 preventivi al mese → 2–3 chiusure" / Costo: €28.000/mese
-2. **IL SINTOMO CHE VEDI** — "Ti faccio lo sconto, così chiudiamo" / Costo: −15–20% margine
-3. **LA BUGIA CHE TI HAI RACCONTATO** — "I miei commerciali sono bravi..." / Nessun badge costo
-4. **LA TRAPPOLA NASCOSTA** — "Lavori 10–12 ore al giorno..." / Nessun badge costo
+Layout: blocchi di testo full-width su card con bordo gold sottile, titoli dei capitoli in gold, testo in foreground/muted-foreground. Stile narrativo, non grid.
 
-**Blocco conclusivo:**
-- "Se hai riconosciuto almeno 2 punti: stai perdendo €30.000–€50.000 al mese."
-- "Non perché sei incapace. Perché nessuno ti ha mai dato un sistema costruito per questo mercato, in questo momento."
+### 2. Riscrittura: `src/components/vendita-edile/VEWhyWeCanSection.tsx`
 
-**CTA:** "Calcola il tuo costo reale" → scroll a `#costo-reale`
+Sostituzione completa del contenuto con la nuova versione "Credibilità":
+- **Header**: "Perché NOI possiamo insegnartelo — e gli altri no"
+- **Sottotitolo**: "Non siamo formatori. Siamo imprenditori edili attivi..."
+- **6 stat card** aggiornate con i nuovi dati:
+  - 8 anni con Marketing Edile (solo a provvigione)
+  - €400K venduti primi 3 mesi I-Profili
+  - 47+ aziende affiancate
+  - €0,8M+ fatturato generato per i clienti
+  - 2 aziende attive (Marketing Edile + I-Profili)
+  - <14% candidature accettate
+- **Blocco provvigione**: "Il modello a provvigione non è un dettaglio. È la prova." con spiegazione del DNA
+- **Tabella confronto** aggiornata con le nuove righe (6 righe invece di 5, include la riga provvigione)
 
-Layout: card singole full-width impilate verticalmente, con etichetta gold in alto a sinistra e stile coerente con il resto del sito.
+### 3. Modifica: `src/pages/Index.tsx`
+
+- Importare `VEOriginStorySection`
+- Inserirlo dopo `<VEPainPointsSection />` e prima di `<VETrueCostSection />`
+- `VEWhyWeCanSection` resta nella stessa posizione ma con contenuto aggiornato
+
+Ordine risultante delle sezioni:
+1. Hero → 2. Market Changed → 3. Timeline → 4. Pain Points → **5. Origin Story (NUOVA)** → 6. True Cost → 7. Who Wins → **8. Credibilità (AGGIORNATA)** → 9. Results → ...
 
