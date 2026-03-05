@@ -86,21 +86,21 @@ const Index = () => {
         {/* 6b. CASI STUDIO E RECENSIONI */}
         <VECaseStudiesSection />
         
-        {/* 7. COSTO - Quanto ti sta costando */}
+        {/* 7. VALUE STACK + PREZZO */}
+        <VEPricingSection />
+        
+        {/* 8. COSTO - Quanto ti sta costando */}
         <VETrueCostSection />
         
-        {/* 8. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
+        {/* 9. SOLUZIONE - Chi vince e cosa fanno + Truth Block (fuse) */}
         <VEWhoWinsSection />
         
         
-        {/* 9. RISULTATI - Cosa ottieni */}
+        {/* 10. RISULTATI - Cosa ottieni */}
         <VEResultsSection />
         
-        {/* 10. DIFFERENZIAZIONE - Affiancamento vs corsi */}
+        {/* 11. DIFFERENZIAZIONE - Affiancamento vs corsi */}
         <VEDifferentiatorSection />
-        
-        {/* 11. VALUE STACK + PREZZO */}
-        <VEPricingSection />
         
         {/* 12. GARANZIA - Sezione separata */}
         <VEGuaranteeSection />
