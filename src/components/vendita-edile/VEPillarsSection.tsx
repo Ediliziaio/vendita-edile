@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import cantiereImage from "@/assets/cantiere.jpg";
+import cantiereImage from "@/assets/cantiere-installazione.jpg";
 
 const pillars = [
   {
@@ -174,7 +174,7 @@ const VEPillarsSection = () => {
               >
                 <img
                   src={cantiereImage}
-                  alt="Cantiere edile - il nostro lavoro quotidiano"
+                  alt="Installazione infissi in cantiere - il nostro metodo applicato sul campo"
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />
