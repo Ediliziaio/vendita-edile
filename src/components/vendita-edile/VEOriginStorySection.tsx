@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BookOpen, Shield, Check, X, Calendar, TrendingUp, Users, DollarSign, Building2, Filter } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { useCountUp } from "@/hooks/useCountUp";
+import floProfili from "@/assets/flo-profili.jpg";
 
 const credentials = [
   { icon: Calendar, value: "8", suffix: " anni", label: "con Marketing Edile", proof: "Acquisizione clienti solo a provvigione" },
@@ -32,13 +33,13 @@ const VEOriginStorySection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+    <section className="py-20 md:py-32 bg-gradient-to-b from-background to-secondary/5 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary/10 via-transparent to-transparent" />
 
       <div className="container mx-auto px-4 relative z-10 max-w-4xl">
         <AnimatedSection>
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium">
               <BookOpen className="w-4 h-4" />
               La nostra storia
             </span>
@@ -46,38 +47,59 @@ const VEOriginStorySection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <div className="bg-card/60 backdrop-blur-sm border border-primary/15 rounded-2xl p-6 md:p-10">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground mb-8">
-              Perché ho creato Vendita Edile® — e cosa mi ha insegnato partire da zero
-            </h3>
+          <div className="bg-card/60 backdrop-blur-sm border border-secondary/15 rounded-2xl p-6 md:p-10">
+            {/* 2-column layout: photo + text */}
+            <div className="flex flex-col md:flex-row gap-8 mb-8">
+              {/* Photo column */}
+              <div className="flex flex-col items-center md:items-start shrink-0 md:w-[35%]">
+                <div className="w-48 h-60 md:w-full md:h-auto md:aspect-[3/4] rounded-2xl overflow-hidden border-2 border-secondary/30 shadow-lg shadow-secondary/10">
+                  <img
+                    src={floProfili}
+                    alt="Flo — Fondatore di Vendita Edile"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="mt-4 text-center md:text-left">
+                  <p className="text-lg font-black text-secondary">Flo</p>
+                  <p className="text-sm text-muted-foreground">Fondatore, Vendita Edile®</p>
+                </div>
+              </div>
 
-            <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
-              <p>Mi chiamo Flo. Non sono nato serramentista.</p>
-              <p>
-                Sono cresciuto nel marketing e nella vendita. Da 8 anni gestisco Marketing Edile — portiamo clienti qualificati alle aziende edili, solo a provvigione. Guadagniamo solo quando i nostri clienti guadagnano.
-              </p>
-              <p>
-                Questo modello mi ha insegnato una cosa brutale: <strong className="text-foreground">non basta portare i lead. Se l'azienda non sa venderli, non prendi un euro.</strong>
-              </p>
-              <p>
-                Dopo anni a guardare aziende edili perdere in trattativa i contatti che gli portavamo, ho capito che il problema non era il marketing. Era la vendita.
-              </p>
-              <p>
-                Quindi a fine 2023 ho aperto una mia azienda di serramenti — da zero, senza esperienza tecnica. Per testare sul campo quello che avevo visto funzionare in 8 anni con i nostri partner.
-              </p>
+              {/* Text column */}
+              <div className="md:w-[65%]">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground mb-6">
+                  Perché ho creato <span className="text-secondary">Vendita Edile®</span> — e cosa mi ha insegnato partire da zero
+                </h3>
+
+                <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
+                  <p>Mi chiamo <strong className="text-secondary">Flo</strong>. Non sono nato serramentista.</p>
+                  <p>
+                    Sono cresciuto nel marketing e nella vendita. Da <strong className="text-secondary">8 anni</strong> gestisco Marketing Edile — portiamo clienti qualificati alle aziende edili, <strong className="text-secondary">solo a provvigione</strong>. Guadagniamo solo quando i nostri clienti guadagnano.
+                  </p>
+                  <p>
+                    Questo modello mi ha insegnato una cosa brutale: <strong className="text-foreground">non basta portare i lead. Se l'azienda non sa venderli, non prendi un euro.</strong>
+                  </p>
+                  <p>
+                    Dopo anni a guardare aziende edili perdere in trattativa i contatti che gli portavamo, ho capito che il problema non era il marketing. Era la vendita.
+                  </p>
+                  <p>
+                    Quindi a fine 2023 ho aperto una mia azienda di serramenti — da zero, senza esperienza tecnica. Per testare sul campo quello che avevo visto funzionare in 8 anni con i nostri partner.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Highlight box */}
-            <div className="mt-8 bg-primary/10 border border-primary/30 rounded-xl p-6">
+            <div className="bg-secondary/10 border border-secondary/30 rounded-xl p-6">
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 mb-2">
-                <p className="text-3xl md:text-4xl font-black text-primary">€400.000</p>
+                <p className="text-3xl md:text-4xl font-black text-secondary">€400.000</p>
                 <p className="text-foreground font-semibold">nei primi 3 mesi</p>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6">
-                <p className="text-3xl md:text-4xl font-black text-primary">€2M+</p>
+                <p className="text-3xl md:text-4xl font-black text-secondary">€2M+</p>
                 <p className="text-foreground font-semibold">in meno di 2 anni</p>
               </div>
-              <p className="text-primary font-bold text-sm mt-4 italic">
+              <p className="text-secondary font-bold text-sm mt-4 italic">
                 Senza sconto in fattura. Solo con un sistema di vendita costruito sul cliente.
               </p>
             </div>
@@ -94,13 +116,16 @@ const VEOriginStorySection = () => {
               </p>
             </div>
 
-            {/* Closing */}
-            <div className="mt-8 pt-6 border-t border-primary/20">
-              <p className="text-xl font-black text-primary mb-3">
+            {/* Closing with gold accent */}
+            <div className="mt-8 pt-6 border-t border-secondary/30">
+              <p className="text-xl font-black text-secondary mb-3">
                 Il risultato è Vendita Edile®.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base mb-4">
                 Non un corso. Un sistema costruito sul campo.
+              </p>
+              <p className="text-secondary font-bold text-lg">
+                Oggi non portiamo solo clienti. <strong>Portiamo clienti e il sistema per chiuderli.</strong>
               </p>
             </div>
           </div>
@@ -110,7 +135,7 @@ const VEOriginStorySection = () => {
         <div className="mt-16">
           <AnimatedSection>
             <div className="text-center mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium">
                 <Shield className="w-4 h-4" />
                 Non siamo formatori. Siamo imprenditori edili attivi.
               </span>
@@ -119,8 +144,8 @@ const VEOriginStorySection = () => {
 
           <AnimatedSection delay={0.1}>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-black text-center mb-4 text-foreground">
-              PERCHÉ <span className="text-primary">NOI</span> POSSIAMO INSEGNARTELO
-              <span className="block text-primary text-xl md:text-2xl mt-2">— e gli altri no</span>
+              PERCHÉ <span className="text-secondary">NOI</span> POSSIAMO INSEGNARTELO
+              <span className="block text-secondary text-xl md:text-2xl mt-2">— e gli altri no</span>
             </h2>
             <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
               Non siamo formatori. Siamo imprenditori edili attivi — con un'agenzia, un'azienda di serramenti, e 8 anni di dati sul campo.
@@ -133,13 +158,13 @@ const VEOriginStorySection = () => {
               <StaggerItem key={index}>
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 md:p-5 text-center h-full hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
+                  className="bg-card/50 backdrop-blur-sm border border-secondary/20 rounded-xl p-4 md:p-5 text-center h-full hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10 transition-all"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3">
-                    <item.icon className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-3">
+                    <item.icon className="w-5 h-5 text-secondary" />
                   </div>
                   <p
-                    className="text-2xl md:text-3xl font-black text-primary mb-1"
+                    className="text-2xl md:text-3xl font-black text-secondary mb-1"
                     ref={counters[index].ref}
                   >
                     {item.prefix || ""}
@@ -159,16 +184,16 @@ const VEOriginStorySection = () => {
           <AnimatedSection delay={0.3}>
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="max-w-4xl mx-auto bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30 rounded-3xl p-8 md:p-12 mb-16 shadow-xl shadow-primary/10"
+              className="max-w-4xl mx-auto bg-gradient-to-br from-secondary/10 to-secondary/5 border-2 border-secondary/30 rounded-3xl p-8 md:p-12 mb-16 shadow-xl shadow-secondary/10"
             >
               <h3 className="text-xl md:text-2xl font-black text-center text-foreground mb-6">
                 Il modello a provvigione non è un dettaglio.
-                <span className="block text-primary mt-1">È la prova.</span>
+                <span className="block text-secondary mt-1">È la prova.</span>
               </h3>
               <p className="text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
                 Quando lavori solo a provvigione per 8 anni, impari una cosa che i formatori non imparano mai: <span className="text-foreground font-semibold">se il cliente non chiude, non mangi.</span> Ogni lead generato, ogni funnel costruito, ogni campagna ottimizzata — tutto misurato sull'unico numero che conta: le commesse firmate.
               </p>
-              <p className="text-primary font-bold text-center mt-6 text-lg">
+              <p className="text-secondary font-bold text-center mt-6 text-lg">
                 Questo è il DNA di Vendita Edile®.
               </p>
             </motion.div>
@@ -177,7 +202,7 @@ const VEOriginStorySection = () => {
           {/* Comparison Table */}
           <AnimatedSection delay={0.4}>
             <h3 className="text-xl md:text-2xl font-bold text-center text-foreground mb-8">
-              <span className="text-destructive">Gli altri ti vendono</span> vs. <span className="text-primary">Noi facciamo</span>
+              <span className="text-destructive">Gli altri ti vendono</span> vs. <span className="text-secondary">Noi facciamo</span>
             </h3>
 
             <div className="max-w-3xl mx-auto bg-card border-2 border-border rounded-2xl overflow-hidden shadow-xl">
@@ -185,7 +210,7 @@ const VEOriginStorySection = () => {
                 <div className="p-4 text-center font-bold text-destructive border-r border-border">
                   ✗ Gli altri ti vendono
                 </div>
-                <div className="p-4 text-center font-bold text-primary">
+                <div className="p-4 text-center font-bold text-secondary">
                   ✓ Noi facciamo
                 </div>
               </div>
@@ -204,7 +229,7 @@ const VEOriginStorySection = () => {
                     <span className="text-muted-foreground text-xs md:text-sm">{item.them}</span>
                   </div>
                   <div className="p-3 md:p-4 flex items-center gap-3">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <Check className="w-4 h-4 text-secondary flex-shrink-0" />
                     <span className="text-foreground text-xs md:text-sm font-medium">{item.us}</span>
                   </div>
                 </motion.div>
