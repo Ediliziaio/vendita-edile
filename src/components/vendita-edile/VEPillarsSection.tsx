@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, MessageSquare, FileText, PhoneCall, BarChart3, Check, Shield, ArrowRight } from "lucide-react";
+import { Swords, ShieldCheck, BarChart3, UsersRound, Check, Clock, MessageCircle, Phone, Package } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import {
   Accordion,
@@ -9,129 +9,111 @@ import {
 } from "@/components/ui/accordion";
 import cantiereImage from "@/assets/cantiere.jpg";
 
+const pillars = [
+  {
+    icon: Swords,
+    number: "01",
+    label: "LA MACCHINA DA GUERRA",
+    title: "Struttura di Vendita",
+    intro: "Prima di tutto sistemiamo il fondamento. Come qualifichi un lead, come strutturi la prima chiamata, come arrivi al preventivo con il cliente già orientato a comprare — non a trattare.",
+    context: "La maggior parte delle aziende edili perde la trattativa prima ancora di presentare il prezzo. Non per colpa del prezzo — per come hanno gestito i 20 minuti precedenti.",
+    points: [
+      "Script di qualificazione — filtri i clienti perdi-tempo prima che ti rubino ore",
+      "Struttura della prima visita — ogni appuntamento segue un flusso preciso, non va a sensazione",
+      "Gestione delle obiezioni — le 7 obiezioni standard del cliente edile e come smontarle senza abbassare il prezzo",
+      "Tecnica di chiusura — guidi il cliente alla decisione, non aspetti che la prenda da solo",
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    number: "02",
+    label: "IL PREZZO CHE DIFENDI",
+    title: "Sistema di Preventivazione ad Alto Margine",
+    intro: "Un preventivo non è un documento. È l'ultimo atto di vendita prima della firma. La maggior parte delle aziende lo tratta come una fattura pro-forma — e poi si stupisce se il cliente risponde \"ci penso\" o \"l'altro mi fa meno.\"",
+    context: "",
+    points: [
+      "Template preventivo che vende — struttura, layout, linguaggio orientato al valore",
+      "Pricing difendibile — come presenti il prezzo in modo che lo sconto non sia nemmeno la conversazione",
+      "Follow-up automatizzato — sequenza testata per recuperare i \"ci penso\" senza sembrare disperato",
+      "Margine minimo per commessa — ogni preventivo esce con un floor di margine sotto cui non scendi, mai",
+    ],
+  },
+  {
+    icon: BarChart3,
+    number: "03",
+    label: "I NUMERI CHE COMANDANO",
+    title: "KPI e Controllo",
+    intro: "Non puoi migliorare quello che non misuri. E la maggior parte delle aziende edili misura una sola cosa: il fatturato. Che è il numero più inutile che esista se non sai cosa ti rimane.",
+    context: "",
+    points: [
+      "Dashboard KPI settimanale — tasso di chiusura, margine medio per commessa, costo per lead, tempo medio trattativa",
+      "Report trattative — ogni commerciale documenta ogni contatto, ogni obiezione, ogni esito",
+      "Soglie di allerta — sai in tempo reale quando qualcosa non funziona, senza aspettare la fine del mese",
+      "Riunione commerciale settimanale — struttura, agenda, come si conduce per produrre decisioni, non chiacchiere",
+    ],
+  },
+  {
+    icon: UsersRound,
+    number: "04",
+    label: "IL TEAM CHE VENDE SENZA DI TE",
+    title: "Struttura Commerciale",
+    intro: "L'obiettivo finale non è che tu venda meglio. È che la tua azienda venda bene anche quando non ci sei tu.",
+    context: "Finché ogni trattativa dipende dalla tua presenza, dalla tua energia, dalla tua disponibilità — non hai un sistema. Hai un lavoro.",
+    points: [
+      "Profilo del commerciale edile — come selezionare, onboardare e formare chi vende per te",
+      "Manuale di vendita dell'azienda — il tuo metodo scritto nero su bianco, replicabile da chiunque",
+      "Sistema di incentivazione — struttura provvigionale che allinea gli interessi del commerciale ai tuoi",
+      "Affiancamento diretto — ascoltiamo le chiamate reali dei tuoi commerciali e diamo feedback specifico entro 24h",
+    ],
+  },
+];
+
+const timelineItems = [
+  { icon: Clock, title: "Sessione settimanale 1:1", description: "Lavoriamo direttamente sul tuo sistema — ogni settimana un avanzamento concreto" },
+  { icon: MessageCircle, title: "Supporto WhatsApp diretto", description: "Risposta entro 4h su qualsiasi trattativa in corso — 6 giorni su 7" },
+  { icon: Phone, title: "Revisione trattative", description: "Ascoltiamo le tue chiamate e ti diamo feedback specifico, non generico" },
+  { icon: Package, title: "Consegne in itinere", description: "Script, template, dashboard — ricevi ogni elemento nel momento in cui è pronto e testato" },
+];
+
+const finalDeliverables = [
+  "Un sistema di vendita documentato e replicabile — non dipendente da te",
+  "Script testati sulla tua clientela reale",
+  "Preventivi che convertono senza fare sconti",
+  "Dashboard KPI che ti dice ogni lunedì mattina esattamente dove sei",
+  "Un team che vende seguendo un metodo — non andando a sensazione",
+];
+
 const VEPillarsSection = () => {
-  const pillars = [
-    {
-      icon: Target,
-      number: "01",
-      title: "STRUTTURA DI VENDITA",
-      subtitle: "Stop improvvisazione. Creiamo un processo.",
-      description: "Costruiamo:",
-      points: [
-        "fasi chiare (lead → appuntamento → preventivo → firma)",
-        "regole di trattativa",
-        "criteri di qualificazione",
-        "ruoli e responsabilità",
-      ],
-      result: "Da caos totale → a sistema replicabile",
-      resultDetail: "Ogni vendita segue un percorso. Ogni trattativa è sotto controllo.",
-    },
-    {
-      icon: MessageSquare,
-      number: "02",
-      title: "SCRIPT DI TRATTATIVA",
-      subtitle: "Sai sempre cosa dire, quando dirlo, come rispondere.",
-      description: "Ti diamo:",
-      points: [
-        "aperture che catturano l'attenzione",
-        "risposte alle obiezioni più comuni",
-        "tecniche di chiusura testate",
-        "frasi che eliminano il 'ci penso'",
-      ],
-      result: "Da obiezioni infinite → a risposte pronte",
-      resultDetail: "Il cliente sente sicurezza. E smette di trattare.",
-    },
-    {
-      icon: FileText,
-      number: "03",
-      title: "PREVENTIVO CHE VENDE",
-      subtitle: "Non è un PDF. È uno strumento di persuasione.",
-      description: "Lavoriamo su:",
-      points: [
-        "struttura e ancoraggi psicologici",
-        "comparazioni che guidano la scelta",
-        "leva psicologica e urgenza",
-        "presentazione del valore percepito",
-      ],
-      result: "Da -20% margine → a +15% valore percepito",
-      resultDetail: "Meno sconti. Più firme. Margini più alti.",
-    },
-    {
-      icon: PhoneCall,
-      number: "04",
-      title: "FOLLOW-UP STRATEGICO",
-      subtitle: "Il 70% delle vendite si perde qui. Noi lo recuperiamo.",
-      description: "Costruiamo:",
-      points: [
-        "sequenze precise e temporizzate",
-        "controllo totale delle trattative aperte",
-        'script anti-"le faccio sapere"',
-        "automazioni dove possibile",
-      ],
-      result: "Da trattative perse → a conversioni recuperate",
-      resultDetail: "Chi guida il follow-up, guida la vendita.",
-    },
-    {
-      icon: BarChart3,
-      number: "05",
-      title: "NUMERI E CONTROLLO",
-      subtitle: "Finalmente sai esattamente dove stai guadagnando e perdendo.",
-      description: "Monitoriamo:",
-      points: [
-        "quante trattative hai aperte",
-        "tasso di chiusura reale",
-        "valore medio ordine",
-        "tempi di incasso",
-        "colli di bottiglia nel processo",
-      ],
-      result: "Da 'sensazioni' → a decisioni sui dati",
-      resultDetail: "Niente più intuito. Solo numeri che parlano.",
-    },
-  ];
-
-  const finalDeliverables = [
-    "Sistema di vendita documentato",
-    "Script testati sulla TUA clientela",
-    "Preventivi che convertono di più",
-    "Follow-up che non perde trattative",
-    "Dashboard con i tuoi numeri VERI",
-  ];
-
   return (
     <section id="metodo" className="section-padding bg-navy-light relative overflow-hidden">
-      {/* Decorative */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[200px]" />
       </div>
 
       <div className="container-narrow relative z-10">
-        {/* Pre-header */}
+        {/* Header */}
         <AnimatedSection>
-          <div className="text-center mb-12">
+          <div className="text-center mb-4">
             <span className="inline-block px-4 py-2 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium mb-6 uppercase tracking-wider">
-              Il metodo testato su 47+ aziende edili
+              Il programma completo
             </span>
             <h2 className="heading-section text-foreground mb-4">
-              ECCO COSA COSTRUIAMO IN{" "}
-              <span className="text-gold drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]">90 GIORNI</span>
+              Il Programma — Cosa Costruiamo Insieme in{" "}
+              <span className="text-gold drop-shadow-[0_0_20px_hsl(var(--gold)/0.4)]">90 Giorni</span>
             </h2>
             <p className="text-xl md:text-2xl font-bold text-foreground mb-2">
-              (E perché funziona anche per te)
+              Non ti diamo un manuale. Entriamo nella tua azienda e costruiamo il sistema mentre lavori.
             </p>
             <p className="text-lg text-muted-foreground mt-4">
-              Non uno schema standard. Non un metodo copiato.
-            </p>
-            <p className="text-xl text-gold font-bold">
-              IL TUO SISTEMA. Sulla TUA azienda.
+              Ogni elemento viene consegnato in itinere — non alla fine.{" "}
+              <span className="text-gold font-semibold">Dal giorno 1 inizi già a vedere i risultati.</span>
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Content with Image */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {/* Main Content - 2 columns */}
+        {/* Pillars + Sidebar */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           <div className="lg:col-span-2">
-            {/* Pillars accordion - rimosso badge garanzia duplicato */}
             <Accordion type="single" collapsible className="space-y-4">
               {pillars.map((pillar, index) => (
                 <motion.div
@@ -151,45 +133,30 @@ const VEPillarsSection = () => {
                           <pillar.icon className="w-6 h-6 md:w-7 md:h-7 text-gold" />
                         </div>
                         <div className="text-left flex-1">
-                          <div className="flex items-center gap-3 mb-1">
-                            <span className="text-gold font-bold text-sm">
-                              PILASTRO {pillar.number}
-                            </span>
-                          </div>
+                          <span className="text-gold font-bold text-sm block mb-1">
+                            PILASTRO {pillar.number} — {pillar.label}
+                          </span>
                           <h3 className="text-lg md:text-xl font-bold text-foreground">
                             {pillar.title}
                           </h3>
-                        </div>
-                        {/* Result badge visible on desktop */}
-                        <div className="hidden md:block flex-shrink-0">
-                          <span className="inline-block px-3 py-1 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm font-medium">
-                            {pillar.result}
-                          </span>
                         </div>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="px-4 md:px-6 lg:px-8 pb-6">
                       <div className="pl-0 md:pl-20 pt-4 border-t border-border">
-                        <p className="text-lg text-foreground font-medium mb-4">{pillar.subtitle}</p>
-                        {pillar.description && (
-                          <p className="text-muted-foreground mb-3">{pillar.description}</p>
+                        <p className="text-foreground mb-3">{pillar.intro}</p>
+                        {pillar.context && (
+                          <p className="text-muted-foreground italic mb-4">{pillar.context}</p>
                         )}
-                        <ul className="space-y-2 mb-6">
+                        <p className="text-gold font-bold mb-3">Quello che costruiamo insieme:</p>
+                        <ul className="space-y-3">
                           {pillar.points.map((point, i) => (
                             <li key={i} className="text-muted-foreground flex items-start gap-3">
                               <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                              {point}
+                              <span>{point}</span>
                             </li>
                           ))}
                         </ul>
-                        <div className="p-4 bg-gradient-to-r from-gold/20 to-gold/10 border border-gold/30 rounded-xl">
-                          <p className="text-gold font-bold text-lg mb-1">
-                            👉 {pillar.result}
-                          </p>
-                          <p className="text-foreground">
-                            {pillar.resultDetail}
-                          </p>
-                        </div>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -198,16 +165,16 @@ const VEPillarsSection = () => {
             </Accordion>
           </div>
 
-          {/* Sidebar Image - 1 column */}
+          {/* Sidebar Image */}
           <div className="hidden lg:block">
             <AnimatedSection delay={0.2}>
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 className="sticky top-24 rounded-2xl overflow-hidden shadow-2xl shadow-gold/20 border-2 border-gold/30"
               >
-                <img 
-                  src={cantiereImage} 
-                  alt="Cantiere edile - il nostro lavoro quotidiano" 
+                <img
+                  src={cantiereImage}
+                  alt="Cantiere edile - il nostro lavoro quotidiano"
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-transparent to-transparent" />
@@ -220,6 +187,46 @@ const VEPillarsSection = () => {
           </div>
         </div>
 
+        {/* Timeline — Come funziona in pratica */}
+        <AnimatedSection delay={0.2}>
+          <div className="max-w-3xl mx-auto mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-3">
+              Come funziona in pratica
+            </h3>
+            <p className="text-muted-foreground text-center mb-10">
+              I 4 pilastri si costruiscono in parallelo nei 90 giorni — non in sequenza. Dal giorno 1 lavori già su tutti e 4 i fronti.
+            </p>
+
+            <div className="relative pl-8 md:pl-12">
+              {/* Vertical gold line */}
+              <div className="absolute left-3 md:left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/60 to-gold/20" />
+
+              <div className="space-y-8">
+                {timelineItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                    className="relative"
+                  >
+                    {/* Gold dot */}
+                    <div className="absolute -left-8 md:-left-12 top-4 w-6 h-6 md:w-8 md:h-8 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
+                      <item.icon className="w-3 h-3 md:w-4 md:h-4 text-gold" />
+                    </div>
+                    {/* Card */}
+                    <div className="p-5 bg-card border border-border rounded-xl hover:border-gold/40 transition-colors">
+                      <h4 className="text-lg font-bold text-foreground mb-1">{item.title}</h4>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Final deliverables box */}
         <AnimatedSection delay={0.3}>
           <motion.div
@@ -229,13 +236,13 @@ const VEPillarsSection = () => {
             className="max-w-2xl mx-auto p-5 md:p-8 bg-card border-2 border-gold rounded-2xl shadow-xl shadow-gold/20"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-              Dopo 90 giorni avrai:
+              Dopo 90 giorni hai in mano:
             </h3>
             <StaggerContainer className="space-y-3 mb-8" staggerDelay={0.1}>
               {finalDeliverables.map((item, index) => (
                 <StaggerItem key={index}>
-                  <div className="flex items-center gap-3 p-3 bg-gold/10 rounded-xl">
-                    <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start gap-3 p-3 bg-gold/10 rounded-xl">
+                    <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-gold" />
                     </div>
                     <span className="text-base md:text-lg text-foreground">{item}</span>
@@ -252,7 +259,7 @@ const VEPillarsSection = () => {
           </motion.div>
         </AnimatedSection>
 
-        {/* Transition - collegamento alla sezione successiva */}
+        {/* Transition */}
         <AnimatedSection delay={0.4}>
           <div className="text-center mt-12">
             <p className="text-lg text-muted-foreground mb-2">
