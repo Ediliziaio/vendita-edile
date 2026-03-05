@@ -96,8 +96,6 @@ const Index = () => {
         <VEWhoWinsSection />
         
         
-        {/* 10. RISULTATI - Cosa ottieni */}
-        <VEResultsSection />
         
         {/* 11. DIFFERENZIAZIONE - Affiancamento vs corsi */}
         <VEDifferentiatorSection />
