@@ -76,7 +76,7 @@ const VEOriginStorySection = () => {
         </AnimatedSection>
 
         {/* Chapters */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           {chapters.map((chapter, i) => (
             <AnimatedSection key={i} delay={i * 0.08}>
               <div className="bg-card/60 backdrop-blur-sm border border-primary/15 rounded-2xl p-6 md:p-10">
