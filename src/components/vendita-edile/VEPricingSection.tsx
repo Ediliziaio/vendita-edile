@@ -191,7 +191,7 @@ const VEPricingSection = () => {
 
               {/* Actual price */}
               <div className="mb-6">
-                <span className="text-5xl md:text-6xl lg:text-7xl font-black text-gold">
+                <span className="text-4xl md:text-6xl lg:text-7xl font-black text-gold">
                   €{actualPrice.toLocaleString("it-IT")}
                 </span>
               </div>

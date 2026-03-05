@@ -46,7 +46,7 @@ const VEGuaranteeSection = () => {
               className="p-6 md:p-10 bg-card border-2 border-gold/50 rounded-2xl relative"
             >
               {/* Sigillo */}
-              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24">
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24">
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
