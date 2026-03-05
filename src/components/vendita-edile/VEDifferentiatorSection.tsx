@@ -124,7 +124,10 @@ const VEDifferentiatorSection = () => {
         {/* Team Members Grid */}
         <AnimatedSection delay={0.25}>
           <div className="mb-12 max-w-3xl mx-auto">
-            <p className="text-center text-gold font-bold text-xl mb-6">Il nostro team sul campo</p>
+            <p className="text-center text-xl md:text-2xl font-bold text-foreground mb-2">
+              Questo messaggio potrebbe valere <span className="text-gold drop-shadow-[0_0_15px_hsl(var(--gold)/0.5)]">€100.000/€500.000+</span> per te quest'anno.
+            </p>
+            <p className="text-center text-gold font-bold text-lg mb-6">Il nostro team sul campo</p>
             <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6" staggerDelay={0.1}>
               {[
                 { name: "Membro 1", role: "Fondatore" },
