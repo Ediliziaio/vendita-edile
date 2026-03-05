@@ -210,7 +210,7 @@ const VETrueCostSection = () => {
                   </div>
                   <div className="bg-destructive/20 rounded-xl p-4">
                     <p className="text-2xl md:text-3xl lg:text-4xl font-black text-destructive">€{marginePrima.toLocaleString('it-IT')}</p>
-                    <p className="text-sm text-muted-foreground">margine/mese</p>
+                    <p className="text-sm text-muted-foreground">GUADAGNO/mese</p>
                   </div>
                 </div>
               </motion.div>
@@ -232,7 +232,7 @@ const VETrueCostSection = () => {
                   </div>
                   <div className="bg-gold/20 rounded-xl p-4">
                     <p className="text-2xl md:text-3xl lg:text-4xl font-black text-gold">€{margineDopo.toLocaleString('it-IT')}</p>
-                    <p className="text-sm text-muted-foreground">margine/mese</p>
+                    <p className="text-sm text-muted-foreground">GUADAGNO/mese</p>
                   </div>
                 </div>
               </motion.div>
@@ -269,7 +269,7 @@ const VETrueCostSection = () => {
                     <p className="text-2xl md:text-3xl font-black text-foreground mb-1">
                       +€{item.margineExtra.toLocaleString('it-IT')}
                     </p>
-                    <p className="text-sm text-muted-foreground mb-2">margine extra</p>
+                    <p className="text-sm text-muted-foreground mb-2">GUADAGNO extra</p>
                     <div className="bg-gold/30 rounded-full px-3 py-1 inline-block">
                       <span className="text-sm font-black text-gold">ROI: {item.roi}x</span>
                     </div>
@@ -362,7 +362,7 @@ const VETrueCostSection = () => {
                         </div>
                       </div>
                       <div className="bg-gold/20 border-2 border-gold rounded-xl p-4 text-center">
-                        <p className="text-sm text-foreground mb-1">MARGINE EXTRA MENSILE</p>
+                        <p className="text-sm text-foreground mb-1">GUADAGNO EXTRA MENSILE</p>
                         <p className="text-3xl font-black text-gold">+€{calcMargineExtra.toLocaleString('it-IT')}</p>
                       </div>
                       <div className="grid grid-cols-4 gap-2">
