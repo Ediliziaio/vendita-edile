@@ -1,15 +1,34 @@
 
 
-## Piano: Sostituire "margine" con "GUADAGNO" nelle label della sezione
+## Piano: Aggiornare e spostare la sezione Pricing prima di "Il Vero Costo"
 
-Dallo screenshot, ci sono diverse occorrenze di "margine" da sostituire con "GUADAGNO":
+### 1. Spostare la sezione in Index.tsx
+Muovere `<VEPricingSection />` dalla posizione attuale (dopo VEDifferentiatorSection, riga 103) a **prima** di `<VETrueCostSection />` (prima della riga 90), aggiornando i commenti numerici.
 
-### File: `src/components/vendita-edile/VETrueCostSection.tsx`
+### 2. Aggiornare il contenuto di VEPricingSection.tsx
+Riscrivere la sezione con il nuovo value stack completo (8 elementi invece di 6) e le descrizioni dettagliate fornite dall'utente:
 
-1. **"margine/mese"** nelle card PRIMA e DOPO (righe ~214 e ~228) → `GUADAGNO/mese`
-2. **"margine extra"** nelle card ROI timeline (riga ~252) → `GUADAGNO extra`
-3. **"MARGINE EXTRA MENSILE"** nel calcolatore popup (riga ~305) → `GUADAGNO EXTRA MENSILE`
-4. **"margine extra"** label nel calcolatore popup ROI grid (riga ~252) → `GUADAGNO extra`
+**Nuovo value stack:**
+| Elemento | Valore |
+|----------|--------|
+| Affiancamento 1:1 per 90 giorni | €12.000 |
+| Script di Vendita Personalizzati | €4.500 |
+| Revisione Trattative Settimanale | €6.000 |
+| Supporto WhatsApp Diretto | €3.000 |
+| Sistema di Follow-Up Automatizzato | €2.500 |
+| Template Preventivi che Convertono | €2.000 |
+| Dashboard KPI Vendite | €1.800 |
+| Accesso alla Community Vendita Edile® | €1.200 |
 
-Verificherò tutte le occorrenze leggendo il file aggiornato.
+**Totale:** €33.000 → Investimento: €9.000 → Risparmio: €24.000
+
+**Nuovi elementi di design:**
+- Aggiungere 2 nuove icone (BarChart3 per Dashboard KPI, Users2 per Community)
+- Descrizioni più dettagliate e specifiche per ogni voce (come da testo utente)
+- Aggiungere sezione "calcolo rapido ROI" in fondo: se chiudi 1 trattativa extra → payback in 3 mesi; se 2 extra → profitto dal mese 2
+- Subtitle aggiornato: "Ogni elemento ha un prezzo reale, calcolato sui prezzi di mercato per servizi equivalenti. Non numeri inventati."
+
+### File modificati
+- `src/pages/Index.tsx` — spostamento ordine sezione
+- `src/components/vendita-edile/VEPricingSection.tsx` — aggiornamento contenuto, value stack, descrizioni e sezione ROI finale
 
