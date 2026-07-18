@@ -1,20 +1,34 @@
 import { Mail, MapPin, Building2 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import logoImg from "@/assets/vendita-edile-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Il Metodo", href: "#metodo" },
   { label: "Investimento", href: "#investimento" },
+  { label: "Blog", href: "/blog" },
   { label: "Candidati", href: "#candidati" },
 ];
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   const handleSmoothScroll = (href: string) => {
     if (href === "/") {
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (href.startsWith("/")) {
+      navigate(href);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     if (href.startsWith("#")) {
+      if (window.location.pathname !== "/") {
+        navigate(`/${href}`);
+        return;
+      }
       const element = document.getElementById(href.slice(1));
       if (element) {
         const offset = 80;
@@ -90,8 +104,15 @@ const Footer = () => {
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Domus Group S.r.l. — VENDITA EDILE®</p>
           <div className="flex items-center gap-4">
-            <button className="hover:text-secondary transition-colors">Privacy Policy</button>
-            <button className="hover:text-secondary transition-colors">Termini</button>
+            <Link to="/privacy" className="hover:text-secondary transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/cookie" className="hover:text-secondary transition-colors">
+              Cookie Policy
+            </Link>
+            <Link to="/termini" className="hover:text-secondary transition-colors">
+              Termini
+            </Link>
           </div>
         </div>
       </div>

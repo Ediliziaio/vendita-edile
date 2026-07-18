@@ -4,16 +4,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logoImg from "@/assets/vendita-edile-logo.png";
+import { goToContactForm } from "@/config/site";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Il Metodo", href: "#metodo" },
   { label: "Investimento", href: "#investimento" },
+  { label: "Blog", href: "/blog" },
   { label: "Candidati", href: "#candidati" },
 ];
-
-// Configura qui l'URL del tuo form esterno
-const EXTERNAL_FORM_URL = "https://example.typeform.com/to/your-form";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,6 +55,13 @@ const Navbar = () => {
       return;
     }
 
+    // Rotte reali (es. /blog): naviga e scrolla in cima
+    if (href.startsWith("/")) {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     if (href.startsWith("#")) {
       const targetId = href.slice(1);
 
@@ -78,7 +84,7 @@ const Navbar = () => {
 
   const handleCtaClick = () => {
     setIsMobileMenuOpen(false);
-    window.open(EXTERNAL_FORM_URL, "_blank");
+    goToContactForm();
   };
 
   return (

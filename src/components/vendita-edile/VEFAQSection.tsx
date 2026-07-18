@@ -19,8 +19,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const EXTERNAL_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdqP0IjmBgMpFPblV2dMO72YOSxvlEvKezLyBQ-EXayIAkuCQ/viewform";
-
 const faqs = [
   {
     icon: Euro,
@@ -129,10 +127,6 @@ const summaryPoints = [
 ];
 
 const VEFAQSection = () => {
-  const handleCtaClick = () => {
-    window.open(EXTERNAL_FORM_URL, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <section className="relative py-20 md:py-32 bg-navy overflow-hidden">
       {/* Background Effects */}

@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Shield, Clock, Award } from "lucide-react";
+import { Shield, Clock, Award } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { getMonthName, getAvailableSpots } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { ContactFormEmbed } from "@/components/ContactFormEmbed";
 import showroomImage from "@/assets/showroom.jpg";
 
-// Configura qui l'URL del tuo form esterno (Typeform, ecc.)
-const EXTERNAL_FORM_URL = "https://example.typeform.com/to/your-form";
-
 const VEFinalCTASection = () => {
-  const handleCtaClick = () => {
-    window.open(EXTERNAL_FORM_URL, "_blank");
-  };
-
   const trustBadges = [
     { icon: Shield, text: "Sistema testato" },
     { icon: Clock, text: "90 giorni" },
@@ -44,42 +37,27 @@ const VEFinalCTASection = () => {
               Conclusione
             </motion.span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-foreground mb-6">
-              Vendita Edile non è formazione.
+              VENDITA EDILE® non è un corso da guardare.
             </h2>
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-gold mb-8 drop-shadow-[0_0_30px_hsl(var(--gold)/0.4)]">
-              È un sistema di vendita costruito sul campo.
+              È un sistema di vendita costruito sul campo, sui tuoi clienti.
             </p>
           </AnimatedSection>
 
           <AnimatedSection delay={0.3}>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Se vuoi capire se è applicabile alla tua azienda, candidati ora.
+              Candidati ora: in 2 minuti scopri se la tua azienda rientra tra
+              quelle che possiamo affiancare questo mese. Nessun impegno,
+              nessun venditore al telefono.
             </p>
           </AnimatedSection>
 
+          {/* Form di richiesta contatto embeddato */}
           <AnimatedSection delay={0.4}>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="lg"
-                variant="gold"
-                onClick={handleCtaClick}
-                className="text-base px-6 py-5 md:text-xl md:px-12 md:py-8 font-bold shadow-2xl shadow-gold/50 hover:shadow-gold/70 transition-all duration-300"
-              >
-                <span>Richiedi la Valutazione Strategica</span>
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ExternalLink className="w-5 h-5 ml-2" />
-                </motion.div>
-              </Button>
-            </motion.div>
+            <ContactFormEmbed height={680} />
           </AnimatedSection>
 
           <AnimatedSection delay={0.6}>

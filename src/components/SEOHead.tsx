@@ -1,8 +1,10 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { JsonLd } from '@/components/JsonLd';
 
 const siteConfig = {
   name: "VENDITA EDILE®",
-  description: "L'unico programma di affiancamento vendite per imprenditori edili. +30-50% fatturato in 90 giorni.",
+  description:
+    "L'unico programma di affiancamento vendite per imprenditori edili. +30-50% fatturato in 90 giorni.",
   url: "https://venditaedile.it",
   ogImage: "/og-image.jpg",
   author: "VENDITA EDILE®",
@@ -16,8 +18,8 @@ const siteConfig = {
     "edilizia",
     "ristrutturazioni",
     "sistema vendita",
-    "coaching vendite"
-  ]
+    "coaching vendite",
+  ],
 };
 
 interface SEOHeadProps {
@@ -34,6 +36,17 @@ interface SEOHeadProps {
   jsonLd?: object | object[];
 }
 
+type Tag =
+  | { el: 'meta'; attr: 'name' | 'property'; key: string; content: string }
+  | { el: 'link'; rel: string; href: string };
+
+/**
+ * Gestione dell'head (title + meta + Open Graph + Twitter + canonical) in modo
+ * imperativo tramite useEffect. Scelta deliberata rispetto a react-helmet-async,
+ * che in questo setup SPA non applicava i tag in modo affidabile. Ogni pagina
+ * imposta i propri tag al mount e li rimuove all'unmount, garantendo meta
+ * corretti per SEO, GEO e AEO su ogni rotta.
+ */
 export function SEOHead({
   title,
   description = siteConfig.description,
@@ -45,73 +58,104 @@ export function SEOHead({
   updatedAt,
   author = siteConfig.author,
   noindex = false,
-  jsonLd
+  jsonLd,
 }: SEOHeadProps) {
-  const fullTitle = title 
-    ? `${title} | ${siteConfig.name}` 
+  const fullTitle = title
+    ? `${title} | ${siteConfig.name}`
     : `${siteConfig.name} - Affiancamento Vendite per Imprenditori Edili`;
-  
-  const fullImageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;
-  
-  const jsonLdArray = jsonLd 
-    ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
-    : [];
 
-  return (
-    <Helmet>
-      {/* Basic Meta Tags */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords.join(', ')} />
-      <meta name="author" content={author} />
-      
-      {/* Robots */}
-      {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
-      ) : (
-        <meta name="robots" content="index, follow" />
-      )}
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={url} />
-      
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={fullImageUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={title || siteConfig.name} />
-      <meta property="og:site_name" content={siteConfig.name} />
-      <meta property="og:locale" content="it_IT" />
-      
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={url} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={fullImageUrl} />
-      <meta name="twitter:image:alt" content={title || siteConfig.name} />
-      
-      {/* Article specific meta tags */}
-      {type === 'article' && publishedAt && (
-        <>
-          <meta property="article:published_time" content={publishedAt} />
-          {updatedAt && <meta property="article:modified_time" content={updatedAt} />}
-          <meta property="article:author" content={author} />
-        </>
-      )}
-      
-      {/* JSON-LD Structured Data */}
-      {jsonLdArray.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </Helmet>
-  );
+  const fullImageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;
+  const keywordsStr = keywords.join(', ');
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = fullTitle;
+
+    const tags: Tag[] = [
+      { el: 'meta', attr: 'name', key: 'description', content: description },
+      { el: 'meta', attr: 'name', key: 'keywords', content: keywordsStr },
+      { el: 'meta', attr: 'name', key: 'author', content: author },
+      {
+        el: 'meta',
+        attr: 'name',
+        key: 'robots',
+        content: noindex ? 'noindex, nofollow' : 'index, follow',
+      },
+      { el: 'link', rel: 'canonical', href: url },
+      // Open Graph
+      { el: 'meta', attr: 'property', key: 'og:type', content: type },
+      { el: 'meta', attr: 'property', key: 'og:url', content: url },
+      { el: 'meta', attr: 'property', key: 'og:title', content: fullTitle },
+      { el: 'meta', attr: 'property', key: 'og:description', content: description },
+      { el: 'meta', attr: 'property', key: 'og:image', content: fullImageUrl },
+      { el: 'meta', attr: 'property', key: 'og:image:width', content: '1200' },
+      { el: 'meta', attr: 'property', key: 'og:image:height', content: '630' },
+      { el: 'meta', attr: 'property', key: 'og:image:alt', content: title || siteConfig.name },
+      { el: 'meta', attr: 'property', key: 'og:site_name', content: siteConfig.name },
+      { el: 'meta', attr: 'property', key: 'og:locale', content: 'it_IT' },
+      // Twitter
+      { el: 'meta', attr: 'name', key: 'twitter:card', content: 'summary_large_image' },
+      { el: 'meta', attr: 'name', key: 'twitter:url', content: url },
+      { el: 'meta', attr: 'name', key: 'twitter:title', content: fullTitle },
+      { el: 'meta', attr: 'name', key: 'twitter:description', content: description },
+      { el: 'meta', attr: 'name', key: 'twitter:image', content: fullImageUrl },
+      { el: 'meta', attr: 'name', key: 'twitter:image:alt', content: title || siteConfig.name },
+    ];
+
+    if (type === 'article' && publishedAt) {
+      tags.push({
+        el: 'meta',
+        attr: 'property',
+        key: 'article:published_time',
+        content: publishedAt,
+      });
+      if (updatedAt) {
+        tags.push({
+          el: 'meta',
+          attr: 'property',
+          key: 'article:modified_time',
+          content: updatedAt,
+        });
+      }
+      tags.push({ el: 'meta', attr: 'property', key: 'article:author', content: author });
+    }
+
+    const created: Element[] = [];
+    for (const tag of tags) {
+      let node: Element;
+      if (tag.el === 'meta') {
+        node = document.createElement('meta');
+        node.setAttribute(tag.attr, tag.key);
+        node.setAttribute('content', tag.content);
+      } else {
+        node = document.createElement('link');
+        node.setAttribute('rel', tag.rel);
+        node.setAttribute('href', tag.href);
+      }
+      node.setAttribute('data-seo', 'route');
+      document.head.appendChild(node);
+      created.push(node);
+    }
+
+    return () => {
+      document.title = previousTitle;
+      created.forEach((n) => n.remove());
+    };
+  }, [
+    fullTitle,
+    description,
+    keywordsStr,
+    author,
+    noindex,
+    url,
+    type,
+    fullImageUrl,
+    title,
+    publishedAt,
+    updatedAt,
+  ]);
+
+  const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+  return jsonLdArray.length > 0 ? <JsonLd data={jsonLdArray} /> : null;
 }
