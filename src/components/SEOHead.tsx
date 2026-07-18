@@ -5,7 +5,7 @@ const siteConfig = {
   name: "VENDITA EDILE®",
   description:
     "L'unico programma di affiancamento vendite per imprenditori edili. +30-50% fatturato in 90 giorni.",
-  url: "https://venditaedile.it",
+  url: "https://www.venditaedile.it",
   ogImage: "/og-image.jpg",
   author: "VENDITA EDILE®",
   keywords: [

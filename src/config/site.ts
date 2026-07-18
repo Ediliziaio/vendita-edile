@@ -4,7 +4,7 @@
 
 export const siteConfig = {
   name: "VENDITA EDILE®",
-  domain: "https://venditaedile.it",
+  domain: "https://www.venditaedile.it",
 
   // Form di richiesta contatto embeddato (Form Builder EdiliziaInCloud).
   // ⚠️ Cambiare qui l'URL aggiorna il form ovunque sia embeddato.

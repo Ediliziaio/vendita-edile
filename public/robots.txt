@@ -1,5 +1,5 @@
 # robots.txt — VENDITA EDILE®
-# https://venditaedile.it
+# https://www.venditaedile.it
 
 # --- Motori di ricerca tradizionali ---
 User-agent: Googlebot
@@ -78,4 +78,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://venditaedile.it/sitemap.xml
+Sitemap: https://www.venditaedile.it/sitemap.xml

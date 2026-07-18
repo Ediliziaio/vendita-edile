@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SITE_URL = 'https://venditaedile.it';
+const SITE_URL = 'https://www.venditaedile.it';
 
 serve(async (req) => {
   // Handle CORS preflight requests

@@ -4,7 +4,7 @@
 
 import type { Article } from "@/content/types";
 
-export const SITE_URL = "https://venditaedile.it";
+export const SITE_URL = "https://www.venditaedile.it";
 export const SITE_NAME = "VENDITA EDILE®";
 export const ORG_LEGAL_NAME = "Domus Group S.r.l.";
 export const LOGO_URL = `${SITE_URL}/og-image.jpg`;
