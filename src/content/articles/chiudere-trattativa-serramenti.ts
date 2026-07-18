@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/showroom.jpg";
+import cover from "@/assets/cover-chiudere-trattativa-serramenti.webp";
 
 const article: Article = {
   slug: "chiudere-trattativa-serramenti",

@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-perdere-clienti-distrazione.jpg";
+import cover from "@/assets/cover-follow-up-preventivi-edilizia.webp";
 
 const article: Article = {
   slug: "follow-up-preventivi-edilizia",

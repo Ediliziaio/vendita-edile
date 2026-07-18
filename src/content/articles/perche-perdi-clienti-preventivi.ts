@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-perdere-clienti-distrazione.jpg";
+import cover from "@/assets/cover-perche-perdi-clienti-preventivi.webp";
 
 const article: Article = {
   slug: "perche-perdi-clienti-preventivi",

@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/hero-windows.jpg";
+import cover from "@/assets/cover-chiudere-al-primo-appuntamento.webp";
 
 const article: Article = {
   slug: "chiudere-al-primo-appuntamento",

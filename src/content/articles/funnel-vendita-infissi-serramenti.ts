@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/cantiere.jpg";
+import cover from "@/assets/cover-funnel-vendita-infissi-serramenti.webp";
 
 const article: Article = {
   slug: "funnel-vendita-infissi-serramenti",

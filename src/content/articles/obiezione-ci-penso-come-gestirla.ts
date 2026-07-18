@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-preventivi-edilizia.jpg";
+import cover from "@/assets/cover-obiezione-ci-penso-come-gestirla.webp";
 
 const article: Article = {
   slug: "obiezione-ci-penso-come-gestirla",

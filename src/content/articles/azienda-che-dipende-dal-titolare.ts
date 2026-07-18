@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-azienda-dipende-da-te.jpg";
+import cover from "@/assets/cover-azienda-che-dipende-dal-titolare.webp";
 
 const article: Article = {
   slug: "azienda-che-dipende-dal-titolare",

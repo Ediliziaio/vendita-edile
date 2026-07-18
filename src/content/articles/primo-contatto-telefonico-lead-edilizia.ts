@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-30-richieste-qualificate.jpg";
+import cover from "@/assets/cover-primo-contatto-telefonico-lead-edilizia.webp";
 
 const article: Article = {
   slug: "primo-contatto-telefonico-lead-edilizia",

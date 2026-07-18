@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-aumentare-vendite-edilizia.jpg";
+import cover from "@/assets/cover-aumentare-vendite-infissi.webp";
 
 const article: Article = {
   slug: "aumentare-vendite-infissi-serramenti",

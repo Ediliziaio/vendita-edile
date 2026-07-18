@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/hero-windows.jpg";
+import cover from "@/assets/cover-obiezione-prezzo-costa-troppo-edilizia.webp";
 
 const article: Article = {
   slug: "obiezione-prezzo-costa-troppo-edilizia",

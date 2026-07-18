@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-smetti-fare-sconti.jpg";
+import cover from "@/assets/cover-negoziazione-senza-cedere-sul-prezzo.webp";
 
 const article: Article = {
   slug: "negoziazione-senza-cedere-sul-prezzo",

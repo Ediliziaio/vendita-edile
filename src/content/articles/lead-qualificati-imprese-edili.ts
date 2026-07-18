@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-30-richieste-qualificate.jpg";
+import cover from "@/assets/cover-lead-qualificati-imprese-edili.webp";
 
 const article: Article = {
   slug: "lead-qualificati-imprese-edili",

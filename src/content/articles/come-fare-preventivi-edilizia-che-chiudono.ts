@@ -1,6 +1,6 @@
 import type { Article } from "@/content/types";
 import { flo } from "@/content/authors";
-import cover from "@/assets/blog-preventivi-edilizia-cover.jpg";
+import cover from "@/assets/cover-come-fare-preventivi-edilizia-che-chiudono.webp";
 
 const article: Article = {
   slug: "come-fare-preventivi-edilizia-che-chiudono",
