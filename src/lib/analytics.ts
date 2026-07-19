@@ -16,21 +16,40 @@ declare global {
 export const SITE_SOURCE = "venditaedile.it";
 export const SITE_BRAND = "VENDITA EDILE";
 
-/** Traccia un evento standard Meta (Lead, Contact, ViewContent, ...). */
+// Evento custom di PageView specifico del sito (compare in Gestione Eventi
+// col suo nome, così si distingue subito dal PageView standard condiviso).
+export const SITE_PAGEVIEW_EVENT = "PV_venditaedile";
+
+function withSource(params?: PixelParams): PixelParams {
+  return {
+    source_site: SITE_SOURCE,
+    source_brand: SITE_BRAND,
+    ...(params ?? {}),
+  };
+}
+
+/** Traccia un evento standard Meta (PageView, Lead, Contact, ViewContent, ...). */
 export function fbTrack(event: string, params?: PixelParams) {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    // source_site/source_brand: etichette per attribuire l'evento a questo sito
-    const data: PixelParams = {
-      source_site: SITE_SOURCE,
-      source_brand: SITE_BRAND,
-      ...(params ?? {}),
-    };
-    window.fbq("track", event, data);
+    window.fbq("track", event, withSource(params));
   }
 }
 
-/** PageView — su ogni cambio pagina (SPA). */
-export const trackPageView = () => fbTrack("PageView");
+/** Traccia un evento custom Meta (nome personalizzato). */
+export function fbTrackCustom(event: string, params?: PixelParams) {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("trackCustom", event, withSource(params));
+  }
+}
+
+/**
+ * PageView su ogni pagina (SPA): spara sia il PageView standard di Meta
+ * sia l'evento custom PV_venditaedile, così è facilmente filtrabile.
+ */
+export const trackPageView = () => {
+  fbTrack("PageView");
+  fbTrackCustom(SITE_PAGEVIEW_EVENT);
+};
 
 /** Lead — conversione reale (candidatura inviata / pagina grazie). */
 export const trackLead = (params?: PixelParams) => fbTrack("Lead", params);
