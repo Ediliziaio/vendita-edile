@@ -18,6 +18,7 @@ import {
 import { getArticleBySlug, getRelatedArticles } from "@/content";
 import { extractToc } from "@/lib/markdown";
 import { formatArticleDate } from "@/lib/date";
+import { trackViewContent } from "@/lib/analytics";
 import {
   SITE_URL,
   articleSchema,
@@ -32,7 +33,14 @@ const BlogPost = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, [slug]);
+    if (article) {
+      trackViewContent({
+        content_name: article.title,
+        content_category: article.category,
+        content_type: "article",
+      });
+    }
+  }, [slug, article]);
 
   const toc = useMemo(
     () => (article ? extractToc(article.content) : []),

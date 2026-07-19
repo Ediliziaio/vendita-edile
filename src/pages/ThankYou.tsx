@@ -8,10 +8,13 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { articles } from "@/content";
 import { SITE_URL } from "@/lib/schema";
+import { trackLead } from "@/lib/analytics";
 
 const ThankYou = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    // Conversione: chi arriva qui ha inviato la richiesta
+    trackLead({ content_name: "Pagina grazie" });
   }, []);
 
   const suggested = articles.slice(0, 3);

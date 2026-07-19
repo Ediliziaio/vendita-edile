@@ -109,7 +109,7 @@ I cookie sono piccoli file di testo che i siti visitati inviano al dispositivo d
 
 ## 2. Natura informativa del Sito
 
-Il sito venditaedile.it è un sito prevalentemente informativo e promozionale, dedicato alla presentazione del programma di affiancamento vendite VENDITA EDILE® rivolto alle imprese edili. Il Sito **non utilizza cookie di profilazione propri** e non effettua tracciamento pubblicitario diretto sugli utenti attraverso cookie di terze parti installati autonomamente dal Titolare.
+Il sito venditaedile.it è un sito informativo e promozionale, dedicato alla presentazione del programma di affiancamento vendite VENDITA EDILE® rivolto alle imprese edili. Oltre ai cookie tecnici necessari, il Sito utilizza il **Meta Pixel (Facebook Pixel)** per finalità di misurazione e marketing delle proprie campagne pubblicitarie: si tratta di uno strumento di profilazione di terza parte, per il quale è richiesto il consenso dell'utente (vedi paragrafo 4).
 
 ## 3. Tipologie di cookie utilizzati
 
@@ -120,13 +120,16 @@ Sono cookie indispensabili per il corretto funzionamento del Sito (ad esempio pe
 Il Sito si appoggia ad alcuni servizi esterni che possono impostare propri cookie o effettuare connessioni tecniche indipendenti dalla volontà del Titolare:
 
 - **Google Fonts**: utilizzato per il caricamento dei caratteri tipografici del Sito. Il caricamento dei font può comportare una connessione ai server di Google LLC.
-- **Google Form**: il modulo di candidatura al programma è ospitato su infrastruttura Google. Nel momento in cui l'utente viene indirizzato al modulo (tramite link o iframe di reindirizzamento), è possibile che Google imposti propri cookie tecnici, secondo le proprie policy consultabili su policies.google.com/technologies/cookies.
+- **Modulo di richiesta contatto (EdiliziaInCloud)**: il form di candidatura è embeddato tramite iframe dal servizio EdiliziaInCloud, che può impostare propri cookie tecnici necessari al funzionamento del modulo.
+- **Meta Pixel (Facebook Pixel)**: strumento fornito da Meta Platforms Ireland Ltd. che, tramite cookie e identificatori, consente di misurare l'efficacia delle campagne pubblicitarie, creare pubblici personalizzati e mostrare annunci mirati sulle piattaforme Meta (Facebook, Instagram). Maggiori informazioni su www.facebook.com/policy.php.
 
 Il Titolare non ha accesso né controllo diretto sui cookie eventualmente impostati da questi servizi terzi, la cui gestione è disciplinata dalle rispettive informative privacy e cookie policy.
 
 ## 4. Cookie di profilazione e marketing
 
-Allo stato attuale il Sito non utilizza cookie di profilazione propri per finalità pubblicitarie o di marketing comportamentale. Qualora in futuro venissero attivati strumenti di questo tipo (ad esempio pixel di tracciamento per campagne pubblicitarie), la presente Cookie Policy sarà aggiornata e, ove richiesto dalla legge, sarà attivato un apposito banner di consenso preventivo.
+Il Sito utilizza il **Meta Pixel (Facebook Pixel)** per finalità di marketing, misurazione delle conversioni e remarketing sulle piattaforme Meta. Questo strumento raccoglie dati relativi alla navigazione (pagine viste, interazioni con il modulo di contatto, visualizzazione degli articoli) e li associa, ove possibile, all'account Meta dell'utente, al fine di ottimizzare le campagne pubblicitarie e mostrare annunci pertinenti.
+
+Il trattamento tramite Meta Pixel avviene sulla base del **consenso** dell'utente. L'utente può gestire le proprie preferenze pubblicitarie direttamente dalle impostazioni del proprio account Meta e disattivare i cookie di terze parti dal proprio browser (vedi paragrafo 5). Per il Titolare è consigliata l'adozione di un banner di consenso preventivo (cookie banner) che consenta all'utente di accettare o rifiutare i cookie di marketing prima della loro attivazione.
 
 ## 5. Come gestire e disattivare i cookie
 
