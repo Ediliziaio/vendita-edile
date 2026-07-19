@@ -11,11 +11,21 @@ declare global {
   }
 }
 
+// Lo stesso pixel Meta è usato su più siti: alleghiamo a OGNI evento
+// l'identità del sito, così in Gestione Eventi è chiaro da dove arriva.
+export const SITE_SOURCE = "venditaedile.it";
+export const SITE_BRAND = "VENDITA EDILE";
+
 /** Traccia un evento standard Meta (Lead, Contact, ViewContent, ...). */
 export function fbTrack(event: string, params?: PixelParams) {
   if (typeof window !== "undefined" && typeof window.fbq === "function") {
-    if (params) window.fbq("track", event, params);
-    else window.fbq("track", event);
+    // source_site/source_brand: etichette per attribuire l'evento a questo sito
+    const data: PixelParams = {
+      source_site: SITE_SOURCE,
+      source_brand: SITE_BRAND,
+      ...(params ?? {}),
+    };
+    window.fbq("track", event, data);
   }
 }
 
