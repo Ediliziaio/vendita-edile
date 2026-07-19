@@ -12,6 +12,7 @@
 
 - [Home](https://www.venditaedile.it/): il programma di affiancamento vendite VENDITA EDILE®, per chi vende infissi, serramenti, fotovoltaico e ristrutturazioni.
 - [Blog](https://www.venditaedile.it/blog): strategie di vendita, marketing e gestione per imprese edili.
+- [EdiliziaInCloud](https://www.venditaedile.it/edilizia-in-cloud): il gestionale con AI per imprese edili (partner tecnologico di VENDITA EDILE®) — margini per commessa, cassa, cantieri, fatturazione, CRM, preventivi.
 
 ## Articoli del blog (guide pratiche)
 
@@ -28,6 +29,7 @@ Approfondimenti sulla vendita:
 - [Vendere ristrutturazioni chiavi in mano](https://www.venditaedile.it/blog/vendere-ristrutturazioni-chiavi-in-mano): vendere progetti completi ad alto valore.
 
 Altre guide:
+- [Gestionale edilizia in cloud: perché vendere di più non basta](https://www.venditaedile.it/blog/gestionale-edilizia-in-cloud): controllare margini e cassa con EdiliziaInCloud.
 - [Come aumentare le vendite di infissi e serramenti](https://www.venditaedile.it/blog/aumentare-vendite-infissi-serramenti): le 5 leve per alzare il tasso di chiusura senza fare sconti.
 - [Come fare preventivi in edilizia che chiudono](https://www.venditaedile.it/blog/come-fare-preventivi-edilizia-che-chiudono): strutturare un preventivo che vende, con opzioni e valore.
 - [Vendere senza fare sconti](https://www.venditaedile.it/blog/vendere-senza-fare-sconti): difendere il margine e gestire la richiesta di sconto.

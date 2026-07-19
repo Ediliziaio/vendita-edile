@@ -33,6 +33,7 @@ import chiuderefPrimoAppuntamento from "./articles/chiudere-al-primo-appuntament
 import storytellingVendita from "./articles/storytelling-vendita-edilizia";
 import negoziazionePrezzo from "./articles/negoziazione-senza-cedere-sul-prezzo";
 import vendereRistrutturazioni from "./articles/vendere-ristrutturazioni-chiavi-in-mano";
+import gestionaleEdiliziaInCloud from "./articles/gestionale-edilizia-in-cloud";
 
 // L'ordine qui non conta: sotto ordiniamo per data di pubblicazione.
 const registry: Article[] = [
@@ -66,6 +67,7 @@ const registry: Article[] = [
   storytellingVendita,
   negoziazionePrezzo,
   vendereRistrutturazioni,
+  gestionaleEdiliziaInCloud,
 ];
 
 /** Tutti gli articoli, ordinati dal più recente al più vecchio. */

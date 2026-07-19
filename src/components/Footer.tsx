@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Il Metodo", href: "#metodo" },
   { label: "Investimento", href: "#investimento" },
   { label: "Blog", href: "/blog" },
+  { label: "EdiliziaInCloud", href: "/edilizia-in-cloud" },
   { label: "Candidati", href: "#candidati" },
 ];
 
