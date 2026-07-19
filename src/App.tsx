@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { PixelTracker } from "@/components/PixelTracker";
+import { CookieBanner } from "@/components/CookieBanner";
 import Index from "./pages/Index";
 
 // Il blog (e i testi dei 20 articoli) viene caricato on-demand:
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <CookieBanner />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
