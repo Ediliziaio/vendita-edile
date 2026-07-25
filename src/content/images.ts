@@ -4,22 +4,26 @@
 // scritto a mano nel Markdown (es. /src/assets/foo.jpg) si romperebbe in build.
 // Negli articoli si scrive quindi:  ![Didascalia](img:chiave)
 // e MarkdownRenderer risolve la chiave in URL definitivo.
+//
+// Le immagini sono realizzate su misura per il brand, 1600x900 (16:9).
+// Per sostituirne una basta rimpiazzare il file in src/assets: le chiavi
+// restano invariate e nessun articolo va toccato.
 
-import blogRichieste from "@/assets/blog-30-richieste-qualificate.jpg";
-import blogAumentareVendite from "@/assets/blog-aumentare-vendite-edilizia.jpg";
-import blogAziendaDipende from "@/assets/blog-azienda-dipende-da-te.jpg";
-import blogClientiQualificati from "@/assets/blog-clienti-qualificati-edilizia.jpg";
-import blogControlloGestione from "@/assets/blog-controllo-gestione-edilizia.jpg";
-import blogEfficienza from "@/assets/blog-efficienza-operativa-edilizia.jpg";
-import blogPerdereClienti from "@/assets/blog-perdere-clienti-distrazione.jpg";
-import blogPreventiviCover from "@/assets/blog-preventivi-edilizia-cover.jpg";
-import blogPreventivi from "@/assets/blog-preventivi-edilizia.jpg";
-import blogSconti from "@/assets/blog-smetti-fare-sconti.jpg";
-import cantiere from "@/assets/cantiere.jpg";
-import cantiereInstallazione from "@/assets/cantiere-installazione.jpg";
-import showroom from "@/assets/showroom.jpg";
-import heroWindows from "@/assets/hero-windows.jpg";
-import team from "@/assets/team.jpg";
+import trattativa from "@/assets/img-trattativa.webp";
+import preventivo from "@/assets/img-preventivo.webp";
+import sconto from "@/assets/img-sconto.webp";
+import clienteperso from "@/assets/img-clienteperso.webp";
+import clientiqualificati from "@/assets/img-clientiqualificati.webp";
+import richieste from "@/assets/img-richieste.webp";
+import crescita from "@/assets/img-crescita.webp";
+import margini from "@/assets/img-margini.webp";
+import organizzazione from "@/assets/img-organizzazione.webp";
+import titolare from "@/assets/img-titolare.webp";
+import team from "@/assets/img-team.webp";
+import showroom from "@/assets/img-showroom.webp";
+import infissi from "@/assets/img-infissi.webp";
+import cantiere from "@/assets/img-cantiere.webp";
+import posa from "@/assets/img-posa.webp";
 
 /**
  * Chiavi semantiche: descrivono la SCENA, non il file.
@@ -27,25 +31,25 @@ import team from "@/assets/team.jpg";
  */
 export const contentImages: Record<string, string> = {
   // Trattativa e vendita
-  trattativa: blogPreventivi,
-  preventivo: blogPreventiviCover,
-  sconto: blogSconti,
-  clienteperso: blogPerdereClienti,
-  clientiqualificati: blogClientiQualificati,
-  richieste: blogRichieste,
-  crescita: blogAumentareVendite,
+  trattativa,
+  preventivo,
+  sconto,
+  clienteperso,
+  clientiqualificati,
+  richieste,
+  crescita,
 
   // Azienda e numeri
-  margini: blogControlloGestione,
-  organizzazione: blogEfficienza,
-  titolare: blogAziendaDipende,
+  margini,
+  organizzazione,
+  titolare,
   team,
 
   // Prodotto e cantiere
   showroom,
-  infissi: heroWindows,
+  infissi,
   cantiere,
-  posa: cantiereInstallazione,
+  posa,
 };
 
 /** Prefisso usato nel Markdown per riferirsi al registro. */
