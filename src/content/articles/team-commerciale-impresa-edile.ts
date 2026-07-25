@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Se in azienda chiudi solo tu, non hai un'impresa: hai un lavoro travestito da impresa. Ecco come costruire un team commerciale che vende infissi, ristrutturazioni e fotovoltaico con lo stesso metodo, ogni giorno.",
   category: "Gestione",
-  tags: ["team commerciale", "vendita", "gestione", "provvigioni", "formazione", "kpi"],
+  tags: ["team commerciale", "vendita", "gestione", "provvigioni", "formazione", "kpi", "selezione del personale"],
   keyword: "team commerciale edilizia",
-  readingTime: 10,
+  readingTime: 12,
   publishedAt: "2025-09-25",
   updatedAt: "2025-09-25",
   author: flo,
@@ -45,6 +45,20 @@ Il primo errore è assumere in base al curriculum. "Ha 10 anni di esperienza nel
 
 Fai un colloquio che simuli una vendita vera: chiedi al candidato di venderti qualcosa, anche banale, e osserva come gestisce le tue obiezioni finte. Ti dice più di dieci minuti di curriculum.
 
+## Esempio di colloquio di selezione: le domande che rivelano il venditore giusto
+
+Un colloquio classico, fatto di domande su esperienza e curriculum, non ti dice se quella persona chiuderà preventivi per la tua impresa. Ti servono domande che mettano il candidato in una situazione simile a quella che vivrà davanti a un cliente vero, in showroom o in cantiere. Ecco cinque domande che usiamo quando affianchiamo la selezione di un team commerciale:
+
+1. **"Mi vendi questa penna, ma io ti dico che ho già un fornitore e sono soddisfatto."** Non ti interessa la scaletta di vendita che recita a memoria: ti interessa se fa domande per capire cosa lo rende soddisfatto, invece di lanciarsi subito nel monologo sul prodotto.
+2. **"Raccontami l'ultima volta che un cliente ti ha detto di no. Cosa hai fatto dopo?"** Chi ha già smesso di richiamare al primo rifiuto lo farà anche da te. Chi ha insistito con metodo, senza essere invadente, ha già la tenuta al rifiuto che cerchi.
+3. **"Come reagiresti se ti dicessi che per i primi due mesi guadagnerai meno perché segui un metodo nuovo invece del tuo?"** La risposta ti dice se stai assumendo qualcuno disciplinato o qualcuno che tornerà sempre a fare a modo suo.
+4. **"Descrivimi come ti presenteresti per un sopralluogo in una villa importante."** Nel settore casa la fiducia si costruisce nei primi 90 secondi: chi non ci ha mai pensato, in trattativa lo scoprirai a tue spese.
+5. **"Qual è la domanda più importante che fai a un cliente prima di parlare di prezzo?"** Chi non ha una risposta pronta probabilmente vende ancora "a sensazione", esattamente il problema che vuoi evitare in fase di selezione.
+
+Non serve un test psicoattitudinale complesso: bastano queste cinque domande, fatte con attenzione a come il candidato ragiona più che a cosa risponde, per capire in trenta minuti se stai per assumere un venditore disciplinato o l'ennesimo "esperto" che venderà a modo suo.
+
+![Il primo sopralluogo di un nuovo commerciale dice più di qualsiasi colloquio su come lavorerà davvero.](img:team)
+
 ## Perché serve uno script condiviso (e non "ognuno vende a modo suo")
 
 Qui sta il cuore del problema. Nella maggior parte delle imprese edili ogni venditore vende **a sensazione**: chi ha più esperienza fa un certo tipo di presentazione, il più giovane ne improvvisa un'altra, e i risultati sono a macchia di leopardo. Un team commerciale vero lavora invece su un **metodo condiviso**: stesse domande di qualifica, stessa struttura di presentazione, stesse risposte alle obiezioni più comuni. Non significa trasformare le persone in robot: significa dare a tutti la stessa base solida su cui costruire il proprio stile.
@@ -73,6 +87,22 @@ Alcuni principi che funzionano nelle imprese edili strutturate:
 
 Un sistema provvigionale ben tarato è probabilmente la leva più potente che hai per orientare il comportamento del team senza dover controllare ogni singola trattativa.
 
+## Quanto costa davvero il turnover commerciale (e perché conviene investire in selezione)
+
+Molti imprenditori edili vedono la selezione e l'affiancamento come un costo evitabile: "assumo, vediamo come va, se non funziona cambio". È il calcolo più costoso che si possa fare, perché il turnover commerciale in edilizia non costa solo lo stipendio pagato a vuoto: costa i preventivi persi, i clienti gestiti male, il tempo del titolare speso a rifare selezione invece che a far crescere l'azienda.
+
+| Voce di costo | Turnover rapido (assumo/licenzio a sensazione) | Selezione + affiancamento strutturato |
+|---|---|---|
+| Tempo per portare un venditore a chiudere in autonomia | Spesso non ci arriva mai, oppure oltre 6 mesi | 60-90 giorni |
+| Preventivi persi per metodo assente nei primi mesi | Alto: nessuno script, nessuna guida | Basso: script condiviso da subito |
+| Costo di selezione ripetuta (annunci, colloqui, tempo titolare) | Ricorrente ogni 3-6 mesi | Una tantum, poi il metodo si riusa |
+| Immagine aziendale presso i clienti già contattati | Danneggiata da venditori che sbagliano approccio | Coerente, stesso standard per tutti |
+| Fatturato generato nei primi 90 giorni | Quasi nullo o negativo (formazione a vuoto) | Parziale ma già in crescita |
+
+La tabella mostra un principio semplice: il costo del turnover non si vede sul conto economico come voce isolata, ma si nasconde dentro fatturato mancato, clienti persi e tempo del titolare sprecato in selezione continua. Investire settimane in un processo di selezione serio e in un affiancamento strutturato costa meno, nel tempo, di continuare a "provare" venditori a caso.
+
+![Un'organizzazione commerciale con ruoli e processi chiari riduce il bisogno di sostituire venditori ogni pochi mesi.](img:organizzazione)
+
 ## Affiancamento e addestramento sul campo (non in aula)
 
 La formazione teorica in aula, da sola, non forma venditori. Un corso di due giorni con slide e roleplay in sala riunioni lascia il segno per una settimana, poi tutto torna come prima. Quello che cambia davvero le performance è l'**affiancamento sul campo**: il titolare o il commerciale senior che va al sopralluogo insieme al nuovo venditore, osserva, interviene quando serve, e poi fa un debrief immediato dopo l'incontro.
@@ -99,6 +129,32 @@ Se non misuri, non gestisci: gestisci a sensazione, e torniamo al problema di pa
 | Margine medio per commessa | Margine reale, non solo fatturato | Coerente col target aziendale |
 
 Con questi numeri in mano, sai esattamente dove intervenire: un venditore con tasso di chiusura basso ma tanti follow-up ha un problema di presentazione, non di costanza. Uno con ticket medio basso probabilmente scende di prezzo troppo facilmente. I dati ti tolgono le opinioni e ti danno i fatti.
+
+## Cosa fare se un venditore non regge il ritmo dopo i primi 90 giorni
+
+Non tutti i venditori, anche selezionati con cura, arrivano al ritmo giusto in tre mesi. Prima di decidere se tenerlo o sostituirlo, fatti tre domande, nell'ordine:
+
+- **Ha davvero seguito il metodo, o ha continuato a vendere a modo suo?** Se ha saltato l'affiancamento o ha ignorato lo script, il problema non è il venditore: è l'applicazione del metodo, che va corretta prima di giudicare i risultati.
+- **I suoi KPI raccontano un problema di presentazione, di follow-up o di chiusura?** Un tasso di chiusura basso con pochi follow-up è un problema di costanza, facilmente correggibile. Un tasso di chiusura basso nonostante tanti follow-up è un problema di presentazione o di gestione delle obiezioni, che richiede più affiancamento sul campo, non un richiamo generico.
+- **Il ticket medio è in linea con gli altri, o sconta sistematicamente?** Se sconta per chiudere, il problema è spesso nel sistema provvigionale, più che nella persona: verifica se lo stai premiando per il fatturato o per il margine.
+
+Se dopo queste verifiche il venditore continua a non reggere il ritmo nonostante metodo, affiancamento e provvigioni corrette, il problema è probabilmente di attitudine: manca la tenuta al rifiuto o la disciplina che avevi cercato in selezione. A quel punto la decisione di separarsi va presa con chiarezza e in fretta, perché ogni mese in più con un venditore fuori standard costa preventivi persi e, soprattutto, tempo del titolare che potrebbe affiancare qualcuno con più potenziale.
+
+## Come misurare il ROI del team commerciale in 6 mesi
+
+Costruire un team commerciale è un investimento, e come ogni investimento va misurato con numeri, non con sensazioni. Ecco come si presenta, in genere, il percorso di un'impresa edile che struttura selezione, script, provvigioni e affiancamento sul serio, confrontando il prima e il dopo su un orizzonte di sei mesi.
+
+| Indicatore | Prima (titolare unico venditore) | Dopo 6 mesi di team strutturato |
+|---|---|---|
+| Numero di preventivi gestibili al mese | Limitato dalla disponibilità del titolare | 2-3 volte superiore, distribuito sul team |
+| Tasso di chiusura medio del team | Molto variabile, dipende dal singolo | 30-40%, più omogeneo tra venditori |
+| Fatturato dipendente dalla presenza del titolare | Quasi 100% | Sotto il 40%, il resto lo genera il team |
+| Tempo del titolare su trattative dirette | La maggior parte della settimana | Concentrato su commesse strategiche |
+| Capacità di sostituire un venditore che se ne va | Si riparte da zero | Il metodo resta, il nuovo si inserisce in poche settimane |
+
+Il vero indicatore di ROI non è solo il fatturato in più: è la **quota di fatturato che l'azienda genera senza che tu debba essere fisicamente in trattativa**. Quando quella quota supera il 50-60%, hai trasformato la tua impresa da "il titolare che vende con l'aiuto di qualcuno" a "un'azienda che vende, con te che la guidi".
+
+![Un team commerciale allineato genera fatturato anche nelle settimane in cui il titolare è impegnato altrove.](img:crescita)
 
 ## Come smettere di essere l'unico che chiude in azienda
 

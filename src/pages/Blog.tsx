@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock, Search, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -23,12 +23,17 @@ type Filter = "Tutti" | ArticleCategory;
 const Blog = () => {
   const [filter, setFilter] = useState<Filter>("Tutti");
   const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
   const categories = getCategories();
   const featured = getFeaturedArticle();
 
+  // Filtro per tag, pilotato dall'URL (/blog?tag=infissi): i tag negli
+  // articoli sono cliccabili e portano qui.
+  const activeTag = searchParams.get("tag");
+
   const q = query.trim().toLowerCase();
   const isSearching = q.length > 0;
-  const isFiltering = filter !== "Tutti" || isSearching;
+  const isFiltering = filter !== "Tutti" || isSearching || !!activeTag;
 
   // In modalità ricerca/filtro cerchiamo su TUTTI gli articoli (anche il featured);
   // altrimenti l'articolo in evidenza è mostrato a parte nella hero.
@@ -41,11 +46,17 @@ const Blog = () => {
     return base.filter((a) => {
       const matchesCategory = filter === "Tutti" || a.category === filter;
       if (!matchesCategory) return false;
+      if (activeTag && !a.tags.includes(activeTag)) return false;
       if (!q) return true;
       const haystack = `${a.title} ${a.excerpt} ${a.keyword} ${a.tags.join(" ")}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [base, filter, q]);
+  }, [base, filter, q, activeTag]);
+
+  const clearTag = () => {
+    searchParams.delete("tag");
+    setSearchParams(searchParams, { replace: true });
+  };
 
   const blogSchema = {
     "@context": "https://schema.org",
@@ -214,15 +225,27 @@ const Blog = () => {
             </div>
 
             {isFiltering && (
-              <p className="mt-4 text-sm text-muted-foreground">
-                {filtered.length}{" "}
-                {filtered.length === 1 ? "articolo trovato" : "articoli trovati"}
-                {isSearching && (
-                  <>
-                    {" "}per <span className="text-foreground">"{query}"</span>
-                  </>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <p className="text-sm text-muted-foreground">
+                  {filtered.length}{" "}
+                  {filtered.length === 1 ? "articolo trovato" : "articoli trovati"}
+                  {isSearching && (
+                    <>
+                      {" "}per <span className="text-foreground">"{query}"</span>
+                    </>
+                  )}
+                </p>
+                {activeTag && (
+                  <button
+                    onClick={clearTag}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-secondary/50 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary transition-colors hover:bg-secondary/20"
+                    aria-label={`Rimuovi il filtro ${activeTag}`}
+                  >
+                    #{activeTag}
+                    <X className="h-3 w-3" />
+                  </button>
                 )}
-              </p>
+              </div>
             )}
           </div>
         </section>
@@ -248,6 +271,7 @@ const Blog = () => {
                   onClick={() => {
                     setQuery("");
                     setFilter("Tutti");
+                    clearTag();
                   }}
                 >
                   Azzera i filtri

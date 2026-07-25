@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Parli troppo e chiudi poco: il venditore che vince fa domande, non discorsi. Ecco il metodo in 4 famiglie di domande che fa dire al cliente da solo perché deve comprare da te.",
   category: "Vendita",
-  tags: ["vendita", "qualificazione", "domande", "trattativa", "preventivi", "infissi"],
+  tags: ["vendita", "qualificazione", "domande", "trattativa", "preventivi", "infissi", "sopralluogo"],
   keyword: "domande qualificazione cliente",
-  readingTime: 9,
+  readingTime: 13,
   publishedAt: "2026-01-19",
   updatedAt: "2026-01-19",
   author: flo,
@@ -44,6 +44,8 @@ Chi parla troppo commette tre errori che si pagano cari:
 - **Non fa emergere l'urgenza.** Il cliente che non ha mai detto ad alta voce "sto buttando via 200 euro al mese di gas" continua a pensarci con calma, e il "ci penso" diventa la norma.
 
 Il venditore che chiude di più fa l'opposto: parla il 30% del tempo, ascolta e fa domande per il 70%. Non perché sia timido, ma perché sa che **le persone si convincono con le proprie parole, non con le tue.** Quando è il cliente a dire "quindi se non lo faccio continuo a spendere così tanto", la vendita è già fatta per metà.
+
+![Team commerciale che analizza insieme la lista dei lead qualificati della settimana](img:clientiqualificati)
 
 ## Le 4 famiglie di domande di qualificazione cliente
 
@@ -116,6 +118,74 @@ Chiedere "quanto vuole spendere?" a bruciapelo mette quasi sempre in difficoltà
 - Sul decisore: "Chi altro in famiglia sarà coinvolto nella decisione finale?" oppure, se è presente solo una persona, "Questa scelta la fate insieme a qualcun altro o decidete voi?"
 
 Sono domande che si fanno con naturalezza a metà sopralluogo, non con un modulo da compilare. Se il cliente evita di rispondere, non insistere: è un'informazione anche quella, e ti dice che serve più fiducia prima di andare avanti.
+
+## Gli errori che vanificano le domande anche quando le fai
+
+Sapere le domande a memoria non basta. Molti venditori le imparano, le usano al primo sopralluogo, e poi tornano ai vecchi comportamenti perché non vedono risultati immediati. Il problema quasi sempre non è la domanda: è come viene fatta o cosa si fa con la risposta.
+
+- **Fare la domanda e non ascoltare la risposta.** Il venditore chiede "cosa vi ha spinto a pensarci ora?", il cliente risponde, e lui è già mentalmente alla domanda successiva o al prodotto da mostrare. Il cliente se ne accorge sempre: parla con meno apertura dalla domanda successiva in poi.
+- **Trasformare la domanda in un interrogatorio.** Quattro domande di fila senza una pausa, senza un commento, senza restituire nulla, mette in difesa chiunque. Tra una domanda e l'altra serve un commento breve che dimostri che hai ascolto: "capisco, è una situazione comune" oppure "immagino sia frustrante".
+- **Saltare le domande di implicazione perché sembrano scomode.** È l'errore più diffuso. Il venditore arriva fino al problema ("sì, fa freddo in camera") e poi passa subito al prodotto, saltando la domanda che crea l'urgenza reale. Risultato: il cliente ha ammesso un disagio, ma non ha mai quantificato quanto gli costa, e quindi non ha fretta di risolverlo.
+- **Fare domande chiuse che si esauriscono in un sì o un no.** "Vi dà fastidio il freddo?" chiude la conversazione con un "un po'". "Quali stanze soffrono di più il freddo, e in che momenti della giornata?" apre un racconto. La differenza tra domanda aperta e chiusa vale quanto tutto il resto del metodo.
+- **Riformulare la domanda del cliente invece di rispondere alla sua.** Se il cliente chiede "ma quanto costa più o meno?", rispondere subito con un'altra domanda senza aver dato nulla suona evasivo. Meglio dare una forbice onesta e poi tornare a fare domande (vedi il paragrafo successivo con lo script).
+
+![Sopralluogo con venditore e cliente seduti al tavolo mentre si discute il progetto](img:trattativa)
+
+## Caso concreto: due sopralluoghi sullo stesso prodotto, due risultati diversi
+
+Per capire quanto pesano le domande di qualificazione, confrontiamo due sopralluoghi reali per la stessa tipologia di intervento: sostituzione infissi in una villetta, budget stimato intorno ai 9.500 euro.
+
+**Sopralluogo A, venditore senza metodo.** Arriva, misura le finestre, parla per 12 minuti di profili, camere d'aria e coefficienti termici, poi dice "le preparo il preventivo e glielo mando entro venerdì". Il cliente ringrazia, saluta, e nei giorni successivi confronta il numero con altri due preventivi arrivati via mail da altre due imprese. Sceglie il più basso.
+
+**Sopralluogo B, venditore con le 4 famiglie di domande.** Arriva, fa 3 domande di situazione mentre misura, poi chiede "cosa vi ha spinto a muovervi proprio ora?". Il cliente racconta che l'inverno scorso la bolletta del gas è arrivata a 310 euro in un mese e che in camera dei figli si sente sempre freddo vicino alla finestra. Il venditore chiede: "se continuate così, secondo voi la bolletta del prossimo inverno quanto potrebbe salire ancora?". Il cliente fa due conti ad alta voce e dice "forse 350, 400 euro al mese, con come sta andando il gas". A quel punto il venditore presenta la soluzione collegandola esplicitamente a quella cifra e a quella stanza. Il cliente firma il preventivo in sede, con una piccola trattativa sui tempi di consegna, non sul prezzo.
+
+| Indicatore | Sopralluogo A (senza domande) | Sopralluogo B (con le 4 famiglie) |
+|---|---|---|
+| Tempo dedicato al cliente prima del prezzo | 3-4 minuti | 12-15 minuti |
+| Momento in cui emerge il costo del problema | Mai | Durante le domande di implicazione |
+| Preventivo firmato in sede | Raro | Frequente |
+| Confronto con altri preventivi | Sì, su base solo economica | Ridotto, perché la proposta è già ancorata al problema |
+| Probabilità stimata di chiusura | 10-15% | 35-45% |
+
+Il prodotto era identico. La differenza è tutta nel processo di qualificazione, e nel fatto che nel secondo caso è stato il cliente a mettere sul tavolo il numero (400 euro al mese), non il venditore a inventarlo.
+
+## Cosa fare se il cliente non risponde o si chiude
+
+Non tutti i clienti collaborano subito. Capita di trovarsi davanti a chi risponde a monosillabi, chi sembra infastidito dalle domande, o chi ha già deciso di "fare solo un giro" senza impegnarsi. Ecco come gestire i tre scenari più comuni.
+
+**Il cliente risponde con "boh", "non so", "va bene così".** Non insistere sulla stessa domanda, cambia angolo. Se "quali stanze soffrono di più il freddo" non porta risposta, prova con qualcosa di più concreto e visivo: "quando accendete il riscaldamento la mattina, dopo quanto la casa è calda?". Le domande più fisiche e quotidiane sblocca chi fatica ad astrarre.
+
+**Il cliente sembra infastidito, dice "perché mi fa tutte queste domande, mi dica solo il prezzo".** È un segnale che stai andando troppo veloce o troppo diretto senza aver spiegato il motivo. Rispondi con trasparenza: "le faccio queste domande proprio per non darle un numero a caso, ma un preventivo tarato sulla sua situazione reale. Ci vogliono altri due minuti". Quasi sempre il cliente si rilassa, perché capisce che le domande servono a lui, non a te.
+
+**Il cliente dice fin da subito "sto solo raccogliendo informazioni, non decido a breve".** Non forzare le domande di implicazione, sposteresti la trattativa su un terreno che non è ancora pronto. Limita il sopralluogo alle domande di situazione e problema, lascia un buon preventivo di massima o materiale informativo, e pianifica un follow-up a 30-45 giorni invece che a una settimana.
+
+## Come misurare se le domande di qualificazione stanno funzionando
+
+Un metodo che non si misura resta un'opinione. Per capire se l'impresa sta davvero qualificando meglio, tieni traccia di pochi numeri semplici, mese su mese.
+
+| Indicatore da monitorare | Prima di applicare il metodo | Dopo 2-3 mesi di applicazione costante |
+|---|---|---|
+| Tasso di chiusura sui sopralluoghi fatti | 10-15% | 30-40% |
+| Tempo medio dal sopralluogo alla firma | 15-20 giorni | 7-10 giorni |
+| % di preventivi "spariti" senza risposta | Alta, spesso oltre il 50% | Sotto il 25% |
+| Sconto medio concesso per chiudere | Più frequente e più alto | Più raro, perché il valore è già stato riconosciuto dal cliente |
+
+Non serve un software complicato: basta un foglio dove ogni venditore segna, per ogni sopralluogo, se ha fatto tutte e 4 le famiglie di domande, e l'esito finale. Dopo un trimestre il collegamento tra "quante domande ho fatto" e "quanto ho chiuso" diventa evidente, ed è l'argomento più forte per convincere anche i venditori più scettici a usare il metodo con costanza.
+
+![Cliente e venditore che analizzano insieme un preventivo con numeri e margini chiari](img:margini)
+
+## Adattare le domande ai tre settori principali
+
+Il metodo non cambia da un settore all'altro, cambiano solo gli esempi. Usa questa tabella come riferimento rapido per costruire le tue domande su misura, in base a cosa vendi.
+
+| Famiglia di domanda | Infissi e serramenti | Fotovoltaico | Ristrutturazioni |
+|---|---|---|---|
+| Situazione | "Gli infissi sono quelli originali della costruzione?" | "Avete già un contatore o consumate tutto in rete?" | "State ristrutturando solo un ambiente o tutta la casa?" |
+| Problema | "Quali stanze soffrono di più freddo o rumore?" | "La bolletta attuale vi pesa in un mese particolare?" | "Cosa vi crea più disagio nella casa attuale?" |
+| Implicazione | "Quanto salirà la bolletta del gas se rimandate?" | "Quanto avrete pagato in più tra un anno se rimandate?" | "Che effetto ha rimandare sui tempi e sui costi dei materiali?" |
+| Bisogno-soluzione | "Cosa cambierebbe non sentire più freddo in camera?" | "Come vi immaginate la bolletta con un impianto giusto?" | "Cosa significherebbe vivere la casa finita per Natale?" |
+
+Con questa tabella a portata di mano, anche un venditore alle prime armi può costruire domande pertinenti senza doverle inventare al momento, sopralluogo dopo sopralluogo.
 
 ## Da dove partire domani: le domande pronte all'uso
 

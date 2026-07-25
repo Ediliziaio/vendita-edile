@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Non ti serve un'agenzia da 3.000 € al mese, ti serve un metodo. Ecco come costruire il marketing della tua impresa edile passo dopo passo, partendo da quello che hai già.",
   category: "Marketing",
-  tags: ["marketing", "impresa edile", "google business", "ads locali", "sito web", "reputazione online"],
+  tags: ["marketing", "impresa edile", "google business", "ads locali", "sito web", "reputazione online", "lead generation"],
   keyword: "marketing impresa edile",
-  readingTime: 10,
+  readingTime: 12,
   publishedAt: "2025-10-09",
   updatedAt: "2025-10-09",
   author: flo,
@@ -59,6 +59,8 @@ Un piccolo sistema di **referral** funziona così:
 
 Non serve un software. Serve disciplina: farlo con OGNI cliente soddisfatto, non solo quando te ne ricordi.
 
+![Ogni richiesta di referral fatta a fine lavori vale più di dieci richieste generiche postate sui social.](img:richieste)
+
 ## Le ads locali fatte bene (Meta e Google)
 
 Qui arriva la domanda che mi fate più spesso: "conviene fare pubblicità su Facebook o Google?". Risposta onesta: **conviene, ma solo se prima hai sistemato profilo Google e sito**. Le ads locali amplificano quello che hai, non lo creano dal nulla.
@@ -102,11 +104,71 @@ Un sito che converte per un'impresa edile ha poche cose, fatte bene:
 
 Non serve un sito da 10.000 €. Serve un sito che risponda alla domanda del cliente in 10 secondi: "questa impresa fa quello che cerco, nella mia zona, e sembra seria". Tutto il resto è decorazione.
 
+![Un marketing che porta clienti già qualificati vale più di un marketing che porta solo volume.](img:clientiqualificati)
+
 ## La reputazione online: si costruisce prima di averne bisogno
 
 La reputazione online (recensioni, menzioni, quello che si trova cercando il nome della tua impresa) è il fattore che decide se un lead generato da ads o passaparola si trasforma davvero in preventivo firmato. Nessuno firma un contratto da 15.000 € con un'impresa che online non si trova o ha recensioni negative senza risposta.
 
 Costruirla prima significa: chiedere recensioni sistematicamente, rispondere sempre (bene o male che siano), mantenere coerenza tra quello che dici nelle ads e quello che i clienti raccontano online. Se le ads promettono "massima cura nella posa" e le recensioni parlano di ritardi e disordine, il cliente lo nota e non firma.
+
+## Errori di marketing che vediamo più spesso nelle imprese edili
+
+Prima di aggiungere altre leve, vale la pena guardare cosa NON fare. Questi sono gli errori che ripetiamo di vedere, azienda dopo azienda, e che bruciano budget senza portare risultati.
+
+- **Fare tutto insieme e male, invece di poco e bene.** Aprire ads, social, sito nuovo e volantini nello stesso mese, senza risorse per curare nessuno dei quattro fino in fondo. Meglio sistemare una leva alla volta, farla funzionare, poi passare alla successiva.
+- **Copiare il concorrente senza capire i suoi numeri.** Se il concorrente fa video su Instagram non significa che funzioni per la tua zona o il tuo target. Copiare il formato senza sapere se genera contatti reali è un salto nel buio.
+- **Cambiare strategia dopo due settimane.** Le ads locali hanno bisogno di 3-4 settimane per stabilizzarsi, il posizionamento organico di mesi. Spegnere una campagna dopo 10 giorni perché "non funziona" è quasi sempre una decisione presa troppo presto.
+- **Non avere una landing dedicata per ogni servizio.** Mandare tutto il traffico ads alla home page generica abbassa il tasso di conversione anche del 50% rispetto a una pagina scritta per quella ricerca specifica.
+- **Trattare il marketing come un costo invece che un investimento misurabile.** Se non sai quanto ti costa un lead e quanti lead diventano contratti, non stai facendo marketing: stai spendendo soldi sperando bene.
+- **Ignorare le recensioni negative.** Una recensione da 2 stelle senza risposta pesa più di cinque recensioni positive agli occhi di chi sta decidendo se chiamarti o no.
+
+## Caso pratico: da 4 a 14 preventivi al mese in tre mesi
+
+Vediamo un esempio numerico realistico di cosa succede quando le leve di questo articolo vengono messe in ordine, una alla volta. Impresa di serramenti, zona provincia media, partenza da una situazione comune: profilo Google Business con 6 recensioni, nessun sito funzionante, passaparola casuale.
+
+| Mese | Azione principale | Preventivi generati | Note |
+|---|---|---|---|
+| Mese 0 (partenza) | Nessuna azione strutturata | 4 al mese | Solo passaparola casuale |
+| Mese 1 | Google Business sistemato, richiesta recensioni a fine lavoro | 6 al mese | +8 recensioni nuove, foto cantieri caricate |
+| Mese 2 | Sistema referral attivato, sito con modulo semplice | 9 al mese | 2 referral chiusi, sito genera i primi 3 contatti |
+| Mese 3 | Prime ads locali Meta con budget 400 €/mese | 14 al mese | Costo medio per lead circa 18 €, tasso chiusura invariato |
+
+Il dato da notare non è la crescita in sé, ma l'ordine: le prime due leve (Google Business, referral) sono gratuite e hanno raddoppiato i preventivi prima ancora di spendere un euro in ads. Le ads locali, arrivate al mese 3, hanno amplificato una base già solida, non l'hanno creata dal nulla. Se questa stessa impresa avesse aperto le ads al mese 1, con un profilo Google vuoto e nessuna recensione, il costo per lead sarebbe stato più alto e il tasso di conversione da lead a preventivo molto più basso: il traffico sarebbe arrivato su una vetrina che non dava fiducia.
+
+## Come misurare se il marketing sta funzionando davvero
+
+Molti imprenditori edili giudicano il marketing "a sensazione": se questo mese sono arrivate tante chiamate, va bene; se sono arrivate poche, il marketing "non funziona". Senza numeri, questa valutazione è quasi sempre sbagliata, perché confonde variazioni normali con problemi reali.
+
+I quattro numeri minimi da tracciare ogni mese, anche su un semplice foglio:
+
+| Indicatore | Cosa misura | Frequenza di controllo |
+|---|---|---|
+| Numero di lead per canale | Quante richieste arrivano da Google Business, ads, referral, sito | Settimanale |
+| Costo per lead | Budget speso diviso numero di lead ottenuti, per canale | Mensile |
+| Tasso lead → preventivo | Quanti contatti diventano un sopralluogo/preventivo reale | Mensile |
+| Tasso preventivo → contratto | Quanti preventivi si chiudono, per capire se il problema è a monte o a valle | Mensile |
+
+Se il numero di lead è alto ma il tasso di chiusura è basso, il problema non è il marketing: è la vendita. Se invece il numero di lead è basso da tutti i canali, il problema è a monte, nel marketing stesso. Senza questa distinzione, si rischia di tagliare il budget ads quando in realtà il problema è nel modo in cui i preventivi vengono presentati o seguiti.
+
+## Contenuti: cosa pubblicare ogni settimana senza impazzire
+
+Uno dei blocchi più comuni è pensare che servano contenuti creativi, complicati, da agenzia. Non è così. Per un'impresa edile bastano contenuti semplici, ripetuti con costanza, presi direttamente dal lavoro quotidiano.
+
+- **Lunedì o inizio settimana**: foto "prima" di un cantiere in partenza, con due righe su cosa si farà.
+- **Metà settimana**: un dettaglio tecnico raccontato in modo semplice (una guarnizione, un taglio, un particolare della posa) che mostra competenza senza essere noioso.
+- **Fine lavoro**: foto o video "prima/dopo", il contenuto che converte di più in assoluto in questo settore.
+- **Una volta al mese**: una recensione o testimonianza del cliente, con il suo permesso, magari con una foto del lavoro finito alle spalle.
+
+Non serve un piano editoriale complesso: basta un promemoria fisso in agenda e uno smartphone. Le imprese che pubblicano con costanza, anche contenuti semplici, battono su Google e sui social quelle che pubblicano un post perfetto ogni due mesi. La costanza conta più della qualità estetica, in questo settore.
+
+## Obiezioni comuni sul marketing (e perché non reggono)
+
+"Non ho tempo per il marketing" e "i miei clienti non guardano internet" sono le due frasi che sentiamo più spesso da imprenditori edili che poi, guardando i numeri, scoprono il contrario.
+
+Sul tempo: gestire il profilo Google Business e pubblicare due contenuti a settimana richiede 20-30 minuti, non ore. Il problema raramente è il tempo: è non avere un momento fisso dedicato, per cui la cosa slitta sempre.
+
+Sul "i miei clienti non guardano internet": anche il cliente più anziano, prima di far entrare un'impresa sconosciuta in casa propria per un lavoro da 10.000 €, cerca il nome su Google almeno una volta. Non deve trovarti tramite ads: deve trovarti con una buona impressione quando ti cerca dopo aver sentito il tuo nome da un vicino o un parente. Questo da solo giustifica curare il profilo Google Business, anche per chi non crede nel marketing "digitale" in senso stretto.
 
 ## Il ponte che (quasi) tutti dimenticano: marketing e vendita devono parlare
 
@@ -131,6 +193,8 @@ Non devi fare tutto insieme. Segui questo ordine, che è quello che funziona dav
 5. Metti per iscritto un **processo di gestione lead**: chi richiama, entro quanto tempo, con quale script.
 
 Fai questi cinque passaggi in ordine e il tuo marketing smette di essere un costo casuale e diventa un sistema che porta preventivi seri, ogni mese, senza sorprese.
+
+![Un sistema di marketing curato mese dopo mese porta crescita costante, non picchi isolati e imprevedibili.](img:crescita)
 
 Il marketing porta le persone alla porta. Ma se poi in trattativa perdi 7 preventivi su 10, il marketing da solo non ti salva il fatturato. È esattamente il pezzo che manca a molte imprese edili, ed è quello su cui lavoriamo dentro **VENDITA EDILE®**: un affiancamento sul campo per alzare il tasso di chiusura dei preventivi che il tuo marketing già ti porta, senza abbassare i prezzi. Se vuoi vedere se fa al caso tuo, candidati qui: [scopri come funziona](/#candidati).`,
   faq: [

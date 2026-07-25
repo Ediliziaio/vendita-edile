@@ -202,14 +202,18 @@ const BlogPost = () => {
                 <MarkdownRenderer content={article.content} />
 
                 {/* Tag */}
-                <div className="mt-10 flex flex-wrap gap-2 border-t border-border pt-6">
+                <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-border pt-6">
+                  <span className="mr-1 text-xs font-semibold uppercase tracking-wide text-foreground">
+                    Argomenti
+                  </span>
                   {article.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      to={`/blog?tag=${encodeURIComponent(tag)}`}
+                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-secondary/60 hover:text-secondary"
                     >
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
 

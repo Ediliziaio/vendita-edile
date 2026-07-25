@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Chi non misura i numeri della vendita, vende a sensazione. Ecco i 7 KPI di vendita edilizia da tenere sotto controllo ogni mese, come calcolarli e come leggerli insieme per far crescere il fatturato.",
   category: "Gestione",
-  tags: ["kpi", "vendita", "gestione", "preventivi", "fatturato", "commerciale"],
+  tags: ["kpi", "vendita", "gestione", "preventivi", "fatturato", "commerciale", "tasso di chiusura"],
   keyword: "kpi vendita edilizia",
-  readingTime: 9,
+  readingTime: 12,
   publishedAt: "2025-08-28",
   updatedAt: "2025-08-28",
   author: flo,
@@ -51,6 +51,27 @@ Il ticket medio, o prezzo medio, si calcola dividendo il fatturato totale per il
 
 Monitorare il ticket medio ti dice se stai vendendo valore o se stai scivolando verso lo sconto sistematico per chiudere. Se scende trimestre dopo trimestre a parità di contratti, il problema quasi sempre è nella presentazione del preventivo: il cliente non percepisce abbastanza valore e il commerciale compensa abbassando il prezzo. Va letto insieme al tasso di chiusura, mai da solo: un tasso di chiusura alto ottenuto scontando pesantemente non è un successo commerciale, è un problema di margine.
 
+![Il ticket medio va letto insieme al tasso di chiusura, mai da solo, per capire lo stato reale dei margini](img:margini)
+
+## Cosa fare se il tasso di chiusura non sale nonostante il lavoro sul campo
+
+Succede spesso: la squadra fa sopralluoghi, i preventivi partono regolarmente, eppure il tasso di chiusura resta fermo o addirittura scende. Prima di cambiare tutto, conviene fare una diagnosi ordinata invece di rincorrere soluzioni a caso.
+
+Primo controllo: guarda il tasso di follow-up. Nella maggior parte dei casi, un tasso di chiusura basso non nasce da preventivi sbagliati, ma da preventivi mandati e mai più ripresi in mano. Se il tasso di follow-up è sotto il 40%, è lì che sta il problema prima ancora di guardare altrove.
+
+Secondo controllo: confronta il tasso di chiusura per singolo venditore, non solo il dato aggregato dell'azienda. Un dato medio del 18% può nascondere un commerciale al 30% e un altro al 6%: la media mente, il dettaglio no. Se il problema è concentrato su una persona, la soluzione è affiancamento mirato, non una modifica al sistema commerciale intero.
+
+Terzo controllo: guarda il tempo medio di chiusura. Se sale, spesso significa che i preventivi restano "in trattativa" per settimane senza un vero motivo tecnico: è un segnale di debolezza nella gestione del cliente dopo il sopralluogo, non nella qualità del preventivo stesso.
+
+Quarto controllo: rileggi 5-10 preventivi persi di fila, con occhio critico. Cerca uno schema ricorrente: sempre la stessa obiezione, sempre lo stesso tipo di cliente, sempre lo stesso venditore. I preventivi persi raccontano più verità di quelli vinti, perché mostrano dove il sistema si rompe davvero.
+
+| Sintomo osservato | Causa più probabile | Prima azione da fare |
+|---|---|---|
+| Tasso di chiusura basso, follow-up sotto 40% | Preventivi mandati e mai ripresi | Introdurre un secondo contatto obbligatorio entro 5 giorni |
+| Tasso di chiusura basso solo su un venditore | Problema individuale, non di sistema | Affiancamento sul campo, non formazione teorica generica |
+| Tempo medio di chiusura in aumento | Gestione debole del cliente dopo il sopralluogo | Fissare data e modalità del richiamo già in sopralluogo |
+| Preventivi persi con la stessa obiezione ricorrente | Punto debole nella presentazione o nel prodotto | Rivedere lo script di gestione di quella obiezione specifica |
+
 ## Tempo medio di chiusura e valore per lead: velocità e ritorno di ogni contatto
 
 ### Tempo medio di chiusura
@@ -77,6 +98,37 @@ Il tasso di follow-up misura la percentuale di preventivi che ricevono almeno un
 
 Il fatturato per venditore si calcola dividendo il fatturato commerciale totale per il numero di venditori attivi nel periodo. È il termometro della squadra: confronta commerciali diversi, individua chi trascina i risultati e chi ha bisogno di affiancamento, e ti dice se conviene assumere un altro venditore o migliorare chi hai già.
 
+## Caso concreto: due imprese, stessi preventivi, fatturati molto diversi
+
+Per capire perché guardare i KPI insieme cambia tutto, confrontiamo due imprese di infissi ipotetiche ma realistiche, entrambe con lo stesso numero di preventivi al mese. Stesso mercato, stessa zona, stesso numero di venditori: quello che cambia è il metodo commerciale.
+
+| Indicatore | Impresa A (senza sistema) | Impresa B (con sistema) |
+|---|---|---|
+| Preventivi al mese | 22 | 22 |
+| Tasso di chiusura | 14% | 32% |
+| Ticket medio | 7.500€ | 8.900€ |
+| Tasso di follow-up | 25% | 85% |
+| Contratti al mese | circa 3 | circa 7 |
+| Fatturato mensile stimato | 23.100€ | 62.300€ |
+
+La differenza non nasce da più marketing o da un prezzo più basso: l'Impresa B chiude quasi il triplo dei contratti con lo stesso numero di preventivi, e li chiude a un ticket medio più alto, non più basso. Il tasso di follow-up spiega gran parte della differenza: l'85% dei preventivi riceve un secondo contatto strutturato, contro il 25% dell'Impresa A dove il commerciale manda il documento e aspetta.
+
+Questo è il motivo per cui rincorrere "più lead" senza prima sistemare tasso di chiusura e follow-up è quasi sempre la scelta sbagliata: si finisce per pagare di più il marketing per compensare un problema che nasce dentro la trattativa, non fuori.
+
+![Stesso numero di preventivi, fatturato quasi triplicato: la crescita nasce dal metodo, non da più marketing](img:crescita)
+
+## Errori comuni quando si misurano (male) i KPI di vendita
+
+Anche chi inizia a monitorare i numeri commette errori che rendono i dati inutili o, peggio, fuorvianti.
+
+- Guardare solo il fatturato totale, senza scomporlo nei singoli KPI: un mese buono può nascondere un tasso di chiusura in calo compensato da un ticket medio più alto per pura fortuna, non per merito.
+- Confrontare mesi diversi senza tenere conto della stagionalità: il settore infissi e ristrutturazioni ha picchi e cali fisiologici, e confrontare agosto con marzo senza correggere il dato porta a conclusioni sbagliate.
+- Calcolare il tasso di chiusura sui preventivi ancora aperti, gonfiando artificialmente il risultato: un preventivo "in trattativa da 90 giorni" andrebbe considerato perso ai fini del calcolo, non lasciato in sospeso all'infinito.
+- Non separare i dati per singolo venditore: un'azienda con più commerciali che guarda solo il dato aggregato non riesce a capire dove intervenire davvero.
+- Cambiare la definizione dei KPI nel tempo senza segnarlo da qualche parte: se un mese il tasso di follow-up si calcola in un modo e il mese dopo in un altro, il confronto storico diventa inutile.
+
+Misurare male è quasi peggio che non misurare affatto, perché dà la falsa sicurezza di avere il controllo della situazione.
+
 ## Come leggere i KPI insieme, non uno alla volta
 
 Il vero salto di qualità non è calcolare questi numeri, è leggerli **insieme**. Un tasso di chiusura alto ottenuto con un ticket medio in caduta libera non è crescita, è erosione di margine. Un numero di preventivi alto con un tasso di follow-up basso è tempo commerciale sprecato. Ecco una tabella di riferimento per orientarti:
@@ -92,6 +144,25 @@ Il vero salto di qualità non è calcolare questi numeri, è leggerli **insieme*
 | Fatturato per venditore | Fatturato totale / numero venditori | benchmark interno, da confrontare mese su mese |
 
 Guarda l'esempio che vale più di ogni teoria: un'impresa con 20 preventivi al mese, ticket medio di 8.000 euro e tasso di chiusura del 15% fattura circa 24.000 euro al mese sul nuovo. La stessa impresa, stessi preventivi e stesso ticket medio, con tasso di chiusura al 30%, fattura 48.000 euro. Il doppio, senza un euro in più di marketing e senza un solo preventivo aggiuntivo. Questo è il motivo per cui il tasso di chiusura, tra tutti i KPI di vendita edilizia, merita la priorità assoluta.
+
+## Come portare i KPI nella riunione settimanale con la squadra
+
+Avere i numeri su un foglio serve a poco se restano chiusi lì dentro. Il salto di qualità arriva quando i KPI diventano il centro di una riunione breve, fissa, ogni settimana, con tutta la squadra commerciale.
+
+Struttura semplice che funziona, in 15-20 minuti totali: si parte dal numero di preventivi fatti nella settimana, si passa al tasso di chiusura aggiornato, si guarda il tasso di follow-up (quanti preventivi hanno già ricevuto un secondo contatto), si chiude con un giro veloce dove ogni venditore dice a voce alta il proprio contratto più vicino alla firma e cosa gli serve per chiuderlo.
+
+Un esempio concreto di apertura riunione: "Questa settimana abbiamo fatto 6 preventivi, il tasso di chiusura del mese resta al 22%, sotto il nostro obiettivo del 30%. Marco, i tuoi ultimi tre preventivi hanno ricevuto il secondo contatto? Giulia, a che punto sei con la famiglia Bianchi?". Domande dirette, sui numeri reali, non generiche tipo "come va il lavoro".
+
+| Momento della riunione | Cosa si guarda | Obiettivo |
+|---|---|---|
+| Apertura (2 minuti) | Preventivi della settimana e tasso di chiusura del mese | Allineare tutti sullo stato reale, senza sensazioni |
+| Follow-up (5 minuti) | Preventivi senza secondo contatto da più di 5 giorni | Recuperare trattative che rischiano di raffreddarsi |
+| Giro venditori (8 minuti) | Contratto più vicino alla firma per ciascuno | Sbloccare ostacoli concreti con supporto immediato |
+| Chiusura (2 minuti) | Un'azione concreta per ciascuno prima della prossima riunione | Trasformare i numeri in comportamenti, non solo in report |
+
+La riunione settimanale sui KPI non serve a controllare la squadra, serve a toglierle gli ostacoli prima che diventino contratti persi. Un venditore che sa che ogni lunedì si guardano insieme i numeri lavora diversamente rispetto a uno che sa di non essere mai davvero misurato.
+
+![Un fatturato per venditore letto insieme alla squadra ogni settimana trasforma i numeri in azioni concrete](img:team)
 
 ## Da dove partire domani mattina
 
@@ -134,6 +205,11 @@ Chi non misura questi numeri vende a sensazione, e la sensazione non fa crescere
       question: "Perché non basta guardare solo il numero di preventivi fatti?",
       answer:
         "Perché il numero di preventivi non dice nulla sulla salute commerciale dell'azienda se non viene letto insieme al tasso di chiusura e al ticket medio. Un'impresa può fare 30 preventivi al mese e fatturare meno di una che ne fa 15, semplicemente perché chiude meno contratti o li chiude a un prezzo più basso.",
+    },
+    {
+      question: "Cosa fare se il tasso di chiusura non sale nonostante il lavoro sul campo?",
+      answer:
+        "Prima di cambiare tutto, conviene fare una diagnosi ordinata: controllare il tasso di follow-up (spesso è la causa reale), confrontare il tasso di chiusura per singolo venditore invece che solo il dato medio aziendale, verificare se il tempo medio di chiusura si sta allungando e rileggere gli ultimi preventivi persi cercando uno schema ricorrente nelle obiezioni.",
     },
   ],
 };

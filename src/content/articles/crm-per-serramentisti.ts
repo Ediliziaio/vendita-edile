@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Un CRM per serramentisti serve solo se fa 5 cose precise: anagrafica con misure, stato preventivo, promemoria di follow-up, storico trattativa e dati sul tasso di chiusura. Tutto il resto è tempo sottratto alla vendita.",
   category: "Gestione",
-  tags: ["crm", "serramenti", "preventivi", "commerciale", "gestione"],
+  tags: ["crm", "serramenti", "preventivi", "commerciale", "gestione", "follow-up", "tasso di chiusura"],
   keyword: "crm per serramentisti",
-  readingTime: 9,
+  readingTime: 13,
   publishedAt: "2026-01-22",
   updatedAt: "2026-01-22",
   author: flo,
@@ -40,6 +40,8 @@ Il problema non è che quaderno, Excel e WhatsApp siano strumenti sbagliati in a
 Il quaderno non manda promemoria. Excel non ti dice quale preventivo è fermo da dieci giorni senza un contatto. WhatsApp mescola trattative, spam di gruppi e messaggi personali nella stessa chat, e cercare "quel preventivo di dicembre" diventa un'archeologia che nessuno fa mai davvero.
 
 Il risultato è sempre lo stesso: preventivi fatti bene, misure prese con cura, prezzo giusto, e poi persi non per colpa del prezzo ma perché nessuno ha richiamato al momento giusto. **Il vero collo di bottiglia delle aziende del settore casa non è generare contatti, è gestirli nelle prime 24 ore.** Un cliente che chiede un preventivo per infissi lo sta chiedendo anche altrove, e chi risponde e ricontatta per primo parte con un vantaggio che il prezzo da solo raramente recupera.
+
+![Quando i preventivi aperti superano la ventina, la memoria del commerciale non basta più.](img:organizzazione)
 
 ## Le 5 funzioni che un CRM per serramentisti deve avere
 
@@ -98,6 +100,20 @@ Con un CRM impostato con le 5 funzioni viste sopra, ogni mattina il commerciale 
 
 **Vendita Edile è il sistema commerciale per le aziende del settore casa: trasforma i preventivi emessi in contratti firmati.** Il CRM è lo strumento che rende possibile applicare ogni giorno il metodo, non il metodo in sé: senza [un processo commerciale per vendere serramenti](/vendita-serramenti) alle spalle, anche il CRM più curato resta solo un archivio ordinato di occasioni perse.
 
+## Quanto costa (davvero) non avere un CRM: il conto in euro
+
+Prova a fare questo conto con i tuoi numeri reali, non quelli di un caso studio. Prendi il numero di preventivi che fai in un mese, applica il tasso di chiusura tipico senza sistema (10-15%) e confrontalo con quello che potresti chiudere con un follow-up strutturato (35-45%). La differenza, moltiplicata per il tuo ticket medio, è il fatturato che stai lasciando sul tavolo ogni mese, non una volta sola.
+
+| Preventivi aperti al mese | Contratti chiusi senza CRM (circa 12%) | Contratti chiusi con CRM (circa 38%) | Differenza di fatturato (ticket medio 10.000 €) |
+|---|---|---|---|
+| 15 | 2 | 5-6 | 30.000-40.000 € |
+| 25 | 3 | 9-10 | 60.000-70.000 € |
+| 40 | 5 | 15 | circa 100.000 € |
+
+Il dato che colpisce di più, quando lo mostri a un titolare per la prima volta, non è la percentuale: è che quei preventivi persi non sono lead nuovi da comprare. Sono sopralluoghi già fatti, misure già prese, tempo del commerciale già speso. Il costo di acquisizione di quel cliente è già stato pagato: il CRM serve solo a non buttarlo via per una telefonata mancata.
+
+C'è anche un costo meno visibile: il tempo che il commerciale perde a cercare informazioni sparse tra quaderno, Excel e WhatsApp invece di vendere. Ogni preventivo che richiede cinque minuti per essere "ritrovato" prima di una chiamata è tempo tolto a un'altra chiamata che potrebbe chiudere davvero.
+
 ## Errori da evitare quando scegli o implementi un CRM
 
 **Scegliere il CRM prima di definire il processo.** Se non hai chiaro cosa succede da "primo contatto" a "contratto firmato", nessun software risolve il problema: automatizzi il caos, non lo elimini. Definisci prima le fasi della tua trattativa, poi cerca lo strumento che le rispecchia.
@@ -118,11 +134,48 @@ Seconda cosa: mostra il legame diretto tra CRM usato bene e provvigioni più alt
 
 Terza cosa: rendi il [primo contatto telefonico con i lead](/blog/primo-contatto-telefonico-lead-edilizia) parte del flusso CRM, non un'attività separata su un altro strumento. Meno strumenti diversi da aprire, più probabilità che vengano usati davvero, tutti.
 
+## Script di follow-up: cosa dire (e cosa non dire) in ogni promemoria
+
+Un promemoria che scatta da solo serve a poco se poi il commerciale non sa cosa dire quando il cliente risponde al telefono. Ecco tre tracce reali, da adattare al tuo tono, per le tre tappe viste sopra.
+
+Primo contatto, 48 ore dopo l'invio del preventivo. Non aprire con "ha deciso?": è una domanda che spinge il cliente a rimandare la risposta. Apri invece così: "Buongiorno, la chiamo per sapere se il preventivo che le ho inviato è chiaro o se ci sono dei punti su cui vuole che le spieghi meglio, magari le misure o i materiali." Questo apre una conversazione, non chiede un sì o un no che il cliente non è ancora pronto a dare.
+
+![Ogni chiamata di follow-up pesa poco se il commerciale sa già cosa dire prima di alzare il telefono.](img:team)
+
+Secondo contatto, una settimana dopo, con un contenuto di valore. Qui l'errore più comune è richiamare a mani vuote. Porta qualcosa: una scheda tecnica sul risparmio energetico dei nuovi infissi rispetto a quelli esistenti, oppure una foto di un cantiere simile appena concluso. "Le volevo mandare due dati sul risparmio energetico che ho visto in un cantiere molto simile al suo, giusto per darle un metro di paragone."
+
+Terzo contatto, con una scadenza reale sull'offerta. Non inventare urgenze finte ("solo per oggi"): il cliente le riconosce e perde fiducia. Usa una scadenza vera, legata ai tuoi tempi di produzione o alla validità del prezzo dei materiali: "Il preventivo che le ho fatto tiene questo prezzo fino a fine mese, dopo devo rifare il calcolo perché cambia il costo dei materiali. Vuole che fissiamo un ultimo confronto prima di quella data?"
+
+Lo storico della trattativa nel CRM è quello che rende possibile ogni script: senza sapere cosa è già stato detto nella telefonata precedente, il commerciale rischia di ripetersi o, peggio, di contraddirsi.
+
+## Le obiezioni più comuni in fase di follow-up (e come gestirle davvero)
+
+Le obiezioni che un cliente solleva durante il follow-up sono quasi sempre le stesse tre o quattro. Il problema non è conoscerle: è avere una risposta pronta e coerente con quello che è già stato detto nella trattativa, non improvvisata ogni volta da zero.
+
+| Obiezione del cliente | Perché nasce di solito | Risposta che funziona |
+|---|---|---|
+| "Devo pensarci" | Manca urgenza reale o non ha capito il valore | Chiedere cosa specifico lo fa esitare, non accettare la frase come risposta finale |
+| "Sto aspettando altri preventivi" | Sta confrontando solo il prezzo, non il valore | Riportare l'attenzione su garanzia, tempi di posa, assistenza post-vendita |
+| "È più caro di quanto pensavo" | Non ha capito bene la composizione del prezzo | Scomporre il preventivo voce per voce, con lo storico del sopralluogo alla mano |
+| "Mi richiami tra qualche mese" | Non è nella finestra di decisione adesso | Impostare un promemoria a lungo termine nel CRM, non lasciarlo cadere |
+
+Il CRM da solo non risponde a nessuna di queste obiezioni: le rende gestibili, perché ogni risposta si basa su quello che il commerciale sa già del cliente grazie allo storico, e ogni obiezione rimasta aperta genera un nuovo promemoria invece di sparire nel nulla.
+
 ## Il legame tra CRM e fatturato recuperato
 
 Il fatturato che un CRM ben usato recupera non è "nuovo" fatturato da marketing: è fatturato che stavi già generando con i sopralluoghi fatti, e che perdevi per un follow-up mancato o in ritardo. È il fatturato più economico da recuperare, perché il costo di acquisizione di quel cliente lo hai già sostenuto: hai già pagato il lead, il carburante per il sopralluogo, il tempo del commerciale.
 
 Ogni preventivo che muore per dimenticanza, e non per prezzo o per un vero "no" del cliente, è margine lasciato sul tavolo. Un CRM con le 5 funzioni giuste, usato con disciplina, chiude quella falla in modo diretto e misurabile, mese dopo mese.
+
+![Il fatturato recuperato dal follow-up è il margine più economico che un'azienda possa recuperare.](img:margini)
+
+## Come misurare se il CRM sta funzionando: i 4 numeri da controllare ogni settimana
+
+Installare un CRM non basta a sapere se sta funzionando. Serve guardare, ogni settimana, quattro numeri precisi, non farsi un'idea generica di "va meglio".
+
+Tasso di chiusura per commerciale e per periodo, confrontato con il mese precedente, non con un obiettivo teorico calato dall'alto. Tempo medio tra il sopralluogo e il primo contatto di follow-up: se supera sistematicamente le 48 ore, il problema non è il CRM, è la disciplina con cui viene usato. Percentuale di promemoria rispettati entro la scadenza impostata: sotto l'80% significa che qualcosa nel processo si sta rompendo, anche se il software funziona perfettamente. Valore recuperato dai preventivi "quasi persi", cioè quelli che senza un promemoria automatico sarebbero scivolati nel dimenticatoio e che invece sono stati richiamati in tempo.
+
+Se questi quattro numeri migliorano mese su mese, il CRM sta facendo il suo lavoro. Se restano fermi nonostante l'adozione dello strumento, il problema quasi sempre non è tecnico: è che il sistema è stato installato ma non è mai diventato parte della disciplina quotidiana del team.
 
 ## Come partire in modo semplice, senza complicarti la vita
 

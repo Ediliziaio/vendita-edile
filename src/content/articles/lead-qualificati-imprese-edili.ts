@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Non ti serve più traffico, ti serve traffico giusto. Ecco come costruire un flusso di lead qualificati per la tua impresa edile senza riempire l'agenda di curiosi che non comprano.",
   category: "Marketing",
-  tags: ["lead qualificati", "marketing edilizia", "showroom", "preventivi", "funnel", "generazione contatti"],
+  tags: ["lead qualificati", "marketing edilizia", "showroom", "preventivi", "funnel", "qualifica telefonica", "kpi vendita"],
   keyword: "lead qualificati edilizia",
-  readingTime: 9,
+  readingTime: 11,
   publishedAt: "2025-12-18",
   updatedAt: "2025-12-18",
   author: flo,
@@ -44,6 +44,8 @@ Il lead qualificato ha già fatto un pezzo di percorso mentale: sa cosa vuole ca
 ## I canali che generano lead qualificati in edilizia (e quelli che no)
 
 Non tutti i canali sono uguali. Alcuni portano curiosi, altri portano clienti pronti a firmare. Ecco come si comportano i principali canali usati da imprese edili e showroom in Italia.
+
+![Ogni richiesta che arriva da un canale ben scelto vale più di dieci contatti raccolti a caso.](img:richieste)
 
 ### Google Profilo e recensioni: il canale più sottovalutato
 
@@ -76,6 +78,24 @@ Un sito che risponde a domande reali (quanto costa, quanto dura, che materiali u
 
 I numeri sono indicativi e variano per zona e tipo di lavoro (infissi, fotovoltaico, ristrutturazione completa), ma la gerarchia resta simile in quasi tutte le imprese che seguiamo.
 
+## Caso concreto: da 45 lead generici a 22 qualificati (e il fatturato è salito)
+
+Un'impresa di infissi che seguiamo aveva un problema classico: 45 richieste al mese da campagne ads generiche, agenda del commerciale piena tutti i giorni, e solo 3-4 contratti chiusi. Il titolare era convinto che il problema fosse la capacità di vendita del suo commerciale. Il problema vero era a monte: il modulo della campagna aveva un solo campo, "nome e telefono", e il messaggio prometteva "preventivo in 24 ore" senza nessun filtro.
+
+Abbiamo cambiato tre cose, nell'arco di sei settimane: aggiunto un campo obbligatorio con il tipo di intervento e una fascia di budget indicativa, riscritto il testo dell'annuncio da "preventivo gratis" a "sopralluogo tecnico gratuito, valutazione su misura", e introdotto la qualifica telefonica con le quattro domande viste sopra prima di fissare qualsiasi appuntamento.
+
+Il risultato dopo due mesi: le richieste in ingresso sono scese da 45 a 22 al mese. Numericamente sembra un passo indietro, ma il tasso di chiusura è salito dal 9% al 38%, perché ogni sopralluogo veniva fatto solo a chi aveva davvero intenzione di comprare.
+
+| Indicatore | Prima (lead generici) | Dopo (lead qualificati) |
+|---|---|---|
+| Richieste al mese | 45 | 22 |
+| Sopralluoghi effettuati | 40 | 20 |
+| Contratti chiusi | 4 | 8 |
+| Tasso di chiusura | 9% | 38% |
+| Ore commerciale su sopralluoghi a vuoto | circa 30 ore/mese | circa 6 ore/mese |
+
+Lo stesso commerciale, con la metà delle ore impegnate in sopralluoghi, ha chiuso il doppio dei contratti. Non ha imparato tecniche di vendita nuove: ha semplicemente smesso di sprecare tempo su chi non avrebbe mai firmato.
+
 ## Come evitare i lead spazzatura
 
 Il modo più veloce per rovinare un canale è impostare un messaggio pubblicitario che promette troppo e chiede troppo poco. "Preventivo gratis in 1 minuto" con un solo campo nome e telefono porta valanghe di contatti, ma la maggior parte sono curiosi senza reale intenzione.
@@ -99,6 +119,19 @@ Un lead, anche qualificato, non diventa cliente da solo. Serve un percorso chiar
 
 Il punto debole di quasi tutte le imprese è il passaggio 2. Si salta la qualifica telefonica e si va dritti al sopralluogo con chiunque chiami, riempiendo l'agenda di trattative già morte in partenza.
 
+## Cosa fare se il canale che funzionava meglio smette di portare risultati
+
+Succede a tutte le imprese, prima o poi: il canale che per mesi ha portato i lead migliori (spesso il referral o una specifica campagna ads) rallenta improvvisamente. Prima di andare nel panico e aumentare il budget pubblicitario, controlla in ordine queste quattro cose.
+
+- **Il messaggio è ancora coerente con chi vuoi attirare?** Un annuncio lasciato invariato per mesi perde efficacia, e spesso comincia ad attirare un pubblico diverso da quello iniziale.
+- **La qualifica telefonica si è allentata?** Capita spesso che dopo qualche mese di buoni risultati, la squadra commerciale smetta di fare le domande di filtro "perché ormai i lead sono buoni". Appena questo succede, la qualità scende anche se il canale è identico.
+- **La concorrenza locale è cambiata?** Un nuovo competitor che spende di più sullo stesso canale alza il costo e diluisce la qualità di chi arriva a te.
+- **Il canale si è semplicemente esaurito nella tua zona?** Su un bacino geografico limitato, alcuni canali (soprattutto il referral) hanno un tetto naturale: dopo un certo numero di clienti serviti, il passaparola rallenta fisiologicamente.
+
+Se il calo dipende dal primo o secondo punto, la soluzione è interna e veloce: riscrivere il messaggio, ricompattare la squadra sulla qualifica. Se dipende dal terzo o quarto punto, serve aprire un canale aggiuntivo prima che quello principale si esaurisca del tutto, non dopo.
+
+![Ogni trattativa che parte da un lead già qualificato arriva con metà del lavoro di convincimento già fatto.](img:trattativa)
+
 ## La qualifica telefonica: le domande che fanno risparmiare mezza giornata
 
 Bastano tre o quattro domande, fatte con tono naturale, prima di fissare il sopralluogo:
@@ -110,11 +143,37 @@ Bastano tre o quattro domande, fatte con tono naturale, prima di fissare il sopr
 
 Se le risposte sono vaghe, non urgenti, senza un motivo scatenante e senza chiarezza su chi decide, probabilmente non è ancora il momento di mandare un tecnico a fare un sopralluogo di un'ora. Questo singolo filtro, applicato con costanza, taglia mediamente l'80% dei sopralluoghi a vuoto.
 
+## Errori specifici che abbassano la qualità dei lead (anche con un buon funnel)
+
+Anche le imprese che hanno già capito l'importanza della qualifica commettono errori ricorrenti che silenziosamente riportano dentro i curiosi:
+
+- **Rispondere troppo tardi.** Un lead qualificato che aspetta più di 24-48 ore per una risposta comincia a chiamare altri fornitori. Il vantaggio della qualità si perde se la velocità di risposta è lenta.
+- **Fare la qualifica come un interrogatorio.** Le quattro domande vanno inserite in una conversazione naturale, non lette come un questionario. Un tono troppo rigido allontana anche i clienti buoni.
+- **Non tracciare l'esito di ogni lead.** Senza un minimo di CRM, anche solo un foglio condiviso, perdi la memoria di cosa ha funzionato e cosa no, e ripeti gli stessi errori di targeting mese dopo mese.
+- **Cambiare troppo spesso il messaggio pubblicitario.** L'opposto del punto precedente: modificare l'annuncio ogni settimana non lascia il tempo ai dati di stabilizzarsi, e non capisci mai davvero cosa stava funzionando.
+- **Lasciare la qualifica solo al titolare.** Se solo tu sai fare le domande giuste, il sistema si blocca appena sei impegnato altrove. Le domande di qualifica vanno scritte, condivise e usate da chiunque risponda al telefono in azienda.
+
 ## Costo per lead e ritorno: come leggere davvero i numeri
 
 Un errore comune è guardare solo il costo per lead senza collegarlo al tasso di chiusura. Un lead da 25 € che chiude al 5% costa 500 € per contratto acquisito. Un lead da 60 € che chiude al 30% costa 200 € per contratto. Il secondo canale, apparentemente più caro, è tre volte più conveniente.
 
 Per leggere il ritorno reale, servono tre numeri per ogni canale: costo per lead, tasso di chiusura, ticket medio del contratto. Solo mettendo insieme questi tre dati capisci quale canale sta davvero facendo guadagnare l'impresa e quale sta solo riempiendo l'agenda di appuntamenti inutili.
+
+## Come misurare se il tuo funnel sta migliorando davvero
+
+Non basta "sentire" che i lead sono migliori. Servono numeri controllati ogni mese, altrimenti si torna presto alle vecchie abitudini appena arriva un periodo di lavoro intenso.
+
+| Metrica | Cosa misura | Frequenza di controllo |
+|---|---|---|
+| Numero di richieste per canale | Volume in ingresso, canale per canale | Settimanale |
+| Percentuale di lead che superano la qualifica telefonica | Qualità reale del canale | Mensile |
+| Tasso di chiusura sopralluogo-contratto | Efficacia della qualifica e della vendita insieme | Mensile |
+| Costo per contratto acquisito (non per lead) | Ritorno reale dell'investimento marketing | Mensile |
+| Tempo medio di risposta al primo contatto | Velocità che protegge la qualità del lead | Settimanale |
+
+Guardare questi cinque numeri ogni mese, anche su un semplice foglio condiviso, ti permette di correggere un canale che sta calando prima che diventi un problema serio, e di riconoscere subito quando un nuovo canale sta funzionando meglio del previsto.
+
+![Un funnel che filtra bene produce una crescita più lenta in apparenza, ma molto più solida nel tempo.](img:crescita)
 
 ## Da dove partire domani per avere lead qualificati
 

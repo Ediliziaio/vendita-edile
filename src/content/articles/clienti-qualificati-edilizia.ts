@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Passi le giornate tra sopralluoghi e preventivi, ma la cassa non si muove. Il problema non è la quantità di contatti: è che metà non sono clienti qualificati. Ecco come riconoscerli prima di perdere tempo.",
   category: "Marketing",
-  tags: ["clienti", "qualificazione", "marketing", "vendita", "preventivi", "posizionamento"],
+  tags: ["clienti qualificati", "qualificazione", "marketing", "vendita", "preventivi", "posizionamento", "follow-up"],
   keyword: "clienti qualificati edilizia",
-  readingTime: 9,
+  readingTime: 11,
   publishedAt: "2025-12-11",
   updatedAt: "2025-12-11",
   author: flo,
@@ -61,6 +61,8 @@ Non serve vedere il cliente di persona per capire se è qualificato. Bastano 4-5
 
 Chi risponde con vaghezza a tutte e cinque, o si infastidisce per le domande, ti sta già dicendo che non è pronto. Chi risponde con dettagli concreti, sta già comprando: gli manca solo di firmare.
 
+![Un cliente perso dopo settimane di attenzioni costa più caro di un no detto subito al telefono.](img:clienteperso)
+
 ## Cliente qualificato vs cliente curioso: la tabella che ti fa risparmiare ore
 
 | Segnale | Cliente qualificato | Cliente curioso |
@@ -74,6 +76,24 @@ Chi risponde con vaghezza a tutte e cinque, o si infastidisce per le domande, ti
 
 Su 20 richieste al mese, in un'impresa media, si stima che 10-12 siano curiosi e 8-10 qualificati. Se investi lo stesso tempo su entrambi i gruppi, stai regalando metà delle tue ore a chi non comprerà mai.
 
+## Caso concreto: il cliente che sembrava perfetto e non lo era
+
+Un'impresa di ristrutturazioni che seguiamo ci ha raccontato un caso tipico. Un cliente chiama, sembra tutto a posto: budget dichiarato coerente, casa da ristrutturare completamente, parla con sicurezza. Il titolare fa il sopralluogo di persona, un'ora e mezza, prepara un preventivo dettagliato in due giorni. Il cliente sparisce per tre settimane, poi richiama dicendo che "deve prima sentire la moglie", che in realtà non era mai stata coinvolta in nessuna delle conversazioni precedenti.
+
+Il preventivo, rifatto due volte con piccole modifiche, non è mai stato firmato. Nel frattempo, altri due sopralluoghi con clienti realmente pronti erano stati rimandati per fare spazio a questo.
+
+Cosa mancava, delle 5 domande di qualifica? Proprio la numero 4: chi altro è coinvolto nella decisione. Se fosse emersa al telefono, il titolare avrebbe potuto chiedere di coinvolgere subito la moglie, anche solo con una videochiamata, invece di scoprirlo dopo un preventivo completo.
+
+| Fase | Tempo impiegato | Con qualifica corretta |
+|---|---|---|
+| Telefonata iniziale | 10 minuti | 10 minuti, con una domanda in più |
+| Sopralluogo | 90 minuti | 90 minuti, con entrambi i decisori presenti |
+| Preventivo dettagliato | 2 giorni di lavoro | 2 giorni, ma con tasso di chiusura più alto |
+| Rifacimenti del preventivo | 2 volte | 0-1 volta |
+| Esito | Nessuna chiusura dopo 5 settimane | Decisione in 1-2 settimane |
+
+La domanda sul chi altro decide, da sola, se diventa un'abitudine automatica su ogni telefonata, evita gran parte di queste situazioni.
+
 ## Il posizionamento che attira i clienti giusti (non i cacciatori di preventivi)
 
 Qui arriva la parte che pochi vogliono sentirsi dire: **il tipo di cliente che ti contatta dipende da come ti presenti prima ancora che ti chiami.** Se comunichi solo prezzo, sconti e "preventivo gratuito in 24 ore", stai letteralmente chiamando a raccolta i cacciatori di preventivi. È il messaggio che manda il posizionamento, non colpa loro.
@@ -85,6 +105,19 @@ Un posizionamento che attira clienti qualificati edilizia si costruisce su tre l
 - **Comunicazione che parla di risultato, non di sconto**: "risparmi 400 euro l'anno di riscaldamento" attira chi ha un problema da risolvere; "-20% su tutto il listino" attira chi cerca l'affare del momento.
 
 Le aziende che chiudono di più non sono quelle con più contatti in ingresso. Sono quelle che, a monte, hanno già scremato il pubblico con un posizionamento chiaro, e arrivano al sopralluogo con clienti già mezzi convinti.
+
+## Cosa fare se un cliente qualificato sparisce dopo il sopralluogo
+
+Capita anche ai clienti che hanno superato bene la qualifica: dopo un ottimo sopralluogo, il silenzio. Prima di considerarlo perso, verifica in ordine:
+
+- **Il preventivo è arrivato entro 48-72 ore?** Un preventivo che arriva dopo una settimana perde forza, anche su un cliente inizialmente convinto: nel frattempo ha continuato a guardarsi intorno.
+- **Il follow-up è stato fatto con una data precisa, non generica?** "Le faccio sapere" da parte tua vale poco. "La richiamo giovedì alle 15 per rispondere alle sue domande" blocca un appuntamento reale nella sua testa.
+- **È cambiato qualcosa nella sua urgenza?** A volte, tra il sopralluogo e il preventivo, il motivo scatenante si è risolto diversamente, magari con un intervento parziale, o rimandando la decisione per motivi economici sopraggiunti. Chiederlo direttamente, senza paura, chiarisce se vale la pena insistere.
+- **Ha ricevuto un preventivo concorrente nel frattempo?** Se sì, la domanda utile non è "quanto le hanno fatto", ma "cosa le hanno proposto di diverso", che apre un confronto sul valore invece che sul solo prezzo.
+
+Un cliente qualificato che sparisce quasi sempre ha un motivo specifico, non generico. Trovarlo con una domanda diretta è più efficace di tre messaggi di sollecito silenziosi.
+
+![Un team allineato sulle stesse domande di qualifica evita di perdere clienti buoni per un semplice ritardo nel follow-up.](img:team)
 
 ## Perché abbassare il prezzo attira i clienti peggiori
 
@@ -103,6 +136,32 @@ Dire no fa paura, soprattutto quando il portafoglio ordini non è pieno. Ma cont
 - **"Le propongo di fissare un secondo incontro quando ha già parlato con [socio/coniuge], così possiamo entrare nel dettaglio con tutti presenti."** Rimanda senza rifiutare, filtra chi è davvero pronto.
 
 Dire no a chi non è pronto non è perdere una vendita. È **liberare ore per chi lo è già**.
+
+## Obiezioni reali quando inizi a filtrare i clienti
+
+Chi inizia ad applicare questi criteri incontra quasi sempre le stesse resistenze, interne prima ancora che esterne. Vediamole con le risposte che funzionano davvero.
+
+"Se dico no rischio di perdere un cliente che magari poi si convince." È vero in teoria, ma nella pratica chi non ha budget o urgenza reale non si converte con l'insistenza: si converte solo quando il suo bisogno diventa concreto, e a quel punto ti richiama lui. Nel frattempo, hai investito quel tempo su chi era già pronto.
+
+"I miei commerciali hanno paura di fare troppe domande, sembra un interrogatorio." La soluzione non è eliminare le domande, è farle diventare conversazione. Non si chiede "quanto vuole spendere" a bruciapelo, si chiede "ha già un'idea di fascia di investimento", inserita dopo aver ascoltato il problema del cliente, non prima.
+
+"Non voglio sembrare che scelgo io i clienti, sembra arrogante." In realtà è l'opposto: un'azienda che qualifica bene sta rispettando il tempo di tutti, incluso quello del cliente che non è pronto e che riceverebbe comunque un servizio peggiore se forzato in una trattativa prematura.
+
+## Come misurare se stai davvero attirando clienti migliori
+
+Anche qui, non basta la sensazione. Alcuni numeri da tenere sotto controllo ogni mese per capire se il filtro sta funzionando davvero:
+
+| Metrica | Cosa ti dice | Obiettivo indicativo |
+|---|---|---|
+| Percentuale di sopralluoghi che diventano preventivo | Quanto bene stai qualificando prima del sopralluogo | Sopra il 70% |
+| Percentuale di preventivi che diventano contratto | Qualità reale dei clienti arrivati fin lì | 35-50% |
+| Numero di rifacimenti preventivo per trattativa | Chiarezza raggiunta nel primo incontro | Sotto 1 in media |
+| Tempo medio tra sopralluogo e invio preventivo | Velocità che protegge l'interesse del cliente | 48-72 ore |
+| Percentuale di clienti persi per silenzio senza motivo chiaro | Qualità del follow-up | Sotto il 15% |
+
+Se questi numeri migliorano mese su mese, il tuo filtro sta funzionando. Se restano fermi nonostante applichi le domande di qualifica, il problema probabilmente non è più a monte, in chi ti contatta, ma nel modo in cui gestisci la trattativa dopo il primo contatto.
+
+![Clienti qualificati che ricevono un preventivo puntuale chiudono più spesso e più in fretta.](img:clientiqualificati)
 
 ## Da dove partire domani mattina
 

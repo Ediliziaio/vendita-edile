@@ -13,7 +13,7 @@ const article: Article = {
   category: "Vendita",
   tags: ["vendita", "primo appuntamento", "chiusura", "preventivi", "trattativa", "infissi"],
   keyword: "chiudere al primo appuntamento",
-  readingTime: 9,
+  readingTime: 12,
   publishedAt: "2026-01-13",
   updatedAt: "2026-01-13",
   author: flo,
@@ -52,6 +52,8 @@ Ecco cosa serve avere pronto prima di ogni appuntamento:
 - **La certezza che al tavolo ci sia chi decide.** Prima di fissare l'appuntamento, chiedi esplicitamente: "Per prendere la decisione dobbiamo essere presenti insieme io e lei, o c'è anche qualcun altro che deve vedere il progetto?" Se manca il decisore (il marito, la moglie, il socio), rimandare l'appuntamento di un giorno per averli entrambi presenti è meglio che fare la presentazione a metà.
 - **Materiale che chiude, non che confonde**: campioni, foto di lavori simili già fatti, referenze del quartiere, la scheda tecnica del risparmio energetico. Tutto quello che serve per decidere deve essere lì, non "te lo mando dopo".
 - **Moduli d'ordine e sistema di firma pronti**, anche digitali da tablet. Se per firmare serve tornare in ufficio e stampare qualcosa, hai reintrodotto il secondo giro che volevi eliminare.
+
+![Commerciale che organizza campionario, listino e modulo d'ordine prima di un appuntamento](img:organizzazione)
 
 ## La struttura di un primo appuntamento che chiude
 
@@ -102,6 +104,62 @@ Chiudere al primo appuntamento non significa chiudere sempre e comunque, a costo
 - **Il cliente ha bisogno legittimo di un confronto economico**, tipico su importi molto alti (ristrutturazioni complete, impianti fotovoltaici importanti): qui l'obiettivo del primo appuntamento non è la firma immediata, ma **uscire con un passo successivo concreto e datato**, non un vago "ci pensiamo".
 
 In questi casi, la chiusura del primo appuntamento diventa: fissare insieme, prima di andare via, la data e l'ora esatta del prossimo contatto, con un impegno reciproco chiaro ("Le mando la proposta scritta entro giovedì, e ci sentiamo venerdì alle 18 per la decisione finale"). Non è una resa: è comunque un primo appuntamento "chiuso", perché non lasci nulla al caso e nulla in mano solo al cliente.
+
+## Script pratico: le domande di diagnosi che aprono la vendita
+
+La fase di diagnosi è quella che quasi tutti saltano o sbrigano in trenta secondi, e infatti è quella che, se fatta bene, cambia da sola l'esito dell'appuntamento. Ecco alcune domande che puoi usare quasi parola per parola nei primi dieci minuti, prima ancora di tirare fuori il metro.
+
+Tu: "Prima di guardare le misure, mi racconti cosa vi ha spinto a chiamarci proprio adesso? C'è qualcosa che vi dà fastidio ogni giorno, tipo il freddo, il rumore, o è più una questione di aspetto della casa?"
+
+Questa domanda apre la conversazione sul problema reale, non sul prodotto. Quando il cliente risponde "d'inverno qui si gela" oppure "la bolletta del gas ci ha spaventato quest'anno", hai appena ottenuto l'argomento che userai più avanti per giustificare il prezzo, con le sue stesse parole, non le tue.
+
+Una seconda domanda utile, da fare subito dopo: "Se potesse risolvere questo problema da subito, cosa cambierebbe nella vostra vita quotidiana?". Sembra una domanda quasi banale, ma costringe il cliente a immaginare il risultato, non solo a lamentarsi del problema, e questo passaggio mentale è quello che poi rende il prezzo accettabile quando arriva.
+
+![Commerciale che ascolta con attenzione il cliente durante la fase di diagnosi iniziale](img:trattativa)
+
+## Errori specifici che trasformano il primo appuntamento in un rinvio
+
+Ci sono errori precisi, ripetuti ogni giorno da tanti commerciali, che trasformano un appuntamento potenzialmente chiudibile in un rinvio quasi automatico. Vale la pena riconoscerli uno per uno.
+
+- **Portare il prezzo "da confermare in ufficio".** Se il cliente percepisce che il numero che gli dai oggi non è definitivo, aspetterà comunque la versione "vera" prima di decidere, e quella versione arriverà troppo tardi.
+- **Passare dalla misurazione al prezzo senza diagnosi.** Senza aver fatto emergere il problema reale, il prezzo arriva nudo, senza contesto, e il cliente lo confronta solo con altri numeri, mai con il valore del risultato.
+- **Accettare "ci pensiamo" senza fare una domanda di ritorno.** È la resa più comune: il venditore sente il rifiuto educato e si arrende subito, invece di chiedere cosa esattamente serva per decidere.
+- **Promettere di richiamare "nei prossimi giorni" senza data precisa.** Una promessa vaga non è un impegno, è un modo elegante per chiudere la conversazione senza chiudere la vendita.
+- **Avere paura di chiedere la firma per non sembrare invadenti.** Il cliente si aspetta che tu guidi l'ultimo passo, esattamente come hai guidato la diagnosi: il silenzio in quel momento non è rispetto, è un'occasione persa.
+
+## Caso concreto: il preventivo chiuso in quaranta minuti
+
+Vale la pena raccontare un caso reale, con dettagli cambiati per riservatezza, perché mostra come la struttura in cinque fasi funzioni anche su un budget importante. Una coppia aveva richiesto un sopralluogo per un cappotto termico e il cambio contestuale di otto infissi, un intervento vicino ai 22.000 euro complessivi.
+
+Il commerciale ha dedicato i primi dodici minuti solo a domande di diagnosi: bollette del gas dell'ultimo inverno, stanze più fredde, muffa già comparsa in una camera. Ha poi presentato la soluzione collegando ogni intervento a uno dei problemi appena raccontati, non come pacchetto standard. Ha fatto il prezzo sul posto, con due opzioni, base e consigliata, entrambe con numeri reali, non "da confermare". Alla prima obiezione sul costo ha risposto mostrando la stima del risparmio annuo in bolletta, non con uno sconto.
+
+Ha chiuso l'appuntamento chiedendo direttamente: "Se per voi la soluzione consigliata va bene, possiamo fissare già oggi la data del sopralluogo tecnico per l'intervento?". La coppia ha firmato in quaranta minuti dal suo arrivo, con un acconto concordato sul posto. Il fattore decisivo non è stato uno sconto, ma il fatto che ogni euro del preventivo fosse legato a un problema che avevano appena raccontato con le loro parole.
+
+## Primo appuntamento strutturato vs improvvisato: il confronto
+
+La differenza tra un appuntamento che chiude e uno che si trascina in un giro di preventivi si vede bene mettendo a confronto i due approcci, fase per fase.
+
+| Aspetto | Appuntamento improvvisato | Appuntamento strutturato |
+|---|---|---|
+| Apertura | Si parte subito dalle misure | 10-15 minuti di domande di diagnosi |
+| Prezzo | "Ve lo mando entro qualche giorno" | Prezzo reale comunicato sul posto |
+| Obiezioni | Gestite con sconto immediato | Gestite con argomenti legati alla diagnosi |
+| Chiusura della visita | "Mi faccia sapere" | Domanda diretta di chiusura o firma |
+| Se non chiude in giornata | Nessun appuntamento successivo fissato | Data e ora precise per il passo successivo |
+| Tempo medio dal sopralluogo alla decisione | 2-4 settimane, spesso senza risposta | Stessa visita o entro pochi giorni |
+
+## Come misurare il tuo tasso di chiusura al primo appuntamento
+
+Anche la capacità di chiudere al primo appuntamento si può misurare con pochi numeri, utili sia per te che per confrontare i risultati tra i commerciali del team.
+
+| Metrica | Come si misura | Obiettivo realistico |
+|---|---|---|
+| Tasso di chiusura in giornata | Contratti firmati lo stesso giorno diviso totale sopralluoghi | 35-45% sui lead qualificati |
+| Preventivi con prezzo comunicato sul posto | Sopralluoghi con prezzo reale dato in giornata diviso totale | 90-100% |
+| Giorni medi tra sopralluogo e decisione finale | Data decisione meno data sopralluogo | Sotto i 5-7 giorni |
+| Appuntamenti chiusi senza un "ci pensiamo" vago | Appuntamenti con esito chiaro (firma o data precisa) diviso totale | 85-95% |
+
+![Titolare e commerciale che rivedono insieme i numeri di chiusura del mese](img:margini)
 
 ## Da dove partire già dal prossimo appuntamento
 

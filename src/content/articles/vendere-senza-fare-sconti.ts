@@ -13,7 +13,7 @@ const article: Article = {
   category: "Vendita",
   tags: ["vendita", "sconti", "trattativa", "margine", "preventivi"],
   keyword: "vendere senza fare sconti",
-  readingTime: 9,
+  readingTime: 10,
   publishedAt: "2026-01-02",
   updatedAt: "2026-01-02",
   author: flo,
@@ -59,6 +59,10 @@ Lo sconto dovrebbe convincere il cliente. Nella realtà fa tre danni che raramen
 
 **Terzo: seleziona il cliente sbagliato.** Chi ti sceglie solo perché ha strappato uno sconto è lo stesso cliente che al primo imprevisto in cantiere ti contesterà ogni euro, che pagherà in ritardo, che confronterà ogni fattura. Il cliente che accetta il prezzo pieno perché si fida di te è, quasi sempre, anche il cliente più semplice da gestire in cantiere.
 
+Lo vediamo spesso sul campo: il cliente che ottiene lo sconto alla prima richiesta raramente si ferma lì. Nella maggior parte dei casi torna a chiedere un margine ulteriore su un extra, su una variante in corso d'opera, sulla data di pagamento. Ha imparato, nel primo minuto di trattativa, che il tuo prezzo si muove se insiste abbastanza, e da quel momento tratterà ogni euro come negoziabile fino alla fine del cantiere.
+
+![Concedere lo sconto alla prima richiesta insegna al cliente che ogni prezzo, da quel momento in poi, è negoziabile.](img:sconto)
+
 ## Valore percepito e ancoraggio: le due leve che sostituiscono lo sconto
 
 Prima di arrivare alla trattativa sul prezzo, la partita si gioca su due terreni che il venditore medio ignora completamente.
@@ -90,6 +94,47 @@ Qui il riflesso sbagliato è correre ad allinearsi al prezzo del concorrente. Il
 Chiedi di vedere il preventivo, riga per riga, davanti al cliente. Non per criticare il concorrente, ma per fare un confronto onesto: "Qui vedo lo smaltimento del vecchio infisso, lo include anche loro? La garanzia sulla posa è scritta o verbale?". Il 90% delle volte il preventivo "più basso" è semplicemente un preventivo più povero. Il tuo compito non è abbassarti al suo livello, è mostrare la differenza.
 
 Se dopo questo confronto il cliente sceglie comunque il prezzo più basso, va bene così: non era il tuo cliente. Meglio perdere un contratto a margine zero che vincerlo e lavorarci in perdita per sei mesi.
+
+## Il costo dello sconto ripetuto: cosa succede in un anno intero
+
+Uno sconto isolato sembra un piccolo compromesso su un singolo contratto. Il problema è che raramente resta isolato: se lo concedi una volta, lo concedi quasi sempre, perché diventa l'abitudine tua e della tua squadra commerciale. Guarda cosa succede su un anno di attività con 40 contratti e un ticket medio di 10.000 €.
+
+| Scenario annuo (40 contratti, ticket medio 10.000 €) | Fatturato | Margine medio | Utile annuo |
+|---|---|---|---|
+| Mai sconto, margine pieno al 25% | 400.000 € | 25% | 100.000 € |
+| Sconto medio del 10% su ogni contratto | 360.000 € | 16,7% | 60.000 € |
+| Sconto medio del 15% su ogni contratto | 340.000 € | 11,8% | 40.000 € |
+
+Il margine indicato è calcolato sul prezzo scontato, a parità di costo del lavoro. La differenza tra la prima e la terza riga non è un dettaglio contabile: è la differenza tra un'impresa che può assumere, investire in macchinari o attraversare un mese fiacco senza tremare, e una che vive di cassa in cassa.
+
+![Il margine perso con lo sconto non si vede sulla singola trattativa, ma pesa moltissimo sommato su un anno intero.](img:margini)
+
+## Due trattative, due esiti: un confronto reale
+
+Per capire quanto la gestione dell'obiezione prezzo cambi l'esito, confrontiamo due modi di gestire la stessa identica richiesta di sconto.
+
+| Momento della trattativa | Trattativa A (sconto concesso subito) | Trattativa B (valore prima del prezzo) |
+|---|---|---|
+| Alla richiesta di sconto | Sconto del 10% concesso sul momento | Domanda di chiarimento: cosa la frena esattamente |
+| Alla scoperta del vero dubbio | Non emerge, la trattativa resta sul prezzo | Emerge il vero dubbio, spesso sui tempi di consegna |
+| Soluzione proposta | Nessuna, solo il prezzo più basso | Impegno scritto sulla data di consegna |
+| Esito della trattativa | Contratto chiuso, margine dimezzato | Contratto chiuso, margine pieno |
+| Cliente durante il cantiere | Contesta ogni variazione, paga in ritardo | Collaborativo, paga puntuale |
+
+Il contratto si chiude in entrambi i casi. Quello che cambia radicalmente è il margine che resta in azienda e la qualità della relazione durante il cantiere, un aspetto che raramente si mette in conto quando si decide di scontare "tanto per chiudere".
+
+![Due trattative identiche possono avere esiti economici completamente diversi a seconda di come gestisci la prima obiezione.](img:trattativa)
+
+## Errori interni che spingono a scontare anche quando non serve
+
+Spesso lo sconto non nasce da una vera necessità del cliente, ma da un problema organizzativo interno che nessuno ha mai messo per iscritto.
+
+| Errore interno | Perché succede | Correzione |
+|---|---|---|
+| Il commerciale ha potere di sconto illimitato | Nessuna soglia scritta, decide sotto pressione | Fissare un margine minimo e una soglia di autorizzazione |
+| Si scontra per "chiudere il mese" | Obiettivo di fatturato senza un obiettivo di margine collegato | Misurare anche il margine medio dei contratti, non solo il fatturato |
+| Si teme di perdere il cliente | Manca un'alternativa pronta da offrire al posto dello sconto | Preparare in anticipo bonus, garanzie, tempi certi |
+| Il prezzo di listino non è mai stato spiegato | Nessun lavoro sul valore percepito prima di mostrare il numero | Costruire la presentazione partendo dal problema, non dal prezzo |
 
 ## La regola del non-sconto: come applicarla in azienda
 

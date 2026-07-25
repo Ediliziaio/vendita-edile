@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Non ti serve più traffico, ti serve un sistema. Ecco le 5 leve concrete che fanno passare un'impresa di infissi da 2-3 preventivi chiusi su 20 a 8-10, con lo stesso prodotto e lo stesso prezzo.",
   category: "Vendita",
-  tags: ["infissi", "serramenti", "vendita", "trattativa", "preventivi"],
+  tags: ["infissi", "serramenti", "vendita", "trattativa", "preventivi", "obiezioni", "follow-up"],
   keyword: "aumentare vendite infissi",
-  readingTime: 9,
+  readingTime: 10,
   publishedAt: "2026-01-08",
   updatedAt: "2026-01-08",
   author: flo,
@@ -34,6 +34,8 @@ Ti hanno raccontato che serve più marketing, più richieste, più pubblicità. 
 La verità scomoda è questa: **il collo di bottiglia non è il numero di richieste, è il tasso di chiusura.** Se passi dal chiudere 3 preventivi su 20 a chiuderne 8 su 20, hai quasi triplicato il fatturato senza spendere un euro in più di marketing e senza abbassare il prezzo.
 
 In questo articolo ti mostro le 5 leve concrete che fanno esattamente questo. Non teoria da corso. Cose che facciamo ogni giorno sul campo, vendendo infissi veri a clienti veri.
+
+![In showroom il cliente decide con gli occhi e con le mani: far toccare il prodotto vale più di dieci schede tecniche.](img:showroom)
 
 ## Aumentare le vendite di infissi: le 5 leve del sistema
 
@@ -83,6 +85,83 @@ Ecco il dato che pochi hanno il coraggio di dirti: **la maggior parte dei vendit
 
 Le imprese che chiudono di più hanno un follow-up strutturato: una telefonata a 48 ore, un messaggio a valore dopo qualche giorno (non "ha deciso?" ma "le mando la scheda del risparmio energetico che le avevo promesso"), un ultimo contatto con una scadenza reale. Non è insistenza fastidiosa: è **presenza professionale**. Il cliente che ti percepisce presente e sicuro, si fida e firma.
 
+## Script di qualifica: cosa dire davvero al telefono
+
+Sapere che bisogna "qualificare" il cliente è la teoria. Il problema vero è cosa dire quando squilla il telefono e hai davanti qualcuno che vuole solo "un prezzo". Ecco una traccia che puoi adattare, punto per punto, senza sembrare un interrogatorio.
+
+Cliente: "Buongiorno, vorrei un preventivo per cambiare gli infissi di casa."
+
+Tu: "Certo, felice di aiutarla. Mi dica, cosa la sta spingendo a cambiarli proprio adesso, freddo, rumore, bolletta, o altro?"
+
+Da qui la conversazione si sposta dal "quanto costa" al "cosa risolve". Continua con due o tre domande mirate, poi fissa il sopralluogo solo se le risposte confermano che vale la pena muoversi.
+
+| Domanda da fare al telefono | Cosa scopri | Perché conta |
+|---|---|---|
+| Da quanto tempo ci pensa | Se è un'urgenza reale o solo curiosità | Chi ci pensa da mesi ha un problema serio, non un capriccio passeggero |
+| Cosa la spinge a chiamare proprio ora | Il trigger emotivo o economico dietro la richiesta | Diventa la leva principale nella presentazione |
+| Ha già altri preventivi in mano | Il livello di confronto già in corso | Ti prepara a gestire l'obiezione prezzo prima che arrivi |
+| Chi decide, lei o anche qualcun altro | Chi deve essere presente al sopralluogo | Evita di presentare la proposta a metà del decisore |
+| Ha già un'idea di budget | La compatibilità economica del progetto | Ti evita di perdere ore su un progetto fuori scala |
+
+Se le risposte confermano un problema reale, un'urgenza vera e un budget compatibile, fissa il sopralluogo. Se emergono solo curiosità o richieste "tanto per farsi un'idea", puoi comunque rispondere con cortesia, ma sposta quel contatto in una lista di ricontatto futuro, non nell'agenda dei sopralluoghi della settimana.
+
+![Un cliente qualificato al telefono trasforma il sopralluogo da tentativo a trattativa quasi già avviata.](img:clientiqualificati)
+
+## Obiezioni reali e risposte pronte: la cassetta degli attrezzi del venditore
+
+Le obiezioni che senti sul campo sono sempre le stesse quattro o cinque. Il problema non è l'obiezione in sé, è arrivarci impreparati e rispondere d'istinto, quasi sempre con uno sconto. Prepara le risposte prima, per iscritto, e falle ripetere a ogni commerciale finché non escono naturali.
+
+| Obiezione del cliente | Risposta che non funziona | Risposta che funziona |
+|---|---|---|
+| Costa troppo | Le faccio uno sconto del dieci per cento | Rispetto a cosa le sembra troppo, mi aiuti a capire con cosa lo confronta |
+| Ci devo pensare | Va bene, mi faccia sapere | Capisco. Cosa la frena esattamente, il prezzo, i tempi, o vuole confrontare altre offerte |
+| Ho un preventivo più basso | Allora le allineo il prezzo | Mi fa vedere le voci? Vediamo insieme cosa include e cosa no |
+| Non è il momento giusto | Va bene, la richiamo tra qualche mese | Cosa dovrebbe cambiare perché diventi il momento giusto |
+
+Nota una cosa: nessuna di queste risposte chiude la trattativa sul colpo. Tutte riportano la palla nel campo del cliente, per far emergere il vero motivo dell'esitazione. Solo dopo puoi rispondere al problema reale, non a quello dichiarato.
+
+## Gli errori che affossano il tasso di chiusura
+
+Ci sono errori che si ripetono in quasi tutte le imprese che faticano a chiudere, indipendentemente dalla qualità del prodotto che vendono. Riconoscerli è il primo passo per correggerli.
+
+| Errore comune | Conseguenza sul tasso di chiusura | Correzione |
+|---|---|---|
+| Fare il preventivo a chiunque telefoni | Agenda piena di sopralluoghi che non portano a nulla | Qualificare al telefono prima di fissare l'appuntamento |
+| Parlare subito di prezzo e materiali | Il cliente confronta solo il numero finale | Diagnosi del problema prima della presentazione |
+| Mandare il preventivo senza spiegarlo | Il cliente legge solo il totale in fondo | Consegna a voce, anche in videochiamata |
+| Sparire dopo l'invio del preventivo | Il cliente sceglie chi si è fatto sentire di più | Follow-up programmato a 48-72 ore |
+| Scontare alla prima obiezione | Margine dimezzato, prezzo di listino svalutato per sempre | Rispondere con valore, non con un numero più basso |
+
+Questa tabella, appesa in ufficio o ripassata a inizio settimana con la squadra commerciale, funziona meglio di qualsiasi corso di formazione una tantum. Perché il problema non è mai sapere cosa fare: è ricordarselo trattativa dopo trattativa.
+
+## Come misurare se il sistema funziona: i KPI da tracciare ogni mese
+
+Un sistema di vendita che non misuri i risultati è solo un'intenzione. Per capire se le cinque leve stanno davvero funzionando, tieni sotto controllo pochi numeri, ma con costanza, mese dopo mese.
+
+| KPI | Come si calcola | Obiettivo realistico |
+|---|---|---|
+| Tasso di chiusura | Contratti firmati diviso preventivi fatti | 35-45% |
+| Ticket medio | Fatturato totale diviso numero contratti | 8.000-12.000 euro |
+| Tempo medio di consegna preventivo | Giorni tra sopralluogo e invio | Entro 48 ore |
+| Sconto medio concesso | Sconto totale diviso fatturato di listino | Sotto il 5% |
+| Tasso di risposta al follow-up | Clienti che rispondono al secondo contatto diviso totale contattati | Sopra il 60% |
+
+![Tenere sotto controllo pochi numeri chiave ogni mese vale più di qualsiasi sensazione su come sta andando la squadra vendite.](img:margini)
+
+Non serve un software complicato: bastano un foglio di calcolo e la disciplina di aggiornarlo ogni settimana. Se il tasso di chiusura sale ma il ticket medio scende, probabilmente stai vendendo meglio ma scontando di nascosto sulle fasce. Se il tasso di risposta al follow-up è basso, il problema non è la vendita, è la costanza con cui contatti i clienti dopo il preventivo.
+
+## Cosa fare se il cliente sparisce dopo il preventivo
+
+A volte il cliente non dice né sì né no: sparisce. Non risponde ai messaggi, non richiama, il telefono squilla a vuoto. È il momento in cui la maggior parte dei venditori molla, pensando che non fosse interessato. Spesso non è così: è solo bloccato da qualcosa che non ha il coraggio di dirti, di solito il budget o un mancato accordo in famiglia.
+
+Ecco una traccia di messaggio da usare dopo 5-7 giorni di silenzio, diversa dal solito "ha deciso?":
+
+"Buongiorno, le scrivo perché nel frattempo ho ripensato al suo caso. Se può esserle utile, posso proporle un'opzione con pagamento dilazionato senza interessi, che spesso aiuta a sbloccare la decisione. Mi faccia sapere se vuole che ne parliamo."
+
+Questo tipo di messaggio funziona per due motivi. Primo, non mette pressione diretta, ma offre qualcosa di nuovo, quindi ha un motivo reale per meritare una risposta. Secondo, nomina esplicitamente una possibile causa del blocco, dando al cliente il permesso di ammetterlo senza imbarazzo.
+
+Se dopo questo secondo tentativo il silenzio continua, un ultimo contatto a due settimane, con una motivazione concreta (fine di una promozione, aggiornamento prezzi, disponibilità limitata del materiale), spesso sblocca la decisione o chiude definitivamente la pratica. In entrambi i casi, meglio saperlo che restare in attesa indefinita con un preventivo aperto che occupa spazio mentale senza produrre nulla.
+
 ## Quanto puoi davvero aumentare le vendite: i numeri
 
 Facciamo i conti veri. Un'impresa che fa 20 preventivi al mese con ticket medio di 8.000 € e chiude al 12% (2-3 contratti) fattura circa 19.000 € al mese sul nuovo.
@@ -99,6 +178,7 @@ Non serve rivoluzionare tutto in un giorno. Parti da qui:
 - Prima del prossimo preventivo, dedica 10 minuti alla diagnosi del problema reale.
 - Prepara per iscritto le risposte alle tue 4 obiezioni più frequenti.
 - Metti in agenda un follow-up a 48 ore su ogni preventivo aperto.
+- Apri un foglio di calcolo e comincia a tracciare tasso di chiusura e ticket medio, anche a mano.
 
 Fai solo questo per 30 giorni e il tuo tasso di chiusura si muove. Garantito.
 

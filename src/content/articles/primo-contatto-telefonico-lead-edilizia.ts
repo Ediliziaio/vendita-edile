@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Il preventivo si perde molto prima del preventivo: si perde nei primi 90 secondi di telefonata. Ecco come rispondere, qualificare e fissare l'appuntamento senza regalare il prezzo al telefono.",
   category: "Vendita",
-  tags: ["lead", "telefono", "vendita", "sopralluogo", "showroom"],
+  tags: ["lead", "telefono", "vendita", "sopralluogo", "showroom", "qualificazione", "script vendita"],
   keyword: "gestire lead al telefono edilizia",
-  readingTime: 9,
+  readingTime: 12,
   publishedAt: "2026-01-17",
   updatedAt: "2026-01-17",
   author: flo,
@@ -38,6 +38,8 @@ Il cliente che ti ha scritto o chiamato per infissi, fotovoltaico o una ristrutt
 I dati che si vedono in giro sul B2C sono chiari: rispondere entro 5 minuti da una richiesta in entrata moltiplica le probabilità di trasformarla in appuntamento reale rispetto a rispondere dopo un'ora. Dopo 30 minuti, il lead ha spesso già parlato con un concorrente e si è fatto un'idea di prezzo con qualcun altro. Dopo un giorno, nella metà dei casi ha già deciso, e non con te.
 
 Questo significa una cosa molto concreta per un'impresa edile o uno showroom: **la velocità di risposta non è un dettaglio operativo, è una leva di vendita al pari dello sconto o della qualità del prodotto.** Costa zero, e vale più di una campagna pubblicitaria intera se applicata con disciplina.
+
+![Cliente che chiude la chiamata insoddisfatto dopo aver aspettato troppo una risposta](img:clienteperso)
 
 ### Cosa cambiare da domani per rispondere più veloce
 
@@ -112,6 +114,60 @@ Meno di due minuti, e alla fine hai una data in agenda invece di una mail da scr
 Una struttura che funziona: dai una forbice di prezzo realistica basata sui casi tipici ("per un intervento come quello che mi descrive, di solito si parla di una fascia tra X e Y euro, ma dipende da misure, materiali e condizioni del cantiere"), e chiudi subito con la domanda che riporta il controllo a te: "Per darle un numero preciso e affidabile, e non una cifra buttata lì che poi cambia, dobbiamo vedere la situazione: le va bene [giorno]?".
 
 Questo approccio funziona per due motivi. Primo, non fai sentire il cliente respinto: gli dai un'informazione vera. Secondo, gli spieghi in modo naturale perché serve il sopralluogo, senza sembrare che stai nascondendo qualcosa.
+
+## Caso concreto: stesso lead, due chiamate diverse
+
+Prendiamo un lead reale, arrivato da un form del sito per un preventivo fotovoltaico: casa unifamiliare, bolletta media dichiarata di 180 euro al mese. Vediamo cosa succede con due approcci diversi alla stessa telefonata.
+
+**Chiamata A, risposta dopo 4 ore.** Il commerciale richiama nel pomeriggio. Il cliente, gentile ma distratto, dice "ah sì, avevo chiesto un'informazione, in realtà ho già parlato con un'altra azienda stamattina, mi ha già dato un'idea di prezzo". La trattativa parte già in salita: il commerciale deve smontare un ancoraggio di prezzo che non ha creato lui, e lo fa senza aver ancora visto il tetto né la bolletta reale.
+
+**Chiamata B, risposta dopo 6 minuti.** Il commerciale richiama quasi subito. Il cliente è ancora sul sito, non ha ancora sentito nessun altro. Il commerciale fa le domande di qualifica (da quanto ci pensa, chi decide insieme a lui, che idea ha della fascia di investimento), poi fissa il sopralluogo per il giorno dopo. Quando il secondo concorrente richiama, il giorno successivo, il cliente risponde "grazie, ho già un sopralluogo fissato con un'altra azienda, vediamo prima quello".
+
+| Elemento della trattativa | Chiamata A (risposta dopo ore) | Chiamata B (risposta entro 10 minuti) |
+|---|---|---|
+| Ancoraggio di prezzo | Fatto da un concorrente, fuori controllo | Nessuno, gestito con calma al sopralluogo |
+| Stato emotivo del cliente | Già confrontato, meno disponibile | Ancora aperto, curioso |
+| Probabilità di ottenere il sopralluogo | Bassa, il cliente valuta se serve davvero | Alta, il cliente è ancora "caldo" |
+| Posizione nella trattativa | Rincorsa | Punto di riferimento |
+
+Il prodotto, il prezzo, la qualità dell'impianto erano identici in entrambi gli scenari. L'unica variabile che ha deciso l'esito è stata la velocità di risposta.
+
+![Squillo del telefono in ufficio con operatore pronto a rispondere al lead in entrata](img:richieste)
+
+## Errori che si ripetono anche in imprese strutturate
+
+Ci sono errori nella gestione telefonica dei lead che continuano a presentarsi anche in imprese con un buon reparto commerciale, perché sono legati più all'abitudine che alla competenza.
+
+- **Rispondere al telefono mentre si fa altro.** Il cliente sente rumore di fondo, interruzioni, "un attimo scusi" ripetuti. Trasmette poca serietà anche se il contenuto della chiamata è corretto. Se non puoi dedicare piena attenzione, meglio richiamare tre minuti dopo che rispondere distratti.
+- **Lasciare la qualifica del lead al singolo venditore, senza uno standard scritto.** Ogni commerciale fa domande diverse, in ordine diverso, e il titolare scopre solo mesi dopo che metà dei sopralluoghi va a vuoto perché nessuno chiedeva l'urgenza reale.
+- **Non segnare da nessuna parte l'esito della chiamata.** Senza un CRM o anche solo un foglio condiviso, il follow-up dipende dalla memoria del commerciale. I lead "tiepidi" spariscono nel nulla dopo la prima chiamata.
+- **Trattare allo stesso modo un lead caldo e uno freddo.** Chi ha scritto "vorrei un preventivo urgente, la caldaia è rotta" e chi ha scritto "giusto per farmi un'idea di prezzi" non vanno gestiti con lo stesso ritmo di follow-up: il primo va richiamato subito, il secondo va coltivato con contenuti nel tempo, senza pressarlo.
+
+## Cosa fare se il lead non risponde alla richiamata
+
+Non tutti i lead rispondono al primo tentativo. Succede spesso, e come gestisci questo momento fa la differenza tra recuperare il contatto o perderlo per sempre.
+
+**Se non risponde alla prima chiamata**, lascia un messaggio breve via WhatsApp o SMS entro pochi minuti: "Buongiorno, sono [nome] di [azienda], la chiamavo per la sua richiesta su [prodotto]. Mi richiami quando può o mi dica lei un orario comodo". Non lasciare messaggi lunghi in segreteria: nessuno li riascolta con attenzione.
+
+**Se non risponde nemmeno al secondo tentativo**, prova a cambiare fascia oraria: chi non risponde alle 10 del mattino potrebbe essere al lavoro, e rispondere volentieri alle 18. Tre tentativi distribuiti su due giorni, in orari diversi, recuperano una parte consistente dei lead "silenziosi".
+
+**Se il lead risponde ma dice "non è un buon momento"**, non insistere per fissare subito l'appuntamento: chiedi semplicemente "quando le faccio comodo per una chiamata di due minuti, oggi pomeriggio o domani mattina?". Dare un'alternativa concreta funziona meglio di un generico "la richiamo io più tardi", che quasi sempre finisce per non succedere mai.
+
+## Come misurare se la gestione dei lead sta funzionando
+
+Anche in questo caso, senza numeri è difficile capire se il sistema funziona o se si sta solo lavorando di più senza risultati migliori. Tieni traccia di questi indicatori su base mensile.
+
+| Indicatore | Gestione poco strutturata | Gestione con script e tempi di risposta |
+|---|---|---|
+| Tempo medio di prima risposta | 1-3 ore o il giorno dopo | Sotto i 10 minuti in orario lavorativo |
+| % lead trasformati in sopralluogo | 15-20% | 40-50% |
+| % lead "persi" senza nessun contatto | Spesso oltre il 30% | Sotto il 10% |
+| Preventivi dati al telefono senza sopralluogo | Frequenti | Rari, quasi mai |
+| Tasso di chiusura dei sopralluoghi fissati | Variabile, dipende dal singolo venditore | Più stabile, perché il lead arriva già qualificato |
+
+Bastano un foglio di calcolo condiviso e cinque minuti a fine settimana per aggiornarlo. Il collegamento tra velocità di risposta e numero di sopralluoghi fissati diventa visibile già nel primo mese, ed è l'argomento più convincente per far rispettare lo standard a tutto il team commerciale, non solo a chi è già disciplinato di suo.
+
+![Titolare che controlla insieme al team i risultati di crescita del reparto commerciale](img:crescita)
 
 ## Da dove partire domani mattina
 

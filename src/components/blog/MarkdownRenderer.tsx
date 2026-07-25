@@ -1,7 +1,8 @@
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "react-router-dom";
 import { slugifyHeading, nodeToText } from "@/lib/markdown";
+import { resolveContentImage, IMG_PREFIX } from "@/content/images";
 
 interface MarkdownRendererProps {
   content: string;
@@ -28,6 +29,12 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       prose-hr:border-border">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        // Di default react-markdown scarta gli URL con schemi sconosciuti:
+        // lasciamo passare solo il nostro prefisso interno "img:", tutto il
+        // resto continua a essere sanificato normalmente.
+        urlTransform={(url) =>
+          url.startsWith(IMG_PREFIX) ? url : defaultUrlTransform(url)
+        }
         components={{
           h2: ({ children }) => (
             <h2 id={slugifyHeading(nodeToText(children))}>{children}</h2>
@@ -40,6 +47,39 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
               <table className="my-0">{children}</table>
             </div>
           ),
+          // Un'immagine da sola non deve restare dentro <p>: <figure> in <p>
+          // è annidamento non valido e il browser spezzerebbe il markup.
+          p: ({ node, children }) => {
+            const kids = node?.children ?? [];
+            const isLoneImage =
+              kids.length === 1 &&
+              kids[0].type === "element" &&
+              kids[0].tagName === "img";
+            return isLoneImage ? <>{children}</> : <p>{children}</p>;
+          },
+          img: ({ src, alt }) => {
+            const resolved = resolveContentImage(
+              typeof src === "string" ? src : undefined
+            );
+            // Chiave inesistente: meglio non renderizzare nulla che un'immagine rotta
+            if (!resolved) return null;
+            return (
+              <figure className="my-8">
+                <img
+                  src={resolved}
+                  alt={alt ?? ""}
+                  loading="lazy"
+                  decoding="async"
+                  className="my-0 w-full rounded-2xl border border-border object-cover"
+                />
+                {alt && (
+                  <figcaption className="mt-3 text-center text-sm text-muted-foreground">
+                    {alt}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          },
           a: ({ href, children }) => {
             const target = href ?? "";
             // Link interni (rotte o ancore) → navigazione SPA

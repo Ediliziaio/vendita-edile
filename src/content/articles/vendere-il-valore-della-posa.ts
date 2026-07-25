@@ -13,7 +13,7 @@ const article: Article = {
   category: "Vendita",
   tags: ["posa infissi", "vendita", "preventivi", "serramenti", "differenziazione", "margine"],
   keyword: "vendere la posa infissi",
-  readingTime: 9,
+  readingTime: 12,
   publishedAt: "2026-01-14",
   updatedAt: "2026-01-14",
   author: flo,
@@ -55,6 +55,8 @@ Una posa fatta male, anche con un infisso di ottima qualità, porta quasi sempre
 - **Rumore residuo** dalla strada, perché i giunti non sono sigillati correttamente.
 
 Il punto che deve arrivare chiaro al cliente è questo: **ha comprato un infisso da 1.200 euro per risolvere freddo e bollette, e si ritrova con lo stesso problema di prima, più la muffa.** Il prodotto non ha colpa. La posa sì. E il conto, alla fine, lo paga due volte: una per l'infisso, una per rifare la posa a un'altra azienda.
+
+![Infisso nuovo con segni di condensa sul telaio dovuti a una sigillatura insufficiente](img:infissi)
 
 ## Cos'è la posa a regola d'arte (UNI 11673) spiegata semplice
 
@@ -103,6 +105,63 @@ Molte aziende di infissi lavorano con subappaltatori, ed è normale: non tutte p
 Il cliente non sa distinguerli, ma tu puoi insegnarglielo con una domanda semplice che puoi anche suggerirgli di fare al concorrente: "chi monterà fisicamente i miei infissi, e da quanto tempo lavora con voi?". Se la risposta del concorrente è vaga, hai appena creato un dubbio legittimo che lavora a tuo favore senza che tu debba criticare nessuno.
 
 Se hai una **squadra interna**, questo è un vantaggio competitivo enorme e va detto esplicitamente, non dato per scontato: significa persone formate, che rispondono a te, che hai controllato più volte, e che tornano se c'è un problema perché sono le tue, non un numero di telefono che non risponde più dopo il saldo.
+
+## Script pratico: come spiegare la posa senza tecnicismi
+
+Molti venditori sanno che la posa è importante ma, al momento di spiegarla, scivolano nel linguaggio tecnico da capitolato e perdono il cliente dopo dieci secondi. Ecco uno script semplice che puoi adattare, pensato per essere detto guardando il cliente negli occhi, non leggendo una scheda.
+
+Tu: "Le faccio un esempio concreto. Immagini di comprare l'infisso più bello e performante del mercato, e poi di montarlo con la schiuma spray e basta, senza sigillare bene i giunti. Dopo un anno avrà comunque spifferi e magari macchie di muffa intorno al telaio, non perché l'infisso sia scarso, ma perché il montaggio non ha tenuto. È esattamente per questo che noi trattiamo la posa come una fase tanto importante quanto la scelta del profilo."
+
+Questa frase funziona perché non attacca nessuno, non dice "gli altri lo fanno male", ma pianta nella testa del cliente un dubbio legittimo su qualsiasi preventivo che liquida la posa in una riga. Da quel momento in poi, quando il cliente confronta i preventivi, la domanda "e la posa come la fate?" diventa sua, non tua, ed è molto più efficace così.
+
+Un'altra domanda utile da inserire nella conversazione, subito dopo aver mostrato le foto di cantiere: "Le è mai capitato di sentire di qualcuno con infissi nuovi che si lamenta ancora di freddo o condensa?". Quasi sempre la risposta è sì, e a quel punto il cliente collega da solo l'esperienza che conosce al rischio della posa fatta male, senza che tu debba insistere oltre.
+
+![Operaio che sigilla con cura il giunto tra telaio e muro durante la posa](img:posa)
+
+## Errori specifici che fanno percepire la posa come un costo, non un valore
+
+Ci sono errori di comunicazione precisi che, ripetuti ogni giorno da tanti venditori, trasformano la posa da valore percepito a semplice riga di costo nel preventivo. Vale la pena riconoscerli uno per uno.
+
+- **Scrivere solo "posa in opera compresa" senza dettaglio.** È la frase che rende la posa invisibile, esattamente come fanno i concorrenti. Se non la descrivi, il cliente non ha motivo di considerarla diversa dalla loro.
+- **Parlarne solo se il cliente chiede.** Aspettare la domanda significa arrivare tardi: a quel punto il cliente ha già deciso mentalmente che la posa è un dettaglio, e ogni tua spiegazione suona come una giustificazione difensiva.
+- **Usare termini tecnici da capitolato** (tenuta all'aria, ponte termico, controtelaio) senza tradurli subito in conseguenze concrete. Il cliente annuisce per educazione, ma non ha capito nulla e il valore non gli resta impresso.
+- **Mostrare le foto di cantiere troppo velocemente**, come se fossero un formalismo. Le foto vanno commentate una per una, indicando col dito cosa si vede, non scorse come una gallery.
+- **Non menzionare mai la garanzia specifica sulla posa**, lasciando che il cliente pensi che la garanzia riguardi solo il prodotto. Separare le due garanzie a voce alta è quello che fa la differenza in trattativa.
+
+## Caso concreto: il cantiere dove la posa ha vinto contro un preventivo più basso
+
+Vale la pena raccontare un caso reale, con dettagli cambiati per riservatezza. Un cliente aveva richiesto tre preventivi per il cambio di nove infissi in un appartamento al terzo piano, zona rumorosa vicino a una strada trafficata. Due preventivi, entrambi intorno agli 8.200 euro, indicavano semplicemente "posa in opera compresa". Il terzo, quello dell'azienda che applicava questo metodo, era a 9.400 euro, circa 1.200 euro in più.
+
+Il commerciante ha dedicato dieci minuti, dopo la presentazione del prodotto, esclusivamente alla posa: foto di tre cantieri simili nella stessa zona, spiegazione dei tre livelli di sigillatura con parole semplici, garanzia scritta di 24 mesi sulla sola posa, con richiamo entro 48 ore in caso di problema. Ha anche lasciato il contatto telefonico di un cliente già servito a due isolati di distanza.
+
+Il cliente ha richiamato dopo quattro giorni, dicendo di aver verificato personalmente col vicino di casa indicato, e ha firmato al prezzo pieno di 9.400 euro, senza chiedere sconti. La differenza di 1.200 euro rispetto alla concorrenza non è stata percepita come un costo, ma come il prezzo di non dover rifare il lavoro tra due anni per colpa della muffa.
+
+![Cantiere completato con infissi montati e area di lavoro pulita a fine intervento](img:cantiere)
+
+## Quanto costa davvero una posa fatta male nel tempo
+
+Il confronto sul preventivo iniziale racconta solo metà della storia. Vale la pena mostrare al cliente anche cosa succede nei tre-cinque anni successivi, perché è lì che la differenza di prezzo iniziale si ribalta completamente a favore della posa qualificata.
+
+| Voce di costo nel tempo | Posa economica | Posa qualificata (UNI 11673) |
+|---|---|---|
+| Costo posa iniziale (indicativo, per infisso) | 50-80 euro | 120-180 euro |
+| Probabilità di muffa/condensa entro 24 mesi | Alta | Bassa |
+| Intervento di ripristino sigillature (indicativo) | 150-300 euro a infisso, spesso a carico del cliente | Raramente necessario, coperto da garanzia |
+| Dispersione termica aggiuntiva stimata sulla bolletta annua | Fino al 15-20% in più rispetto al potenziale dell'infisso | In linea con le prestazioni dichiarate del serramento |
+| Chi risponde in caso di contestazione dopo 2 anni | Spesso nessuno, posatore non più reperibile | L'azienda, con garanzia scritta e squadra tracciabile |
+
+Quando presenti questa tabella, non serve commentarla a lungo: lascia che il cliente faccia da solo l'addizione tra risparmio iniziale e costi nascosti successivi. Il margine che difendi oggi con la posa qualificata è quasi sempre inferiore al costo che il cliente eviterebbe di pagare due volte.
+
+## Come misurare se stai vendendo bene la posa
+
+Anche la vendita della posa si può misurare, non solo raccontare. Se lavori con un team di commerciali, questi quattro indicatori ti dicono chi sta davvero usando la posa come leva e chi la sta ancora trattando come un dettaglio.
+
+| Metrica | Come si misura | Obiettivo realistico |
+|---|---|---|
+| Preventivi con descrizione dettagliata della posa | Preventivi con voce posa descritta diviso totale preventivi emessi | 90-100% |
+| Sopralluoghi con foto di cantiere mostrate | Sopralluoghi con foto mostrate diviso totale sopralluoghi | 80-100% |
+| Differenza di ticket medio tra preventivi con e senza dettaglio posa | Ticket medio preventivi dettagliati meno ticket medio preventivi generici | Positiva, in genere 5-12% |
+| Tasso di chiusura su preventivi con garanzia posa citata a voce | Contratti firmati diviso preventivi con garanzia posa citata | Superiore alla media aziendale |
 
 ## Da dove partire domani con i tuoi preventivi
 

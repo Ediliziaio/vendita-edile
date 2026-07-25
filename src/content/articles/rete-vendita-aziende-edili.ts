@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Agenti o procacciatori? Zone esclusive o territorio libero? Provvigione su fatturato o su margine? Ecco come strutturare una rete vendita esterna per un'azienda del settore casa senza perdere il controllo dei clienti.",
   category: "Gestione",
-  tags: ["rete vendita", "agenti", "procacciatori", "provvigioni", "gestione commerciale"],
+  tags: ["rete vendita", "agenti", "procacciatori", "provvigioni", "gestione commerciale", "reclutamento", "zone di vendita"],
   keyword: "rete vendita aziende edili",
-  readingTime: 10,
+  readingTime: 13,
   publishedAt: "2026-01-24",
   updatedAt: "2026-01-24",
   author: flo,
@@ -66,6 +66,20 @@ Nel settore casa le provvigioni tipiche degli agenti esterni si muovono tra il 3
 
 Un mix che funziona bene per i venditori interni è un fisso più basso della media di mercato accompagnato da una provvigione a scaglioni: percentuale più bassa fino a un obiettivo minimo, percentuale più alta oltre soglia. Per gli agenti esterni puri, quasi sempre si lavora a sola provvigione, spesso con un piccolo rimborso spese o un acconto sui contratti in attesa di saldo, per non lasciarli senza liquidità nei mesi di avvio.
 
+## Quanto costa (davvero) una rete vendita: il conto in euro
+
+Prima di scegliere tra interno ed esterno, fai il conto con i tuoi numeri, non con un caso studio generico. Un venditore interno costa un fisso mensile indipendentemente da quanto vende: stipendio, contributi, TFR, spesso anche un'auto aziendale, per un totale realistico di 2.500-3.500 € al mese anche a zero contratti firmati. Un agente esterno puro non ha questo costo fisso: si paga solo se vende, ma la provvigione più alta (6-8% contro il 3-5% tipico dell'interno) compensa parte del rischio che si accolla lavorando senza garanzie.
+
+| Modello | Costo fisso mensile | Provvigione tipica | Rischio per l'azienda a vendite basse |
+|---|---|---|---|
+| Venditore interno | 2.500-3.500 € | 3-5% su margine | Alto: il costo fisso resta anche a zero contratti |
+| Agente esterno puro | 0 € | 6-8% su margine | Basso: si paga solo sul risultato |
+| Mix fisso ridotto più scaglioni | 800-1.500 € | 3% base, fino a 6-7% oltre soglia | Medio: un fisso contenuto protegge l'agente nei primi mesi |
+
+Il punto non è quale riga della tabella sia la migliore in assoluto: è capire in che fase è la tua azienda. Zona nuova da testare, budget limitato, nessuna certezza sul volume: l'agente esterno riduce il rischio iniziale. Zona già collaudata, volume prevedibile, bisogno di controllo sul metodo nel tempo: l'interno, anche con un fisso più alto, spesso costa meno nel medio periodo perché evita il turnover tipico degli agenti puri.
+
+![Costruire una rete vendita significa scegliere il modello giusto per ogni fase dell'azienda, non uno solo per sempre.](img:team)
+
 ## Come reclutare agenti nel settore casa
 
 Gli agenti migliori del settore casa raramente rispondono a un annuncio generico. I canali che funzionano meglio sono tre: il passaparola tra agenti che già lavorano bene con altre aziende del comparto (infissi, fotovoltaico, ristrutturazioni), le fiere ed eventi di settore, e la selezione diretta di ex venditori di aziende concorrenti che conoscono già il territorio e i clienti tipo.
@@ -74,17 +88,44 @@ In fase di colloquio, non chiedere solo "quanto hai venduto": chiedi come vende,
 
 Una volta selezionati, il passo che quasi tutte le aziende saltano è dare loro un metodo comune, invece di lasciarli vendere ognuno a modo suo. La [formazione commerciale per aziende del settore casa](/formazione-commerciale) serve esattamente a questo: allineare agenti interni ed esterni sullo stesso processo di qualifica, diagnosi, presentazione e gestione delle obiezioni, così il risultato non dipende dal talento del singolo ma dal metodo che tutta la rete applica.
 
+## Come condurre il colloquio con un agente: le domande che contano
+
+"Quanto hai venduto l'anno scorso" è la domanda che fanno tutti, ed è anche la meno utile: un numero senza contesto non ti dice se quell'agente sa vendere il tuo prodotto, nella tua zona, con il tuo metodo. Tre domande valgono più di dieci curriculum letti con attenzione.
+
+Chiedigli di simulare una trattativa vera, con te nel ruolo del cliente che solleva le obiezioni tipiche del settore casa: prezzo, tempi di posa, dubbi sui materiali. Ascolta come gestisce il silenzio dopo aver detto il prezzo, non solo cosa risponde subito dopo.
+
+Chiedigli quali clienti porta già con sé in quella zona specifica, non genericamente "conosco bene la zona". Un agente con contatti reali in zona parte con settimane di vantaggio rispetto a uno che deve costruirsi il territorio da zero, partendo da un elenco di indirizzi.
+
+Chiedigli con quali altre aziende lavora in questo momento. Non è un problema che lavori anche per altri, è la normalità per un agente plurimandatario, ma se lavora già per un concorrente diretto nella stessa zona, meglio saperlo prima di firmare il mandato, non dopo il primo cliente conteso.
+
 ## Il contratto e gli aspetti pratici: come evitare che l'agente si porti via i clienti
 
 Il contratto con l'agente (mandato di agenzia, ex art. 1742 del Codice Civile per i rapporti continuativi, o accordo di procacciamento occasionale per collaborazioni più leggere) deve mettere nero su bianco almeno quattro cose: la zona assegnata e l'eventuale esclusiva, il piano provvigionale con le scadenze di pagamento, la titolarità del portafoglio clienti durante e dopo il rapporto, e i termini di preavviso in caso di cessazione.
 
 Il punto più delicato è proprio la titolarità dei clienti. Il modo più concreto per proteggersi è tenere sempre l'anagrafica clienti dentro un sistema aziendale (non nella rubrica personale dell'agente), far passare preventivi e contratti dal gestionale dell'azienda e non da fogli Excel privati, e inserire una clausola di non concorrenza post-contrattuale, limitata nel tempo e nella zona, per evitare che l'agente porti gli stessi clienti a un concorrente il mese dopo. Chi gestisce l'intero flusso commerciale con un [gestionale per imprese edili](/edilizia-in-cloud) ha già di fatto la protezione più semplice ed efficace: il cliente resta nel sistema aziendale, non nella testa o nel telefono del singolo agente.
 
+## Obiezioni tipiche degli agenti in fase di trattativa (e come rispondere)
+
+Quando negozi il mandato con un nuovo agente, alcune richieste tornano quasi sempre. Avere già pronta una posizione, invece di negoziarla a caldo ogni volta, ti evita di firmare condizioni che poi pesano su tutta la rete per gli anni successivi.
+
+| Richiesta dell'agente | Perché la fa | Come rispondere senza perdere l'agente |
+|---|---|---|
+| "Voglio l'esclusiva totale su tutta la provincia" | Vuole proteggersi dalla concorrenza interna | Offrire esclusiva parziale, con priorità sui lead di zona ma libertà di vendita diretta per l'azienda |
+| "Preferisco gestire io i contratti, senza passare dal vostro gestionale" | Vuole mantenere il controllo sul proprio portafoglio | Spiegare che è condizione non negoziabile: senza tracciamento aziendale, la protezione contrattuale del cliente non regge |
+| "Voglio la provvigione sul fatturato, non sul margine" | Il margine gli sembra un dato opaco, difficile da verificare | Mostrare in modo trasparente come si calcola il margine, con accesso diretto al dato per ogni contratto |
+| "Non voglio fare la formazione, ho già il mio metodo" | Teme che il metodo aziendale rallenti le sue vendite | Mostrare i numeri di chi ha già applicato il metodo: il tasso di chiusura convince più della teoria |
+
+![Ogni obiezione negoziata in fase di trattativa prima della firma evita conflitti sulla rete per gli anni successivi.](img:trattativa)
+
+Nessuna di queste richieste va accettata o rifiutata per principio. Vanno negoziate con una posizione chiara, decisa prima di sederti al tavolo, non improvvisata sotto la pressione di perdere un agente che sembra promettente.
+
 ## Esempio concreto: come un'azienda di serramenti ha strutturato la rete
 
 Un'azienda di serramenti con base in una provincia e ambizione di crescere su altre tre aveva un solo venditore interno e nessuna rete esterna. Ha deciso di testare due agenti procacciatori nelle province limitrofe, a sola provvigione del 6% sul margine, con zona in esclusiva parziale e formazione allineata a quella del venditore interno.
 
 Nei primi tre mesi il tasso di chiusura dei due nuovi agenti era basso, intorno al 12%, perché applicavano ancora il loro vecchio metodo. Dopo l'allineamento sul processo di qualifica e diagnosi, e con un follow-up strutturato imposto come standard aziendale (non lasciato alla discrezione del singolo), il tasso è salito al 30% in sei mesi, con un ticket medio tra 8.000 e 12.000 euro per contratto. A quel punto l'azienda ha convertito la zona più performante da agente puro a venditore interno part-time, mantenendo l'esterno solo sulle due zone più marginali.
+
+![La crescita di una rete vendita si misura zona per zona, non con un unico numero medio sull'intera azienda.](img:crescita)
 
 ## Errori da evitare quando costruisci la rete vendita
 
@@ -109,6 +150,14 @@ Prima di aprire una rete esterna, verifica questi cinque punti:
 - Hai un sistema aziendale dove passano tutti i preventivi e i contratti, indipendentemente da chi li ha generati.
 - Hai previsto i KPI da monitorare per ogni agente: preventivi fatti, tasso di chiusura, ticket medio, margine medio. Trovi l'elenco completo nella [guida sui KPI di vendita in edilizia](/blog/kpi-vendita-edilizia-numeri).
 - Hai un contratto che protegge il portafoglio clienti anche dopo la fine del rapporto.
+
+## Come misurare se la rete vendita sta funzionando: i KPI da controllare ogni mese
+
+Una rete vendita senza numeri da guardare ogni mese è una scommessa, non una strategia. Quattro dati, controllati con regolarità agente per agente, ti dicono se la rete sta rendendo o se stai solo pagando provvigioni a chi non porta risultati.
+
+Numero di preventivi generati per agente e per zona, per capire se il problema, quando c'è, è nei lead o nella capacità di chiuderli. Tasso di chiusura per singolo agente, confrontato nel tempo con se stesso, non solo con la media della rete. Tempo di attivazione su una zona nuova, cioè quanto impiega un agente a portare i primi contratti dopo l'ingresso: oltre i 60-90 giorni senza risultati è un segnale da approfondire, non da ignorare. Margine medio per contratto per agente, perché un agente che chiude tanto ma sempre scontando ti sta costando più di quanto sembra guardando solo il fatturato.
+
+Guardare questi numeri agente per agente, non solo come media della rete, è quello che ti permette di capire chi convertire da esterno a interno, chi formare meglio e, quando serve, chi sostituire prima che il danno sulla zona diventi permanente.
 
 Vendita Edile è il sistema commerciale per le aziende del settore casa: trasforma i preventivi emessi in contratti firmati. Se vuoi costruire una rete vendita, interna o esterna, che applica lo stesso metodo su ogni agente e non dipende dal talento del singolo, è esattamente il lavoro che facciamo sul campo con le imprese edili italiane. Se vuoi capire se il tuo caso è adatto, [candidati qui](/#candidati) e ne parliamo direttamente.`,
   faq: [

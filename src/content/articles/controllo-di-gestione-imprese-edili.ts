@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Fatturi tanto ma in cassa resta poco? Il problema non è il lavoro che manca, è il controllo di gestione che non c'è. Ecco come scoprire quali commesse ti fanno guadagnare e quali ti fanno perdere.",
   category: "Gestione",
-  tags: ["controllo di gestione", "margine", "commesse", "cassa", "kpi", "preventivi"],
+  tags: ["controllo di gestione", "margine", "commesse", "cassa", "kpi", "preventivi", "cantiere"],
   keyword: "controllo di gestione edilizia",
-  readingTime: 10,
+  readingTime: 12,
   publishedAt: "2025-12-04",
   updatedAt: "2025-12-04",
   author: flo,
@@ -59,6 +59,24 @@ Questa è la tabella che dovrebbe stare appesa in ufficio, non chiusa in un file
 
 Su una commessa da 38.000 € il margine previsto era del 22%, quello reale è sceso al 7,9%. Non c'è stato nessun disastro visibile: nessun cliente ha fatto causa, nessun operaio si è fatto male. Solo tanti piccoli scostamenti mai misurati, sommati fino a mangiarsi quasi tutto l'utile. Questo è esattamente il punto cieco che il controllo di gestione elimina: non uno scostamento enorme, ma la somma di dieci piccoli scostamenti invisibili.
 
+![Ogni commessa aperta in cantiere andrebbe confrontata con il preventivo almeno una volta a settimana, non solo a lavori finiti.](img:cantiere)
+
+## Caso concreto: due commesse identiche a preventivo, opposte a consuntivo
+
+Un'impresa di ristrutturazioni che seguiamo aveva due cantieri aperti in contemporanea, quasi identici sulla carta: stessa metratura, stesso tipo di intervento (bagno più cucina), preventivo quasi uguale, circa 32.000 € ciascuno, margine atteso del 20%. A fine lavori, il primo aveva chiuso con un margine reale del 19%, quasi in linea. Il secondo era sceso al 4%.
+
+La differenza non era nei materiali, comprati dallo stesso fornitore agli stessi prezzi. Era nella gestione delle ore e degli imprevisti in corso d'opera. Sul secondo cantiere, il capocantiere non aveva segnalato per iscritto due varianti richieste dal cliente a lavori in corso, considerandole "piccole aggiunte di cortesia". Sommate, quelle aggiunte valevano quasi 1.800 € di manodopera e materiali mai fatturati.
+
+| Voce | Commessa A (margine 19%) | Commessa B (margine 4%) |
+|---|---|---|
+| Varianti richieste dal cliente | 1 variante, firmata e fatturata | 2 varianti, mai formalizzate |
+| Ore extra non preventivate | 4 ore | 22 ore |
+| Materiali extra non fatturati | 0 € | 1.800 € |
+| Comunicazione capocantiere-ufficio | Report settimanale scritto | Solo aggiornamenti verbali |
+| Margine finale | 19% | 4% |
+
+La lezione è semplice ma scomoda: **ogni variante richiesta in cantiere, per quanto piccola, va scritta e fatturata**, oppure va registrata consapevolmente come costo extra deciso dall'azienda. La differenza tra le due commesse non era il cliente, non era il materiale: era la disciplina nel tracciare quello che succedeva davvero in cantiere, giorno per giorno.
+
 ## I costi che sfuggono e ti mangiano il margine
 
 Ci sono voci di costo che quasi nessuna impresa edile misura bene, e sono sempre le stesse a fare danno:
@@ -79,6 +97,17 @@ Se emetti una fattura a 60 giorni ma i tuoi fornitori li paghi a 30, per un mese
 
 La regola pratica: **non accettare mai una commessa senza un piano di incassi definito nel contratto**, con acconti reali all'ordine, a stato avanzamento e al saldo. Il margine sulla carta non paga gli stipendi: li paga la cassa.
 
+Uno scadenzario semplice, anche su un foglio condiviso, basta a vedere subito dove si accumula il ritardo:
+
+| Commessa | Fattura emessa | Scadenza pattuita | Incasso reale | Giorni di ritardo |
+|---|---|---|---|---|
+| Cantiere Rossi | 12.000 € | 30 giorni | 45 giorni | +15 |
+| Cantiere Bianchi | 18.500 € | 60 giorni | 58 giorni | -2 |
+| Cantiere Verdi | 9.800 € | 30 giorni | 70 giorni | +40 |
+| Cantiere Neri | 24.000 € | Acconto 30% + saldo a fine lavori | Acconto puntuale, saldo in ritardo di 20 giorni | +20 |
+
+Guardata riga per riga, questa tabella dice più di qualsiasi bilancio annuale: tre commesse su quattro incassano in ritardo, e il ritardo medio (quasi 20 giorni) è quello che ti costringe ad anticipare fornitori e stipendi con soldi tuoi. Se lo vedi ogni settimana, puoi sollecitare per tempo. Se lo scopri solo quando manca liquidità in banca, è già tardi per intervenire con calma.
+
 ## I KPI minimi da controllare ogni mese
 
 Non serve un cruscotto da multinazionale. Bastano pochi numeri, guardati con costanza, per governare l'impresa invece di subirla:
@@ -92,6 +121,21 @@ Non serve un cruscotto da multinazionale. Bastano pochi numeri, guardati con cos
 
 Un imprenditore che controlla questi sei numeri ogni mese sa, con tre mesi di anticipo, se sta andando verso un problema di cassa o di margine. Chi li scopre solo a bilancio, li scopre quando è già tardi per intervenire.
 
+![Sei numeri controllati ogni mese bastano a governare l'impresa invece di subirla a fine anno.](img:margini)
+
+## Cosa fare se scopri a metà cantiere che il margine sta sparendo
+
+Il controllo di gestione serve proprio a intercettare questo scenario mentre il cantiere è ancora aperto, non a consuntivo quando è troppo tardi. Se a metà lavori ti accorgi che lo scostamento preventivo-consuntivo sta già superando il 15-20%, hai ancora margine di manovra. Ecco cosa fare, in ordine.
+
+- Fermati e capisci la causa esatta: materiali, ore, varianti non fatturate o un mix delle tre. Senza questa diagnosi, qualsiasi correzione è alla cieca.
+- Se la causa sono varianti richieste dal cliente, formalizza subito un extra al preventivo, anche a lavori in corso. Meglio una conversazione scomoda ora che una sorpresa dopo.
+- Se la causa sono ore di manodopera oltre il previsto per motivi organizzativi (materiale mancante, squadra che aspetta), correggi il flusso di cantiere prima di proseguire, non dopo.
+- Se lo scostamento è ormai irrecuperabile su questa commessa, accettalo consapevolmente e usalo come dato per correggere il prossimo preventivo simile: meglio chiudere in pareggio sapendo perché, che ripetere lo stesso errore sulla prossima commessa identica.
+
+L'imprenditore che scopre questi scostamenti a metà cantiere ha ancora scelte. Chi li scopre solo a bilancio, ha solo statistiche per il futuro, non correzioni per il presente.
+
+![Organizzare il cantiere con report settimanali trasforma uno scostamento gestibile in un problema che si può ancora correggere.](img:organizzazione)
+
 ## Quali lavori ti fanno guadagnare e quali ti fanno perdere
 
 Una volta che hai il margine per commessa e gli scostamenti, la domanda successiva è la più utile di tutte: **quali tipologie di lavoro, in media, ti fanno guadagnare davvero, e quali ti fanno solo lavorare?**
@@ -99,6 +143,16 @@ Una volta che hai il margine per commessa e gli scostamenti, la domanda successi
 Raggruppa le ultime 15-20 commesse chiuse per categoria (infissi, ristrutturazioni complete, fotovoltaico, piccoli interventi) e calcola il margine medio reale per ciascuna categoria, non quello a preventivo. Quasi sempre emerge una sorpresa: la categoria che sembrava "quella buona" perché fattura di più, in realtà ha il margine più basso perché richiede più manodopera imprevista o più rilavorazioni. E la categoria che sembrava "piccola" magari è quella che ti lascia il margine migliore in percentuale.
 
 Questo tipo di analisi cambia le decisioni commerciali: sai su cosa spingere, cosa preventivare con più cautela e su cosa, semplicemente, smettere di lavorare perché ti costa più energia di quanto ti renda.
+
+## Errori di controllo di gestione che si ripetono in quasi tutte le imprese
+
+Anche le imprese che hanno già iniziato a misurare qualcosa cadono spesso negli stessi errori:
+
+- **Misurare solo a fine commessa.** Il controllo di gestione serve a intervenire in corsa, non a fare l'autopsia dopo. Un controllo anche solo mensile sulle commesse aperte cambia tutto.
+- **Confondere fatturato e margine nelle riunioni con la squadra.** Se in azienda si festeggia solo "abbiamo fatturato tanto questo mese", si sta comunicando il messaggio sbagliato a chi lavora sul campo ogni giorno.
+- **Non responsabilizzare i capocantiere sui numeri.** Chi gestisce il cantiere giorno per giorno dovrebbe conoscere il budget ore e materiali della commessa che segue, non scoprirlo mai.
+- **Tenere il controllo di gestione solo nella testa del titolare.** Se i numeri non sono scritti e condivisi almeno con chi decide gli acquisti e organizza le squadre, ogni correzione dipende da quanto il titolare riesce a seguire personalmente, e questo non scala oltre un certo numero di cantieri aperti insieme.
+- **Aggiornare il foglio dei costi una volta al mese invece che quasi in tempo reale.** Un ritardo di tre settimane nell'aggiornamento vuol dire scoprire lo scostamento quando ormai il cantiere è quasi finito, non quando c'è ancora margine per correggere.
 
 ## Il legame tra controllo di gestione e prezzo di vendita
 

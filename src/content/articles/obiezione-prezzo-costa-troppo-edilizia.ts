@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Il cliente dice \"costa troppo\" e il tuo istinto è abbassare il prezzo. Sbagliato: nella maggior parte dei casi il prezzo non è il vero problema. Ecco come rispondere senza scontare.",
   category: "Vendita",
-  tags: ["obiezioni", "prezzo", "vendita", "preventivi", "trattativa", "edilizia"],
+  tags: ["obiezioni", "prezzo", "vendita", "preventivi", "trattativa", "sconti", "serramenti"],
   keyword: "obiezione prezzo edilizia",
-  readingTime: 9,
+  readingTime: 12,
   publishedAt: "2025-10-16",
   updatedAt: "2025-10-16",
   author: flo,
@@ -43,6 +43,8 @@ Prima di aprire la bocca per rispondere, fatti una domanda: "cosa sta succedendo
 - **Budget reale insufficiente**: qui il prezzo È davvero il problema, ma è raro quanto pensi. Prima di crederci, verifica sempre le altre tre.
 
 Distinguere questi quattro casi è il primo lavoro. Rispondere allo stesso modo a tutti e quattro è l'errore che ti costa margine ogni mese.
+
+![Il momento in cui arriva l'obiezione prezzo dice più cose di quello che viene detto a voce.](img:trattativa)
 
 ## Caro e costoso non sono la stessa cosa
 
@@ -95,11 +97,82 @@ Qui l'obiezione è quasi sempre reale, va rispettata: "Capisco perfettamente. Ve
 
 Spesso è un "costa troppo" mascherato per educazione. "Certo, prenda il tempo che le serve. Solo per capire come aiutarla meglio: è più il prezzo complessivo o qualche voce in particolare che la frena?"
 
+## Tre trattative vere, con i numeri sul tavolo
+
+Le tecniche restano teoria finché non le vedi applicate a un caso reale. Ecco tre situazioni tipiche, con i numeri che le rendono concrete.
+
+**Caso 1 - Il confronto con il preventivo "fantasma".** Cliente per una fornitura di 9 finestre più una portafinestra, preventivo tuo a 11.400 €. Dice di avere un'altra offerta a 8.900 €, "quasi 2.500 € in meno". Alla domanda "posso vedere cosa include?" il cliente ammette di non avere il documento scritto, solo un numero detto al telefono da un installatore conosciuto tramite un vicino. Qui l'obiezione non è nemmeno un vero confronto: è un numero senza contenuto. La risposta corretta non è scontare per avvicinarsi a 8.900 €, ma chiedere di vedere il preventivo scritto prima di ogni altra discussione. Nella metà dei casi, quel preventivo scritto non arriva mai: significa che il numero era una tattica, non un'alternativa reale.
+
+**Caso 2 - Il budget davvero insufficiente.** Coppia giovane, mutuo appena acceso per la casa, preventivo per tutti gli infissi a 9.800 €. Il budget dichiarato all'inizio del sopralluogo era "circa 7.000 €". Qui l'obiezione è reale, il problema è oggettivo. La soluzione che ha chiuso la trattativa non è stato lo sconto del 30% (che avrebbe distrutto il margine), ma la divisione del lavoro in due fasi: prima le 6 finestre del piano abitato (6.100 €), poi entro un anno la mansarda e il balcone. Contratto chiuso a prezzo pieno sulla prima fase, cliente soddisfatto, margine intatto.
+
+**Caso 3 - Il test negoziale puro.** Imprenditore edile, preventivo per la sede della sua azienda, 22 infissi, 34.000 €. Alla consegna del preventivo, prima ancora di leggerlo con attenzione, la prima frase è "quanto mi sconti se firmo oggi?". Nessun confronto, nessun budget dichiarato: è il riflesso di chi negozia per abitudine in ogni acquisto della sua vita professionale. La risposta efficace non è "niente sconto" secco, che chiude la conversazione, ma "il prezzo che vede è già il prezzo corretto per questo capitolato: se firma oggi le blocco la data di posa che le interessa, che con l'agenda piena da qui a due mesi è un valore concreto per lei". Ha spostato il vantaggio dal prezzo al tempo, senza toccare il listino.
+
+## Il ruolo dello showroom nella percezione del prezzo
+
+Un fattore che quasi nessuno collega all'obiezione prezzo è dove avviene la trattativa. Un preventivo discusso al telefono o su un tavolo di cucina parte già svantaggiato: il cliente ha solo numeri davanti, nessun riferimento tangibile di qualità.
+
+![Toccare profilo, vetro e guarnizioni prima di vedere il numero cambia il modo in cui il cliente valuta il preventivo.](img:showroom)
+
+Portare il cliente in showroom, o portare campioni fisici al sopralluogo, cambia l'ordine in cui il cervello elabora l'informazione: prima tocca la qualità, poi vede il prezzo. Se invece l'ordine è invertito (prima il numero, poi eventualmente la qualità) il prezzo arriva senza contesto e sembra sempre più alto di quello che è. Un profilo in mano, una guarnizione da schiacciare con le dita, un vetro triplo confrontato con uno doppio: sono tre minuti che valgono più di qualsiasi discorso sul valore.
+
+Se non hai uno showroom fisico, porta al sopralluogo un campione di profilo e una scheda con foto reali di posa, non un catalogo generico del produttore. Il principio è lo stesso: dare qualcosa da toccare prima di dare un numero da giudicare.
+
+## Errori specifici da evitare quando arriva l'obiezione
+
+Alcuni errori si ripetono trattativa dopo trattativa, in aziende diverse, con lo stesso schema. Riconoscerli è il primo passo per smettere di commetterli.
+
+- **Rispondere subito con un numero più basso.** Se il cliente dice "costa troppo" e tu rispondi in due secondi con uno sconto, gli hai appena insegnato che il prezzo iniziale non era vero. Da quel momento negozierà ogni preventivo futuro, anche quando non ne avrebbe motivo.
+- **Giustificarsi invece di argomentare.** Frasi come "eh lo so che è tanto, ma i materiali sono aumentati" mettono te sulla difensiva e il cliente in posizione di forza. Meglio spiegare cosa ottiene, non scusarsi per il prezzo.
+- **Parlare mentre il cliente sta ancora processando l'obiezione.** Dopo "costa troppo" molti commerciali riempiono il silenzio con altre informazioni, invece di fare la domanda che isola la vera causa. Il silenzio di due secondi, scomodo quanto vuoi, ti dà l'informazione che ti serve.
+- **Trattare un cliente budget-limitato come un cliente da convincere.** Se il budget è oggettivamente insufficiente, insistere a spiegare il valore non sposta nulla: serve una soluzione di pagamento o di fasi, non altre parole.
+- **Fare sconto "per non perdere la vendita" senza contropartita.** Ogni sconto concesso dovrebbe avere un motivo dichiarato (pagamento anticipato, cantiere in bassa stagione, fornitura più ampia). Uno sconto senza contropartita insegna al cliente che basta insistere.
+- **Non registrare l'esito.** Se non tieni traccia di quante trattative perdi per prezzo e quante per altro, continui a curare il sintomo sbagliato mese dopo mese.
+
+## Come misurare se stai gestendo bene le obiezioni (non a sensazione)
+
+La sensazione di "perdo sempre per il prezzo" spesso non corrisponde ai numeri reali. Prima di cambiare strategia, misura. Tieni un tracciamento semplice, anche su un foglio, con queste voci per ogni preventivo perso:
+
+| Motivo dichiarato dal cliente | Frequenza tipica osservata | Motivo reale (dopo indagine) |
+|---|---|---|
+| "Costa troppo" (generico) | 40-50% dei no | Valore non chiaro o sfiducia, raramente budget |
+| "Ho un preventivo più basso" | 20-25% dei no | Spesso preventivo incompleto o non scritto |
+| "Ci penso" senza richiamare | 15-20% dei no | Obiezione mascherata, quasi mai richiamata dal cliente |
+| "Non ho budget ora" | 10-15% dei no | Reale nella maggior parte dei casi |
+| Nessuna risposta dopo 2 follow-up | 5-10% dei no | Priorità del cliente cambiata, non sempre recuperabile |
+
+Il dato interessante, che vediamo ripetersi azienda dopo azienda, è che meno del 15% dei "no" finali è dovuto a un budget realmente insufficiente. Il resto sono obiezioni gestibili con le tecniche di questo articolo, non con lo sconto.
+
+Un secondo indicatore utile è il **rapporto tra sconto medio concesso e tasso di chiusura**. Se scontando di più chiudi solo qualche punto percentuale in più, lo sconto ti sta costando margine senza portare benefici proporzionati. Calcola questo numero ogni trimestre:
+
+| Sconto medio concesso | Tasso di chiusura osservato | Margine medio per commessa |
+|---|---|---|
+| 0-3% | 28-33% | Pieno |
+| 4-8% | 32-36% | Ridotto del 4-8% |
+| 9-15% | 34-38% | Ridotto del 9-15%, spesso sotto la soglia di sostenibilità |
+
+La differenza di tasso di chiusura tra "sconto minimo" e "sconto pesante" è quasi sempre marginale, mentre l'impatto sul margine è lineare e diretto. Questo numero, mostrato al team commerciale, convince più di qualsiasi discorso motivazionale a smettere di scontare per riflesso.
+
 ## Quando il cliente non è nel tuo target
 
 Detto tutto questo, va detta anche la verità scomoda: **non tutti i "costa troppo" si risolvono, e non è un tuo fallimento.** Se un cliente cerca solo il prezzo più basso assoluto, senza alcun interesse per garanzia, tempi o qualità della posa, non è il tuo cliente. Lo sarà del concorrente che lavora sui margini più stretti, spesso in nero o quasi.
 
 Inseguire questi clienti con sconti progressivi produce due danni: brucia il tuo tempo che potevi dedicare a chi apprezza il valore, e comunica al mercato che il tuo prezzo è negoziabile all'infinito. Qualificare bene PRIMA del preventivo (budget, urgenza, chi decide) ti evita gran parte di queste trattative senza uscita.
+
+## Checklist rapida: cosa fare nei primi 60 secondi dopo l'obiezione
+
+Quando l'obiezione arriva, spesso in tempo reale, davanti al cliente, avere una sequenza mentale pronta evita di improvvisare male. Usa questa checklist come promemoria, anche stampata, finché non diventa automatica.
+
+| Passaggio | Azione concreta | Errore da evitare |
+|---|---|---|
+| 1. Ascolta fino in fondo | Lascia finire la frase, non interrompere per giustificarti | Rispondere a metà frase con uno sconto |
+| 2. Fai la domanda di isolamento | "Rispetto a cosa, esattamente?" | Dare per scontato che sia il budget |
+| 3. Ascolta la risposta senza reagire | Prendi nota mentale della vera causa (valore, fiducia, test, budget) | Reagire con la difensiva |
+| 4. Rispondi alla causa reale | Valore non chiaro → confronto voce per voce. Sfiducia → referenze. Budget → fasi o rateizzo | Rispondere sempre allo stesso modo |
+| 5. Chiedi conferma | "Questo risponde al suo dubbio?" prima di richiudere la trattativa | Passare oltre senza verificare che l'obiezione sia davvero risolta |
+
+![Ogni punto percentuale di sconto concesso senza motivo si toglie direttamente dal margine della commessa, non dal fatturato.](img:margini)
+
+Questa sequenza richiede meno di un minuto e nella maggior parte dei casi evita lo sconto riflesso che poi si ripete su ogni trattativa successiva con lo stesso cliente e con chi ne parla in giro.
 
 ## Da dove partire domani mattina
 

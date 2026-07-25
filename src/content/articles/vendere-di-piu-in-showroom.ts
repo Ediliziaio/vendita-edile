@@ -11,9 +11,9 @@ const article: Article = {
   excerpt:
     "Hai investito in uno showroom bellissimo e i clienti entrano, guardano, dicono \"grazie, ci penso\" e se ne vanno. Non è il prodotto: è il processo di vendita che manca.",
   category: "Vendita",
-  tags: ["showroom", "vendita", "infissi", "serramenti", "accoglienza cliente", "trattativa"],
+  tags: ["showroom", "vendita", "infissi", "serramenti", "accoglienza cliente", "trattativa", "qualificazione"],
   keyword: "vendere in showroom serramenti",
-  readingTime: 9,
+  readingTime: 13,
   publishedAt: "2026-01-16",
   updatedAt: "2026-01-16",
   author: flo,
@@ -62,6 +62,8 @@ Gli errori più comuni che vediamo:
 La sequenza che funziona è diversa: **saluto caldo, spazio di respiro di 20-30 secondi, poi avvicinamento con una domanda aperta sul motivo della visita.** Non "cosa cerca", ma "cosa la porta oggi qui, sta valutando una ristrutturazione o un cambio infissi puntuale?". Questa domanda fa parlare il cliente del suo problema, non del prodotto. E da lì parte tutta la trattativa.
 
 Il personale a banco deve avere un ruolo chiaro in questa fase: non è un magazziniere che aspetta ordini, è la prima persona che costruisce fiducia. Se in showroom lavorano più persone, decidete PRIMA chi accoglie chi entra, altrimenti nella confusione il cliente resta due minuti senza nessuno che lo guardi negli occhi, e quei due minuti bastano per perderlo.
+
+![Ingresso di uno showroom di serramenti con campionari esposti e personale pronto ad accogliere](img:showroom)
 
 ## Far toccare, far provare: l'esperienza sensoriale che vende
 
@@ -138,6 +140,61 @@ Il personale a banco deve avere tre competenze allenate, non improvvisate:
 3. **Chiusura del passo successivo**: sapere sempre come far uscire il cliente con un impegno, che sia un appuntamento, un sopralluogo o almeno un contatto raccolto.
 
 Queste non sono doti innate. Sono un metodo che si insegna, si prova, si corregge sul campo, esattamente come si insegna a un tecnico come tarare un'anta.
+
+## Caso concreto: due showroom, stesso traffico, risultati diversi
+
+Prendiamo due showroom di serramenti nella stessa provincia, stesso listino, stesso traffico settimanale: circa 25 visite a settimana. La differenza tra i due non è il prodotto, è il processo.
+
+**Showroom A.** Il cliente entra, viene salutato con un "buongiorno" da lontano, poi lasciato libero di girare. Dopo 8-10 minuti, se non ha fatto domande, se ne va con un "grazie, ci pensiamo". Nessun contatto raccolto in quasi metà dei casi. Su 25 visite settimanali, 3-4 si trasformano in un preventivo richiesto, e di quelli forse 1 chiude.
+
+**Showroom B.** Il cliente viene accolto entro 30 secondi con una domanda aperta sul motivo della visita. Viene guidato su 2-3 prodotti coerenti con quello che ha raccontato, fatto toccare e provare, e prima di uscire riceve una proposta concreta di sopralluogo o quantomeno lascia un contatto per ricevere una simulazione. Su 25 visite settimanali, 8-10 si trasformano in appuntamento o contatto qualificato, e di quelli 3-4 chiudono nel mese.
+
+| Indicatore settimanale | Showroom A (passivo) | Showroom B (processo guidato) |
+|---|---|---|
+| Visite totali | 25 | 25 |
+| Contatti raccolti | 6-8 | 20-22 |
+| Sopralluoghi o appuntamenti fissati | 3-4 | 8-10 |
+| Preventivi chiusi nel mese | 1 | 3-4 |
+| Ticket medio stimato | 8.000-9.000 euro | 8.000-9.000 euro |
+
+Il volume di ingressi era identico. Il fatturato generato dallo stesso traffico è più che raddoppiato semplicemente cambiando cosa succede nei primi 30 secondi e negli ultimi 2 minuti della visita, non il budget dell'allestimento.
+
+![Cliente e venditore che confrontano insieme un campione di infisso in showroom](img:infissi)
+
+## Errori che si ripetono anche in showroom curati e ben allestiti
+
+Alcuni errori non dipendono dalla qualità del punto vendita, ma da abitudini che nessuno corregge perché sembrano dettagli.
+
+- **Nessuno "possiede" la relazione con il cliente.** Se in showroom lavorano in due o tre e non è chiaro chi accoglie chi, spesso succede che tutti pensano che se ne stia occupando qualcun altro, e il cliente resta senza nessuno per due o tre minuti: tempo sufficiente per decidere di uscire.
+- **Il prezzo viene detto troppo presto e senza contesto.** Un cliente che chiede "quanto costa questo?" nei primi due minuti, prima ancora di aver capito il problema che deve risolvere, riceve un numero che userà solo per confrontare, senza nessun altro elemento di valutazione.
+- **Il venditore si arrende al primo "sto solo guardando".** Non insiste, non riprova con una domanda leggera, lascia semplicemente che il cliente esca. È il modo più comune per trasformare una visita interessata in un contatto perso per sempre.
+- **Non si raccoglie mai un motivo valido per il follow-up.** Prendere solo il numero di telefono, senza un pretesto concreto ("le mando le foto di un cantiere simile"), rende la telefonata successiva fredda e spesso ignorata.
+
+## Cosa fare se il cliente confronta subito il prezzo con un altro showroom
+
+Capita spesso, soprattutto per infissi e serramenti: il cliente ha già visitato uno o due showroom concorrenti e arriva dicendo apertamente "dall'altra parte mi hanno fatto un prezzo più basso". Come rispondi in questo momento decide se resti in gara o esci subito.
+
+**Non svalutare mai il concorrente.** Frasi come "eh ma quello è di bassa qualità" senza prove concrete suonano solo come difesa. Meglio chiedere: "posso chiederle cosa le hanno proposto di preciso, che tipo di profilo, quanti punti di chiusura, che vetro?". Spesso il cliente non lo sa con precisione, ed è lì che puoi mostrare la differenza reale, non a parole ma facendo toccare i due livelli di prodotto.
+
+**Riporta il confronto sul valore, non sul numero.** "Il prezzo che le hanno fatto è per un prodotto con questa ferramenta o con quella superiore che le ho fatto provare prima?" è una domanda che sposta il cliente da un confronto di cifre a un confronto di caratteristiche che ha già toccato con mano poco prima.
+
+**Se il divario di prezzo è reale e importante**, sii onesto: "è possibile che ci sia questa differenza, dipende da dove vogliamo posizionarci sulla qualità. Le va di vedere fianco a fianco cosa cambia davvero tra le due soluzioni?". Un cliente che accetta questo confronto diretto, in showroom, quasi sempre resta con te.
+
+## Come misurare se lo showroom sta vendendo di più
+
+Anche in showroom, senza numeri il miglioramento resta un'impressione. Tieni traccia di questi indicatori ogni settimana, anche solo su un foglio condiviso allo staff.
+
+| Indicatore da monitorare | Showroom senza processo | Showroom con processo applicato |
+|---|---|---|
+| % visite che lasciano un contatto | 25-35% | 80-90% |
+| % visite che diventano sopralluogo o appuntamento | 10-15% | 30-40% |
+| Tempo medio di permanenza in showroom | 8-10 minuti | 20-25 minuti |
+| % clienti che toccano fisicamente il prodotto | Basso, spesso solo guardano | Quasi tutti, per protocollo |
+| Follow-up effettuato entro 48 ore | Occasionale | Sistematico su ogni contatto |
+
+Rivedere questi numeri con lo staff ogni settimana, anche in dieci minuti a fine sabato, mantiene il metodo vivo. Uno showroom che non misura torna quasi sempre, in due o tre mesi, alle vecchie abitudini.
+
+![Staff dello showroom che rivede insieme i numeri e gli obiettivi della settimana](img:organizzazione)
 
 ## Da dove partire domani in showroom
 
