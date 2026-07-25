@@ -65,6 +65,32 @@ export function serviceSchema() {
   };
 }
 
+/**
+ * ProfessionalService: usato sulle pagine HUB dei silo di contenuto.
+ * Qualifica il brand come servizio professionale verticale sul settore casa.
+ */
+export function professionalServiceSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: "IT",
+    serviceType: "Formazione e affiancamento commerciale",
+    audience: {
+      "@type": "Audience",
+      audienceType:
+        "Aziende del settore casa: serramenti, infissi, fotovoltaico, edilizia, ristrutturazioni, arredamento",
+    },
+  };
+}
+
 /** Breadcrumb per una pagina generica. */
 export function breadcrumbSchema(
   items: { name: string; url: string }[]

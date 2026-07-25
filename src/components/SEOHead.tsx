@@ -60,8 +60,15 @@ export function SEOHead({
   noindex = false,
   jsonLd,
 }: SEOHeadProps) {
+  // Il <title> non deve superare i 60 caratteri (oltre, Google tronca).
+  // Il suffisso di brand si aggiunge solo se ci sta: il titolo della pagina
+  // ha la precedenza, perché contiene la keyword primaria.
+  const TITLE_MAX = 60;
+  const branded = title ? `${title} | ${siteConfig.name}` : "";
   const fullTitle = title
-    ? `${title} | ${siteConfig.name}`
+    ? branded.length <= TITLE_MAX
+      ? branded
+      : title
     : `${siteConfig.name} - Affiancamento Vendite per Imprenditori Edili`;
 
   const fullImageUrl = image.startsWith('http') ? image : `${siteConfig.url}${image}`;

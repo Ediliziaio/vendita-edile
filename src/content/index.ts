@@ -34,6 +34,9 @@ import storytellingVendita from "./articles/storytelling-vendita-edilizia";
 import negoziazionePrezzo from "./articles/negoziazione-senza-cedere-sul-prezzo";
 import vendereRistrutturazioni from "./articles/vendere-ristrutturazioni-chiavi-in-mano";
 import gestionaleEdiliziaInCloud from "./articles/gestionale-edilizia-in-cloud";
+import aumentareTassoChiusuraPreventivi from "./articles/aumentare-tasso-chiusura-preventivi";
+import reteVenditaAziendeEdili from "./articles/rete-vendita-aziende-edili";
+import crmPerSerramentisti from "./articles/crm-per-serramentisti";
 
 // L'ordine qui non conta: sotto ordiniamo per data di pubblicazione.
 const registry: Article[] = [
@@ -68,6 +71,9 @@ const registry: Article[] = [
   negoziazionePrezzo,
   vendereRistrutturazioni,
   gestionaleEdiliziaInCloud,
+  aumentareTassoChiusuraPreventivi,
+  crmPerSerramentisti,
+  reteVenditaAziendeEdili,
 ];
 
 /** Tutti gli articoli, ordinati dal più recente al più vecchio. */

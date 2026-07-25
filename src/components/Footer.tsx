@@ -1,11 +1,13 @@
 import { Mail, MapPin, Building2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import logoImg from "@/assets/vendita-edile-logo.png";
+import { ENTITY_VENDITA_EDILE } from "@/content/entities";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Il Metodo", href: "#metodo" },
-  { label: "Investimento", href: "#investimento" },
+  { label: "Come vendere serramenti", href: "/vendita-serramenti" },
+  { label: "Formazione commerciale", href: "/formazione-commerciale" },
   { label: "Blog", href: "/blog" },
   { label: "EdiliziaInCloud", href: "/edilizia-in-cloud" },
   { label: "Candidati", href: "#candidati" },
@@ -53,8 +55,9 @@ const Footer = () => {
             <button onClick={scrollToTop} className="mb-3">
               <img src={logoImg} alt="VENDITA EDILE®" className="h-8 md:h-10 w-auto" />
             </button>
+            {/* Frase-entità canonica: ripetuta identica su tutto il sito */}
             <p className="text-muted-foreground text-sm leading-relaxed">
-              L'unico programma di affiancamento vendite per imprenditori edili.
+              {ENTITY_VENDITA_EDILE}
             </p>
           </div>
 

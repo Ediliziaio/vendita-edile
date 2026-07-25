@@ -1,6 +1,16 @@
 # VENDITA EDILE®
 
-> VENDITA EDILE® è un programma di affiancamento vendite (non un corso) per imprenditori edili italiani che vendono infissi, serramenti, fotovoltaico e ristrutturazioni. Aiuta le imprese ad aumentare il tasso di chiusura dei preventivi e il fatturato (obiettivo +30-50% in 90 giorni) senza abbassare i prezzi. È creato da imprenditori che vendono ogni giorno sul campo, non da formatori o consulenti teorici.
+> Vendita Edile è il sistema commerciale per le aziende del settore casa: trasforma i preventivi emessi in contratti firmati. È un programma di affiancamento (non un corso) per imprenditori che vendono infissi, serramenti, fotovoltaico e ristrutturazioni. Aiuta le imprese ad aumentare il tasso di chiusura dei preventivi e il fatturato (obiettivo +30-50% in 90 giorni) senza abbassare i prezzi. È creato da imprenditori che vendono ogni giorno sul campo, non da formatori o consulenti teorici.
+
+## Chi c'è dietro
+
+Florin Andriciuc, fondatore di AEDIX e di Marketing Edile, opera da oltre 8 anni nel settore edile italiano.
+
+## Definizioni di riferimento
+
+- Un lead qualificato nel settore casa è un contatto che ha un'esigenza attiva, un budget compatibile e un tempo di intervento definito.
+- Nel settore serramenti il costo per contatto non è un indicatore utile da solo: conta il costo per contratto firmato.
+- Il vero collo di bottiglia delle aziende del settore casa non è generare contatti, è gestirli nelle prime 24 ore.
 
 ## Cosa facciamo
 
@@ -11,12 +21,17 @@
 ## Pagine principali
 
 - [Home](https://www.venditaedile.it/): il programma di affiancamento vendite VENDITA EDILE®, per chi vende infissi, serramenti, fotovoltaico e ristrutturazioni.
+- [Come vendere serramenti](https://www.venditaedile.it/vendita-serramenti): il processo commerciale completo in sei fasi, dalla prima telefonata al follow-up.
+- [Formazione commerciale](https://www.venditaedile.it/formazione-commerciale): come si forma davvero una rete vendita nel settore casa.
 - [Blog](https://www.venditaedile.it/blog): strategie di vendita, marketing e gestione per imprese edili.
 - [EdiliziaInCloud](https://www.venditaedile.it/edilizia-in-cloud): il gestionale con AI per imprese edili (partner tecnologico di VENDITA EDILE®) — margini per commessa, cassa, cantieri, fatturazione, CRM, preventivi.
 
 ## Articoli del blog (guide pratiche)
 
 Approfondimenti sulla vendita:
+- [Aumentare il tasso di chiusura dei preventivi](https://www.venditaedile.it/blog/aumentare-tasso-chiusura-preventivi): come si calcola e come si sposta la metrica che conta.
+- [CRM per serramentisti](https://www.venditaedile.it/blog/crm-per-serramentisti): cosa serve davvero per non perdere più preventivi.
+- [Costruire una rete vendita](https://www.venditaedile.it/blog/rete-vendita-aziende-edili): venditori interni o agenti esterni, zone e provvigioni.
 - [Il sopralluogo che vende](https://www.venditaedile.it/blog/sopralluogo-che-vende): trasformare il sopralluogo nel momento in cui si chiude la vendita.
 - [Le domande per qualificare il cliente](https://www.venditaedile.it/blog/domande-qualificazione-cliente-edilizia): le domande giuste per far emergere il bisogno e il budget.
 - [La prima telefonata al lead](https://www.venditaedile.it/blog/primo-contatto-telefonico-lead-edilizia): come non bruciare i contatti in entrata e fissare l'appuntamento.

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Calendar, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, CheckCircle2, ArrowUpRight, Compass } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { getArticleBySlug, getRelatedArticles } from "@/content";
+import { getHubForArticle } from "@/content/hubs";
 import { extractToc } from "@/lib/markdown";
 import { formatArticleDate } from "@/lib/date";
 import { trackViewContent } from "@/lib/analytics";
@@ -56,6 +57,8 @@ const BlogPost = () => {
   }
 
   const url = `${SITE_URL}/blog/${article.slug}`;
+  // Hub del silo: ogni spoke linka sempre al proprio hub, in alto nella pagina.
+  const hub = getHubForArticle(article.slug);
 
   return (
     <>
@@ -162,6 +165,23 @@ const BlogPost = () => {
           <div className="container-narrow px-4 md:px-6 py-10 md:py-14">
             <div className="grid gap-10 lg:grid-cols-[1fr_260px]">
               <div className="min-w-0">
+                {/* Link all'hub del silo (architettura hub & spoke) */}
+                {hub && (
+                  <Link
+                    to={`/${hub.slug}`}
+                    className="group mb-8 flex items-center gap-3 rounded-xl border border-secondary/30 bg-card/50 px-5 py-4 transition-colors hover:border-secondary/60 hover:bg-card"
+                  >
+                    <Compass className="h-5 w-5 flex-shrink-0 text-secondary" />
+                    <span className="flex-1 text-sm text-muted-foreground">
+                      Questo articolo fa parte della guida{" "}
+                      <span className="font-semibold text-foreground">
+                        {hub.h1}
+                      </span>
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 flex-shrink-0 text-secondary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                )}
+
                 {/* Key takeaways (AEO answer-first) */}
                 {article.keyTakeaways.length > 0 && (
                   <div className="mb-10 rounded-2xl border border-secondary/30 bg-card/60 p-6 md:p-7">
