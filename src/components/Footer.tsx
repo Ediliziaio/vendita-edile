@@ -106,7 +106,17 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Domus Group S.r.l. — VENDITA EDILE®</p>
+          <p>
+            © {new Date().getFullYear()} Domus Group S.r.l. — VENDITA EDILE® · Un progetto di{" "}
+            {/* Anchor branded costante verso l'entità fondatore. */}
+            <a
+              href="https://www.florinandriciuc.com/chi-sono"
+              rel="author"
+              className="font-semibold text-foreground hover:text-secondary transition-colors"
+            >
+              Florin Andriciuc
+            </a>
+          </p>
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="hover:text-secondary transition-colors">
               Privacy Policy
