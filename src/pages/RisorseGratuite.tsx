@@ -13,6 +13,8 @@ type Resource = {
   description?: string;
   image: string;
   imageAlt: string;
+  /** Formato dell'immagine nella card: quadrata (copertine) o 16:9 (video/screenshot). */
+  imageAspect: "square" | "video";
   ctaLabel: string;
   href: string;
   icon: "download" | "external" | "play";
@@ -23,66 +25,77 @@ const resources: Resource[] = [
     key: "manuale-ci-devo-pensare",
     kicker: "Manuale PDF",
     title: "Come Rispondere a “Ci Devo Pensare” e Trasformarlo in un “Ok, Firmo”",
+    description:
+      "Le risposte esatte da dare quando il cliente prende tempo. Da leggere prima del prossimo appuntamento.",
     image: "/landing/manuale-ci-devo-pensare.webp",
     imageAlt: "Copertina del manuale PDF: Come Rispondere a Ci Devo Pensare",
-    ctaLabel: "Scaricalo Ora",
+    imageAspect: "square",
+    ctaLabel: "Scarica il Manuale Gratis",
     href: "https://drive.google.com/file/d/1Tkbi8Yqw23c8lTMhkksyZXpgHzw6vhv4/view?usp=sharing",
     icon: "download",
   },
   {
     key: "manuale-preventivo-vendita",
     kicker: "Manuale PDF",
-    title: "“Come Trasformare un Preventivo in una Vendita (Senza Rincorrere il Cliente)”",
+    title: "Come Trasformare un Preventivo in una Vendita (Senza Rincorrere il Cliente)",
+    description:
+      "Il metodo per farti dire sì senza telefonate a vuoto e senza sconti forzati.",
     image: "/landing/manuale-preventivo-vendita.webp",
     imageAlt: "Copertina del manuale PDF: Come Trasformare un Preventivo in una Vendita",
-    ctaLabel: "Scaricalo Ora",
+    imageAspect: "square",
+    ctaLabel: "Scarica il Manuale Gratis",
     href: "https://drive.google.com/file/d/1HIpJ1p9yzK79ntTIydk6AC0aFRe7-JPr/view?usp=sharing",
     icon: "download",
   },
   {
     key: "crm-gratis",
-    kicker: "Gestionale Tutto in Uno",
-    title:
-      "AUMENTA LE VENDITE E FATTURATO DELLA TUA AZIENDA CON EDILIZIA IN CLOUD, IL 1° GESTIONALE TUTTO IN UNO PER AZIENDE EDILI",
+    kicker: "Gestionale per Imprese Edili",
+    title: "Edilizia in Cloud: Preventivi, Cantieri, Fatture e Incassi in un Posto Solo",
     description:
-      "Edilizia in Cloud ti fa Acquisire Contatti e Vendite per la tua Attività e ti Aiuta ad Automatizzare e Digitalizzare tutti i processi della tua Attività... provalo GRATIS per 31 giorni, senza addebito automatico.",
+      "Basta fogli, Excel e telefonate per sapere come va un cantiere. Provalo gratis per 31 giorni: a fine prova scegli tu, nessun addebito automatico.",
     image: "/landing/crm-dashboard.webp",
-    imageAlt: "Dashboard di Edilizia in Cloud, il gestionale tutto in uno per aziende edili",
-    ctaLabel: "Prova GRATIS 31 Giorni",
+    imageAlt: "Dashboard di Edilizia in Cloud, il gestionale per aziende edili",
+    imageAspect: "video",
+    ctaLabel: "Prova Gratis 31 Giorni",
     href: "/crmgratis",
     icon: "external",
   },
   {
     key: "gruppo-facebook",
-    kicker: "Gruppo Facebook per Imprenditori Edili",
+    kicker: "Gruppo Facebook Riservato",
     title: "Imprenditore Edile®: Crescita, Vendite, Marketing e Libertà",
     description:
-      "Qui dentro non trovi chiacchiere, trovi risultati. Strategie pratiche, risorse gratuite ad alto valore, casi studio reali, collaborazioni tra professionisti del settore e consigli da esperti di marketing, vendita e gestione specifici per il settore edile.",
+      "Niente chiacchiere: strategie pratiche, casi reali e consigli di marketing, vendita e gestione specifici per il settore edile.",
     image: "/landing/gruppo-facebook.webp",
     imageAlt: "Anteprima del gruppo Facebook Imprenditore Edile",
-    ctaLabel: "Accedi Ora",
+    imageAspect: "square",
+    ctaLabel: "Entra nel Gruppo",
     href: "https://www.facebook.com/groups/marketingedile?locale=it_IT",
     icon: "external",
   },
   {
     key: "video-15-clienti",
     kicker: "Video Formativo",
-    title:
-      "15 Nuovi Clienti OGNI MESE con questo Sistema (per Imprenditori Edili, Infissi, Fotovoltaico ecc...)",
+    title: "15 Nuovi Clienti al Mese con questo Sistema (Edili, Infissi, Fotovoltaico)",
+    description:
+      "Il sistema passo-passo per far arrivare richieste ogni mese, senza dipendere dal passaparola.",
     image: "/landing/video-15-clienti.webp",
     imageAlt: "Anteprima video: 15 nuovi clienti ogni mese",
-    ctaLabel: "Accedi al VIDEO",
+    imageAspect: "video",
+    ctaLabel: "Guarda il Video",
     href: "https://www.youtube.com/watch?v=iIi2TOB5UPM",
     icon: "play",
   },
   {
     key: "video-chiudere-preventivi",
     kicker: "Video Formativo",
-    title:
-      "Come Chiudere Preventivi in Edilizia (infissi, fotovoltaico, tetti, edile): Strategie e Consigli Pratici",
+    title: "Come Chiudere i Preventivi in Edilizia: Strategie e Consigli Pratici",
+    description:
+      "Cosa dire (e cosa non dire) per far firmare il preventivo senza abbassare il prezzo.",
     image: "/landing/video-chiudere-preventivi.webp",
     imageAlt: "Anteprima video: come chiudere preventivi in edilizia",
-    ctaLabel: "Accedi al VIDEO",
+    imageAspect: "video",
+    ctaLabel: "Guarda il Video",
     href: "https://www.youtube.com/watch?v=MwRPEy0NHSw",
     icon: "play",
   },
@@ -103,7 +116,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
     ? { target: "_blank", rel: "noopener noreferrer" }
     : {};
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-[#E4E7EC] bg-white shadow-md shadow-black/5 transition-shadow hover:shadow-xl">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-lg shadow-black/20 transition-shadow hover:shadow-2xl">
       <a
         href={resource.href}
         {...externalProps}
@@ -113,19 +126,23 @@ function ResourceCard({ resource }: { resource: Resource }) {
         <img
           src={resource.image}
           alt={resource.imageAlt}
-          className="aspect-square w-full object-cover"
+          className={
+            resource.imageAspect === "square"
+              ? "aspect-square w-full object-cover"
+              : "aspect-video w-full object-cover"
+          }
           loading="lazy"
         />
       </a>
-      <div className="flex flex-1 flex-col gap-3 p-6 text-center">
-        <p className="text-sm font-bold uppercase tracking-wide text-[#B8860B]">
+      <div className="flex flex-1 flex-col gap-3 p-5 text-center sm:p-6">
+        <p className="text-xs font-extrabold uppercase tracking-widest text-secondary sm:text-sm">
           {resource.kicker}
         </p>
-        <h3 className="text-lg font-extrabold leading-snug text-[#101828]">
+        <h3 className="text-lg font-extrabold leading-snug">
           {resource.title}
         </h3>
         {resource.description && (
-          <p className="text-sm leading-relaxed text-[#475467]">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             {resource.description}
           </p>
         )}
@@ -134,7 +151,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
             href={resource.href}
             {...externalProps}
             onClick={() => fbTrackCustom("Click Risorsa Gratis", { resource: resource.key })}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#43B14B] px-8 py-3.5 font-bold text-white transition-transform duration-200 hover:scale-105 hover:bg-[#3AA042] sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 font-extrabold uppercase tracking-wide text-secondary-foreground transition-transform duration-200 hover:scale-105 sm:w-auto sm:px-8"
           >
             <Icon className="h-5 w-5" aria-hidden />
             {resource.ctaLabel}
@@ -146,10 +163,9 @@ function ResourceCard({ resource }: { resource: Resource }) {
 }
 
 /**
- * Landing /risorsegratuite — replica della pagina funnel
- * "Risorse Gratuite Esclusive per Imprenditori Edili".
- * Contiene i materiali riservati (manuali, CRM, gruppo FB, video)
- * e il form per la consulenza strategica.
+ * Landing /risorsegratuite — hub delle risorse gratuite:
+ * manuali, gestionale, gruppo FB, video + form consulenza.
+ * Colori brand (navy + oro), copy DOLORE → SOLUZIONE → RISULTATO.
  */
 const RisorseGratuite = () => {
   useEffect(() => {
@@ -162,15 +178,15 @@ const RisorseGratuite = () => {
   return (
     <>
       <SEOHead
-        title="Risorse Gratuite Esclusive per Imprenditori Edili"
-        description="Risorse gratuite per imprenditori edili: manuali PDF di vendita, CRM tutto in uno, gruppo riservato e video formativi. Più clienti, più cantieri, più profitti."
+        title="Risorse Gratuite per Imprenditori Edili"
+        description="Manuali PDF di vendita, gestionale gratis per 31 giorni, gruppo riservato e video formativi per imprese edili. Più clienti, più cantieri, più margine."
         url={`${SITE_URL}/risorsegratuite`}
         noindex
       />
 
-      <main className="font-outfit">
-        {/* Barra alta oro con titolo */}
-        <section className="bg-[#DBB33B] px-5 py-8 text-center sm:px-6 sm:py-10">
+      <main className="bg-background font-outfit text-foreground">
+        {/* Barra alta oro con logo e titolo */}
+        <section className="bg-secondary px-5 py-8 text-center sm:px-6 sm:py-10">
           <div className="mx-auto max-w-4xl">
             <img
               src="/landing/logo-vendita-edile.webp"
@@ -179,33 +195,33 @@ const RisorseGratuite = () => {
               height={142}
               className="mx-auto mb-5 w-32 rounded-lg bg-white p-3 shadow-md sm:mb-6 sm:w-40"
             />
-            <h1 className="text-[22px] font-extrabold leading-snug text-[#101828] sm:text-3xl md:text-4xl">
-              Risorse Gratuite Esclusive per Imprenditori Edili: Pi&ugrave;
-              Clienti, Pi&ugrave; Cantieri, Pi&ugrave; Profitti&hellip; Subito
+            <h1 className="text-[22px] font-extrabold leading-snug text-secondary-foreground sm:text-3xl md:text-4xl">
+              Risorse Gratuite per Imprenditori Edili: Pi&ugrave; Clienti,
+              Pi&ugrave; Cantieri, Pi&ugrave; Margine
             </h1>
           </div>
         </section>
 
-        {/* Hero */}
-        <section className="bg-[#F1F9FF] px-5 py-10 text-center sm:px-6 sm:py-14">
+        {/* Hero — dolore */}
+        <section className="px-5 py-10 text-center sm:px-6 sm:py-14">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-[22px] font-extrabold leading-snug text-[#101828] sm:text-3xl md:text-4xl">
-              Troppi Preventivi Persi? Troppo Lavoro e Pochi Profitti? Scarica
-              le Risorse Gratuite che Ti Aiutano a Vendere Meglio e Guadagnare
-              di Pi&ugrave;
+            <h2 className="text-[22px] font-extrabold leading-snug sm:text-3xl md:text-4xl">
+              Preventivi che Finiscono nel Nulla? Tanto Lavoro e Margini che{" "}
+              <span className="text-secondary">Non Si Vedono?</span>
             </h2>
-            <p className="mt-4 text-base font-semibold text-[#475467] sm:mt-5 sm:text-xl">
-              in Settori Come Ristrutturazioni, Fotovoltaico, Serramenti,
-              Caldaie e Altro...
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-xl">
+              Qui trovi i manuali, i video e gli strumenti che usiamo ogni
+              giorno con le imprese edili. <strong className="text-foreground">Tutto gratis</strong> — per
+              ristrutturazioni, fotovoltaico, serramenti, caldaie e impianti.
             </p>
           </div>
         </section>
 
         {/* Materiali riservati */}
-        <section className="bg-[#F5F6F8] px-5 py-12 sm:px-6 sm:py-16">
+        <section className="border-t border-border bg-card/50 px-5 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-center text-2xl font-extrabold uppercase tracking-wide text-[#101828] sm:text-4xl">
-              Materiali Riservati
+            <h2 className="text-center text-2xl font-extrabold uppercase tracking-wide sm:text-4xl">
+              Materiali <span className="text-secondary">Riservati</span>
             </h2>
             <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
               {resources.map((resource) => (
@@ -216,16 +232,17 @@ const RisorseGratuite = () => {
         </section>
 
         {/* Form consulenza strategica */}
-        <section id="consulenza" className="bg-[#F1F9FF] px-5 py-12 sm:px-6 sm:py-16">
+        <section id="consulenza" className="border-t border-border px-5 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-extrabold text-[#101828] sm:text-4xl">
-              Richiedi ora la Tua Consulenza Strategica
+            <h2 className="text-2xl font-extrabold sm:text-4xl">
+              Vuoi una Mano <span className="text-secondary">Diretta?</span>
             </h2>
-            <p className="mt-4 text-base text-[#475467] sm:text-lg">
-              Compila il form: un nostro Consulente ti ricontatta per capire
-              insieme come aumentare vendite e margini della tua azienda.
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              Lascia i tuoi dati: ti richiama un Consulente. Capiamo insieme
+              dove stai perdendo margine e cosa sistemare per primo.{" "}
+              <strong className="text-foreground">Senza impegno.</strong>
             </p>
-            <ContactFormEmbed className="mt-10" height={680} />
+            <ContactFormEmbed className="mt-8 sm:mt-10" height={680} />
           </div>
         </section>
       </main>
