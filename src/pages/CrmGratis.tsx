@@ -13,10 +13,32 @@ import {
 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { LandingFooter } from "@/components/landing/LandingFooter";
+import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
 import { SITE_URL } from "@/lib/schema";
 import { fbTrackCustom } from "@/lib/analytics";
+import { withUtmParams } from "@/lib/utm";
 
 const TRIAL_URL = "https://www.ediliziaincloud.com/demo/";
+
+// Obiezioni tipiche, risposte secche.
+const faqs = [
+  {
+    q: "Quanto ci metto a partire?",
+    a: "Un pomeriggio. Ti aiutiamo noi a caricare listini e clienti: il giorno dopo fai già preventivi.",
+  },
+  {
+    q: "E i dati che ho già su Excel?",
+    a: "Li importi. Clienti, listini e preventivi non si buttano: si portano dentro.",
+  },
+  {
+    q: "Serve il commercialista per la fatturazione?",
+    a: "No. Fatturi in autonomia dal gestionale; il commercialista vede quello che gli serve, quando gli serve.",
+  },
+  {
+    q: "E se dopo 31 giorni non fa per me?",
+    a: "Chiudi e non paghi niente. Nessun addebito automatico, nessun vincolo, i dati restano tuoi.",
+  },
+];
 
 // Copy in stile Florin: niente feature, solo il cambiamento concreto.
 const features = [
@@ -70,7 +92,7 @@ const guarantees = [
 function TrialCTA({ position }: { position: string }) {
   return (
     <a
-      href={TRIAL_URL}
+      href={withUtmParams(TRIAL_URL)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() =>
@@ -133,6 +155,7 @@ const CrmGratis = () => {
               height={924}
               className="mx-auto mt-10 w-full max-w-3xl sm:mt-12"
               loading="eager"
+              {...({ fetchpriority: "high" } as Record<string, string>)}
             />
           </div>
         </section>
@@ -163,6 +186,31 @@ const CrmGratis = () => {
 
             <div className="mt-10 text-center sm:mt-12">
               <TrialCTA position="dopo-funzionalita" />
+            </div>
+          </div>
+        </section>
+
+        {/* Prova sociale */}
+        <LandingTestimonials />
+
+        {/* FAQ */}
+        <section className="border-t border-border bg-card px-5 py-12 sm:px-6 sm:py-16">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-center text-2xl font-extrabold sm:text-4xl">
+              Domande <span className="text-secondary">Dirette</span>
+            </h2>
+            <div className="mt-8 space-y-4 sm:mt-10">
+              {faqs.map((faq) => (
+                <div
+                  key={faq.q}
+                  className="rounded-2xl border border-border bg-background p-5 text-left sm:p-6"
+                >
+                  <h3 className="text-base font-extrabold sm:text-lg">{faq.q}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

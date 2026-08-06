@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { trackPageView, trackLead } from "@/lib/analytics";
+import { captureUtmParams } from "@/lib/utm";
 
 /**
  * Tracciamento Meta Pixel lato SPA:
@@ -10,6 +11,11 @@ import { trackPageView, trackLead } from "@/lib/analytics";
 export function PixelTracker() {
   const location = useLocation();
   const isFirst = useRef(true);
+
+  // Attribuzione: salva utm_*/fbclid del primo atterraggio (per le CTA esterne)
+  useEffect(() => {
+    captureUtmParams();
+  }, []);
 
   // PageView sui cambi rotta (SPA)
   useEffect(() => {

@@ -3,6 +3,7 @@ import { Download, ExternalLink, PlayCircle } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { ContactFormEmbed } from "@/components/ContactFormEmbed";
 import { LandingFooter } from "@/components/landing/LandingFooter";
+import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
 import { SITE_URL } from "@/lib/schema";
 import { fbTrack, fbTrackCustom } from "@/lib/analytics";
 
@@ -31,7 +32,7 @@ const resources: Resource[] = [
     imageAlt: "Copertina del manuale PDF: Come Rispondere a Ci Devo Pensare",
     imageAspect: "square",
     ctaLabel: "Scarica il Manuale Gratis",
-    href: "https://drive.google.com/file/d/1Tkbi8Yqw23c8lTMhkksyZXpgHzw6vhv4/view?usp=sharing",
+    href: "/risorse/manuale-ci-devo-pensare.pdf",
     icon: "download",
   },
   {
@@ -44,7 +45,7 @@ const resources: Resource[] = [
     imageAlt: "Copertina del manuale PDF: Come Trasformare un Preventivo in una Vendita",
     imageAspect: "square",
     ctaLabel: "Scarica il Manuale Gratis",
-    href: "https://drive.google.com/file/d/1HIpJ1p9yzK79ntTIydk6AC0aFRe7-JPr/view?usp=sharing",
+    href: "/risorse/manuale-preventivo-vendita.pdf",
     icon: "download",
   },
   {
@@ -109,10 +110,11 @@ const ctaIcons = {
 
 function ResourceCard({ resource }: { resource: Resource }) {
   const Icon = ctaIcons[resource.icon];
-  // I link interni (es. /crmgratis) restano nella stessa scheda;
-  // quelli esterni (Drive, Facebook, YouTube) si aprono in una nuova.
-  const isExternal = /^https?:\/\//.test(resource.href);
-  const externalProps = isExternal
+  // Le pagine interne (es. /crmgratis) restano nella stessa scheda;
+  // link esterni e PDF si aprono in una nuova.
+  const opensNewTab =
+    /^https?:\/\//.test(resource.href) || resource.href.endsWith(".pdf");
+  const externalProps = opensNewTab
     ? { target: "_blank", rel: "noopener noreferrer" }
     : {};
   return (
@@ -230,6 +232,9 @@ const RisorseGratuite = () => {
             </div>
           </div>
         </section>
+
+        {/* Prova sociale */}
+        <LandingTestimonials />
 
         {/* Form consulenza strategica */}
         <section id="consulenza" className="border-t border-border px-5 py-12 sm:px-6 sm:py-16">

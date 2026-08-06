@@ -44,12 +44,12 @@ export function CookieBanner() {
           className="fixed inset-x-0 bottom-0 z-[100] px-3 pb-3 md:px-4 md:pb-4"
         >
           <div className="container-narrow">
-            <div className="flex flex-col gap-4 rounded-2xl border border-secondary/30 bg-card/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-md md:flex-row md:items-center md:gap-6 md:p-5">
+            <div className="flex flex-col gap-3 rounded-2xl border border-secondary/30 bg-card/95 p-3 shadow-2xl shadow-black/40 backdrop-blur-md md:flex-row md:items-center md:gap-6 md:p-5">
               <div className="flex items-start gap-3 md:items-center">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondary/15">
+                <div className="hidden h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondary/15 md:flex">
                   <Cookie className="h-5 w-5 text-secondary" />
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
                   Usiamo cookie tecnici e di marketing (incluso il Meta Pixel) per
                   migliorare la tua esperienza e le nostre campagne. Continuando la
                   navigazione acconsenti. Dettagli nella{" "}
