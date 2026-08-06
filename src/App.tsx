@@ -18,6 +18,9 @@ const ThankYou = lazy(() => import("./pages/ThankYou"));
 const EdiliziaInCloud = lazy(() => import("./pages/EdiliziaInCloud"));
 const Hub = lazy(() => import("./pages/Hub"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const GruppoRiservato = lazy(() => import("./pages/GruppoRiservato"));
+const RisorseGratuite = lazy(() => import("./pages/RisorseGratuite"));
+const CrmGratis = lazy(() => import("./pages/CrmGratis"));
 
 const queryClient = new QueryClient();
 
@@ -45,6 +48,10 @@ const App = () => (
               <Route path="/termini" element={<Legal slug="termini" />} />
               <Route path="/grazie" element={<ThankYou />} />
               <Route path="/edilizia-in-cloud" element={<EdiliziaInCloud />} />
+              {/* Landing pubblicitarie (noindex) */}
+              <Route path="/adgrupporiservato" element={<GruppoRiservato />} />
+              <Route path="/risorsegratuite" element={<RisorseGratuite />} />
+              <Route path="/crmgratis" element={<CrmGratis />} />
               {/* HUB dei silo di contenuto */}
               <Route path="/vendita-serramenti" element={<Hub slug="vendita-serramenti" />} />
               <Route path="/formazione-commerciale" element={<Hub slug="formazione-commerciale" />} />

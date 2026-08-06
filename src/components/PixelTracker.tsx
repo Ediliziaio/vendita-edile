@@ -32,7 +32,13 @@ export function PixelTracker() {
       } catch {
         payload = "";
       }
-      if (/submit|success|lead|thank|grazie|inviat/i.test(payload)) {
+      // Il form EiC invia "eic-lead-form-height" a ogni caricamento (auto-resize):
+      // contiene "lead" ma NON è un invio — va ignorato, altrimenti si generano
+      // conversioni Lead false a ogni pageview con il form embeddato.
+      if (/eic-lead-form-height/i.test(payload)) {
+        return;
+      }
+      if (/submit|success|thank|grazie|inviat/i.test(payload)) {
         trackLead({ content_name: "Form contatto EiC" });
       }
     }
