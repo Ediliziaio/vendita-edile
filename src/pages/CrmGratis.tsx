@@ -69,7 +69,7 @@ function TrialCTA({ position }: { position: string }) {
       onClick={() =>
         fbTrackCustom("Click EiC 31 Giorni", { cta_position: position })
       }
-      className="inline-block rounded-lg bg-[#43B14B] px-10 py-4 text-lg font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-105 hover:bg-[#3AA042]"
+      className="block w-full rounded-lg bg-[#43B14B] px-6 py-4 text-center text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-105 hover:bg-[#3AA042] sm:inline-block sm:w-auto sm:px-10 sm:text-lg"
     >
       Attiva GRATIS i tuoi 31 Giorni
     </a>
@@ -97,17 +97,17 @@ const CrmGratis = () => {
 
       <main className="font-outfit">
         {/* Hero */}
-        <section className="bg-[#F1F9FF] px-6 pb-16 pt-14 text-center">
+        <section className="bg-[#F1F9FF] px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
           <div className="mx-auto max-w-4xl">
-            <p className="mb-5 inline-block rounded-full bg-[#DBB33B] px-5 py-2 text-sm font-bold uppercase tracking-wide text-[#101828]">
+            <p className="mb-4 inline-block rounded-full bg-[#DBB33B] px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-[#101828] sm:mb-5 sm:px-5 sm:py-2 sm:text-sm">
               Prova gratuita &mdash; nessun addebito automatico
             </p>
-            <h1 className="text-3xl font-extrabold leading-tight text-[#101828] sm:text-4xl md:text-5xl">
+            <h1 className="text-[26px] font-extrabold leading-tight text-[#101828] sm:text-4xl md:text-5xl">
               31 Giorni GRATIS di Edilizia in Cloud: il Gestionale Tutto in Uno
               per Aziende Edili
             </h1>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-[#1D2939] sm:text-xl">
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#1D2939] sm:mt-6 sm:text-xl">
               <strong>Acquisisci contatti e vendite</strong> e{" "}
               <strong>
                 automatizza e digitalizza tutti i processi della tua attivit&agrave;
@@ -121,24 +121,24 @@ const CrmGratis = () => {
             </div>
 
             <img
-              src="/landing/crm-dashboard.png"
+              src="/landing/crm-dashboard.webp"
               alt="Dashboard di Edilizia in Cloud con opportunità, funnel e conversioni"
               width={1640}
               height={924}
-              className="mx-auto mt-12 w-full max-w-3xl"
+              className="mx-auto mt-10 w-full max-w-3xl sm:mt-12"
               loading="eager"
             />
           </div>
         </section>
 
         {/* Funzionalità */}
-        <section className="bg-white px-6 py-16">
+        <section className="bg-white px-5 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-center text-3xl font-extrabold text-[#101828] sm:text-4xl">
+            <h2 className="text-center text-2xl font-extrabold text-[#101828] sm:text-4xl">
               Cosa Fai con Edilizia in Cloud
             </h2>
 
-            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
               {features.map((feature) => (
                 <div
                   key={feature.title}
@@ -155,32 +155,32 @@ const CrmGratis = () => {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-10 text-center sm:mt-12">
               <TrialCTA position="dopo-funzionalita" />
             </div>
           </div>
         </section>
 
         {/* Garanzie */}
-        <section className="bg-[#F1F9FF] px-6 py-16">
+        <section className="bg-[#F1F9FF] px-5 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-center text-3xl font-extrabold text-[#101828] sm:text-4xl">
+            <h2 className="text-center text-2xl font-extrabold text-[#101828] sm:text-4xl">
               Zero Rischi, Zero Vincoli
             </h2>
-            <ul className="mt-10 space-y-5">
+            <ul className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
               {guarantees.map((guarantee) => (
-                <li key={guarantee.text} className="flex items-start gap-4">
+                <li key={guarantee.text} className="flex items-start gap-3 sm:gap-4">
                   <CheckCircle2
-                    className="mt-0.5 h-7 w-7 shrink-0 text-[#43B14B]"
+                    className="mt-0.5 h-6 w-6 shrink-0 text-[#43B14B] sm:h-7 sm:w-7"
                     aria-hidden
                   />
-                  <span className="text-lg font-semibold text-[#1D2939]">
+                  <span className="text-base font-semibold text-[#1D2939] sm:text-lg">
                     {guarantee.text}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="mt-12 text-center">
+            <div className="mt-10 text-center sm:mt-12">
               <TrialCTA position="fine-pagina" />
             </div>
           </div>

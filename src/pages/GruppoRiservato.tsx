@@ -46,7 +46,7 @@ function GroupCTA({ position }: { position: string }) {
       onClick={() =>
         fbTrackCustom("Click Gruppo Riservato", { cta_position: position })
       }
-      className="inline-block rounded-lg bg-secondary px-10 py-4 text-lg font-extrabold uppercase tracking-wide text-secondary-foreground shadow-[0_0_40px_-10px_hsl(var(--gold-glow)/0.8)] transition-transform duration-200 hover:scale-105"
+      className="block w-full rounded-lg bg-secondary px-6 py-4 text-center text-base font-extrabold uppercase tracking-wide text-secondary-foreground shadow-[0_0_40px_-10px_hsl(var(--gold-glow)/0.8)] transition-transform duration-200 hover:scale-105 sm:inline-block sm:w-auto sm:px-10 sm:text-lg"
     >
       Accedi al Gruppo e Scarica il Manuale
     </a>
@@ -82,9 +82,9 @@ const GruppoRiservato = () => {
         </div>
 
         {/* Hero navy */}
-        <section className="px-6 pb-16 pt-14 text-center">
+        <section className="px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
           <div className="mx-auto max-w-4xl">
-            <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
+            <h1 className="text-[26px] font-extrabold leading-tight sm:text-4xl md:text-5xl">
               Per Scaricare il Manuale devi Accedere al{" "}
               <span className="text-secondary">
                 Gruppo Esclusivo per Imprenditori Edili
@@ -92,7 +92,7 @@ const GruppoRiservato = () => {
               (&egrave; Gratis)
             </h1>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
               Il Manuale ti aspetta nel post in evidenza del gruppo, insieme a
               script, template e strategie riservate.{" "}
               <strong className="text-foreground">
@@ -101,8 +101,13 @@ const GruppoRiservato = () => {
               : solo contenuti ad alto valore per chi lavora nell'edilizia.
             </p>
 
+            {/* CTA subito visibile, prima dei passi (fondamentale su mobile) */}
+            <div className="mt-7">
+              <GroupCTA position="sopra-passi" />
+            </div>
+
             {/* 3 passi */}
-            <div className="mt-10 grid gap-6 text-left sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 text-left sm:mt-10 sm:grid-cols-3 sm:gap-6">
               {steps.map((item) => (
                 <div
                   key={item.step}
@@ -120,42 +125,38 @@ const GruppoRiservato = () => {
               ))}
             </div>
 
-            <div className="mt-10">
-              <GroupCTA position="hero" />
-            </div>
-
             <img
-              src="/landing/gruppo-facebook.png"
+              src="/landing/gruppo-facebook.webp"
               alt="Anteprima del gruppo Facebook riservato Imprenditore Edile"
               width={1080}
               height={1080}
-              className="mx-auto mt-12 w-full max-w-xl rounded-2xl border border-border shadow-2xl shadow-black/40"
+              className="mx-auto mt-10 w-full max-w-xl rounded-2xl border border-border shadow-2xl shadow-black/40 sm:mt-12"
               loading="eager"
             />
           </div>
         </section>
 
         {/* Cosa scoprirai */}
-        <section className="border-t border-border bg-card px-6 py-16">
+        <section className="border-t border-border bg-card px-5 py-12 sm:px-6 sm:py-16">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-center text-3xl font-extrabold sm:text-4xl">
+            <h2 className="text-center text-2xl font-extrabold sm:text-4xl">
               Cosa Trovi Nel Gruppo{" "}
               <span className="text-secondary">(Oltre al Manuale)</span>
             </h2>
 
-            <ul className="mt-10 space-y-5">
+            <ul className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
               {benefits.map((benefit) => (
-                <li key={benefit} className="flex items-start gap-4">
+                <li key={benefit} className="flex items-start gap-3 sm:gap-4">
                   <CheckCircle2
-                    className="mt-0.5 h-7 w-7 shrink-0 text-secondary"
+                    className="mt-0.5 h-6 w-6 shrink-0 text-secondary sm:h-7 sm:w-7"
                     aria-hidden
                   />
-                  <span className="text-lg font-semibold">{benefit}</span>
+                  <span className="text-base font-semibold sm:text-lg">{benefit}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-12 text-center">
+            <div className="mt-10 text-center sm:mt-12">
               <GroupCTA position="fine-pagina" />
               <p className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
                 <Lock className="h-4 w-4" aria-hidden />

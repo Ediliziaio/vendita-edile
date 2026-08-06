@@ -1,11 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { trackContact } from "@/lib/analytics";
 
 interface ContactFormEmbedProps {
   className?: string;
-  /** Altezza dell'iframe in px (default 640). */
+  /** Altezza dell'iframe in px (default 640). Usata come fallback finché
+   *  il form non comunica la sua altezza reale via postMessage. */
   height?: number;
 }
 
@@ -17,6 +18,30 @@ interface ContactFormEmbedProps {
 export function ContactFormEmbed({ className, height = 640 }: ContactFormEmbedProps) {
   const ref = useRef<HTMLDivElement>(null);
   const fired = useRef(false);
+  const [liveHeight, setLiveHeight] = useState<number | null>(null);
+
+  // Il form EiC comunica la sua altezza reale via postMessage
+  // ({ type: "eic-lead-form-height", height: N }): la usiamo per evitare
+  // scroll interni o spazi vuoti, soprattutto su mobile dove i campi
+  // impilati rendono il form più alto del fallback.
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      if (typeof e.origin !== "string" || !e.origin.includes("ediliziaincloud")) {
+        return;
+      }
+      const data = e.data as { type?: string; height?: number } | undefined;
+      if (
+        data &&
+        data.type === "eic-lead-form-height" &&
+        typeof data.height === "number" &&
+        data.height > 200
+      ) {
+        setLiveHeight(Math.ceil(data.height));
+      }
+    }
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -50,7 +75,7 @@ export function ContactFormEmbed({ className, height = 640 }: ContactFormEmbedPr
         title="Richiedi informazioni"
         loading="lazy"
         className="block w-full"
-        style={{ border: 0, height }}
+        style={{ border: 0, height: liveHeight ?? height }}
       />
     </div>
   );
