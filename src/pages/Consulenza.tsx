@@ -8,6 +8,12 @@ import {
   ClipboardList,
   Quote,
   ShieldCheck,
+  Clock,
+  TrendingDown,
+  Target,
+  MessageCircle,
+  Package,
+  TrendingUp,
 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { ContactFormEmbed } from "@/components/ContactFormEmbed";
@@ -80,6 +86,102 @@ const testimonials = [
     company: "Solar Toscana",
     quote:
       "In 3 mesi abbiamo strutturato un processo vendita che prima non esisteva. I numeri parlano da soli: +40% di fatturato.",
+  },
+];
+
+// Il conto di quello che costa NON sistemare la vendita.
+const costs = [
+  { period: "Ogni mese", loss: "50.000 €", detail: "Vendite perse + margini compressi" },
+  { period: "Ogni anno", loss: "360-600.000 €", detail: "Fatturato bruciato" },
+  { period: "In 3 anni", loss: "1.000.000 €+", detail: "Patrimonio evaporato" },
+];
+
+const costImpacts = [
+  { icon: Clock, label: "Tempo", line: "480 ore l'anno in trattative che non chiudono" },
+  {
+    icon: TrendingDown,
+    label: "Margini",
+    line: "-20/30% su ogni preventivo: lavori per pagare le bollette",
+  },
+  {
+    icon: Target,
+    label: "Opportunità",
+    line: "I clienti premium vanno ai concorrenti e la crescita si blocca",
+  },
+];
+
+// I 4 pilastri del metodo (stessi della home, in versione sintetica).
+const pillars = [
+  {
+    number: "01",
+    tag: "La macchina da guerra",
+    title: "Struttura di Vendita",
+    text: "Script di qualificazione, struttura della prima visita, le 7 obiezioni standard del cliente edile e la tecnica di chiusura. Ogni appuntamento segue un flusso preciso, non va a sensazione.",
+  },
+  {
+    number: "02",
+    tag: "Il prezzo che difendi",
+    title: "Preventivazione ad Alto Margine",
+    text: "Template di preventivo che vende, prezzo presentato in modo che lo sconto non sia nemmeno la conversazione, follow-up testato e un margine minimo sotto cui non scendi mai.",
+  },
+  {
+    number: "03",
+    tag: "I numeri che comandano",
+    title: "KPI e Controllo",
+    text: "Tasso di chiusura, margine medio per commessa, costo per lead, tempo medio trattativa. Sai in tempo reale quando qualcosa non funziona, senza aspettare fine mese.",
+  },
+  {
+    number: "04",
+    tag: "Il team che vende senza di te",
+    title: "Struttura Commerciale",
+    text: "Come selezionare e formare chi vende per te, il tuo metodo scritto nero su bianco e provvigioni che allineano i suoi interessi ai tuoi. Finché ogni trattativa dipende da te, non hai un sistema: hai un lavoro.",
+  },
+];
+
+const howWeWork = [
+  {
+    icon: CalendarCheck,
+    title: "Sessione settimanale 1:1",
+    text: "Lavoriamo direttamente sul tuo sistema: ogni settimana un avanzamento concreto.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Supporto WhatsApp diretto",
+    text: "Risposta entro 4 ore su qualsiasi trattativa in corso, 6 giorni su 7.",
+  },
+  {
+    icon: PhoneCall,
+    title: "Revisione trattative",
+    text: "Ascoltiamo le tue chiamate reali e ti diamo feedback specifico, non generico.",
+  },
+  {
+    icon: Package,
+    title: "Consegne in itinere",
+    text: "Script, template e dashboard: ricevi ogni elemento appena è pronto e testato.",
+  },
+];
+
+const caseStudies = [
+  {
+    sector: "Serramentista",
+    problem: "Preventivi ignorati, clienti che sparivano dopo il sopralluogo.",
+    result: "+47% tasso di chiusura",
+    detail: "Da 18 a 34 contratti al mese",
+    timeline: "In 90 giorni",
+  },
+  {
+    sector: "Impresa Edile",
+    problem: "Dipendenza totale dal passaparola, zero prevedibilità.",
+    result: "+€320.000 di fatturato",
+    detail: "Con un sistema di acquisizione strutturato",
+    timeline: "In 6 mesi",
+  },
+  {
+    sector: "Showroom Fotovoltaico",
+    problem: "Lead dal web che non convertivano, costo per lead altissimo.",
+    result: "3x ROI sul marketing",
+    detail: "Costo di acquisizione cliente dimezzato",
+    timeline: "In 120 giorni",
   },
 ];
 
@@ -298,6 +400,60 @@ const Consulenza = () => {
           </section>
         </div>
 
+        {/* Il vero costo — isola scura */}
+        <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+          <section className="mx-auto max-w-5xl rounded-3xl bg-navy-dark px-5 py-12 sm:px-10 sm:py-16">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-center text-2xl font-extrabold leading-tight sm:text-4xl">
+                Quanto ti costa{" "}
+                <span className="text-secondary">non sistemarlo</span>
+              </h2>
+              <p className="mt-4 text-center text-base text-muted-foreground sm:text-lg">
+                Non è un costo che vedi in bilancio. È quello che non entra —
+                ed è il più caro di tutti.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {costs.map((cost) => (
+                  <div
+                    key={cost.period}
+                    className="rounded-2xl border border-destructive/40 bg-destructive/5 p-5 text-center"
+                  >
+                    <p className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
+                      {cost.period}
+                    </p>
+                    <p className="mt-2 text-2xl font-extrabold text-destructive sm:text-3xl">
+                      -{cost.loss}
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {cost.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="mt-8 space-y-4">
+                {costImpacts.map((impact) => (
+                  <li key={impact.label} className="flex items-start gap-3">
+                    <impact.icon
+                      className="mt-0.5 h-6 w-6 shrink-0 text-secondary"
+                      aria-hidden
+                    />
+                    <span className="text-base sm:text-lg">
+                      <strong className="font-extrabold">{impact.label}:</strong>{" "}
+                      <span className="text-muted-foreground">{impact.line}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10 text-center">
+                <ConsulenzaCTA position="vero-costo" label="Fermiamo l'emorragia" />
+              </div>
+            </div>
+          </section>
+        </div>
+
         {/* Promesse vs realtà — isola scura */}
         <div className="px-3 pt-3 sm:px-4 sm:pt-4">
           <section className="mx-auto max-w-5xl rounded-3xl bg-navy-dark px-5 py-12 sm:px-10 sm:py-16">
@@ -439,6 +595,116 @@ const Consulenza = () => {
               <div className="mt-10">
                 <ConsulenzaCTA position="dopo-soluzione" />
               </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Il metodo — isola bianca */}
+        <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+          <section className="mx-auto max-w-5xl rounded-3xl bg-white px-5 py-12 text-navy-dark sm:px-10 sm:py-16">
+            <p className="mx-auto mb-4 w-fit rounded-full bg-[#101828] px-4 py-1.5 text-sm font-bold text-white">
+              Cosa costruiamo insieme
+            </p>
+            <h2 className="text-center text-2xl font-extrabold leading-tight text-[#101828] sm:text-4xl">
+              I 4 Pilastri del{" "}
+              <span className="text-[#B8860B]">Sistema di Vendita</span>
+            </h2>
+            <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 sm:gap-6">
+              {pillars.map((pillar) => (
+                <div
+                  key={pillar.number}
+                  className="rounded-2xl border border-[#E4E7EC] bg-[#F9FAFB] p-6"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-3xl font-extrabold text-[#DBB33B]">
+                      {pillar.number}
+                    </span>
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-[#B8860B]">
+                      {pillar.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 text-lg font-extrabold text-[#101828]">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#475467]">
+                    {pillar.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Come lavoriamo — isola bianca */}
+        <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+          <section className="mx-auto max-w-5xl rounded-3xl bg-white px-5 py-12 text-navy-dark sm:px-10 sm:py-16">
+            <h2 className="text-center text-2xl font-extrabold text-[#101828] sm:text-4xl">
+              Non ti Lasciamo{" "}
+              <span className="text-[#B8860B]">con un PDF in Mano</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-base text-[#475467] sm:text-lg">
+              È affiancamento, non formazione. Lavoriamo sulle tue trattative
+              vere, ogni settimana.
+            </p>
+            <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 sm:gap-6">
+              {howWeWork.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex gap-4 rounded-2xl border border-[#E4E7EC] bg-[#F9FAFB] p-6"
+                >
+                  <item.icon
+                    className="h-8 w-8 shrink-0 text-[#B8860B]"
+                    aria-hidden
+                  />
+                  <div>
+                    <h3 className="text-lg font-extrabold text-[#101828]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#475467]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <ConsulenzaCTA position="dopo-metodo" />
+            </div>
+          </section>
+        </div>
+
+        {/* Casi studio — isola scura (i loghi sono bianchi, servono su fondo scuro) */}
+        <div className="px-3 pt-3 sm:px-4 sm:pt-4">
+          <section className="mx-auto max-w-5xl rounded-3xl bg-navy-dark px-5 py-12 sm:px-10 sm:py-16">
+            <h2 className="text-center text-2xl font-extrabold sm:text-4xl">
+              Casi Studio <span className="text-secondary">Reali</span>
+            </h2>
+            <div className="mt-10 grid gap-5 sm:grid-cols-3 sm:gap-6">
+              {caseStudies.map((study) => (
+                <div
+                  key={study.sector}
+                  className="flex flex-col rounded-2xl border border-border bg-background p-6"
+                >
+                  <p className="text-xs font-extrabold uppercase tracking-widest text-secondary">
+                    {study.sector}
+                  </p>
+                  <p className="mt-2 flex-1 text-sm italic leading-relaxed text-muted-foreground">
+                    &ldquo;{study.problem}&rdquo;
+                  </p>
+                  <div className="mt-4 border-t border-border pt-4">
+                    <p className="flex items-center gap-2 text-xl font-extrabold text-secondary">
+                      <TrendingUp className="h-5 w-5" aria-hidden />
+                      {study.result}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {study.detail}
+                    </p>
+                    <p className="mt-2 text-xs font-bold uppercase tracking-widest">
+                      {study.timeline}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </div>
