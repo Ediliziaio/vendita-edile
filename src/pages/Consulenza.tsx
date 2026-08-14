@@ -43,17 +43,17 @@ const comparison = [
 ];
 
 const pains = [
-  "Il cliente entusiasta al sopralluogo... che poi sparisce.",
+  "Il cliente entusiasta al sopralluogo. Poi più una risposta.",
   "Il “ci devo pensare” che non diventa mai una firma.",
-  "Lo sconto fatto pur di non perdere il lavoro — e il margine che se ne va con lui.",
-  "Le settimane piene di appuntamenti e i mesi vuoti di contratti.",
+  "Lo sconto fatto pur di non perdere il lavoro. E il margine che se ne va con lui.",
+  "L'agenda piena di appuntamenti. Il conto in banca fermo.",
 ];
 
 const solutions = [
-  "Sappiamo cosa significa vivere di preventivi, acconti e cantieri che devono partire.",
-  "L'obiettivo non è fare like: è far firmare più preventivi allo stesso prezzo.",
-  "Alzare lo scontrino medio senza perdere il cliente.",
-  "Costruire un flusso di richieste che non dipende solo dal passaparola.",
+  "Sappiamo cosa vuol dire vivere di acconti e cantieri che devono partire.",
+  "L'obiettivo non è fare like. È far firmare più preventivi, allo stesso prezzo.",
+  "Alzare il valore medio della commessa senza perdere il cliente.",
+  "Far arrivare richieste anche quando il passaparola si ferma.",
 ];
 
 const stats = [
@@ -116,25 +116,25 @@ const pillars = [
     number: "01",
     tag: "La macchina da guerra",
     title: "Struttura di Vendita",
-    text: "Script di qualificazione, struttura della prima visita, le 7 obiezioni standard del cliente edile e la tecnica di chiusura. Ogni appuntamento segue un flusso preciso, non va a sensazione.",
+    text: "Script per filtrare chi ti fa perdere il sabato mattina. La prima visita segue un flusso preciso, non va a sensazione. Le 7 obiezioni standard del cliente edile e come smontarle senza toccare il prezzo.",
   },
   {
     number: "02",
     tag: "Il prezzo che difendi",
     title: "Preventivazione ad Alto Margine",
-    text: "Template di preventivo che vende, prezzo presentato in modo che lo sconto non sia nemmeno la conversazione, follow-up testato e un margine minimo sotto cui non scendi mai.",
+    text: "Il preventivo diventa un documento che vende, non un elenco di voci. Presenti il prezzo così che lo sconto non sia nemmeno la conversazione. E hai un margine minimo sotto cui non scendi. Mai.",
   },
   {
     number: "03",
     tag: "I numeri che comandano",
     title: "KPI e Controllo",
-    text: "Tasso di chiusura, margine medio per commessa, costo per lead, tempo medio trattativa. Sai in tempo reale quando qualcosa non funziona, senza aspettare fine mese.",
+    text: "Tasso di chiusura, margine per commessa, costo per contatto, tempo medio di trattativa. Il lunedì mattina sai già se la settimana sta andando storta. Non a fine mese, quando è tardi.",
   },
   {
     number: "04",
     tag: "Il team che vende senza di te",
     title: "Struttura Commerciale",
-    text: "Come selezionare e formare chi vende per te, il tuo metodo scritto nero su bianco e provvigioni che allineano i suoi interessi ai tuoi. Finché ogni trattativa dipende da te, non hai un sistema: hai un lavoro.",
+    text: "Come scegli e formi chi vende per te. Il tuo metodo scritto nero su bianco, che chiunque può applicare. Finché ogni trattativa passa da te, non hai un'azienda: hai un lavoro.",
   },
 ];
 
@@ -142,22 +142,22 @@ const howWeWork = [
   {
     icon: CalendarCheck,
     title: "Sessione settimanale 1:1",
-    text: "Lavoriamo direttamente sul tuo sistema: ogni settimana un avanzamento concreto.",
+    text: "Ogni settimana lavoriamo su un pezzo del tuo sistema. E ogni settimana è un pezzo in più che funziona.",
   },
   {
     icon: MessageCircle,
     title: "Supporto WhatsApp diretto",
-    text: "Risposta entro 4 ore su qualsiasi trattativa in corso, 6 giorni su 7.",
+    text: "Trattativa aperta e non sai come muoverti? Risposta entro 4 ore, 6 giorni su 7.",
   },
   {
     icon: PhoneCall,
     title: "Revisione trattative",
-    text: "Ascoltiamo le tue chiamate reali e ti diamo feedback specifico, non generico.",
+    text: "Ascoltiamo le tue chiamate vere e ti diciamo dove hai perso il cliente. Con l'esempio, non con la teoria.",
   },
   {
     icon: Package,
-    title: "Consegne in itinere",
-    text: "Script, template e dashboard: ricevi ogni elemento appena è pronto e testato.",
+    title: "Consegne strada facendo",
+    text: "Script, template e dashboard arrivano già pronti e testati. Non aspetti la fine del percorso per usarli.",
   },
 ];
 
@@ -173,7 +173,7 @@ const caseStudies = [
     sector: "Impresa Edile",
     problem: "Dipendenza totale dal passaparola, zero prevedibilità.",
     result: "+€320.000 di fatturato",
-    detail: "Con un sistema di acquisizione strutturato",
+    detail: "Smettendo di dipendere dal passaparola",
     timeline: "In 6 mesi",
   },
   {
@@ -234,6 +234,14 @@ const faqs = [
   {
     q: "Devo preparare qualcosa?",
     a: "Ti basta avere in mente gli ultimi 10 preventivi: quanti firmati, quanti persi e a che prezzo.",
+  },
+  {
+    q: "E poi quanto costa lavorare con voi?",
+    a: "Il percorso è un affiancamento 1:1 di 90 giorni. La cifra te la diciamo in chiamata, quando sappiamo con cosa hai a che fare: nessun prezzo a sorpresa, nessuna pressione per decidere subito.",
+  },
+  {
+    q: "Ho già provato un corso e non è servito. Perché ora sì?",
+    a: "Perché qui non ti diamo appunti da studiare. Lavoriamo sulle tue trattative vere, ogni settimana, finché il sistema non gira anche senza di noi.",
   },
 ];
 
@@ -318,9 +326,10 @@ const Consulenza = () => {
               clienti che <span className="text-secondary">spariscono</span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
-              Affida la crescita commerciale della tua azienda a chi lavora{" "}
-              <strong className="text-foreground">solo con l'edilizia</strong>:
-              serramenti, ristrutturazioni, fotovoltaico, impianti.
+              Ti aiutiamo a far firmare più preventivi,{" "}
+              <strong className="text-foreground">allo stesso prezzo</strong>.
+              Lavoriamo solo con l'edilizia: serramenti, ristrutturazioni,
+              fotovoltaico, impianti.
             </p>
             <div className="mt-7 sm:mt-8">
               <ConsulenzaCTA position="hero" />
