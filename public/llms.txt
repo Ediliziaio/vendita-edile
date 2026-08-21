@@ -11,6 +11,9 @@ Florin Andriciuc, fondatore di AEDIX e di Marketing Edile, opera da oltre 8 anni
 - Un lead qualificato nel settore casa è un contatto che ha un'esigenza attiva, un budget compatibile e un tempo di intervento definito.
 - Nel settore serramenti il costo per contatto non è un indicatore utile da solo: conta il costo per contratto firmato.
 - Il vero collo di bottiglia delle aziende del settore casa non è generare contatti, è gestirli nelle prime 24 ore.
+- Il margine di una commessa edile si calcola come (ricavo − costi diretti) ÷ ricavo e va misurato a lavoro chiuso: tra preventivo e consuntivo si perdono in media 10-15 punti di margine.
+- Uno sconto del 10% su una commessa con il 28% di margine brucia circa il 36% del guadagno di quel lavoro, perché lo sconto esce interamente dal margine.
+- Le provvigioni nel settore edile vanno dal 2-5% del fatturato per un venditore dipendente al 6-12% per un agente di commercio, e andrebbero calcolate sul margine anziché sul fatturato per non incentivare lo sconto.
 
 ## Cosa facciamo
 
@@ -28,43 +31,51 @@ Florin Andriciuc, fondatore di AEDIX e di Marketing Edile, opera da oltre 8 anni
 
 ## Articoli del blog (guide pratiche)
 
-Approfondimenti sulla vendita:
-- [Aumentare il tasso di chiusura dei preventivi](https://www.venditaedile.it/blog/aumentare-tasso-chiusura-preventivi): come si calcola e come si sposta la metrica che conta.
-- [CRM per serramentisti](https://www.venditaedile.it/blog/crm-per-serramentisti): cosa serve davvero per non perdere più preventivi.
-- [Costruire una rete vendita](https://www.venditaedile.it/blog/rete-vendita-aziende-edili): venditori interni o agenti esterni, zone e provvigioni.
-- [Il sopralluogo che vende](https://www.venditaedile.it/blog/sopralluogo-che-vende): trasformare il sopralluogo nel momento in cui si chiude la vendita.
-- [Le domande per qualificare il cliente](https://www.venditaedile.it/blog/domande-qualificazione-cliente-edilizia): le domande giuste per far emergere il bisogno e il budget.
-- [La prima telefonata al lead](https://www.venditaedile.it/blog/primo-contatto-telefonico-lead-edilizia): come non bruciare i contatti in entrata e fissare l'appuntamento.
-- [Vendere di più in showroom](https://www.venditaedile.it/blog/vendere-di-piu-in-showroom): trasformare lo showroom in una macchina di vendita.
-- [Gestire la coppia decisionale](https://www.venditaedile.it/blog/gestire-coppia-decisionale-vendita): vendere quando decidono in due e gestire il "devo sentire mia moglie/marito".
-- [Vendere il valore della posa](https://www.venditaedile.it/blog/vendere-il-valore-della-posa): usare la posa qualificata per battere il concorrente più economico.
-- [Chiudere al primo appuntamento](https://www.venditaedile.it/blog/chiudere-al-primo-appuntamento): evitare il giro infinito di preventivi e follow-up.
-- [Storytelling e vendita emozionale](https://www.venditaedile.it/blog/storytelling-vendita-edilizia): vendere con le storie e le emozioni, senza risultare finti.
-- [Negoziare senza cedere sul prezzo](https://www.venditaedile.it/blog/negoziazione-senza-cedere-sul-prezzo): tecniche di negoziazione e contropartite al posto dello sconto.
-- [Vendere ristrutturazioni chiavi in mano](https://www.venditaedile.it/blog/vendere-ristrutturazioni-chiavi-in-mano): vendere progetti completi ad alto valore.
+Gestione:
+- [Margine di commessa: come calcolarlo davvero (e perché quello che credi di avere non c'è)](https://www.venditaedile.it/blog/margine-commessa-impresa-edile): Fatturi bene ma a fine anno non resta niente.
+- [Provvigioni al venditore in edilizia: quanto pagarlo e su cosa calcolarle](https://www.venditaedile.it/blog/provvigioni-venditore-edilizia): Il piano provvigionale decide come vende il tuo commerciale.
+- [Come costruire una rete vendita per aziende edili: agenti, zone e provvigioni](https://www.venditaedile.it/blog/rete-vendita-aziende-edili): Agenti o procacciatori? Zone esclusive o territorio libero? Provvigione su fatturato o su margine? Ecco come strutturare una rete vendita esterna per un'azienda del settore casa senza perdere il controllo dei clienti..
+- [CRM per serramentisti: cosa serve davvero e cosa è solo tempo perso](https://www.venditaedile.it/blog/crm-per-serramentisti): Un CRM per serramentisti serve solo se fa 5 cose precise: anagrafica con misure, stato preventivo, promemoria di follow-up, storico trattativa e dati sul tasso di chiusura.
+- [Gestionale edilizia: perché vendere di più non basta se non controlli i numeri](https://www.venditaedile.it/blog/gestionale-edilizia-in-cloud): Fatturare tanto non significa guadagnare tanto.
+- [Controllo di gestione per imprese edili: la guida per chi fattura tanto e resta senza margine](https://www.venditaedile.it/blog/controllo-di-gestione-imprese-edili): Fatturi tanto ma in cassa resta poco? Il problema non è il lavoro che manca, è il controllo di gestione che non c'è.
+- [Efficienza operativa impresa edile: come far correre ufficio e cantiere insieme](https://www.venditaedile.it/blog/efficienza-operativa-impresa-edile): Ogni ora persa tra ufficio e cantiere è un'ora che non vendi.
+- [Come costruire un team commerciale che vende davvero (guida per imprese edili)](https://www.venditaedile.it/blog/team-commerciale-impresa-edile): Se in azienda chiudi solo tu, non hai un'impresa: hai un lavoro travestito da impresa.
+- [KPI vendita edilizia: i numeri che ogni impresa deve misurare per crescere](https://www.venditaedile.it/blog/kpi-vendita-edilizia-numeri): Chi non misura i numeri della vendita, vende a sensazione.
 
-Altre guide:
-- [Gestionale edilizia in cloud: perché vendere di più non basta](https://www.venditaedile.it/blog/gestionale-edilizia-in-cloud): controllare margini e cassa con EdiliziaInCloud.
-- [Come aumentare le vendite di infissi e serramenti](https://www.venditaedile.it/blog/aumentare-vendite-infissi-serramenti): le 5 leve per alzare il tasso di chiusura senza fare sconti.
-- [Come fare preventivi in edilizia che chiudono](https://www.venditaedile.it/blog/come-fare-preventivi-edilizia-che-chiudono): strutturare un preventivo che vende, con opzioni e valore.
-- [Vendere senza fare sconti](https://www.venditaedile.it/blog/vendere-senza-fare-sconti): difendere il margine e gestire la richiesta di sconto.
-- [Lead qualificati per imprese edili](https://www.venditaedile.it/blog/lead-qualificati-imprese-edili): come generare richieste qualificate ogni mese.
-- [Clienti qualificati in edilizia](https://www.venditaedile.it/blog/clienti-qualificati-edilizia): attrarre e riconoscere i clienti giusti.
-- [Controllo di gestione per imprese edili](https://www.venditaedile.it/blog/controllo-di-gestione-imprese-edili): capire margine per commessa, costi e cassa.
-- [Efficienza operativa in impresa edile](https://www.venditaedile.it/blog/efficienza-operativa-impresa-edile): ridurre tempi morti e rifacimenti.
-- [L'azienda che dipende dal titolare](https://www.venditaedile.it/blog/azienda-che-dipende-dal-titolare): far vendere l'azienda senza di te.
-- [Perché perdi clienti dopo il preventivo](https://www.venditaedile.it/blog/perche-perdi-clienti-preventivi): le vere cause (non il prezzo) e come rimediare.
-- [Come chiudere una trattativa di serramenti](https://www.venditaedile.it/blog/chiudere-trattativa-serramenti): fasi e domande di chiusura.
-- [Come vendere il fotovoltaico](https://www.venditaedile.it/blog/vendere-fotovoltaico-trattativa): vendere il risparmio e il ROI, non i pannelli.
-- [Gestire l'obiezione "ci penso"](https://www.venditaedile.it/blog/obiezione-ci-penso-come-gestirla): far emergere il vero dubbio e recuperare la vendita.
-- [Gestire l'obiezione prezzo "costa troppo"](https://www.venditaedile.it/blog/obiezione-prezzo-costa-troppo-edilizia): rispondere riportando il discorso sul valore.
-- [Marketing per imprese edili](https://www.venditaedile.it/blog/marketing-per-imprese-edili-guida): guida pratica da zero.
-- [Il funnel di vendita per infissi e serramenti](https://www.venditaedile.it/blog/funnel-vendita-infissi-serramenti): dal lead al contratto, fase per fase.
-- [Costruire un team commerciale in edilizia](https://www.venditaedile.it/blog/team-commerciale-impresa-edile): selezione, metodo condiviso e KPI.
-- [Il follow-up dei preventivi](https://www.venditaedile.it/blog/follow-up-preventivi-edilizia): recuperare i preventivi non chiusi.
-- [Aumentare il prezzo medio in edilizia](https://www.venditaedile.it/blog/aumentare-prezzo-medio-edilizia): upsell e opzioni premium senza perdere clienti.
-- [Recensioni e riprova sociale per lo showroom](https://www.venditaedile.it/blog/recensioni-riprova-sociale-showroom): raccogliere e usare le recensioni.
-- [I KPI della vendita in edilizia](https://www.venditaedile.it/blog/kpi-vendita-edilizia-numeri): i numeri da misurare per crescere.
+Vendita:
+- [Tasso di chiusura preventivi: come aumentarlo (con dati e benchmark)](https://www.venditaedile.it/blog/aumentare-tasso-chiusura-preventivi): Il tasso di chiusura preventivi è la metrica che decide se la tua impresa fattura o resta ferma.
+- [Sopralluogo che vende: come trasformare la visita in casa nella tua arma migliore](https://www.venditaedile.it/blog/sopralluogo-che-vende): Il sopralluogo non è il momento in cui misuri le finestre, è il momento in cui decidi se venderai o no.
+- [Domande di qualificazione cliente in edilizia: fagli dire lui perché deve comprare](https://www.venditaedile.it/blog/domande-qualificazione-cliente-edilizia): Parli troppo e chiudi poco: il venditore che vince fa domande, non discorsi.
+- [Primo contatto telefonico: come gestire i lead in edilizia senza bruciarli](https://www.venditaedile.it/blog/primo-contatto-telefonico-lead-edilizia): Il preventivo si perde molto prima del preventivo: si perde nei primi 90 secondi di telefonata.
+- [Vendere di più in showroom: la guida per infissi, serramenti e porte](https://www.venditaedile.it/blog/vendere-di-piu-in-showroom): Hai investito in uno showroom bellissimo e i clienti entrano, guardano, dicono "grazie, ci penso" e se ne vanno.
+- [Coppia decisionale in vendita: come chiudere quando decidono in due](https://www.venditaedile.it/blog/gestire-coppia-decisionale-vendita): Il preventivo perfetto muore lo stesso se in casa decidono in due e tu hai parlato solo con uno.
+- [Vendere la posa infissi: come trasformarla nella tua arma di differenziazione](https://www.venditaedile.it/blog/vendere-il-valore-della-posa): Il cliente guarda solo il prodotto e considera la posa un dettaglio.
+- [Chiudere al primo appuntamento: come firmare senza il giro infinito di preventivi](https://www.venditaedile.it/blog/chiudere-al-primo-appuntamento): Ogni giorno che passa tra il sopralluogo e la firma è un giorno in più per far raffreddare il cliente e farlo confrontare con altri tre preventivatori.
+- [Storytelling nella vendita edilizia: come vendere con le emozioni (senza sembrare finto)](https://www.venditaedile.it/blog/storytelling-vendita-edilizia): Le caratteristiche tecniche non fanno firmare nessuno.
+- [Negoziazione del prezzo: come trattare col cliente senza cedere](https://www.venditaedile.it/blog/negoziazione-senza-cedere-sul-prezzo): Sapere fare uno sconto non è negoziare.
+- [Come vendere ristrutturazioni chiavi in mano (senza spaventare il cliente)](https://www.venditaedile.it/blog/vendere-ristrutturazioni-chiavi-in-mano): Vendere una ristrutturazione completa non è vendere un infisso più grande.
+- [Come aumentare le vendite di infissi e serramenti (senza abbassare i prezzi)](https://www.venditaedile.it/blog/aumentare-vendite-infissi-serramenti): Non ti serve più traffico, ti serve un sistema.
+- [Vendere senza fare sconti: come chiudere a prezzo pieno nell'edilizia](https://www.venditaedile.it/blog/vendere-senza-fare-sconti): Ogni volta che fai uno sconto regali margine, non fatturato.
+- [Perché perdi clienti dopo il preventivo (e non è il prezzo)](https://www.venditaedile.it/blog/perche-perdi-clienti-preventivi): Fai preventivi corretti e prezzi giusti, eppure il cliente sparisce.
+- [Come chiudere una trattativa di serramenti (in showroom o a casa del cliente)](https://www.venditaedile.it/blog/chiudere-trattativa-serramenti): Il preventivo era buono, il cliente sembrava convinto, poi il silenzio.
+- [Come vendere il fotovoltaico in trattativa senza svenderlo](https://www.venditaedile.it/blog/vendere-fotovoltaico-trattativa): Se in trattativa parli ancora di pannelli, kW e marche, hai già perso il confronto sul prezzo.
+- [Obiezione "ci penso": come gestirla e chiudere più preventivi di infissi](https://www.venditaedile.it/blog/obiezione-ci-penso-come-gestirla): "Ci devo pensare" non è un no.
+- [Obiezione prezzo in edilizia: cosa rispondere quando il cliente dice "costa troppo"](https://www.venditaedile.it/blog/obiezione-prezzo-costa-troppo-edilizia): Il cliente dice "costa troppo" e il tuo istinto è abbassare il prezzo.
+- [Follow up preventivi edilizia: il sistema per recuperare il fatturato che stai perdendo](https://www.venditaedile.it/blog/follow-up-preventivi-edilizia): Il preventivo non chiuso non è un cliente perso: è fatturato parcheggiato che nessuno va a riprendere.
+- [Come aumentare il prezzo medio in edilizia (senza perdere clienti)](https://www.venditaedile.it/blog/aumentare-prezzo-medio-edilizia): Non ti servono più clienti, ti serve un ticket medio più alto sugli stessi clienti.
+
+Preventivi:
+- [Come fare preventivi edilizia che chiudono (e non finiscono nel dimenticatoio)](https://www.venditaedile.it/blog/come-fare-preventivi-edilizia-che-chiudono): Il preventivo perfetto sulla carta che finisce in un cassetto non serve a niente.
+
+Marketing:
+- [Lead qualificati per imprese edili: come arrivare a 30 richieste al mese](https://www.venditaedile.it/blog/lead-qualificati-imprese-edili): Non ti serve più traffico, ti serve traffico giusto.
+- [Clienti qualificati edilizia: come smettere di rincorrere i curiosi](https://www.venditaedile.it/blog/clienti-qualificati-edilizia): Passi le giornate tra sopralluoghi e preventivi, ma la cassa non si muove.
+- [Marketing per imprese edili: la guida pratica per chi parte da zero](https://www.venditaedile.it/blog/marketing-per-imprese-edili-guida): Non ti serve un'agenzia da 3.000 € al mese, ti serve un metodo.
+- [Funnel di vendita per infissi e serramenti: dal lead al contratto firmato](https://www.venditaedile.it/blog/funnel-vendita-infissi-serramenti): Se ogni preventivo è una scommessa e non sai mai perché chiudi o perdi un cliente, non hai un funnel.
+- [Recensioni e riprova sociale: come farle diventare vendite in showroom](https://www.venditaedile.it/blog/recensioni-riprova-sociale-showroom): Il cliente non si fida di te, si fida di chi è già passato dal tuo showroom prima di lui.
+
+Mindset:
+- [Azienda che dipende dal titolare: come uscire dalla trappola e vendere senza di te](https://www.venditaedile.it/blog/azienda-che-dipende-dal-titolare): Se stacchi il telefono per due giorni e i preventivi non si chiudono più, non hai un'azienda: hai un lavoro autonomo con dipendenti.
 
 ## Contatti
 

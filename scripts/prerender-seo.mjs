@@ -338,6 +338,7 @@ function buildRoutes({ articles, hubs }) {
     const url = `${SITE}/blog/${a.slug}`;
     routes.push({
       path: `/blog/${a.slug}`,
+      lastmod: a.updatedAt || a.publishedAt,
       head: buildHead({
         title: a.metaTitle,
         description: a.metaDescription,
@@ -522,7 +523,61 @@ async function main() {
     if (desc.length > 160) warnings.push(`description ${desc.length} char — ${route.path}`);
   }
 
+  // Sitemap generata dalle stesse rotte del prerender: un'unica fonte di
+  // verità, così non può più andare fuori sincrono quando si aggiunge un
+  // articolo. Le rotte noindex sono escluse.
+  const priority = (p) => {
+    if (p === "/") return "1.0";
+    if (p === "/blog") return "0.8";
+    if (p.startsWith("/blog/")) return "0.7";
+    if (["/privacy", "/cookie", "/termini"].includes(p)) return "0.3";
+    return "0.8";
+  };
+  const changefreq = (p) =>
+    p === "/" || p === "/blog" ? "weekly" : p.startsWith("/blog/") ? "monthly" : "monthly";
+
+  const indexable = routes.filter((r) => !/noindex/.test(r.head));
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = indexable
+    .map((r) => {
+      const lastmod = r.lastmod || today;
+      return `  <url>\n    <loc>${SITE}${r.path === "/" ? "/" : r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq(r.path)}</changefreq>\n    <priority>${priority(r.path)}</priority>\n  </url>`;
+    })
+    .join("\n");
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  await writeFile(path.join(dist, "sitemap.xml"), sitemap, "utf8");
+  await writeFile(path.join(root, "public/sitemap.xml"), sitemap, "utf8");
+
+  // llms.txt — l'elenco degli articoli si rigenera dal registro dei contenuti,
+  // così non resta indietro quando se ne pubblica uno nuovo. Le sezioni scritte
+  // a mano (introduzione, definizioni, contatti) restano intatte.
+  const llmsPath = path.join(root, "public/llms.txt");
+  let llms = await readFile(llmsPath, "utf8");
+  const listStart = "## Articoli del blog (guide pratiche)";
+  const listEnd = "## Contatti";
+  if (llms.includes(listStart) && llms.includes(listEnd)) {
+    const byCategory = new Map();
+    for (const a of content.articles) {
+      if (!byCategory.has(a.category)) byCategory.set(a.category, []);
+      byCategory.get(a.category).push(a);
+    }
+    const blocks = [...byCategory.entries()].map(
+      ([cat, list]) =>
+        `${cat}:\n` +
+        list
+          .map((a) => `- [${a.title}](${SITE}/blog/${a.slug}): ${a.excerpt.split(". ")[0]}.`)
+          .join("\n")
+    );
+    const generated = `${listStart}\n\n${blocks.join("\n\n")}\n\n`;
+    llms =
+      llms.slice(0, llms.indexOf(listStart)) + generated + llms.slice(llms.indexOf(listEnd));
+    await writeFile(llmsPath, llms, "utf8");
+    await writeFile(path.join(dist, "llms.txt"), llms, "utf8");
+  }
+
+  console.log(`✓ llms.txt: ${content.articles.length} articoli elencati per categoria`);
   console.log(`✓ Prerender: ${routes.length} pagine statiche generate in dist/`);
+  console.log(`✓ Sitemap: ${indexable.length} URL indicizzabili (${routes.length - indexable.length} noindex esclusi)`);
   if (warnings.length) {
     console.log(`⚠ ${warnings.length} meta fuori limite SERP:`);
     for (const w of warnings.slice(0, 12)) console.log(`  - ${w}`);

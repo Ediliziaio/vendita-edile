@@ -245,6 +245,8 @@ const formazioneCommerciale: Hub = {
     { slug: "storytelling-vendita-edilizia", label: "Storytelling nella vendita" },
     { slug: "negoziazione-senza-cedere-sul-prezzo", label: "Negoziare senza cedere sul prezzo" },
     { slug: "azienda-che-dipende-dal-titolare", label: "L'azienda che dipende dal titolare" },
+    { slug: "provvigioni-venditore-edilizia", label: "Provvigioni: quanto pagare chi vende" },
+    { slug: "margine-commessa-impresa-edile", label: "Calcolare il margine di commessa" },
   ],
   faq: [
     {
