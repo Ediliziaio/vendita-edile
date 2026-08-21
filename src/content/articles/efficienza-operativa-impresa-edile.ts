@@ -7,7 +7,7 @@ const article: Article = {
   title: "Efficienza operativa impresa edile: come far correre ufficio e cantiere insieme",
   metaTitle: "Efficienza Operativa Impresa Edile: Guida Pratica 2026",
   metaDescription:
-    "Efficienza operativa impresa edile: processi, ruoli chiari e strumenti semplici per ridurre tempi morti e rifacimenti. La guida pratica per liberare tempo e vendere di più.",
+    "Processi, ruoli chiari e strumenti semplici per ridurre tempi morti e rifacimenti nella tua impresa edile. La guida pratica per liberare tempo e vendere di più.",
   excerpt:
     "Ogni ora persa tra ufficio e cantiere è un'ora che non vendi. Ecco come costruire efficienza operativa reale in un'impresa edile, senza assumere e senza software da 10.000 euro.",
   category: "Gestione",

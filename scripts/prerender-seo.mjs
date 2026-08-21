@@ -1,0 +1,535 @@
+/**
+ * Prerender SEO — genera un file HTML statico per ogni URL pubblico.
+ *
+ * Perché serve: il sito è una SPA. Senza questo passaggio ogni URL servirebbe
+ * lo stesso index.html (stesso <title>, nessuna description, nessun contenuto).
+ * Google renderizza il JS con ritardo, ma social network e crawler AI
+ * (GPTBot, ClaudeBot, PerplexityBot) NON eseguono JavaScript: senza prerender
+ * vedono una pagina vuota, e i 34 articoli con 205 FAQ restano invisibili.
+ *
+ * Cosa fa per ogni rotta:
+ *  - <title>, meta description, canonical, Open Graph e Twitter Card unici
+ *  - JSON-LD (Article, FAQPage, BreadcrumbList, Organization, WebSite)
+ *  - il testo reale della pagina dentro #root (React lo sostituisce al mount)
+ */
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import esbuild from "esbuild";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, "..");
+const dist = path.join(root, "dist");
+
+const SITE = "https://www.venditaedile.it";
+const BRAND = "VENDITA EDILE®";
+const OG_IMAGE = `${SITE}/og-image.jpg`;
+const LOGO = `${SITE}/apple-touch-icon.png`;
+const FOUNDER = "Florin Andriciuc";
+const FOUNDER_URL = "https://www.florinandriciuc.com/chi-sono";
+
+/* ------------------------------------------------------------------ *
+ * 1. Caricamento contenuti (bundle esbuild dei sorgenti TypeScript)
+ * ------------------------------------------------------------------ */
+
+const assetStub = {
+  name: "asset-stub",
+  setup(build) {
+    // Le immagini importate nei contenuti non servono al prerender:
+    // le sostituiamo con il loro path pubblico.
+    build.onResolve({ filter: /\.(png|jpe?g|webp|svg|gif|avif)$/ }, (args) => ({
+      path: args.path,
+      namespace: "asset-stub",
+    }));
+    build.onLoad({ filter: /.*/, namespace: "asset-stub" }, (args) => ({
+      contents: `export default ${JSON.stringify("/assets/" + path.basename(args.path))};`,
+      loader: "js",
+    }));
+  },
+};
+
+const aliasPlugin = {
+  name: "alias-at",
+  setup(build) {
+    build.onResolve({ filter: /^@\// }, async (args) => {
+      // Deleghiamo al resolver di esbuild così estensioni e index.ts
+      // vengono risolti come farebbe Vite.
+      return build.resolve(`./${args.path.slice(2)}`, {
+        kind: args.kind,
+        resolveDir: path.join(root, "src"),
+      });
+    });
+  },
+};
+
+async function loadContent() {
+  const outfile = path.join(root, "node_modules/.cache/prerender-content.mjs");
+  await esbuild.build({
+    entryPoints: [path.join(__dirname, "content-entry.ts")],
+    bundle: true,
+    format: "esm",
+    platform: "node",
+    target: "node18",
+    outfile,
+    logLevel: "silent",
+    plugins: [assetStub, aliasPlugin],
+  });
+  return import(`${pathToFileURL(outfile).href}?t=${Date.now()}`);
+}
+
+/* ------------------------------------------------------------------ *
+ * 2. Utility
+ * ------------------------------------------------------------------ */
+
+const esc = (s = "") =>
+  String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+/** Markdown (GFM ridotto) → HTML. Serve solo ai crawler: niente fronzoli. */
+function mdToHtml(md = "") {
+  const lines = String(md).split("\n");
+  const out = [];
+  let inList = false;
+  let inTable = false;
+
+  const closeList = () => {
+    if (inList) {
+      out.push("</ul>");
+      inList = false;
+    }
+  };
+  const closeTable = () => {
+    if (inTable) {
+      out.push("</table>");
+      inTable = false;
+    }
+  };
+
+  const inline = (t) =>
+    esc(t)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+
+    if (!line.trim()) {
+      closeList();
+      closeTable();
+      continue;
+    }
+
+    const heading = line.match(/^(#{2,4})\s+(.*)$/);
+    if (heading) {
+      closeList();
+      closeTable();
+      const level = heading[1].length;
+      out.push(`<h${level}>${inline(heading[2])}</h${level}>`);
+      continue;
+    }
+
+    if (/^[-*]\s+/.test(line)) {
+      closeTable();
+      if (!inList) {
+        out.push("<ul>");
+        inList = true;
+      }
+      out.push(`<li>${inline(line.replace(/^[-*]\s+/, ""))}</li>`);
+      continue;
+    }
+
+    if (/^\|/.test(line)) {
+      closeList();
+      // riga separatore |---|---|
+      if (/^\|[\s:|-]+\|$/.test(line)) continue;
+      if (!inTable) {
+        out.push("<table>");
+        inTable = true;
+      }
+      const cells = line
+        .split("|")
+        .slice(1, -1)
+        .map((c) => `<td>${inline(c.trim())}</td>`)
+        .join("");
+      out.push(`<tr>${cells}</tr>`);
+      continue;
+    }
+
+    if (/^>\s?/.test(line)) {
+      closeList();
+      closeTable();
+      out.push(`<blockquote>${inline(line.replace(/^>\s?/, ""))}</blockquote>`);
+      continue;
+    }
+
+    closeList();
+    closeTable();
+    out.push(`<p>${inline(line)}</p>`);
+  }
+  closeList();
+  closeTable();
+  return out.join("\n");
+}
+
+const jsonLd = (obj) =>
+  `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
+
+const organization = {
+  "@type": "Organization",
+  "@id": `${SITE}/#organization`,
+  name: BRAND,
+  url: SITE,
+  logo: LOGO,
+  founder: { "@type": "Person", name: FOUNDER, url: FOUNDER_URL },
+  areaServed: { "@type": "Country", name: "IT" },
+};
+
+function breadcrumb(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: `${SITE}${it.path}`,
+    })),
+  };
+}
+
+function faqPage(faq) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+}
+
+/* ------------------------------------------------------------------ *
+ * 3. Composizione della pagina
+ * ------------------------------------------------------------------ */
+
+function buildHead({ title, description, url, image = OG_IMAGE, type = "website", schemas = [], keywords, noindex = false }) {
+  const t = esc(title);
+  const d = esc(description);
+  return [
+    `<title>${t}</title>`,
+    `<meta name="description" content="${d}" />`,
+    keywords ? `<meta name="keywords" content="${esc(keywords)}" />` : "",
+    `<link rel="canonical" href="${url}" />`,
+    noindex
+      ? `<meta name="robots" content="noindex, nofollow" />`
+      : `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />`,
+    `<meta property="og:type" content="${type}" />`,
+    `<meta property="og:site_name" content="${esc(BRAND)}" />`,
+    `<meta property="og:locale" content="it_IT" />`,
+    `<meta property="og:url" content="${url}" />`,
+    `<meta property="og:title" content="${t}" />`,
+    `<meta property="og:description" content="${d}" />`,
+    `<meta property="og:image" content="${image}" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${t}" />`,
+    `<meta name="twitter:description" content="${d}" />`,
+    `<meta name="twitter:image" content="${image}" />`,
+    ...schemas.map(jsonLd),
+  ]
+    .filter(Boolean)
+    .join("\n    ");
+}
+
+function faqHtml(faq = []) {
+  if (!faq.length) return "";
+  return `<section><h2>Domande frequenti</h2>${faq
+    .map((f) => `<h3>${esc(f.question)}</h3><p>${esc(f.answer)}</p>`)
+    .join("")}</section>`;
+}
+
+/* ------------------------------------------------------------------ *
+ * 4. Definizione delle rotte
+ * ------------------------------------------------------------------ */
+
+function buildRoutes({ articles, hubs }) {
+  const routes = [];
+
+  // --- Home ---
+  routes.push({
+    path: "/",
+    head: buildHead({
+      title: `Vendita Edile® — Affiancamento Vendite per Imprese Edili`,
+      description:
+        "Trasforma i preventivi in contratti firmati senza abbassare i prezzi. Affiancamento commerciale per imprese edili, serramentisti e fotovoltaico.",
+      url: `${SITE}/`,
+      keywords:
+        "affiancamento vendite edilizia, formazione commerciale imprese edili, aumentare tasso chiusura preventivi, vendita serramenti",
+      schemas: [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            organization,
+            {
+              "@type": "WebSite",
+              "@id": `${SITE}/#website`,
+              url: SITE,
+              name: BRAND,
+              inLanguage: "it-IT",
+              publisher: { "@id": `${SITE}/#organization` },
+            },
+          ],
+        },
+      ],
+    }),
+    body: `
+      <h1>Vendita Edile® — il metodo di vendita per l'impresa edile</h1>
+      <p>Il programma di affiancamento che insegna all'imprenditore edile a trasformare i preventivi in contratti firmati, senza svendere il proprio lavoro.</p>
+      <p>Vendita Edile® è il sistema commerciale per le aziende del settore casa: infissi, serramenti, fotovoltaico, ristrutturazioni e impianti. L'obiettivo è alzare la percentuale di preventivi chiusi mantenendo prezzi e margine.</p>
+      <p>Un progetto di <a href="${FOUNDER_URL}" rel="author">${FOUNDER}</a>, founder e CEO di AEDIX.</p>`,
+  });
+
+  // --- Blog index ---
+  routes.push({
+    path: "/blog",
+    head: buildHead({
+      title: "Blog — Guide di Vendita per Imprese Edili",
+      description:
+        "Guide pratiche su preventivi, trattativa, obiezioni e gestione commerciale per imprese edili, serramentisti e installatori. Aggiornate e testate sul campo.",
+      url: `${SITE}/blog`,
+      schemas: [
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]),
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: `Blog ${BRAND}`,
+          url: `${SITE}/blog`,
+          publisher: { "@id": `${SITE}/#organization` },
+          blogPost: articles.slice(0, 20).map((a) => ({
+            "@type": "BlogPosting",
+            headline: a.title,
+            url: `${SITE}/blog/${a.slug}`,
+            datePublished: a.publishedAt,
+          })),
+        },
+      ],
+    }),
+    body: `
+      <h1>Blog — Guide di vendita per imprese edili</h1>
+      <p>Guide pratiche su preventivi, trattativa, gestione delle obiezioni e organizzazione commerciale per chi vende infissi, serramenti, fotovoltaico e ristrutturazioni.</p>
+      <ul>${articles
+        .map(
+          (a) =>
+            `<li><a href="/blog/${a.slug}">${esc(a.title)}</a> — ${esc(a.excerpt)}</li>`
+        )
+        .join("")}</ul>`,
+  });
+
+  // --- Articoli ---
+  for (const a of articles) {
+    const url = `${SITE}/blog/${a.slug}`;
+    routes.push({
+      path: `/blog/${a.slug}`,
+      head: buildHead({
+        title: a.metaTitle,
+        description: a.metaDescription,
+        url,
+        type: "article",
+        keywords: [a.keyword, ...(a.tags || [])].join(", "),
+        schemas: [
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: a.title,
+            description: a.metaDescription,
+            datePublished: a.publishedAt,
+            dateModified: a.updatedAt || a.publishedAt,
+            inLanguage: "it-IT",
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+            author: { "@type": "Person", name: a.author?.name || FOUNDER, url: FOUNDER_URL },
+            publisher: organization,
+            image: OG_IMAGE,
+            articleSection: a.category,
+            keywords: [a.keyword, ...(a.tags || [])].join(", "),
+            wordCount: String(a.content || "").split(/\s+/).length,
+          },
+          ...(a.faq?.length ? [faqPage(a.faq)] : []),
+          breadcrumb([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: a.title, path: `/blog/${a.slug}` },
+          ]),
+        ],
+      }),
+      body: `
+        <article>
+          <h1>${esc(a.title)}</h1>
+          <p><em>${esc(a.excerpt)}</em></p>
+          <p>Categoria: ${esc(a.category)} · Lettura ${a.readingTime} min · Aggiornato il ${esc(a.updatedAt || a.publishedAt)} · di ${esc(a.author?.name || FOUNDER)}</p>
+          ${a.keyTakeaways?.length ? `<h2>In sintesi</h2><ul>${a.keyTakeaways.map((k) => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
+          ${mdToHtml(a.content)}
+          ${faqHtml(a.faq)}
+        </article>`,
+    });
+  }
+
+  // --- Hub (silo) ---
+  for (const h of hubs) {
+    const url = `${SITE}/${h.slug}`;
+    routes.push({
+      path: `/${h.slug}`,
+      head: buildHead({
+        title: h.metaTitle,
+        description: h.metaDescription,
+        url,
+        keywords: h.keyword,
+        schemas: [
+          ...(h.faq?.length ? [faqPage(h.faq)] : []),
+          breadcrumb([
+            { name: "Home", path: "/" },
+            { name: h.h1, path: `/${h.slug}` },
+          ]),
+        ],
+      }),
+      body: `
+        <article>
+          <h1>${esc(h.h1)}</h1>
+          <p>${esc(h.answerFirst)}</p>
+          <p>${esc(h.entity)}</p>
+          ${(h.sections || [])
+            .map(
+              (s) => `
+            <h2>${esc(s.h2)}</h2>
+            ${(s.paragraphs || []).map((p) => `<p>${esc(p)}</p>`).join("")}
+            ${s.bullets?.length ? `<ul>${s.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+            ${(s.subsections || []).map((ss) => `<h3>${esc(ss.h3)}</h3><p>${esc(ss.text)}</p>`).join("")}`
+            )
+            .join("")}
+          <h2>Approfondimenti</h2>
+          <ul>${(h.spokes || []).map((s) => `<li><a href="/blog/${s.slug}">${esc(s.label)}</a></li>`).join("")}</ul>
+          ${faqHtml(h.faq)}
+        </article>`,
+    });
+  }
+
+  // --- Pagina EdiliziaInCloud ---
+  routes.push({
+    path: "/edilizia-in-cloud",
+    head: buildHead({
+      title: "Edilizia in Cloud — Il Gestionale per Imprese Edili",
+      description:
+        "Preventivi, cantieri, fatture e incassi in un unico gestionale pensato per le imprese edili italiane. Prova gratuita di 31 giorni.",
+      url: `${SITE}/edilizia-in-cloud`,
+      keywords: "gestionale edilizia cloud, software imprese edili, crm edilizia",
+      schemas: [
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Edilizia in Cloud", path: "/edilizia-in-cloud" },
+        ]),
+      ],
+    }),
+    body: `
+      <h1>Edilizia in Cloud — il gestionale per le imprese edili</h1>
+      <p>Preventivi, gestione cantieri, fatturazione elettronica, margini e incassi in un unico posto. Il gestionale che usiamo con le aziende che seguiamo.</p>`,
+  });
+
+  // --- Pagine legali ---
+  const legal = [
+    ["/privacy", "Privacy Policy", "Informativa sul trattamento dei dati personali di Vendita Edile®."],
+    ["/cookie", "Cookie Policy", "Informativa sui cookie tecnici e di marketing utilizzati dal sito."],
+    ["/termini", "Termini e Condizioni", "Termini e condizioni d'uso del sito Vendita Edile®."],
+  ];
+  for (const [p, title, description] of legal) {
+    routes.push({
+      path: p,
+      head: buildHead({ title: `${title} — ${BRAND}`, description, url: `${SITE}${p}` }),
+      body: `<h1>${title}</h1><p>${description}</p>`,
+    });
+  }
+
+  // --- Landing pubblicitarie e pagina grazie: fuori dall'indice ---
+  // Vanno comunque prerenderizzate, altrimenti il fallback SPA servirebbe
+  // loro l'HTML della home, canonical incluso.
+  const noindexRoutes = [
+    ["/consulenza", "Consulenza Gratuita per Imprenditori Edili", "30 minuti al telefono per capire dove perdi firme e margine. Gratis e senza impegno."],
+    ["/crmgratis", "Prova Gratis 31 Giorni di Edilizia in Cloud", "Preventivi, cantieri, fatture e incassi in un posto solo. Prova gratuita di 31 giorni."],
+    ["/risorsegratuite", "Risorse Gratuite per Imprenditori Edili", "Manuali di vendita, gestionale gratis 31 giorni, gruppo riservato e video formativi."],
+    ["/adgrupporiservato", "Gruppo Riservato per Imprenditori Edili", "Script, template e strategie per vendere di più nel settore edile."],
+    ["/grazie", "Grazie — Richiesta ricevuta", "Abbiamo ricevuto la tua richiesta. Ti contattiamo nelle prossime ore."],
+  ];
+  for (const [p, title, description] of noindexRoutes) {
+    routes.push({
+      path: p,
+      head: buildHead({ title: `${title} — ${BRAND}`, description, url: `${SITE}${p}`, noindex: true }),
+      body: `<h1>${title}</h1><p>${description}</p>`,
+    });
+  }
+
+  return routes;
+}
+
+/* ------------------------------------------------------------------ *
+ * 5. Scrittura dei file
+ * ------------------------------------------------------------------ */
+
+async function main() {
+  const content = await loadContent();
+  const template = await readFile(path.join(dist, "index.html"), "utf8");
+  const routes = buildRoutes(content);
+
+  const warnings = [];
+  for (const route of routes) {
+    let html = template;
+
+    // Sostituisce il <title> statico (o il blocco già iniettato da un run
+    // precedente) con i meta della rotta. I marcatori rendono lo script
+    // ripetibile senza accumulare tag duplicati.
+    const headBlock = `<!--seo:start-->\n    ${route.head}\n    <!--seo:end-->`;
+    html = html.includes("<!--seo:start-->")
+      ? html.replace(/<!--seo:start-->[\s\S]*?<!--seo:end-->/, headBlock)
+      : html.replace(/<title>[\s\S]*?<\/title>/, headBlock);
+
+    // Inietta il contenuto reale dentro #root (React lo rimpiazza al mount)
+    html = html.replace(
+      /<div id="root">[\s\S]*?<\/div>/,
+      `<div id="root">\n${route.body.trim()}\n    </div>`
+    );
+
+    const outDir =
+      route.path === "/" ? dist : path.join(dist, route.path.replace(/^\//, ""));
+    await mkdir(outDir, { recursive: true });
+    await writeFile(path.join(outDir, "index.html"), html, "utf8");
+
+    // Controllo limiti SERP. Misuriamo il testo come lo vede l'utente,
+    // non l'HTML: &quot; conta 1 carattere, non 6.
+    const unesc = (v) =>
+      v
+        .replace(/&quot;/g, '"')
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">");
+    const title = unesc(/<title>(.*?)<\/title>/.exec(route.head)?.[1] ?? "");
+    const desc = unesc(/name="description" content="(.*?)"/.exec(route.head)?.[1] ?? "");
+    if (title.length > 60) warnings.push(`title ${title.length} char — ${route.path}`);
+    if (desc.length > 160) warnings.push(`description ${desc.length} char — ${route.path}`);
+  }
+
+  console.log(`✓ Prerender: ${routes.length} pagine statiche generate in dist/`);
+  if (warnings.length) {
+    console.log(`⚠ ${warnings.length} meta fuori limite SERP:`);
+    for (const w of warnings.slice(0, 12)) console.log(`  - ${w}`);
+  }
+}
+
+main().catch((err) => {
+  console.error("Prerender fallito:", err);
+  process.exit(1);
+});

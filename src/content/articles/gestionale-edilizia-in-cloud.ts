@@ -7,7 +7,7 @@ const article: Article = {
   title: "Gestionale edilizia: perché vendere di più non basta se non controlli i numeri",
   metaTitle: "Gestionale Edilizia: Controlla Margini e Cassa (2026)",
   metaDescription:
-    "Gestionale edilizia con AI per imprese edili: margine reale per commessa, previsionale di cassa, preventivi e fatturazione in un solo posto. Scopri EdiliziaInCloud.",
+    "Gestionale edilizia con AI: margine reale per commessa, previsionale di cassa, preventivi e fatturazione in un solo posto. Scopri EdiliziaInCloud.",
   excerpt:
     "Fatturare tanto non significa guadagnare tanto. Ecco perché dopo aver imparato a vendere serve un gestionale edilizia che ti dica davvero quanto margine resta in cassa.",
   category: "Gestione",

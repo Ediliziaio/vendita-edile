@@ -7,7 +7,7 @@ const article: Article = {
   title: "Coppia decisionale in vendita: come chiudere quando decidono in due",
   metaTitle: "Coppia Decisionale Vendita: Come Chiudere in Due (Guida)",
   metaDescription:
-    "Coppia decisionale vendita: come coinvolgere marito e moglie fin dal sopralluogo, scoprire chi decide davvero e chiudere senza il temuto \"ci pensiamo\". Guida pratica.",
+    "Come coinvolgere marito e moglie fin dal sopralluogo, capire chi decide davvero e chiudere la trattativa senza il temuto «ci pensiamo». Guida pratica.",
   excerpt:
     "Il preventivo perfetto muore lo stesso se in casa decidono in due e tu hai parlato solo con uno. Ecco come gestire la coppia decisionale in vendita senza perdere il controllo della trattativa.",
   category: "Vendita",
