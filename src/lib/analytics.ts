@@ -3,6 +3,8 @@
 // fbq mette in coda le chiamate finché lo script non è caricato,
 // quindi è sicuro chiamare questi helper anche subito al mount.
 
+import { getContentSource, setContentSource, type ContentSource } from "@/lib/utm";
+
 type PixelParams = Record<string, unknown>;
 
 declare global {
@@ -51,8 +53,40 @@ export const trackPageView = () => {
   fbTrackCustom(SITE_PAGEVIEW_EVENT);
 };
 
-/** Lead — conversione reale (candidatura inviata / pagina grazie). */
-export const trackLead = (params?: PixelParams) => fbTrack("Lead", params);
+/**
+ * Lead — conversione reale (candidatura inviata / pagina grazie).
+ * Allega il contenuto da cui è partito il percorso, così in Gestione Eventi
+ * si vede quale articolo o hub ha generato il contatto.
+ */
+export const trackLead = (params?: PixelParams) => {
+  const source = getContentSource();
+  fbTrack("Lead", {
+    ...(source
+      ? {
+          content_source_type: source.type,
+          content_source_slug: source.slug,
+          content_source_title: source.title,
+        }
+      : {}),
+    ...(params ?? {}),
+  });
+};
+
+/**
+ * Click su una CTA da una pagina di contenuto (articolo, hub, glossario).
+ * Fa due cose: spara l'evento con l'origine e memorizza quell'origine, così
+ * il Lead che arriverà dal form sulla home resta collegato al contenuto.
+ */
+export const trackContentCta = (source: ContentSource, ctaPosition?: string) => {
+  setContentSource(source);
+  fbTrackCustom("Click CTA Contenuto", {
+    content_source_type: source.type,
+    content_source_slug: source.slug,
+    content_source_title: source.title,
+    content_category: source.category,
+    cta_position: ctaPosition,
+  });
+};
 
 /** Contact — l'utente ha raggiunto/aperto il form di contatto. */
 export const trackContact = (params?: PixelParams) => fbTrack("Contact", params);

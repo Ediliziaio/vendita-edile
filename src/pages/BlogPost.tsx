@@ -19,7 +19,7 @@ import { getArticleBySlug, getRelatedArticles } from "@/content";
 import { getHubForArticle } from "@/content/hubs";
 import { extractToc } from "@/lib/markdown";
 import { formatArticleDate } from "@/lib/date";
-import { trackViewContent } from "@/lib/analytics";
+import { trackViewContent, trackContentCta } from "@/lib/analytics";
 import {
   SITE_URL,
   articleSchema,
@@ -287,7 +287,22 @@ const BlogPost = () => {
                     infissi, serramenti e fotovoltaico. Sul campo, non in aula.
                   </p>
                   <Button asChild variant="gold" size="lg">
-                    <Link to="/#candidati">Candidati al programma</Link>
+                    <Link
+                      to="/#candidati"
+                      onClick={() =>
+                        trackContentCta(
+                          {
+                            type: "article",
+                            slug: article.slug,
+                            title: article.title,
+                            category: article.category,
+                          },
+                          "fine-articolo"
+                        )
+                      }
+                    >
+                      Candidati al programma
+                    </Link>
                   </Button>
                 </div>
               </div>

@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { trackContentCta } from "@/lib/analytics";
 import { getHub } from "@/content/hubs";
 import { getArticleBySlug } from "@/content";
 import {
@@ -228,7 +229,17 @@ const Hub = ({ slug }: HubProps) => {
                   {hub.ctaText}
                 </p>
                 <Button asChild variant="gold" size="lg">
-                  <Link to="/#candidati">Scopri se qualifichi (2 minuti)</Link>
+                  <Link
+                    to="/#candidati"
+                    onClick={() =>
+                      trackContentCta(
+                        { type: "hub", slug: hub.slug, title: hub.h1 },
+                        "fine-hub"
+                      )
+                    }
+                  >
+                    Scopri se qualifichi (2 minuti)
+                  </Link>
                 </Button>
                 <p className="mt-6 text-sm text-muted-foreground">
                   Per tenere sotto controllo margini e cassa dei lavori che chiudi,

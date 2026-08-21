@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { glossary, glossaryGroups, getGlossaryByGroup } from "@/content/glossary";
 import { getArticleBySlug } from "@/content";
 import { SITE_URL, breadcrumbSchema, organizationSchema } from "@/lib/schema";
+import { trackContentCta } from "@/lib/analytics";
 import { goToContactForm } from "@/config/site";
 
 const URL = `${SITE_URL}/glossario`;
@@ -191,7 +192,13 @@ const Glossario = () => {
               <Button
                 size="lg"
                 className="mt-6"
-                onClick={() => goToContactForm()}
+                onClick={() => {
+                  trackContentCta(
+                    { type: "glossario", slug: "glossario", title: "Glossario della vendita in edilizia" },
+                    "fine-glossario"
+                  );
+                  goToContactForm();
+                }}
               >
                 Richiedi una consulenza gratuita
               </Button>

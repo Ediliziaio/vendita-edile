@@ -38,3 +38,44 @@ export function withUtmParams(url: string): string {
     return url;
   }
 }
+
+/* ------------------------------------------------------------------ *
+ * Attribuzione del contenuto
+ *
+ * Le CTA di articoli, hub e glossario portano al form sulla home: senza
+ * memoria, l'invio del form arriva "anonimo" e non si sa quale contenuto
+ * abbia generato il contatto. Qui teniamo traccia dell'ultima pagina di
+ * contenuto da cui è partito il percorso verso il form.
+ * ------------------------------------------------------------------ */
+
+const CONTENT_KEY = "ve_content_source_v1";
+
+export interface ContentSource {
+  /** Tipo di pagina di origine: articolo, hub di silo o glossario. */
+  type: "article" | "hub" | "glossario";
+  /** Slug della pagina di origine. */
+  slug: string;
+  /** Titolo leggibile, per ritrovarlo in Gestione Eventi. */
+  title?: string;
+  /** Categoria dell'articolo, dove disponibile. */
+  category?: string;
+}
+
+/** Memorizza da quale contenuto è partito il percorso verso il form. */
+export function setContentSource(source: ContentSource) {
+  try {
+    sessionStorage.setItem(CONTENT_KEY, JSON.stringify(source));
+  } catch {
+    /* no-op: senza storage perdiamo solo l'attribuzione */
+  }
+}
+
+/** Recupera il contenuto di origine, se presente. */
+export function getContentSource(): ContentSource | null {
+  try {
+    const raw = sessionStorage.getItem(CONTENT_KEY);
+    return raw ? (JSON.parse(raw) as ContentSource) : null;
+  } catch {
+    return null;
+  }
+}
