@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Come vendere serramenti", href: "/vendita-serramenti" },
   { label: "Formazione commerciale", href: "/formazione-commerciale" },
   { label: "Blog", href: "/blog" },
+  { label: "Glossario", href: "/glossario" },
   { label: "EdiliziaInCloud", href: "/edilizia-in-cloud" },
   { label: "Candidati", href: "#candidati" },
 ];

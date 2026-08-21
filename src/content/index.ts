@@ -24,6 +24,7 @@ import recensioni from "./articles/recensioni-riprova-sociale-showroom";
 import kpiVendita from "./articles/kpi-vendita-edilizia-numeri";
 import margineCommessa from "./articles/margine-commessa-impresa-edile";
 import provvigioniVenditore from "./articles/provvigioni-venditore-edilizia";
+import quantoCostaCorso from "./articles/quanto-costa-corso-vendita-imprese-edili";
 // Cluster "Vendita" — approfondimenti tecniche di vendita
 import sopralluogoCheVende from "./articles/sopralluogo-che-vende";
 import domandeQualificazione from "./articles/domande-qualificazione-cliente-edilizia";
@@ -80,6 +81,7 @@ const registry: Article[] = [
 
 /** Tutti gli articoli, ordinati dal più recente al più vecchio. */
 export const articles: Article[] = [
+  quantoCostaCorso,
   margineCommessa,
   provvigioniVenditore,...registry].sort(
   (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()

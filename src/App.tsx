@@ -22,6 +22,7 @@ const GruppoRiservato = lazy(() => import("./pages/GruppoRiservato"));
 const RisorseGratuite = lazy(() => import("./pages/RisorseGratuite"));
 const CrmGratis = lazy(() => import("./pages/CrmGratis"));
 const Consulenza = lazy(() => import("./pages/Consulenza"));
+const Glossario = lazy(() => import("./pages/Glossario"));
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="/risorsegratuite" element={<RisorseGratuite />} />
               <Route path="/crmgratis" element={<CrmGratis />} />
               <Route path="/consulenza" element={<Consulenza />} />
+              <Route path="/glossario" element={<Glossario />} />
               {/* HUB dei silo di contenuto */}
               <Route path="/vendita-serramenti" element={<Hub slug="vendita-serramenti" />} />
               <Route path="/formazione-commerciale" element={<Hub slug="formazione-commerciale" />} />

@@ -257,7 +257,7 @@ function faqHtml(faq = []) {
  * 4. Definizione delle rotte
  * ------------------------------------------------------------------ */
 
-function buildRoutes({ articles, hubs }) {
+function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
   const routes = [];
 
   // --- Home ---
@@ -420,6 +420,66 @@ function buildRoutes({ articles, hubs }) {
         </article>`,
     });
   }
+
+  // --- Glossario ---
+  // DefinedTermSet è lo schema pensato per i glossari: ogni voce è una
+  // definizione autonoma, il formato che i motori generativi citano meglio.
+  routes.push({
+    path: "/glossario",
+    head: buildHead({
+      title: "Glossario della Vendita in Edilizia: 32 Termini",
+      description:
+        "I termini della vendita per imprese edili spiegati in modo pratico: tasso di chiusura, margine di commessa, qualificazione, follow-up, provvigioni e altri.",
+      url: `${SITE}/glossario`,
+      keywords: "glossario vendita edilizia, termini vendita edile, tasso di chiusura, margine commessa",
+      schemas: [
+        {
+          "@context": "https://schema.org",
+          "@type": "DefinedTermSet",
+          "@id": `${SITE}/glossario#glossario`,
+          name: "Glossario della vendita in edilizia",
+          description:
+            "I termini della vendita per imprese edili, serramentisti e installatori, spiegati con definizioni pratiche.",
+          url: `${SITE}/glossario`,
+          inLanguage: "it-IT",
+          hasDefinedTerm: glossary.map((t) => ({
+            "@type": "DefinedTerm",
+            "@id": `${SITE}/glossario#${t.id}`,
+            name: t.term,
+            description: t.definition,
+            inDefinedTermSet: `${SITE}/glossario#glossario`,
+          })),
+        },
+        breadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Glossario", path: "/glossario" },
+        ]),
+      ],
+    }),
+    body: `
+      <article>
+        <h1>Glossario della vendita in edilizia</h1>
+        <p>I ${glossary.length} termini che servono davvero per capire e governare la vendita in un'impresa edile — dal tasso di chiusura al margine di commessa — spiegati come li usiamo sul campo.</p>
+        ${glossaryGroups
+          .map((group) => {
+            const terms = glossary.filter((t) => t.group === group);
+            if (!terms.length) return "";
+            return `<h2>${esc(group)}</h2><dl>${terms
+              .map(
+                (t) =>
+                  `<dt id="${t.id}"><h3>${esc(t.term)}</h3></dt><dd><p>${esc(t.definition)}</p>${
+                    t.why ? `<p><strong>Perché conta:</strong> ${esc(t.why)}</p>` : ""
+                  }${
+                    t.article
+                      ? `<p><a href="/blog/${t.article}">${esc(t.articleLabel || t.term)}</a></p>`
+                      : ""
+                  }</dd>`
+              )
+              .join("")}</dl>`;
+          })
+          .join("")}
+      </article>`,
+  });
 
   // --- Pagina EdiliziaInCloud ---
   routes.push({

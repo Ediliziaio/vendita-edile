@@ -2,3 +2,4 @@
 // (articoli, hub) a Node tramite un bundle esbuild.
 export { articles } from "../src/content/index";
 export { hubs } from "../src/content/hubs";
+export { glossary, glossaryGroups } from "../src/content/glossary";
