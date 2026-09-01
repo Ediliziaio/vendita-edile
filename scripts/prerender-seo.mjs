@@ -12,7 +12,7 @@
  *  - JSON-LD (Article, FAQPage, BreadcrumbList, Organization, WebSite)
  *  - il testo reale della pagina dentro #root (React lo sostituisce al mount)
  */
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import esbuild from "esbuild";
@@ -89,6 +89,47 @@ const esc = (s = "") =>
     .replace(/"/g, "&quot;");
 
 /** Markdown (GFM ridotto) → HTML. Serve solo ai crawler: niente fronzoli. */
+/* ------------------------------------------------------------------ *
+ * 2b. Asset: dal nome logico al file con hash emesso da Vite
+ * ------------------------------------------------------------------ */
+
+// Vite emette "<nome>-<hash>.<ext>". I contenuti referenziano il nome logico
+// ("/assets/cover-x.webp"), quindi serve una mappa per ottenere l'URL reale.
+const assetMap = new Map();
+let contentImageMap = {};
+
+async function buildAssetMap() {
+  try {
+    for (const f of await readdir(path.join(dist, "assets"))) {
+      assetMap.set(f, `/assets/${f}`);
+      const m = f.match(/^(.*)-[A-Za-z0-9_-]{6,}(\.[a-z0-9]+)$/i);
+      if (m) assetMap.set(m[1] + m[2], `/assets/${f}`);
+    }
+  } catch {
+    /* build non ancora eseguita: le immagini verranno semplicemente omesse */
+  }
+}
+
+function resolveAsset(p) {
+  if (!p) return null;
+  return assetMap.get(path.basename(String(p))) || null;
+}
+
+/** Risolve sia "img:chiave" (registro) sia un path di asset importato. */
+function resolveImageSrc(src) {
+  if (!src) return null;
+  const v = String(src).trim();
+  if (v.startsWith("img:")) return resolveAsset(contentImageMap[v.slice(4).trim()]);
+  return resolveAsset(v);
+}
+
+function figureHtml(src, alt) {
+  const url = resolveImageSrc(src);
+  if (!url) return "";
+  const caption = alt ? `<figcaption>${esc(alt)}</figcaption>` : "";
+  return `<figure><img src="${esc(url)}" alt="${esc(alt || "")}" loading="lazy" />${caption}</figure>`;
+}
+
 function mdToHtml(md = "") {
   const lines = String(md).split("\n");
   const out = [];
@@ -110,6 +151,12 @@ function mdToHtml(md = "") {
 
   const inline = (t) =>
     esc(t)
+      // Le immagini vanno risolte prima dei link: la regex dei link
+      // catturerebbe anche "![alt](src)" producendo un link rotto.
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt, src) => {
+        const url = resolveImageSrc(src);
+        return url ? `<img src="${esc(url)}" alt="${esc(alt)}" loading="lazy" />` : "";
+      })
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
       .replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>")
@@ -121,6 +168,16 @@ function mdToHtml(md = "") {
     if (!line.trim()) {
       closeList();
       closeTable();
+      continue;
+    }
+
+    // Immagine su riga propria: diventa <figure> con didascalia
+    const image = line.match(/^!\[([^\]]*)\]\(([^)]+)\)\s*$/);
+    if (image) {
+      closeList();
+      closeTable();
+      const fig = figureHtml(image[2], image[1]);
+      if (fig) out.push(fig);
       continue;
     }
 
@@ -257,6 +314,35 @@ function faqHtml(faq = []) {
  * 4. Definizione delle rotte
  * ------------------------------------------------------------------ */
 
+/** FAQ della home: le stesse mostrate in pagina, per lo schema FAQPage. */
+const HOME_FAQ = [
+  {
+    question: "Quanto costa il programma VENDITA EDILE® e conviene?",
+    answer:
+      "L'investimento è di 9.000 € e si ripaga in genere con un solo contratto chiuso meglio. La media dei clienti perde 30.000-50.000 € al mese in trattative che non chiudono: il programma punta a un ritorno di circa 5 volte l'investimento in 90 giorni.",
+  },
+  {
+    question: "È un corso di vendita?",
+    answer:
+      "No. VENDITA EDILE® non è un corso ma un affiancamento sul campo di 90 giorni: ogni settimana si revisionano le trattative reali, con feedback e correzioni. Non ti lasciamo con un PDF, lavoriamo sui tuoi preventivi veri.",
+  },
+  {
+    question: "Funziona per il mio settore in edilizia?",
+    answer:
+      "Sì. Il metodo è applicato con oltre 47 aziende in tutta l'edilizia: infissi, serramenti, fotovoltaico, ristrutturazioni e impianti. I principi di vendita sono gli stessi, l'applicazione viene personalizzata sul tuo prodotto.",
+  },
+  {
+    question: "Serve essere già bravi a vendere?",
+    answer:
+      "No. Non servono doti innate ma un sistema: script, qualifica, gestione delle obiezioni e follow-up. Circa il 70% dei clienti non aveva esperienza di vendita prima di iniziare.",
+  },
+  {
+    question: "Cosa succede se non ottengo risultati?",
+    answer:
+      "C'è una garanzia 100%: se non vedi risultati, il rimborso è totale ed è messo per iscritto prima di iniziare. Il rischio è a carico nostro.",
+  },
+];
+
 function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
   const routes = [];
 
@@ -285,12 +371,41 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
             },
           ],
         },
+        faqPage(HOME_FAQ),
       ],
     }),
     body: `
       <h1>Vendita Edile® — il metodo di vendita per l'impresa edile</h1>
+      ${figureHtml("img:trattativa", "Affiancamento commerciale per imprese edili: dalla trattativa al contratto firmato")}
       <p>Il programma di affiancamento che insegna all'imprenditore edile a trasformare i preventivi in contratti firmati, senza svendere il proprio lavoro.</p>
       <p>Vendita Edile® è il sistema commerciale per le aziende del settore casa: infissi, serramenti, fotovoltaico, ristrutturazioni e impianti. L'obiettivo è alzare la percentuale di preventivi chiusi mantenendo prezzi e margine.</p>
+
+      <h2>Il problema: fai 20 preventivi al mese e ne chiudi 2</h2>
+      <p>La maggior parte delle imprese edili chiude tra il 10% e il 15% dei preventivi emessi. Il resto muore nel "ci penso", nel confronto con un preventivo più basso o nel silenzio. Il collo di bottiglia non è il numero di richieste: è il tasso di chiusura.</p>
+      <p>Con lo stesso numero di preventivi, passare dal 12% al 35% di chiusura significa triplicare il venduto senza spendere un euro in più di marketing e senza abbassare i prezzi.</p>
+
+      <h2>Cosa fa VENDITA EDILE®</h2>
+      <p>È un affiancamento sul campo di 90 giorni, non un corso da guardare. Si lavora sulle trattative vere dell'azienda, con revisione settimanale e correzioni.</p>
+      <ul>
+        <li><strong>Qualifica del cliente</strong>: smettere di fare preventivi a chiunque chiami.</li>
+        <li><strong>Diagnosi del bisogno</strong>: capire il problema reale prima di parlare di prodotto.</li>
+        <li><strong>Presentazione a valore</strong>: vendere il risultato, non il materiale.</li>
+        <li><strong>Gestione delle obiezioni</strong>: risposte preparate a "costa troppo" e "ci penso".</li>
+        <li><strong>Follow-up strutturato</strong>: recuperare i preventivi che oggi restano senza risposta.</li>
+      </ul>
+
+      <h2>Per chi è</h2>
+      <p>Per imprenditori e showroom che vendono infissi, serramenti, fotovoltaico, ristrutturazioni e impianti, e che vogliono alzare il margine invece di rincorrere il prezzo più basso.</p>
+
+      <h2>Approfondimenti</h2>
+      <ul>
+        <li><a href="/vendita-serramenti">Come vendere serramenti: il processo commerciale che chiude</a></li>
+        <li><a href="/formazione-commerciale">Formazione commerciale per aziende del settore casa</a></li>
+        <li><a href="/blog">Guide di vendita per imprese edili</a></li>
+      </ul>
+
+      ${faqHtml(HOME_FAQ)}
+
       <p>Un progetto di <a href="${FOUNDER_URL}" rel="author">${FOUNDER}</a>, founder e CEO di AEDIX.</p>`,
   });
 
@@ -336,6 +451,10 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
   // --- Articoli ---
   for (const a of articles) {
     const url = `${SITE}/blog/${a.slug}`;
+    // Ogni articolo condivide la PROPRIA copertina, non l'immagine generica:
+    // i crawler social non eseguono JS, quindi leggono solo questo og:image.
+    const coverUrl = resolveAsset(a.cover);
+    const shareImage = coverUrl ? `${SITE}${coverUrl}` : OG_IMAGE;
     routes.push({
       path: `/blog/${a.slug}`,
       lastmod: a.updatedAt || a.publishedAt,
@@ -343,6 +462,7 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
         title: a.metaTitle,
         description: a.metaDescription,
         url,
+        image: shareImage,
         type: "article",
         keywords: [a.keyword, ...(a.tags || [])].join(", "),
         schemas: [
@@ -357,7 +477,7 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             author: { "@type": "Person", name: a.author?.name || FOUNDER, url: FOUNDER_URL },
             publisher: organization,
-            image: OG_IMAGE,
+            image: shareImage,
             articleSection: a.category,
             keywords: [a.keyword, ...(a.tags || [])].join(", "),
             wordCount: String(a.content || "").split(/\s+/).length,
@@ -373,6 +493,7 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
       body: `
         <article>
           <h1>${esc(a.title)}</h1>
+          ${figureHtml(a.cover, a.title)}
           <p><em>${esc(a.excerpt)}</em></p>
           <p>Categoria: ${esc(a.category)} · Lettura ${a.readingTime} min · Aggiornato il ${esc(a.updatedAt || a.publishedAt)} · di ${esc(a.author?.name || FOUNDER)}</p>
           ${a.keyTakeaways?.length ? `<h2>In sintesi</h2><ul>${a.keyTakeaways.map((k) => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
@@ -543,6 +664,10 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
 
 async function main() {
   const content = await loadContent();
+  // Prima delle rotte: serve la mappa degli asset con hash per poter
+  // risolvere copertine e immagini dei contenuti.
+  await buildAssetMap();
+  contentImageMap = content.contentImages || {};
   const template = await readFile(path.join(dist, "index.html"), "utf8");
   const routes = buildRoutes(content);
 

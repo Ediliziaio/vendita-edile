@@ -3,3 +3,4 @@
 export { articles } from "../src/content/index";
 export { hubs } from "../src/content/hubs";
 export { glossary, glossaryGroups } from "../src/content/glossary";
+export { contentImages } from "../src/content/images";
