@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { trackContact } from "@/lib/analytics";
+import { captureUtmParams, withUtmParams } from "@/lib/utm";
 
 interface ContactFormEmbedProps {
   className?: string;
@@ -19,6 +20,14 @@ export function ContactFormEmbed({ className, height = 640 }: ContactFormEmbedPr
   const ref = useRef<HTMLDivElement>(null);
   const fired = useRef(false);
   const [liveHeight, setLiveHeight] = useState<number | null>(null);
+  // L'iframe non vede l'indirizzo di questa pagina: UTM, gclid e fbclid
+  // dell'atterraggio arrivano al CRM solo se li aggiungiamo al suo indirizzo.
+  // Calcolato nel browser (nel prerender non ci sono né URL né storage).
+  const [src, setSrc] = useState<string | null>(null);
+  useEffect(() => {
+    captureUtmParams();
+    setSrc(withUtmParams(siteConfig.contactFormEmbedUrl));
+  }, []);
 
   // Il form EiC comunica la sua altezza reale via postMessage
   // ({ type: "eic-lead-form-height", height: N }): la usiamo per evitare
@@ -70,13 +79,17 @@ export function ContactFormEmbed({ className, height = 640 }: ContactFormEmbedPr
         className
       )}
     >
-      <iframe
-        src={siteConfig.contactFormEmbedUrl}
-        title="Richiedi informazioni"
-        loading="lazy"
-        className="block w-full"
-        style={{ border: 0, height: liveHeight ?? height }}
-      />
+      {src ? (
+        <iframe
+          src={src}
+          title="Richiedi informazioni"
+          loading="lazy"
+          className="block w-full"
+          style={{ border: 0, height: liveHeight ?? height }}
+        />
+      ) : (
+        <div style={{ height }} aria-hidden="true" />
+      )}
     </div>
   );
 }

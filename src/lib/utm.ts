@@ -4,7 +4,12 @@
 // sull'altro dominio resta collegabile all'annuncio di partenza.
 
 const STORAGE_KEY = "ve_utm_params_v1";
-const TRACKED = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "fbclid", "gclid"];
+// Anche i click id di Google su iOS/app (wbraid, gbraid) e degli altri canali:
+// il form di Edilizia in Cloud li salva tutti sul contatto.
+const TRACKED = [
+  "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+  "fbclid", "gclid", "wbraid", "gbraid", "ttclid", "msclkid", "li_fat_id",
+];
 
 /** Salva in sessionStorage i parametri di attribuzione presenti nell'URL corrente. */
 export function captureUtmParams() {
