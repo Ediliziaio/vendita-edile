@@ -247,7 +247,7 @@ const RisorseGratuite = () => {
               dove stai perdendo margine e cosa sistemare per primo.{" "}
               <strong className="text-foreground">Senza impegno.</strong>
             </p>
-            <ContactFormEmbed className="mt-8 sm:mt-10" height={680} />
+            <ContactFormEmbed className="mt-8 sm:mt-10" height={620} />
           </div>
         </section>
       </main>

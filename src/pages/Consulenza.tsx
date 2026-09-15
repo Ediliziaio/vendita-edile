@@ -890,7 +890,7 @@ const Consulenza = () => {
               l'edilizia. Capiamo dove perdi firme e margine — e cosa sistemare
               per primo.
             </p>
-            <ContactFormEmbed className="mt-8 sm:mt-10" height={680} />
+            <ContactFormEmbed className="mt-8 sm:mt-10" height={620} />
             <p className="mt-5 text-sm text-muted-foreground">
               Ti richiamiamo entro 24 ore lavorative. Nessun venditore
               aggressivo, nessun vincolo.

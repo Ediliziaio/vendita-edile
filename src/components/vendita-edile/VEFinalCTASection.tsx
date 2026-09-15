@@ -57,7 +57,7 @@ const VEFinalCTASection = () => {
 
           {/* Form di richiesta contatto embeddato */}
           <AnimatedSection delay={0.4}>
-            <ContactFormEmbed height={680} />
+            <ContactFormEmbed height={620} />
           </AnimatedSection>
 
           <AnimatedSection delay={0.6}>
