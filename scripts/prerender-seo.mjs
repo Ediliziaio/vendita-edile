@@ -1,4 +1,4 @@
-import { writeStaticRoute, writeNotFound } from "./static-routing.mjs";
+import { writeStaticRoute, writeNotFound, replaceRootContent } from "./static-routing.mjs";
 /**
  * Prerender SEO — genera un file HTML statico per ogni URL pubblico.
  *
@@ -676,10 +676,7 @@ async function main() {
       : html.replace(/<title>[\s\S]*?<\/title>/, headBlock);
 
     // Inietta il contenuto reale dentro #root (React lo rimpiazza al mount)
-    html = html.replace(
-      /<div id="root">[\s\S]*?<\/div>/,
-      `<div id="root">\n${route.body.trim()}\n    </div>`
-    );
+    html = replaceRootContent(html, `\n${route.body.trim()}\n    `);
 
     await writeStaticRoute(dist, route.path, html);
 
