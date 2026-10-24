@@ -44,7 +44,7 @@ type Tag =
  * Gestione dell'head (title + meta + Open Graph + Twitter + canonical) in modo
  * imperativo tramite useEffect. Scelta deliberata rispetto a react-helmet-async,
  * che in questo setup SPA non applicava i tag in modo affidabile. Ogni pagina
- * imposta i propri tag al mount e li rimuove all'unmount, garantendo meta
+ * imposta i propri tag al mount e sostituisce quelli del prerender, garantendo meta
  * corretti per SEO, GEO e AEO su ogni rotta.
  */
 export function SEOHead({
@@ -86,7 +86,7 @@ export function SEOHead({
         el: 'meta',
         attr: 'name',
         key: 'robots',
-        content: noindex ? 'noindex, nofollow' : 'index, follow',
+        content: noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
       },
       { el: 'link', rel: 'canonical', href: url },
       // Open Graph
@@ -126,6 +126,14 @@ export function SEOHead({
       }
       tags.push({ el: 'meta', attr: 'property', key: 'article:author', content: author });
     }
+
+    // Replace the prerendered route head, rather than appending a second canonical.
+    // Only route metadata is managed here; viewport, verification and security tags remain.
+    const managedSelectors = tags.map(tag => tag.el === 'meta'
+      ? `meta[${tag.attr}="${tag.key}"]`
+      : `link[rel="${tag.rel}"]`);
+    managedSelectors.push('meta[property^="article:"]');
+    document.head.querySelectorAll(managedSelectors.join(',')).forEach(node => node.remove());
 
     const created: Element[] = [];
     for (const tag of tags) {

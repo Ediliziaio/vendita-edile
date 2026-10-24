@@ -1,3 +1,4 @@
+import NotFound from "./NotFound";
 import { useEffect, useMemo } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -53,7 +54,7 @@ const BlogPost = () => {
   );
 
   if (!article) {
-    return <Navigate to="/blog" replace />;
+    return <NotFound />;
   }
 
   const url = `${SITE_URL}/blog/${article.slug}`;

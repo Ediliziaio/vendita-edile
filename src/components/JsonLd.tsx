@@ -14,6 +14,7 @@ export function JsonLd({ data }: JsonLdProps) {
   const json = JSON.stringify(data);
 
   useEffect(() => {
+    document.head.querySelectorAll('script[data-prerender-jsonld]').forEach(node => node.remove());
     const items = Array.isArray(data) ? data : [data];
     const nodes = items.map((schema) => {
       const el = document.createElement("script");

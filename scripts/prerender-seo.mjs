@@ -1,3 +1,4 @@
+import { writeStaticRoute, writeNotFound } from "./static-routing.mjs";
 /**
  * Prerender SEO — genera un file HTML statico per ogni URL pubblico.
  *
@@ -234,7 +235,7 @@ function mdToHtml(md = "") {
 }
 
 const jsonLd = (obj) =>
-  `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
+  `<script type="application/ld+json" data-prerender-jsonld>${JSON.stringify(obj).replace(/</g, "\\u003c")}</script>`;
 
 const organization = {
   "@type": "Organization",
@@ -343,7 +344,7 @@ const HOME_FAQ = [
   },
 ];
 
-function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
+function buildRoutes({ articles, hubs, glossary, glossaryGroups, legalDocs, mainLinks, areas, painPoints }) {
   const routes = [];
 
   // --- Home ---
@@ -602,38 +603,29 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups }) {
       </article>`,
   });
 
-  // --- Pagina EdiliziaInCloud ---
+  // Share the same modules and links with the React page; no thin crawler-only placeholder.
   routes.push({
     path: "/edilizia-in-cloud",
+    lastmod: "2026-10-24",
     head: buildHead({
-      title: "Edilizia in Cloud — Il Gestionale per Imprese Edili",
-      description:
-        "Preventivi, cantieri, fatture e incassi in un unico gestionale pensato per le imprese edili italiane. Prova gratuita di 31 giorni.",
+      title: "EdiliziaInCloud: il gestionale con AI per imprese edili",
+      description: "EdiliziaInCloud è il gestionale edilizia con AI: margini reali per commessa, previsione di cassa, cantieri, fatturazione elettronica, CRM e preventivi in un'unica piattaforma.",
       url: `${SITE}/edilizia-in-cloud`,
-      keywords: "gestionale edilizia cloud, software imprese edili, crm edilizia",
-      schemas: [
-        breadcrumb([
-          { name: "Home", path: "/" },
-          { name: "Edilizia in Cloud", path: "/edilizia-in-cloud" },
-        ]),
-      ],
+      schemas: [breadcrumb([{ name: "Home", path: "/" }, { name: "EdiliziaInCloud", path: "/edilizia-in-cloud" }])],
     }),
-    body: `
-      <h1>Edilizia in Cloud — il gestionale per le imprese edili</h1>
-      <p>Preventivi, gestione cantieri, fatturazione elettronica, margini e incassi in un unico posto. Il gestionale che usiamo con le aziende che seguiamo.</p>`,
+    body: `<article><h1>Il gestionale con AI per le imprese edili</h1><p>Cantieri, margini reali, cassa, fatturazione, CRM e preventivi in un'unica piattaforma.</p>
+      <h2>Le domande sui numeri dell'impresa</h2>${painPoints.map(p => `<h3>${esc(p.q)}</h3><p>${esc(p.a)}</p>`).join("")}
+      <h2>Funzionalità per area operativa</h2>${areas.map(a => `<section><h3>${esc(a.area)}</h3><p>${esc(a.desc)}</p><ul>${a.links.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("")}</ul></section>`).join("")}
+      <nav aria-label="Sito ufficiale Edilizia in Cloud"><ul>${mainLinks.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("")}</ul></nav><p><a href="/blog/gestionale-edilizia-in-cloud">Come collegare il gestionale al processo commerciale</a></p></article>`,
   });
 
   // --- Pagine legali ---
-  const legal = [
-    ["/privacy", "Privacy Policy", "Informativa sul trattamento dei dati personali di Vendita Edile®."],
-    ["/cookie", "Cookie Policy", "Informativa sui cookie tecnici e di marketing utilizzati dal sito."],
-    ["/termini", "Termini e Condizioni", "Termini e condizioni d'uso del sito Vendita Edile®."],
-  ];
-  for (const [p, title, description] of legal) {
+  for (const doc of legalDocs) {
     routes.push({
-      path: p,
-      head: buildHead({ title: `${title} — ${BRAND}`, description, url: `${SITE}${p}` }),
-      body: `<h1>${title}</h1><p>${description}</p>`,
+      path: `/${doc.slug}`,
+      lastmod: doc.updatedAt,
+      head: buildHead({ title: doc.title, description: doc.metaDescription, url: `${SITE}/${doc.slug}` }),
+      body: `<article><h1>${esc(doc.title)}</h1>${mdToHtml(doc.content)}</article>`,
     });
   }
 
@@ -689,10 +681,7 @@ async function main() {
       `<div id="root">\n${route.body.trim()}\n    </div>`
     );
 
-    const outDir =
-      route.path === "/" ? dist : path.join(dist, route.path.replace(/^\//, ""));
-    await mkdir(outDir, { recursive: true });
-    await writeFile(path.join(outDir, "index.html"), html, "utf8");
+    await writeStaticRoute(dist, route.path, html);
 
     // Controllo limiti SERP. Misuriamo il testo come lo vede l'utente,
     // non l'HTML: &quot; conta 1 carattere, non 6.
@@ -708,6 +697,8 @@ async function main() {
     if (desc.length > 160) warnings.push(`description ${desc.length} char — ${route.path}`);
   }
 
+  await writeNotFound(dist, template, "Vendita Edile");
+
   // Sitemap generata dalle stesse rotte del prerender: un'unica fonte di
   // verità, così non può più andare fuori sincrono quando si aggiunge un
   // articolo. Le rotte noindex sono escluse.
@@ -722,11 +713,10 @@ async function main() {
     p === "/" || p === "/blog" ? "weekly" : p.startsWith("/blog/") ? "monthly" : "monthly";
 
   const indexable = routes.filter((r) => !/noindex/.test(r.head));
-  const today = new Date().toISOString().slice(0, 10);
   const urls = indexable
     .map((r) => {
-      const lastmod = r.lastmod || today;
-      return `  <url>\n    <loc>${SITE}${r.path === "/" ? "/" : r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq(r.path)}</changefreq>\n    <priority>${priority(r.path)}</priority>\n  </url>`;
+      const lastmod = r.lastmod;
+      return `  <url>\n    <loc>${SITE}${r.path === "/" ? "/" : r.path}</loc>\n${lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ""}    <changefreq>${changefreq(r.path)}</changefreq>\n    <priority>${priority(r.path)}</priority>\n  </url>`;
     })
     .join("\n");
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

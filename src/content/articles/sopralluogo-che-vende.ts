@@ -5,17 +5,16 @@ import cover from "@/assets/cover-sopralluogo-che-vende.webp";
 const article: Article = {
   slug: "sopralluogo-che-vende",
   title: "Sopralluogo che vende: come trasformare la visita in casa nella tua arma migliore",
-  metaTitle: "Sopralluogo Vendita Infissi: la Guida per Chiudere di Più",
+  metaTitle: "Sopralluogo infissi: domande, scheda e prossimo passo",
   metaDescription:
     "Il sopralluogo vendita infissi non è prendere le misure: è dove vinci o perdi la trattativa. Scopri cosa osservare, chiedere e fare in casa del cliente.",
-  excerpt:
-    "Il sopralluogo non è il momento in cui misuri le finestre, è il momento in cui decidi se venderai o no. Ecco cosa cambia tra chi arriva, misura e va via, e chi esce da quella casa con la vendita già in tasca.",
+  excerpt: "Un sopralluogo utile raccoglie esigenze, vincoli e informazioni per una proposta chiara. Ecco le domande da fare, cosa annotare e come concordare il passaggio successivo, senza forzare la decisione del cliente.",
   category: "Vendita",
   tags: ["sopralluogo", "infissi", "serramenti", "vendita", "trattativa", "preventivi", "decisori"],
   keyword: "sopralluogo vendita infissi",
   readingTime: 13,
   publishedAt: "2026-01-20",
-  updatedAt: "2026-01-20",
+  updatedAt: "2026-10-24",
   author: flo,
   cover,
   keyTakeaways: [
@@ -25,7 +24,21 @@ const article: Article = {
     "La fiducia si costruisce in quei 30-45 minuti in casa: mostrando competenza, ordine e ascolto, prima ancora di parlare di euro.",
     "Chi arriva, misura e se ne va senza fare domande sta buttando via la trattativa già dal primo contatto, indipendentemente da quanto sia bravo il preventivo che scriverà dopo.",
   ],
-  content: `## Perché il sopralluogo vendita infissi decide la trattativa prima ancora del preventivo
+  content: `## La scheda da compilare durante il sopralluogo
+
+Un sopralluogo commerciale serve a raccogliere le informazioni necessarie per una proposta pertinente. Affianca il rilievo tecnico, senza sostituire le verifiche di chi progetta e posa. Non garantisce la vendita: rende più chiaro che cosa il cliente chiede e quali decisioni restano aperte.
+
+- **Contesto:** locali e aperture interessati, uso degli ambienti, vincoli segnalati dal cliente e informazioni ancora da verificare.
+- **Esigenze:** cosa non funziona oggi e quale risultato si vuole ottenere. Separa l'osservazione del cliente dalla tua ipotesi tecnica.
+- **Perimetro:** forniture e attività richieste, alternative da confrontare e parti escluse dalla prima proposta.
+- **Decisione:** chi deve esaminare la proposta, quali chiarimenti occorrono e come preferisce riceverli.
+- **Passaggio successivo:** referente, materiale da inviare e appuntamento concordato. Una scadenza va condivisa, non imposta.
+
+Prima di uscire, rileggi il riepilogo con il cliente e correggi le incomprensioni. Conserva fotografie e documenti soltanto per gli usi consentiti e con modalità appropriate. Quando prepari l'offerta, usa quel riepilogo per distinguere soluzione base e opzioni.
+
+Se ti manca una struttura per la prima chiamata, parti dalle [domande di qualificazione del cliente](/blog/domande-qualificazione-cliente-edilizia). Dopo la visita, il percorso prosegue con la [presentazione dei preventivi](/blog/come-fare-preventivi-edilizia-che-chiudono) e il [follow-up concordato](/blog/follow-up-preventivi-edilizia).
+
+## Perché il sopralluogo vendita infissi decide la trattativa prima ancora del preventivo
 
 Rispondiamo subito, senza girarci intorno: il **sopralluogo vendita infissi** non è il momento in cui prendi le misure delle finestre. È il momento in cui il cliente decide, spesso senza dirtelo, se comprerà da te o da un altro. Il preventivo che scriverai dopo è solo la conseguenza scritta di quello che è successo (o non è successo) in quei 30-45 minuti dentro casa sua.
 
