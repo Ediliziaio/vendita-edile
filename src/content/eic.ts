@@ -67,4 +67,3 @@ export const painPoints = [
     a: "Materiali, ore, rifacimenti, sconti: i buchi che si mangiano l'utile diventano visibili.",
   },
 ];
-
