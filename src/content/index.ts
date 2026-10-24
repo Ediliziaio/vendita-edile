@@ -1,3 +1,4 @@
+import aprireShowroom from "./articles/come-aprire-showroom-serramenti";
 import type { Article, ArticleCategory } from "./types";
 
 // Registro degli articoli. Ogni articolo è un modulo in ./articles/<slug>.ts
@@ -43,6 +44,7 @@ import crmPerSerramentisti from "./articles/crm-per-serramentisti";
 
 // L'ordine qui non conta: sotto ordiniamo per data di pubblicazione.
 const registry: Article[] = [
+  aprireShowroom,
   aumentareVenditeInfissi,
   comeFarePreventivi,
   vendereSenzaSconti,

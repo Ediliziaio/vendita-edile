@@ -15,7 +15,7 @@ const article: Article = {
   keyword: "vendere in showroom serramenti",
   readingTime: 13,
   publishedAt: "2026-01-16",
-  updatedAt: "2026-01-16",
+  updatedAt: "2026-10-24",
   author: flo,
   cover,
   keyTakeaways: [
@@ -25,7 +25,9 @@ const article: Article = {
     "Il cliente che dice \"sto solo guardando\" va gestito con una domanda, non ignorato: altrimenti esce e non torna più.",
     "Uno showroom che vende raccoglie sempre un contatto prima che il cliente esca, anche se non è pronto a comprare oggi.",
   ],
-  content: `## Perché il tuo showroom è bello ma non vende
+  content: `Se stai progettando l’apertura, parti dalla [guida per aprire uno showroom di serramenti](/blog/come-aprire-showroom-serramenti): locale, fornitori, budget e responsabilità. Qui trovi invece il percorso della visita in uno showroom già operativo.
+
+## Perché il tuo showroom è bello ma non vende
 
 Rispondiamo subito, senza girarci intorno: uno showroom bellissimo non vende infissi da solo. Vende un **processo**. Se hai speso 40, 60, anche 100 mila euro per allestire sale espositive con luci, ambientazioni e campionari di ogni finitura, ma i clienti entrano, girano dieci minuti, dicono "bello, ci pensiamo" e se ne vanno senza lasciare un contatto, il problema non è l'arredamento. È che nessuno in showroom sta guidando la visita verso una decisione.
 

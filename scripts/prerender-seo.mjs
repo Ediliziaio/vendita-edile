@@ -609,7 +609,7 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups, legalDocs, main
     lastmod: "2026-10-24",
     head: buildHead({
       title: "EdiliziaInCloud: il gestionale con AI per imprese edili",
-      description: "EdiliziaInCloud è il gestionale edilizia con AI: margini reali per commessa, previsione di cassa, cantieri, fatturazione elettronica, CRM e preventivi in un'unica piattaforma.",
+      description: "EdiliziaInCloud collega preventivi, commesse, ore e materiali. Scopri il flusso tra commerciale e cantiere e verifica condizioni e funzioni sul sito ufficiale.",
       url: `${SITE}/edilizia-in-cloud`,
       schemas: [breadcrumb([{ name: "Home", path: "/" }, { name: "EdiliziaInCloud", path: "/edilizia-in-cloud" }])],
     }),

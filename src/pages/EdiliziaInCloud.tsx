@@ -55,7 +55,7 @@ const EdiliziaInCloud = () => {
     <>
       <SEOHead
         title="EdiliziaInCloud: il gestionale con AI per imprese edili"
-        description="EdiliziaInCloud è il gestionale edilizia con AI: margini reali per commessa, previsione di cassa, cantieri, fatturazione elettronica, CRM e preventivi in un'unica piattaforma."
+        description="EdiliziaInCloud collega preventivi, commesse, ore e materiali. Scopri il flusso tra commerciale e cantiere e verifica condizioni e funzioni sul sito ufficiale."
         url={url}
         keywords={[
           "edilizia in cloud",
@@ -277,18 +277,19 @@ const EdiliziaInCloud = () => {
             <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 rounded-2xl border border-border bg-card/50 p-8 text-center">
               <ShieldCheck className="h-10 w-10 text-[#F26A21]" />
               <h2 className="text-xl font-bold text-foreground md:text-2xl">
-                Garanzia ROI 90 giorni
+                Valuta il flusso su una tua commessa
               </h2>
               <p className="text-muted-foreground">
-                Provi EdiliziaInCloud gratis e il piano lo costruiscono su di te. Se in
-                90 giorni non vedi ritorno, hai la garanzia. Il rischio è loro.
+                Il sito ufficiale indica una prova di 31 giorni. Verifica su un lavoro reale
+                il collegamento tra preventivo, ore, materiali e costi; confronta le condizioni
+                aggiornate prima di attivare il servizio. Il risparmio dipende dai tuoi processi.
               </p>
               <div className="flex flex-wrap justify-center gap-4 pt-2 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-[#F26A21]" /> Prova gratuita
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Check className="h-4 w-4 text-[#F26A21]" /> Piano su misura
+                  <Check className="h-4 w-4 text-[#F26A21]" /> Condizioni sul sito ufficiale
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-[#F26A21]" /> Supporto in italiano

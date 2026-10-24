@@ -121,6 +121,7 @@ const vendtaSerramenti: Hub = {
     { slug: "come-fare-preventivi-edilizia-che-chiudono", label: "Preventivi che chiudono" },
     { slug: "chiudere-trattativa-serramenti", label: "Chiudere la trattativa di serramenti" },
     { slug: "chiudere-al-primo-appuntamento", label: "Chiudere al primo appuntamento" },
+    { slug: "come-aprire-showroom-serramenti", label: "Aprire uno showroom: budget e organizzazione" },
     { slug: "vendere-di-piu-in-showroom", label: "Vendere di più in showroom" },
     { slug: "gestire-coppia-decisionale-vendita", label: "Vendere quando decidono in due" },
     { slug: "obiezione-prezzo-costa-troppo-edilizia", label: "Obiezione prezzo: costa troppo" },
