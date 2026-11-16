@@ -1,3 +1,4 @@
+import { PriorityPaths } from "@/components/PriorityPaths";
 import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -108,6 +109,7 @@ const Index = () => {
         
         {/* 1. HOOK - Cattura attenzione */}
         <VEHeroSection />
+        <PriorityPaths />
         
         {/* 2. MERCATO CAMBIATO - 3 stat + sistema */}
         <VEMarketChangedSection />

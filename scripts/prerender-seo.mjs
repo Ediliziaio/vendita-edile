@@ -1,3 +1,4 @@
+import { renderPriorityPaths } from "../src/data/render-priority-paths.mjs";
 import { writeStaticRoute, writeNotFound, replaceRootContent } from "./static-routing.mjs";
 /**
  * Prerender SEO — genera un file HTML statico per ogni URL pubblico.
@@ -676,7 +677,7 @@ async function main() {
       : html.replace(/<title>[\s\S]*?<\/title>/, headBlock);
 
     // Inietta il contenuto reale dentro #root (React lo rimpiazza al mount)
-    html = replaceRootContent(html, `\n${route.body.trim()}\n    `);
+    html = replaceRootContent(html, `\n${route.body.trim()}${route.path === "/" ? renderPriorityPaths() : ""}\n    `);
 
     await writeStaticRoute(dist, route.path, html);
 
