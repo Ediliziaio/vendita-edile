@@ -47,6 +47,8 @@ export interface Article {
   author: ArticleAuthor;
   /** Immagine di copertina (import) */
   cover: string;
+  coverAlt?: string;
+  coverCaption?: string;
   /** In evidenza in cima al blog */
   featured?: boolean;
   /**

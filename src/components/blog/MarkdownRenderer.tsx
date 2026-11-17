@@ -82,6 +82,9 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
           },
           a: ({ href, children }) => {
             const target = href ?? "";
+            if (target.startsWith("/risorse-download/")) {
+              return <a href={target} download>{children}</a>;
+            }
             // Link interni (rotte o ancore) → navigazione SPA
             if (target.startsWith("/") || target.startsWith("#")) {
               return <Link to={target}>{children}</Link>;

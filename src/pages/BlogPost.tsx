@@ -156,11 +156,13 @@ const BlogPost = () => {
             <div className="overflow-hidden rounded-2xl md:rounded-3xl">
               <img
                 src={article.cover}
-                alt={article.title}
+                alt={article.coverAlt ?? article.title}
                 className="aspect-[16/9] w-full object-cover"
               />
             </div>
           </div>
+
+          {article.coverCaption && <p className="container-narrow px-4 md:px-6 mt-3 text-sm text-muted-foreground">{article.coverCaption}</p>}
 
           {/* Body + TOC */}
           <div className="container-narrow px-4 md:px-6 py-10 md:py-14">
@@ -200,7 +202,7 @@ const BlogPost = () => {
                   </div>
                 )}
 
-                <MarkdownRenderer content={article.content} />
+                <div data-editorial-body><MarkdownRenderer content={article.content} /></div>
 
                 {/* Tag */}
                 <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-border pt-6">

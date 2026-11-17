@@ -495,11 +495,12 @@ function buildRoutes({ articles, hubs, glossary, glossaryGroups, legalDocs, main
       body: `
         <article>
           <h1>${esc(a.title)}</h1>
-          ${figureHtml(a.cover, a.title)}
+          ${figureHtml(a.cover, a.coverAlt || a.title)}
+          ${a.coverCaption ? `<p>${esc(a.coverCaption)}</p>` : ""}
           <p><em>${esc(a.excerpt)}</em></p>
           <p>Categoria: ${esc(a.category)} · Lettura ${a.readingTime} min · Aggiornato il ${esc(a.updatedAt || a.publishedAt)} · di ${esc(a.author?.name || FOUNDER)}</p>
           ${a.keyTakeaways?.length ? `<h2>In sintesi</h2><ul>${a.keyTakeaways.map((k) => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
-          ${mdToHtml(a.content)}
+          <div data-editorial-body>${mdToHtml(a.content)}</div>
           ${faqHtml(a.faq)}
         </article>`,
     });

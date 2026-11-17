@@ -31,6 +31,18 @@ Florin Andriciuc, fondatore di AEDIX e di Marketing Edile, opera da oltre 8 anni
 
 ## Articoli del blog (guide pratiche)
 
+Gestione:
+- [Passaggio commerciale tecnico dei serramenti: dall’offerta all’ordine](https://www.venditaedile.it/blog/passaggio-commerciale-tecnico-ordine-serramenti): Una scheda pratica per consegnare la vendita all’ufficio tecnico, collegare documenti e verifiche e preparare l’ordine con informazioni riconoscibili..
+- [Quanto costa un corso di vendita per imprese edili (e quando conviene davvero)](https://www.venditaedile.it/blog/quanto-costa-corso-vendita-imprese-edili): Da 300 € per un corso in aula a diverse migliaia per un affiancamento sul campo: le formule sono diverse e non sono confrontabili sul prezzo.
+- [Margine di commessa: come calcolarlo davvero (e perché quello che credi di avere non c'è)](https://www.venditaedile.it/blog/margine-commessa-impresa-edile): Fatturi bene ma a fine anno non resta niente.
+- [Provvigioni al venditore in edilizia: quanto pagarlo e su cosa calcolarle](https://www.venditaedile.it/blog/provvigioni-venditore-edilizia): Il piano provvigionale decide come vende il tuo commerciale.
+- [CRM per serramentisti: cosa serve davvero e cosa è solo tempo perso](https://www.venditaedile.it/blog/crm-per-serramentisti): Un CRM per serramentisti serve solo se fa 5 cose precise: anagrafica con misure, stato preventivo, promemoria di follow-up, storico trattativa e dati sul tasso di chiusura.
+- [Gestionale edilizia: perché vendere di più non basta se non controlli i numeri](https://www.venditaedile.it/blog/gestionale-edilizia-in-cloud): Fatturare tanto non significa guadagnare tanto.
+- [Controllo di gestione per imprese edili: la guida per chi fattura tanto e resta senza margine](https://www.venditaedile.it/blog/controllo-di-gestione-imprese-edili): Fatturi tanto ma in cassa resta poco? Il problema non è il lavoro che manca, è il controllo di gestione che non c'è.
+- [Efficienza operativa impresa edile: come far correre ufficio e cantiere insieme](https://www.venditaedile.it/blog/efficienza-operativa-impresa-edile): Ogni ora persa tra ufficio e cantiere è un'ora che non vendi.
+- [Come costruire un team commerciale che vende davvero (guida per imprese edili)](https://www.venditaedile.it/blog/team-commerciale-impresa-edile): Se in azienda chiudi solo tu, non hai un'impresa: hai un lavoro travestito da impresa.
+- [KPI vendita edilizia: i numeri che ogni impresa deve misurare per crescere](https://www.venditaedile.it/blog/kpi-vendita-edilizia-numeri): Chi non misura i numeri della vendita, vende a sensazione.
+
 Vendita:
 - [Come aprire uno showroom serramenti: percorso, budget e organizzazione](https://www.venditaedile.it/blog/come-aprire-showroom-serramenti): Prima del locale vengono clienti, forniture e organizzazione.
 - [Come creare una rete vendita per un’impresa edile](https://www.venditaedile.it/blog/rete-vendita-aziende-edili): Una rete vendita funziona quando persone, zone e contatti seguono lo stesso processo.
@@ -54,17 +66,6 @@ Vendita:
 - [Obiezione prezzo in edilizia: cosa rispondere quando il cliente dice "costa troppo"](https://www.venditaedile.it/blog/obiezione-prezzo-costa-troppo-edilizia): Il cliente dice "costa troppo" e il tuo istinto è abbassare il prezzo.
 - [Follow up preventivi edilizia: il sistema per recuperare il fatturato che stai perdendo](https://www.venditaedile.it/blog/follow-up-preventivi-edilizia): Il preventivo non chiuso non è un cliente perso: è fatturato parcheggiato che nessuno va a riprendere.
 - [Come aumentare il prezzo medio in edilizia (senza perdere clienti)](https://www.venditaedile.it/blog/aumentare-prezzo-medio-edilizia): Non ti servono più clienti, ti serve un ticket medio più alto sugli stessi clienti.
-
-Gestione:
-- [Quanto costa un corso di vendita per imprese edili (e quando conviene davvero)](https://www.venditaedile.it/blog/quanto-costa-corso-vendita-imprese-edili): Da 300 € per un corso in aula a diverse migliaia per un affiancamento sul campo: le formule sono diverse e non sono confrontabili sul prezzo.
-- [Margine di commessa: come calcolarlo davvero (e perché quello che credi di avere non c'è)](https://www.venditaedile.it/blog/margine-commessa-impresa-edile): Fatturi bene ma a fine anno non resta niente.
-- [Provvigioni al venditore in edilizia: quanto pagarlo e su cosa calcolarle](https://www.venditaedile.it/blog/provvigioni-venditore-edilizia): Il piano provvigionale decide come vende il tuo commerciale.
-- [CRM per serramentisti: cosa serve davvero e cosa è solo tempo perso](https://www.venditaedile.it/blog/crm-per-serramentisti): Un CRM per serramentisti serve solo se fa 5 cose precise: anagrafica con misure, stato preventivo, promemoria di follow-up, storico trattativa e dati sul tasso di chiusura.
-- [Gestionale edilizia: perché vendere di più non basta se non controlli i numeri](https://www.venditaedile.it/blog/gestionale-edilizia-in-cloud): Fatturare tanto non significa guadagnare tanto.
-- [Controllo di gestione per imprese edili: la guida per chi fattura tanto e resta senza margine](https://www.venditaedile.it/blog/controllo-di-gestione-imprese-edili): Fatturi tanto ma in cassa resta poco? Il problema non è il lavoro che manca, è il controllo di gestione che non c'è.
-- [Efficienza operativa impresa edile: come far correre ufficio e cantiere insieme](https://www.venditaedile.it/blog/efficienza-operativa-impresa-edile): Ogni ora persa tra ufficio e cantiere è un'ora che non vendi.
-- [Come costruire un team commerciale che vende davvero (guida per imprese edili)](https://www.venditaedile.it/blog/team-commerciale-impresa-edile): Se in azienda chiudi solo tu, non hai un'impresa: hai un lavoro travestito da impresa.
-- [KPI vendita edilizia: i numeri che ogni impresa deve misurare per crescere](https://www.venditaedile.it/blog/kpi-vendita-edilizia-numeri): Chi non misura i numeri della vendita, vende a sensazione.
 
 Preventivi:
 - [Come fare preventivi edilizia che chiudono (e non finiscono nel dimenticatoio)](https://www.venditaedile.it/blog/come-fare-preventivi-edilizia-che-chiudono): Il preventivo perfetto sulla carta che finisce in un cassetto non serve a niente.

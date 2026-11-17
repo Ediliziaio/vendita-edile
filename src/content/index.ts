@@ -1,3 +1,4 @@
+import passaggioTecnico from "./articles/passaggio-commerciale-tecnico-ordine-serramenti";
 import aprireShowroom from "./articles/come-aprire-showroom-serramenti";
 import type { Article, ArticleCategory } from "./types";
 
@@ -44,6 +45,7 @@ import crmPerSerramentisti from "./articles/crm-per-serramentisti";
 
 // L'ordine qui non conta: sotto ordiniamo per data di pubblicazione.
 const registry: Article[] = [
+  passaggioTecnico,
   aprireShowroom,
   aumentareVenditeInfissi,
   comeFarePreventivi,
