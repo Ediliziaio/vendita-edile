@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
   <head>
+    <!-- EIC consent-based analytics -->
+    <script defer src="/analytics-config.js"></script>
+    <script defer src="/analytics-loader.js"></script>
+    <script defer src="/analytics-consent.js"></script>
+    <!-- End EIC consent-based analytics -->
+
+
+
+
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VENDITA EDILE® | Programma di Affiancamento per Imprenditori Edili</title>
@@ -12,29 +22,11 @@
     <link rel="alternate icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#0C1D30" />
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '912028060826443');
-      fbq('track', 'PageView', { source_site: 'venditaedile.it', source_brand: 'VENDITA EDILE' });
-      fbq('trackCustom', 'PV_venditaedile', { source_site: 'venditaedile.it', source_brand: 'VENDITA EDILE' });
-    </script>
-    <!-- End Meta Pixel Code -->
   </head>
 
   <body>
     <!-- Meta Pixel (noscript fallback) -->
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=912028060826443&ev=PageView&noscript=1"
-    /></noscript>
+
     <!-- Contenuto di fallback: React lo sostituisce al mount (client render, nessuna
          hydration mismatch). Serve ai crawler, che altrimenti riceverebbero un <div>
          vuoto: qui trovano di cosa parla il sito e la firma dell'entità fondatore,

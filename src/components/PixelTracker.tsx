@@ -29,24 +29,22 @@ export function PixelTracker() {
   // Lead: ascolta il messaggio di invio dal form EiC (iframe cross-origin)
   useEffect(() => {
     function onMessage(e: MessageEvent) {
-      if (typeof e.origin !== "string" || !e.origin.includes("ediliziaincloud")) {
-        return;
-      }
-      let payload = "";
+      if (e.origin !== "https://app.ediliziaincloud.com") return;
+      const frame = Array.from(document.querySelectorAll<HTMLIFrameElement>("iframe[src]")).find((item) => {
+        try { return item.contentWindow === e.source && new URL(item.src).origin === e.origin; }
+        catch { return false; }
+      });
+      if (!frame) return;
+      let data: unknown = e.data;
       try {
-        payload = typeof e.data === "string" ? e.data : JSON.stringify(e.data ?? "");
-      } catch {
-        payload = "";
-      }
-      // Il form EiC invia "eic-lead-form-height" a ogni caricamento (auto-resize):
-      // contiene "lead" ma NON è un invio — va ignorato, altrimenti si generano
-      // conversioni Lead false a ogni pageview con il form embeddato.
-      if (/eic-lead-form-height/i.test(payload)) {
-        return;
-      }
-      if (/submit|success|thank|grazie|inviat/i.test(payload)) {
-        trackLead({ content_name: "Form contatto EiC" });
-      }
+        if (typeof data === "string") data = JSON.parse(data);
+      } catch { return; }
+      if (!data || typeof data !== "object" || Array.isArray(data)) return;
+      const payload = data as { type?: unknown; slug?: unknown };
+      if (payload.type !== "eic-lead-form-submit") return;
+      const slug = new URL(frame.src).searchParams.get("slug");
+      if (!slug || payload.slug !== slug) return;
+      trackLead({ content_name: "Form contatto EiC" });
     }
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);

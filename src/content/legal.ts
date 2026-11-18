@@ -100,7 +100,7 @@ Il Titolare si riserva il diritto di modificare o aggiornare la presente informa
     metaTitle: "Cookie Policy | VENDITA EDILE",
     metaDescription:
       "Informazioni sui cookie utilizzati dal sito VENDITA EDILE e su come gestirli o disattivarli dal proprio browser.",
-    updatedAt: "2026-01-17",
+    updatedAt: "2026-11-18",
     content: `> Nota: il presente documento è un modello informativo redatto a scopo organizzativo. Prima della pubblicazione definitiva è necessaria la validazione da parte di un professionista legale qualificato in materia di protezione dei dati personali.
 
 ## 1. Cosa sono i cookie
@@ -125,11 +125,14 @@ Il Sito si appoggia ad alcuni servizi esterni che possono impostare propri cooki
 
 Il Titolare non ha accesso né controllo diretto sui cookie eventualmente impostati da questi servizi terzi, la cui gestione è disciplinata dalle rispettive informative privacy e cookie policy.
 
+### 3.3 Statistiche di utilizzo
+Google Analytics 4 viene gestito tramite Google Tag Manager e caricato solo dopo il consenso alla categoria **Statistiche**. Serve a misurare l’uso delle pagine pubbliche. Questa integrazione non trasmette agli strumenti di analisi i campi compilati nel modulo di candidatura. Le informazioni sui servizi Google sono disponibili su policies.google.com/technologies/partner-sites.
+
 ## 4. Cookie di profilazione e marketing
 
 Il Sito utilizza il **Meta Pixel (Facebook Pixel)** per finalità di marketing, misurazione delle conversioni e remarketing sulle piattaforme Meta. Questo strumento raccoglie dati relativi alla navigazione (pagine viste, interazioni con il modulo di contatto, visualizzazione degli articoli) e li associa, ove possibile, all'account Meta dell'utente, al fine di ottimizzare le campagne pubblicitarie e mostrare annunci pertinenti.
 
-Il trattamento tramite Meta Pixel avviene sulla base del **consenso** dell'utente. L'utente può gestire le proprie preferenze pubblicitarie direttamente dalle impostazioni del proprio account Meta e disattivare i cookie di terze parti dal proprio browser (vedi paragrafo 5). Per il Titolare è consigliata l'adozione di un banner di consenso preventivo (cookie banner) che consenta all'utente di accettare o rifiutare i cookie di marketing prima della loro attivazione.
+Il Pixel Meta già presente si attiva solo dopo il consenso alla categoria **Marketing**. Il banner permette di accettare, rifiutare o scegliere separatamente statistiche e marketing. Il pulsante **Preferenze cookie** consente di riaprire le scelte in qualsiasi momento. La revoca interrompe il relativo tracciamento, elimina i cookie accessibili al sito e può ricaricare la pagina. Il precedente avviso informativo non viene considerato un consenso alle nuove categorie.
 
 ## 5. Come gestire e disattivare i cookie
 
