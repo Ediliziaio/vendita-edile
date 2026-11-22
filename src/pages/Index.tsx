@@ -33,6 +33,7 @@ import VEFAQSection from "@/components/vendita-edile/VEFAQSection";
 import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
 import VETrattativaSection from "@/components/vendita-edile/VETrattativaSection";
 import VEEsplosoSection from "@/components/vendita-edile/VEEsplosoSection";
+import FunzioniVive from "@/components/vivo/FunzioniVive";
 
 // Caricato on-demand: i testi degli articoli restano fuori dal bundle della
 // homepage, che così rimane leggera (importante per il caricamento su mobile).
@@ -111,7 +112,6 @@ const Index = () => {
         
         {/* 1. HOOK - Cattura attenzione */}
         <VEHeroSection />
-        <PriorityPaths />
         
         {/* 2. MERCATO CAMBIATO - 3 stat + sistema */}
         <VEMarketChangedSection />
@@ -129,6 +129,7 @@ const Index = () => {
         {/* 6. METODO - Il programma completo */}
         <VEEsplosoSection />
         <VETrattativaSection />
+        <FunzioniVive />
         <VEPillarsSection />
         
         {/* 6b. CASI STUDIO E RECENSIONI */}
@@ -155,6 +156,7 @@ const Index = () => {
         <VESelectionProcessSection />
         
         {/* 13. OBIEZIONI - FAQ */}
+        <PriorityPaths />
         <VEFAQSection />
 
         {/* 14. RISORSE - Ultimi articoli del blog (internal linking + valore) */}
