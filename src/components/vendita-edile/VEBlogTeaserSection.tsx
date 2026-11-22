@@ -46,7 +46,7 @@ const VEBlogTeaserSection = () => {
           </Button>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="scorri-mobile grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {latest.map((a, i) => (
             <ArticleCard key={a.slug} article={a} index={i} />
           ))}

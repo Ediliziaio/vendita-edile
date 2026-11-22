@@ -1,3 +1,5 @@
+import ReteViva from "@/components/vivo/ReteViva";
+import VEEsplosoSection from "@/components/vendita-edile/VEEsplosoSection";
 import { useEffect } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -71,7 +73,8 @@ const Hub = ({ slug }: HubProps) => {
 
       <main className="overflow-hidden">
         {/* Header + risposta secca */}
-        <section className="section-padding pb-8 pt-28 md:pt-36">
+        <section className="section-padding relative isolate overflow-hidden pb-8 pt-28 md:pt-36">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="container-narrow px-4 md:px-6">
             <nav
               aria-label="Breadcrumb"
@@ -110,6 +113,12 @@ const Hub = ({ slug }: HubProps) => {
             </motion.div>
           </div>
         </section>
+
+        {hub.slug === "vendita-serramenti" ? (
+          <VEEsplosoSection variante="serramenti" titolo="Dalla prima telefonata all'ordine firmato." />
+        ) : (
+          <VEEsplosoSection />
+        )}
 
         {/* Corpo */}
         <section className="px-4 md:px-6 pb-8">

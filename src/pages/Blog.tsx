@@ -1,3 +1,4 @@
+import ReteViva from "@/components/vivo/ReteViva";
 import { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -103,7 +104,8 @@ const Blog = () => {
 
       <main className="overflow-hidden">
         {/* Hero */}
-        <section className="section-padding pb-8 md:pb-12 pt-28 md:pt-36">
+        <section className="relative isolate overflow-hidden section-padding pb-8 md:pb-12 pt-28 md:pt-36">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="container-narrow px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 24 }}

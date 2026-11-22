@@ -4,6 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { LandingFooter } from "@/components/landing/LandingFooter";
 import { SITE_URL } from "@/lib/schema";
 import { fbTrackCustom } from "@/lib/analytics";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const GROUP_URL = "https://jo.my/gruppoedilizia";
 
@@ -82,7 +83,8 @@ const GruppoRiservato = () => {
         </div>
 
         {/* Hero navy */}
-        <section className="px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
+        <section className="relative isolate overflow-hidden px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="mx-auto max-w-4xl">
             <h1 className="text-[26px] font-extrabold leading-tight sm:text-4xl md:text-5xl">
               Per Scaricare il Manuale devi Accedere al{" "}

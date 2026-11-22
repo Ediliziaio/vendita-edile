@@ -142,7 +142,7 @@ const VETrueCostSection = () => {
         {/* Loss Timeline — il pugno */}
         <AnimatedSection delay={0.2}>
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="scorri-mobile grid grid-cols-1 sm:grid-cols-3 gap-6">
               {lossTimeline.map((item, index) => (
                 <motion.div
                   key={index}
@@ -165,7 +165,7 @@ const VETrueCostSection = () => {
         {/* 3 Hidden Costs — inline, compatto */}
         <AnimatedSection delay={0.3}>
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="scorri-mobile grid grid-cols-1 md:grid-cols-3 gap-4">
               {hiddenCosts.map((item, index) => (
                 <div key={index} className="flex items-start gap-3 bg-card/50 border border-gold/20 rounded-xl p-4">
                   <item.icon className="w-5 h-5 text-gold mt-0.5 shrink-0" />

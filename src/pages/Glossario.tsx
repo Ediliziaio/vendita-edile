@@ -11,6 +11,7 @@ import { getArticleBySlug } from "@/content";
 import { SITE_URL, breadcrumbSchema, organizationSchema } from "@/lib/schema";
 import { trackContentCta } from "@/lib/analytics";
 import { goToContactForm } from "@/config/site";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const URL = `${SITE_URL}/glossario`;
 
@@ -64,7 +65,8 @@ const Glossario = () => {
 
       <main className="overflow-hidden">
         {/* Header */}
-        <section className="section-padding pb-8 pt-28 md:pt-36">
+        <section className="relative isolate overflow-hidden section-padding pb-8 pt-28 md:pt-36">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="container-narrow px-4 md:px-6">
             <nav
               aria-label="Breadcrumb"

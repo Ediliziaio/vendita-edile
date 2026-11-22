@@ -31,6 +31,7 @@ import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { SITE_URL, breadcrumbSchema, organizationSchema } from "@/lib/schema";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const EdiliziaInCloud = () => {
   useEffect(() => {
@@ -77,7 +78,8 @@ const EdiliziaInCloud = () => {
 
       <main className="overflow-hidden">
         {/* HERO */}
-        <section className="section-padding relative pt-28 md:pt-36">
+        <section className="relative isolate overflow-hidden section-padding pt-28 md:pt-36">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(242,106,33,0.12)_0%,transparent_55%)]" />
           <div className="container-narrow relative z-10 text-center">
             <motion.div

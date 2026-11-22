@@ -76,7 +76,7 @@ const VEResultsSection = () => {
         </AnimatedSection>
 
         {/* Stats Grid - Potenziata */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="scorri-mobile grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {/* Stat 1 - Commesse */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

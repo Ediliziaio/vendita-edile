@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import cantiereImage from "@/assets/cantiere-installazione.jpg";
+import FlussoVivo from "@/components/vivo/FlussoVivo";
 
 const pillars = [
   {
@@ -197,33 +198,10 @@ const VEPillarsSection = () => {
               I 4 pilastri si costruiscono in parallelo nei 90 giorni — non in sequenza. Dal giorno 1 lavori già su tutti e 4 i fronti.
             </p>
 
-            <div className="relative pl-8 md:pl-12">
-              {/* Vertical gold line */}
-              <div className="absolute left-3 md:left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/60 to-gold/20" />
-
-              <div className="space-y-8">
-                {timelineItems.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
-                    className="relative"
-                  >
-                    {/* Gold dot */}
-                    <div className="absolute -left-8 md:-left-12 top-4 w-6 h-6 md:w-8 md:h-8 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
-                      <item.icon className="w-3 h-3 md:w-4 md:h-4 text-gold" />
-                    </div>
-                    {/* Card */}
-                    <div className="p-5 bg-card border border-border rounded-xl hover:border-gold/40 transition-colors">
-                      <h4 className="text-lg font-bold text-foreground mb-1">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            <FlussoVivo
+              colonne="sm:grid-cols-2"
+              steps={timelineItems.map((item) => ({ title: item.title, text: item.description, icon: item.icon, etichetta: "Ogni settimana" }))}
+            />
           </div>
         </AnimatedSection>
 

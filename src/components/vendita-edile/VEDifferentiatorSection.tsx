@@ -130,7 +130,7 @@ const VEDifferentiatorSection = () => {
         <AnimatedSection delay={0.25}>
           <div className="mb-12 max-w-5xl mx-auto">
             <p className="text-center text-gold font-bold text-xl md:text-2xl mb-8">Il nostro team sul campo</p>
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" staggerDelay={0.1}>
+            <StaggerContainer className="scorri-mobile grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6" staggerDelay={0.1}>
               {[
                 { name: "Membro 1", role: "Fondatore", description: "Ha costruito 3 aziende edili da zero. Ora guida il metodo.", photo: teamMember1 },
                 { name: "Membro 2", role: "Sales Manager", description: "Oltre 2.000 trattative chiuse nel settore serramenti.", photo: teamMember2 },

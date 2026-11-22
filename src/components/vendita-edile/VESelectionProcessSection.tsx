@@ -3,6 +3,7 @@ import { FileEdit, Search, CheckCircle, ArrowRight, Clock, Users, Target, AlertT
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
+import FlussoVivo from "@/components/vivo/FlussoVivo";
 
 // Integrato da VEForWhoSection
 const weAccept = [
@@ -195,44 +196,10 @@ const VESelectionProcessSection = () => {
         </AnimatedSection>
 
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ scale: 1.03, y: -5 }}
-                className="relative"
-              >
-                <div className="p-6 bg-card border border-border rounded-2xl h-full hover:border-gold transition-colors">
-                  {/* Step number badge */}
-                  <div className="absolute -top-3 left-6 px-3 py-1 bg-gold text-background text-xs font-bold rounded-full">
-                    {step.step}
-                  </div>
-                  
-                  <div className="flex flex-col items-center text-center pt-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gold/20 flex items-center justify-center mb-4">
-                      <step.icon className="w-7 h-7 text-gold" />
-                    </div>
-                    <h4 className="text-lg font-bold text-foreground mb-2">{step.title}</h4>
-                    <div className="inline-block px-3 py-1 bg-gold/10 rounded-full mb-3">
-                      <span className="text-sm font-semibold text-gold">{step.time}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
-
-                {/* Arrow connector */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:flex absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="w-6 h-6 text-gold" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
+          <FlussoVivo
+            colonne="sm:grid-cols-3"
+            steps={steps.map((step) => ({ etichetta: `${step.step} · ${step.time}`, title: step.title, text: step.description, icon: step.icon }))}
+          />
         </div>
 
         {/* CTA finale */}

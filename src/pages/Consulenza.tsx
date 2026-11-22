@@ -22,6 +22,7 @@ import { SITE_URL } from "@/lib/schema";
 import { fbTrackCustom } from "@/lib/analytics";
 import imgPreventivo from "@/assets/img-preventivo.webp";
 import imgFlo from "@/assets/flo-profili.jpg";
+import ReteViva from "@/components/vivo/ReteViva";
 
 // Confronto stile "cosa offre": due alternative barrate + la nostra evidenziata.
 const comparison = [
@@ -317,7 +318,8 @@ const Consulenza = () => {
       <main className="bg-background pb-24 font-outfit text-foreground sm:pb-28">
         {/* Hero — isola scura */}
         <div className="px-3 pt-3 sm:px-4 sm:pt-4">
-          <section className="mx-auto max-w-5xl rounded-3xl bg-navy-dark px-5 py-12 text-center sm:px-10 sm:py-16">
+          <section className="relative isolate overflow-hidden mx-auto max-w-5xl rounded-3xl bg-navy-dark px-5 py-12 text-center sm:px-10 sm:py-16">
+          <ReteViva className="-z-10 opacity-80" />
             <p className="mb-5 inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-bold text-foreground">
               Imprenditore Edile:
             </p>

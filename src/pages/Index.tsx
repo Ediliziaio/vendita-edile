@@ -31,6 +31,8 @@ import VEGuaranteeSection from "@/components/vendita-edile/VEGuaranteeSection";
 import VESelectionProcessSection from "@/components/vendita-edile/VESelectionProcessSection";
 import VEFAQSection from "@/components/vendita-edile/VEFAQSection";
 import VEFinalCTASection from "@/components/vendita-edile/VEFinalCTASection";
+import VETrattativaSection from "@/components/vendita-edile/VETrattativaSection";
+import VEEsplosoSection from "@/components/vendita-edile/VEEsplosoSection";
 
 // Caricato on-demand: i testi degli articoli restano fuori dal bundle della
 // homepage, che così rimane leggera (importante per il caricamento su mobile).
@@ -125,6 +127,8 @@ const Index = () => {
         <VEOriginStorySection />
         
         {/* 6. METODO - Il programma completo */}
+        <VEEsplosoSection />
+        <VETrattativaSection />
         <VEPillarsSection />
         
         {/* 6b. CASI STUDIO E RECENSIONI */}

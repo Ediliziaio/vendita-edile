@@ -4,6 +4,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { getMonthName, getAvailableSpots } from "@/lib/utils";
 import { ContactFormEmbed } from "@/components/ContactFormEmbed";
 import showroomImage from "@/assets/showroom.jpg";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const VEFinalCTASection = () => {
   const trustBadges = [
@@ -24,6 +25,8 @@ const VEFinalCTASection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/90 to-navy/95" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gold/20 via-transparent to-transparent" />
       </div>
+
+      <ReteViva className="opacity-70" />
 
       <div className="section-padding relative z-10">
         <div className="container-narrow text-center">

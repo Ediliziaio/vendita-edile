@@ -17,6 +17,7 @@ import { LandingTestimonials } from "@/components/landing/LandingTestimonials";
 import { SITE_URL } from "@/lib/schema";
 import { fbTrackCustom } from "@/lib/analytics";
 import { withUtmParams } from "@/lib/utm";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const TRIAL_URL = "https://www.ediliziaincloud.com/demo/";
 
@@ -125,7 +126,8 @@ const CrmGratis = () => {
 
       <main className="bg-background font-outfit text-foreground">
         {/* Hero */}
-        <section className="px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
+        <section className="relative isolate overflow-hidden px-5 pb-12 pt-10 text-center sm:px-6 sm:pb-16 sm:pt-14">
+          <ReteViva className="-z-10 opacity-80" />
           <div className="mx-auto max-w-4xl">
             <p className="mb-4 inline-block rounded-full bg-secondary px-4 py-1.5 text-xs font-extrabold uppercase tracking-wide text-secondary-foreground sm:mb-5 sm:px-5 sm:py-2 sm:text-sm">
               31 giorni gratis &mdash; nessun addebito automatico

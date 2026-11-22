@@ -85,7 +85,7 @@ const VEMarketChangedSection = () => {
         </AnimatedSection>
 
         {/* Stat Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12">
+        <div className="scorri-mobile grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto mb-12">
           {stats.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} />
           ))}

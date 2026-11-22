@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
 import { getMonthName, getAvailableSpots } from "@/lib/utils";
 import heroImage from "@/assets/hero-windows.jpg";
+import ReteViva from "@/components/vivo/ReteViva";
 
 const VEHeroSection = () => {
   const aziende = useCountUp({ end: 47, duration: 2000 });
@@ -49,6 +50,8 @@ const VEHeroSection = () => {
           }}
         />
       </div>
+
+      <ReteViva />
 
       <div className="container-narrow relative z-10">
         {/* Pattern Interrupt Badge */}

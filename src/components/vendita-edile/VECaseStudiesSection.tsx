@@ -85,7 +85,7 @@ const VECaseStudiesSection = () => {
         </AnimatedSection>
 
         {/* Case Studies Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20" staggerDelay={0.15}>
+        <StaggerContainer className="scorri-mobile grid grid-cols-1 md:grid-cols-3 gap-6 mb-20" staggerDelay={0.15}>
           {caseStudies.map((cs, i) => (
             <StaggerItem key={i}>
               <div className="h-full rounded-xl border border-secondary/20 bg-card/50 backdrop-blur-sm p-6 flex flex-col hover:border-secondary/40 transition-colors duration-300">
@@ -126,7 +126,7 @@ const VECaseStudiesSection = () => {
           </h3>
         </AnimatedSection>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16" staggerDelay={0.12}>
+        <StaggerContainer className="scorri-mobile grid grid-cols-1 md:grid-cols-2 gap-6 mb-16" staggerDelay={0.12}>
           {testimonials.map((t, i) => (
             <StaggerItem key={i}>
               <div className="rounded-xl border border-secondary/15 bg-card/30 p-6 relative hover:border-secondary/30 transition-colors duration-300">
